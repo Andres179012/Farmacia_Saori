@@ -1,0 +1,37 @@
+C:\Users\LAB02_PC15\Desktop\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.deps.json
+C:\Users\LAB02_PC15\Desktop\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\LAB02_PC15\Desktop\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\LAB02_PC15\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csprojAssemblyReference.cache
+C:\Users\LAB02_PC15\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfoInputs.cache
+C:\Users\LAB02_PC15\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfo.cs
+C:\Users\LAB02_PC15\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\LAB02_PC15\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\LAB02_PC15\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.deps.json
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfoInputs.cache
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfo.cs
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\Deyanira Soto\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\Arias\Desktop\Nueva carpeta (5)\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.deps.json
+C:\Users\Arias\Desktop\Nueva carpeta (5)\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\Arias\Desktop\Nueva carpeta (5)\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\Arias\Desktop\Nueva carpeta (5)\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\Arias\Desktop\Nueva carpeta (5)\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfoInputs.cache
+C:\Users\Arias\Desktop\Nueva carpeta (5)\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfo.cs
+C:\Users\Arias\Desktop\Nueva carpeta (5)\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\Arias\Desktop\Nueva carpeta (5)\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\Arias\Desktop\Nueva carpeta (5)\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\Andres\Desktop\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.deps.json
+C:\Users\Andres\Desktop\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\Andres\Desktop\Sistema\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csprojAssemblyReference.cache
+C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfoInputs.cache
+C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfo.cs
+C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.pdb
