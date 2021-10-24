@@ -2,32 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"] - Farmacia Saori</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @*<link rel="stylesheet" href="~/css/site.css" />*@
     <link rel="icon" href="/IMG/logo/FAVICON.png" type="image/png" />
 
 
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     @*<link type="text/css" href="~/css/bootstrap.min.css" rel="stylesheet" />*@
-    <link rel="stylesheet" type="text/css" href="~/DataTables/datatables.min.css" />
     @*<link rel="stylesheet" type="text/css" href="~/js/assets/swal2/sweetalert2.min.css" />*@
     <link rel="stylesheet" type="text/css" href="~/css/sweetalert2.css" />
 
-    <link href="/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="~/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="~/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="~/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="~/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
-    <link href="css/pace.min.css" rel="stylesheet" />
-    <script src="js/pace.min.js"></script>
+    <link href="~/plugins/highcharts/css/highcharts.css" rel="stylesheet" />
+    <link href="~/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/icons.css" rel="stylesheet">
+    <link href="~/css/pace.min.css" rel="stylesheet" />
+    <script src="~/js/pace.min.js"></script>
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/app.css" rel="stylesheet">
+    <link href="~/css/icons.css" rel="stylesheet">
 
     <!-- Theme Style CSS -->
-    <link rel="stylesheet" href="/css/dark-theme.css" />
-    <link rel="stylesheet" href="/css/semi-dark.css" />
-    <link rel="stylesheet" href="/css/header-colors.css" />
+    <link rel="stylesheet" href="~/css/dark-theme.css" />
+    <link rel="stylesheet" href="~/css/semi-dark.css" />
+    <link rel="stylesheet" href="~/css/header-colors.css" />
 
 </head>
 <body>
@@ -1000,38 +1003,7 @@
 
     </div>
 
-    <!--
-        <header style="margin-top:4em;">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Farmacia Saori</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Categorias" asp-action="Crear">Categorias</a>
-                        </li>
-
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
-    -->
-
-
-
-    <div class="container">
+    <div class="wrapper">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -1043,21 +1015,33 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script type="text/javascript" src="~/DataTables/datatables.min.js"></script>
     @*<script type="text/javascript" src="~/js/assets/swal2/sweetalert2.min.js"></script>*@
     <script type="text/javascript" src="~/js/sweetalert2.all.js"></script>
 
-    <script src="/js/bootstrap.bundle.min.js"></script>
-
     <!--<script src="/js/jquery.min.js"></script>-->
 
-    <script src="/plugins/simplebar/js/simplebar.min.js"></script>
-    <script src="/plugins/metismenu/js/metisMenu.min.js"></script>
-    <script src="/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-    <script src="/js/index.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="~/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="~/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="~/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="~/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="~/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="~/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/plugins/highcharts/js/highcharts.js"></script>
+    <script src="~/plugins/highcharts/js/exporting.js"></script>
+    <script src="~/plugins/highcharts/js/variable-pie.js"></script>
+    <script src="~/plugins/highcharts/js/export-data.js"></script>
+    <script src="~/plugins/highcharts/js/accessibility.js"></script>
+    <script src="~/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/plugins/datatable/js/jquery.dataTables.min.js"></script>
+
+    <script src="~/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="~/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="~/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/js/app.js"></script>
     <script>
         new PerfectScrollbar('.customers-list');
         new PerfectScrollbar('.store-metrics');
