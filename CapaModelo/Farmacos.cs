@@ -10,5 +10,6 @@ namespace CapaModelo
         public string Nombre_Generico { get; set; }
         public int Id_Categoria { get; set; }
         public bool Estado { get; set; }
+        public Categorias Objcategoria { get; set; }
     }
 }

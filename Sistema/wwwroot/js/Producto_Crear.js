@@ -1,53 +1,87 @@
 ﻿
 var tabladata;
 $(document).ready(function () {
+    //activarMenu("Mantenedor");
 
-    //validamos el formulario
+
+    ////validamos el formulario
     $("#form").validate({
         rules: {
-            Nombre_Laboratorio: "required"
+            Nombre_Generico: "required",
+            //Descripcion: "required"
         },
         messages: {
-            Nombre_Laboratorio: "(Este campo obligatorio)"
+            Nombre: "(*)",
+            //Descripcion: "(*)"
 
         },
         errorElement: 'span'
     });
 
+    //OBTENER CATEGORIAS
+    jQuery.ajax({
+        url:"/Categorias/Obtener",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            
+            $("#cboCategoria").html("");
+
+            if (data.data != null) {
+                $.each(data.data, function (i, item) {
+
+                    if (item.estado == true) {
+                        $("<option>").attr({ "value": item.id_Categoria }).text(item.categoria).appendTo("#cboCategoria");
+                    }
+                })
+                $("#cboCategoria").val($("#cboCategoria option:first").val());
+            }
+
+        },
+        error: function (error) {
+            console.log(error)
+        },
+        beforeSend: function () {
+        },
+    });
+
 
     tabladata = $('#tbdata').DataTable({
         "ajax": {
-            "url": "/Laboratorios/Obtener",
+            "url": "/Farmacos/Obtener",
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
-            { "data": "id_Laboratorio", "width": "10%" },
-            { "data": "nombre_Laboratorio", "width": "20%" },
-            { "data": "direccion", "width": "10%" },
-            { "data": "telefono", "width": "20%" },
-            { "data": "politica_Vencimiento", "width": "10%" },
-            { "data": "cantidad_Meses", "width": "20%" },
+            { "data": "id_Farmaco" },
+            { "data": "nombre_Generico" },
+            {
+                "data": "objcategoria", render: function (data) {
+                    return data.categoria
+                }
+            },
             {
                 "data": "estado", "render": function (data) {
                     if (data) {
-                        return '<span class="badge badge-success">Activo</span>'
+                        return '<span class="badge bg-light-success text-success w-100">Activo</span>'
                     } else {
-                        return '<span class="badge badge-danger">Inactivo</span>'
+                        return '<span class="badge bg-light-danger text-danger w-100">Inactivo</span>'
                     }
-                }, "width": "10%",
+                }
             },
             {
-                "data": "id_Laboratorio", "render": function (data, type, row, meta) {
-                    return "<button class='btn btn-primary btn-sm' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='fas fa-pen'></i>Editar</button>" +
-                        "<button class='btn btn-danger btn-sm ml-2' type='button' onclick='eliminar(" + data + ")'><i class='fa fa-trash'></i>Eliminar</button>"
+                "data": "id_Farmaco", "render": function (data, type, row, meta) {
+                    return "<button class='text-primary bg - light - primary border - 0' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='bx bxs-edit'></i></button>" +
+                        "<button class='ms-4 text-danger bg-light-danger border-0' type='button' onclick='eliminar(" + data + ")'><i class='bx bxs-trash'></i></button>"
                 },
                 "orderable": false,
                 "searchable": false,
-                //"width": "90px"
+                "width": "90px"
             }
 
-        ], "language": {
+        ],
+        "language": {
             "processing": "Procesando...",
             "lengthMenu": "Mostrar _MENU_ registros",
             "zeroRecords": "No se encontraron resultados",
@@ -226,7 +260,7 @@ $(document).ready(function () {
                 }
             }
         },
-        responsive: true
+        //responsive: true
     });
 
 
@@ -239,41 +273,44 @@ function abrirPopUpForm(json) {
 
     if (json != null) {
 
-        $("#txtid").val(json.id_Laboratorio);
-        $("#txtNombreLaboratorio").val(json.nombre_Laboratorio);
-        $("#txtDireccion").val(json.direccion);
-        $("#txtTelefono").val(json.telefono);
-        $("#txtPoliticaVencimiento").val(json.politica_Vencimiento);
-        $("#txtCantidadMeses").val(json.cantidad_Meses);
+        $("#txtid").val(json.id_Farmaco);
+        $("#txtNombreProducto").val(json.nombre_Generico);
+        $("#cboCategoria").val(json.id_Categoria);
         $("#cboEstado").val(json.estado == true ? 1 : 0);
+        $("#txtid").prop("disabled", true)
 
     } else {
-        $("#txtNombreLaboratorio").val("");
-        $("#txtDireccion").val("");
-        $("#txtTelefono").val("");
-        $("#txtPoliticaVencimiento").val("");
-        $("#txtCantidadMeses").val("");
-        $("#cboEstado").val("");
+
+        $("#txtid").val("AUTOGENERADO");
+        $("#txtid").prop("disabled", true)
+        $("#txtNombreProducto").val("");
+        $("#cboCategoria").val($("#cboCategoria option:first").val());
+
+        $("#cboEstado").val();
+        
     }
 
     $('#FormModal').modal('show');
 
 }
+
+
 function Guardar() {
 
     if ($("#form").valid()) {
 
         var request = {
             objeto: {
-                id_Categoria: parseInt($("#txtid").val()),
-                categoria: $("#txtNombreCategoria").val(),
-                descripcion: ($("#txtDescripcion").val() != "" ? $("#txtDescripcion").val() : ""),
-                estado: ($("#cboEstado").val() == "1" ? true : false)
+                id_Farmaco: parseInt($("#txtid").val()),
+                nombre_Generico: $("#txtNombreProducto").val(),
+                id_Categoria: $("#cboCategoria").val(),
+                Estado: ($("#cboEstado").val() == "1" ? true : false)
             }
         }
 
+
         jQuery.ajax({
-            url: "/Categorias/Guardar",
+            url:"/Farmacos/Guardar",
             type: "POST",
             data: request,
             success: function (data) {
@@ -301,33 +338,33 @@ function Guardar() {
 
 function eliminar($id) {
 
-    Swal.fire({
-        title: 'Está seguro de eliminar el registro?',
-        text: "Esta acción no podrá revertirse!",
-        icon: 'warning',
+
+    swal.fire({
+        title: "Mensaje",
+        text: "¿Desea eliminar el producto seleccionado?",
+        type: "warning",
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, Eliminarlo',
-        cancelButtonText: 'Cancelar eliminación'
-    }).then((result) => {
-        if (result.isConfirmed) {
+
+        confirmButtonText: "Si",
+        confirmButtonColor: "#DD6B55",
+
+        cancelButtonText: "No",
+
+        closeOnConfirm: true
+    },
+
+        function () {
             jQuery.ajax({
-                url: "/Categorias/Eliminar" + "?id=" + $id,
+                url: $.MisUrls.url._EliminarProducto + "?id=" + $id,
                 type: "GET",
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
 
                     if (data.resultado) {
-                        Swal.fire(
-                            'Eliminado!',
-                            'Tu archivo ha sido eliminado.',
-                            'success'
-                        )
                         tabladata.ajax.reload();
                     } else {
-                        Swal.fire("Mensaje", "No se pudo eliminar la categoria", "warning")
+                        swal("Mensaje", "No se pudo eliminar el producto", "warning")
                     }
                 },
                 error: function (error) {
@@ -337,8 +374,6 @@ function eliminar($id) {
 
                 },
             });
+        });
 
-        }
-    },
-    );
 }

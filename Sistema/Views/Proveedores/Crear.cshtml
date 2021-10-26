@@ -1,4 +1,4 @@
-﻿@model CapaModelo.Laboratorios
+﻿@model CapaModelo.Proveedores
 @{
     ViewBag.Title = "Crear";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,7 +19,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">Laboratorio</li>
+                                <li class="breadcrumb-item active" aria-current="page">Proveedores</li>
                             </ol>
                         </nav>
                     </div>
@@ -30,48 +30,55 @@
                     </div>
                 </div>
                 <!--end breadcrumb-->
+                <h6 class="mb-0 text-uppercase">Proveedores</h6>
+                <hr />
                 <div class="card-body">
-                    <h6 class="mb-0 text-uppercase">Laboratorios</h6>
-                    <hr />
-                    <div class="row mt-3">
-                        <div class="col-sm-12">
-                            <table id="tbdata2" class="table table-striped table-bordered nowrap compact" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th>Codigo</th>
-                                        <th>Nombre</th>
-                                        <th>Direccion</th>
-                                        <th>Telefono</th>
-                                        <th>Politica</th>
-                                        <th>Meses</th>
-                                        <th>Estado</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="tbdata" class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Proveedor</th>
+                                            <th>Visitador</th>
+                                            <th>Direccion</th>
+                                            <th>Telefono</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header btn-info text-white">
-                    <h5 class="modal-title" id="exampleModalLabel">Laboratorios</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel">Proveedores</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form id="form">
                         @*<input id="txtid" name="IdRol" value="0" type="text" />*@
-                        <input type="hidden" class="form-control form-control-sm model" id="txtid" name="Id_Laboratorio">
+                        <input type="hidden" class="form-control form-control-sm model" id="txtid" name="Id_Proveedor">
 
                         <div class="form-group">
-                            <label for="txtNombreLaboratorio" class="col-form-label">Laboratorio: <span class="error"></span></label>
-                            <input type="text" class="form-control form-control-sm model" id="txtNombreLaboratorio" name="Nombre_Laboratorio">
+                            <label for="txtNombreProveedor" class="col-form-label">Proveedor: <span class="error"></span></label>
+                            <input type="text" class="form-control form-control-sm model" id="txtNombreProveedor" name="Proveedor">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtVisitador" class="col-form-label">Visitador: <span class="error"></span></label>
+                            <input type="text" class="form-control form-control-sm model" id="txtVisitador" name="Visitador">
                         </div>
                         <div class="form-group">
                             <label for="txtDireccion" class="col-form-label">Direccion: <span class="error"></span></label>
@@ -80,14 +87,6 @@
                         <div class="form-group">
                             <label for="txtTelefono" class="col-form-label">Telefono: <span class="error"></span></label>
                             <input type="text" class="form-control form-control-sm model" id="txtTelefono" name="Telefono">
-                        </div>
-                        <div class="form-group">
-                            <label for="txtPoliticaVencimiento" class="col-form-label">Politica Vencimiento: <span class="error"></span></label>
-                            <input type="text" class="form-control form-control-sm model" id="txtPoliticaVencimiento" name="Politica_Vencimiento">
-                        </div>
-                        <div class="form-group">
-                            <label for="txtCantidadMeses" class="col-form-label">Cantidad Meses: <span class="error"></span></label>
-                            <input type="text" class="form-control form-control-sm model" id="txtCantidadMeses" name="Cantidad_Meses">
                         </div>
                         <div class="form-group">
                             <label for="cboEstado" class="col-form-label">Estado:</label>
@@ -104,10 +103,11 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
-</body>
-@section Scripts{
+    @section Scripts{
 
-    <partial name="_ValidationScriptsPartial" />
-    <script src="~/js/Laboratorio_Crear.js"></script>
-}
+        <partial name="_ValidationScriptsPartial" />
+        <script src="~/js/Proveedores_Crear.js"></script>
+    }
+</body>

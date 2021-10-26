@@ -1618,3 +1618,5 @@ C:\Users\Andres\Desktop\Sistema\Sistema\obj\Debug\net5.0\ref\Sistema.dll
 C:\Users\Andres\Desktop\Sistema\Sistema\obj\Debug\net5.0\Sistema.pdb
 C:\Users\Andres\Desktop\Sistema\Sistema\obj\Debug\net5.0\Sistema.genruntimeconfig.cache
 C:\Users\Andres\Desktop\Sistema\Sistema\obj\Debug\net5.0\Razor\Views\Laboratorios\Crear.cshtml.g.cs
+C:\Users\Andres\Desktop\Sistema\Sistema\obj\Debug\net5.0\Razor\Views\Farmacos\Crear.cshtml.g.cs
+C:\Users\Andres\Desktop\Sistema\Sistema\obj\Debug\net5.0\Razor\Views\Proveedores\Crear.cshtml.g.cs

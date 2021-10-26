@@ -89,7 +89,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Fármacos</a>
+                            <a asp-area="" asp-controller="Farmacos" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Fármacos</a>
                         </li>
                         <li>
                             <a asp-area="" asp-controller="Categorias" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Categorías</a>
@@ -98,7 +98,7 @@
                             <a asp-area="" asp-controller="Laboratorios" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Laboratorios</a>
                         </li>
                         <li>
-                            <a href="app-contact-list.html"><i class="bx bx-right-arrow-alt"></i>Proveedores</a>
+                            <a asp-area="" asp-controller="Proveedores" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Proveedores</a>
                         </li>
                         <li>
                             <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Contactos</a>
@@ -712,7 +712,7 @@
                                         <a class="dropdown-item" href="javascript:;">
                                             <div class="d-flex align-items-center">
                                                 <div class="user-online">
-                                                    <img src="https://via.placeholder.com/110x110" class="msg-avatar" alt="user avatar">
+                                                    <img src="/IMG/logo/LOGOFarmaciaSaori.png" class="msg-avatar" alt="user avatar">
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <h6 class="msg-name">
@@ -895,7 +895,7 @@
                     </div>
                     <div class="user-box dropdown">
                         <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
+                            <img src="~/IMG/logo/" class="user-img" alt="user avatar">
                             <div class="user-info ps-3">
                                 <p class="user-name mb-0">Pauline Seitz</p>
                                 <p class="designattion mb-0">Web Designer</p>
@@ -1014,7 +1014,8 @@
             &copy; 2021 - Farmacia Saori - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @*<script type="text/javascript" src="~/js/assets/swal2/sweetalert2.min.js"></script>*@
     <script type="text/javascript" src="~/js/sweetalert2.all.js"></script>

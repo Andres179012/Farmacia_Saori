@@ -5,10 +5,10 @@ $(document).ready(function () {
     //validamos el formulario
     $("#form").validate({
         rules: {
-            Nombre_Laboratorio: "required"
+            Proveedor: "required"
         },
         messages: {
-            Nombre_Laboratorio: "(Este campo obligatorio)"
+            Proveedor: "(Este campo obligatorio)"
 
         },
         errorElement: 'span'
@@ -17,30 +17,29 @@ $(document).ready(function () {
 
     tabladata = $('#tbdata').DataTable({
         "ajax": {
-            "url": "/Laboratorios/Obtener",
+            "url": "/Proveedores/Obtener",
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
-            { "data": "id_Laboratorio", "width": "10%" },
-            { "data": "nombre_Laboratorio", "width": "20%" },
-            { "data": "direccion", "width": "10%" },
+            { "data": "id_Proveedor", "width": "10%" },
+            { "data": "proveedor", "width": "20%" },
+            { "data": "visitador", "width": "20%" },
+            { "data": "direccion", "width": "20%" },
             { "data": "telefono", "width": "20%" },
-            { "data": "politica_Vencimiento", "width": "10%" },
-            { "data": "cantidad_Meses", "width": "20%" },
             {
                 "data": "estado", "render": function (data) {
                     if (data) {
-                        return '<span class="badge badge-success">Activo</span>'
+                        return '<span class="badge bg-light-success text-success w-100">Activo</span>'
                     } else {
-                        return '<span class="badge badge-danger">Inactivo</span>'
+                        return '<span class="badge bg-light-danger text-danger w-100">Inactivo</span>'
                     }
                 }, "width": "10%",
             },
             {
-                "data": "id_Laboratorio", "render": function (data, type, row, meta) {
-                    return "<button class='btn btn-primary btn-sm' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='fas fa-pen'></i>Editar</button>" +
-                        "<button class='btn btn-danger btn-sm ml-2' type='button' onclick='eliminar(" + data + ")'><i class='fa fa-trash'></i>Eliminar</button>"
+                "data": "id_Proveedor", "render": function (data, type, row, meta) {
+                    return "<button class='text-primary bg - light - primary border - 0' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='bx bxs-edit'></i></button>" +
+                        "<button class='ms-4 text-danger bg-light-danger border-0' type='button' onclick='eliminar(" + data + ")'><i class='bx bxs-trash'></i></button>"
                 },
                 "orderable": false,
                 "searchable": false,
@@ -239,21 +238,15 @@ function abrirPopUpForm(json) {
 
     if (json != null) {
 
-        $("#txtid").val(json.id_Laboratorio);
-        $("#txtNombreLaboratorio").val(json.nombre_Laboratorio);
-        $("#txtDireccion").val(json.direccion);
-        $("#txtTelefono").val(json.telefono);
-        $("#txtPoliticaVencimiento").val(json.politica_Vencimiento);
-        $("#txtCantidadMeses").val(json.cantidad_Meses);
+        $("#txtid").val(json.id_Categoria);
+        $("#txtNombreCategoria").val(json.categoria);
+        $("#txtDescripcion").val(json.descripcion);
         $("#cboEstado").val(json.estado == true ? 1 : 0);
 
     } else {
-        $("#txtNombreLaboratorio").val("");
-        $("#txtDireccion").val("");
-        $("#txtTelefono").val("");
-        $("#txtPoliticaVencimiento").val("");
-        $("#txtCantidadMeses").val("");
-        $("#cboEstado").val("");
+        $("#txtNombreCategoria").val("");
+        $("#txtDescripcion").val("");
+        $("#cboEstado").val();
     }
 
     $('#FormModal').modal('show');

@@ -1,38 +1,38 @@
-﻿using System;
+﻿using CapaModelo;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using CapaModelo;
 
-namespace CapaDatos 
+namespace CapaDatos
 {
-    public class CD_Laboratorio
+    public class CD_Farmaco
     {
-        public static CD_Laboratorio _instancia = null;
+        public static CD_Farmaco _instancia = null;
 
-        private CD_Laboratorio()
+        private CD_Farmaco()
         {
 
         }
 
-        public static CD_Laboratorio Instancia
+        public static CD_Farmaco Instancia
         {
             get
             {
                 if (_instancia == null)
                 {
-                    _instancia = new CD_Laboratorio();
+                    _instancia = new CD_Farmaco();
                 }
                 return _instancia;
             }
         }
 
-        public List<Laboratorios> ObtenerLaboratorio()
+        public List<Farmacos> ObtenerProducto()
         {
-            var rptListaLaboratorio = new List<Laboratorios>();
+            List<Farmacos> rptListaFarmaco = new List<Farmacos>();
             using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
             {
-                SqlCommand cmd = new SqlCommand("USP_LaboratorioObtener", oConexion);
+                SqlCommand cmd = new SqlCommand("USP_FarmacoObtener", oConexion);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 try
@@ -42,41 +42,39 @@ namespace CapaDatos
 
                     while (dr.Read())
                     {
-                        rptListaLaboratorio.Add(new Laboratorios()
+                        rptListaFarmaco.Add(new Farmacos()
                         {
-                            Id_Laboratorio = Convert.ToInt32(dr["Id_Categoria"].ToString()),
-                            Nombre_Laboratorio = dr["Nombre_Laboratorio"].ToString(),
-                            Direccion = dr["Direccion"].ToString(),
-                            Telefono = dr["Telefono"].ToString(),
-                            Politica_Vencimiento = dr[" Politica_Vencimiento"].ToString(),
-                            Cantidad_Meses = Convert.ToInt32(dr["Cantidad_Meses"].ToString()),
+                            Id_Farmaco = Convert.ToInt32(dr["Id_Farmaco"].ToString()),
+                            Nombre_Generico = dr["Nombre_Generico"].ToString(),
+                            Id_Categoria = Convert.ToInt32(dr["Id_Categoria"].ToString()),
+                            Objcategoria = new Categorias() { Categoria = dr["Categoria"].ToString() },
                             Estado = Convert.ToBoolean(dr["Estado"].ToString())
                         });
                     }
                     dr.Close();
 
-                    return rptListaLaboratorio;
+                    return rptListaFarmaco;
 
                 }
-                catch
+                catch (Exception ex)
                 {
-                    rptListaLaboratorio = null;
-                    return rptListaLaboratorio;
+                    rptListaFarmaco = null;
+                    return rptListaFarmaco;
                 }
             }
         }
 
-      /*  public bool RegistrarCategoria(Categorias oCategoria)
+        public bool RegistrarProducto(Farmacos oProducto)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("USP_CategoriaRegistrar", oConexion);
-                    cmd.Parameters.AddWithValue("Categoria", oCategoria.Categoria);
-                    cmd.Parameters.AddWithValue("Descripcion", oCategoria.Descripcion = (oCategoria.Descripcion != null ? oCategoria.Descripcion : ""));
-                    cmd.Parameters.AddWithValue("Estado", oCategoria.Estado);
+                    SqlCommand cmd = new SqlCommand("USP_FarmacoRegistrar", oConexion);
+                    cmd.Parameters.AddWithValue("NombreGenerico", oProducto.Nombre_Generico);
+                    cmd.Parameters.AddWithValue("IdCategoria", oProducto.Id_Categoria);
+                    cmd.Parameters.AddWithValue("Estado", oProducto.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -87,7 +85,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch
+                catch (Exception ex)
                 {
                     respuesta = false;
                 }
@@ -95,18 +93,18 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool ModificarCategoria(Categorias oCategoria)
+        public bool ModificarProducto(Farmacos oProducto)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("USP_CategoriaModificar", oConexion);
-                    cmd.Parameters.AddWithValue("IdCategoria", oCategoria.Id_Categoria);
-                    cmd.Parameters.AddWithValue("Categoria", oCategoria.Categoria);
-                    cmd.Parameters.AddWithValue("Descripcion", oCategoria.Descripcion = (oCategoria.Descripcion != null ? oCategoria.Descripcion : ""));
-                    cmd.Parameters.AddWithValue("Estado", oCategoria.Estado);
+                    SqlCommand cmd = new SqlCommand("USP_FarmacoModificar", oConexion);
+                    cmd.Parameters.AddWithValue("IdFarmaco", oProducto.Id_Farmaco);
+                    cmd.Parameters.AddWithValue("NombreGenerico", oProducto.Nombre_Generico);
+                    cmd.Parameters.AddWithValue("IdCategoria", oProducto.Id_Categoria);
+                    cmd.Parameters.AddWithValue("Estado", oProducto.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -118,7 +116,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch
+                catch (Exception ex)
                 {
                     respuesta = false;
                 }
@@ -129,15 +127,15 @@ namespace CapaDatos
 
         }
 
-        public bool EliminarCategoria(int IdCategoria)
+        public bool EliminarProducto(int IdFarmaco)
         {
             bool respuesta = true;
-            using (SqlConnection oConexion = new SqlConnection("Server =.; Database = FarmaciaSaoriDB; User Id = sa; Password = 123"))
+            using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("USP_CategoriaEliminar", oConexion);
-                    cmd.Parameters.AddWithValue("IdCategoria", IdCategoria);
+                    SqlCommand cmd = new SqlCommand("USP_FarmacoEliminar", oConexion);
+                    cmd.Parameters.AddWithValue("IdFarmaco", IdFarmaco);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -148,7 +146,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch
+                catch (Exception ex)
                 {
                     respuesta = false;
                 }
@@ -156,7 +154,7 @@ namespace CapaDatos
             }
 
             return respuesta;
-      
-        }*/
+
+        }
     }
 }
