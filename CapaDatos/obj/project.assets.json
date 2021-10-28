@@ -771,27 +771,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Andres\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\inter\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andres\\Desktop\\Sistema\\CapaDatos\\CapaDatos.csproj",
+      "projectUniqueName": "C:\\Users\\inter\\Desktop\\Farmacia_Saori\\CapaDatos\\CapaDatos.csproj",
       "projectName": "CapaDatos",
-      "projectPath": "C:\\Users\\Andres\\Desktop\\Sistema\\CapaDatos\\CapaDatos.csproj",
-      "packagesPath": "C:\\Users\\Andres\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andres\\Desktop\\Sistema\\CapaDatos\\obj\\",
+      "projectPath": "C:\\Users\\inter\\Desktop\\Farmacia_Saori\\CapaDatos\\CapaDatos.csproj",
+      "packagesPath": "C:\\Users\\inter\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\inter\\Desktop\\Farmacia_Saori\\CapaDatos\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Andres\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\inter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -804,8 +797,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Andres\\Desktop\\Sistema\\CapaModelo\\CapaModelo.csproj": {
-              "projectPath": "C:\\Users\\Andres\\Desktop\\Sistema\\CapaModelo\\CapaModelo.csproj"
+            "C:\\Users\\inter\\Desktop\\Farmacia_Saori\\CapaModelo\\CapaModelo.csproj": {
+              "projectPath": "C:\\Users\\inter\\Desktop\\Farmacia_Saori\\CapaModelo\\CapaModelo.csproj"
             }
           }
         }
@@ -844,7 +837,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.208\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -5,7 +5,7 @@ $(document).ready(function () {
     //validamos el formulario
     $("#form").validate({
         rules: {
-            Nombre_Laboratorio: "required"
+            Nombre_Laboratorio : "required"
         },
         messages: {
             Nombre_Laboratorio: "(Este campo obligatorio)"
@@ -24,23 +24,24 @@ $(document).ready(function () {
         "columns": [
             { "data": "id_Laboratorio", "width": "10%" },
             { "data": "nombre_Laboratorio", "width": "20%" },
-            { "data": "direccion", "width": "10%" },
+            { "data": "direccion", "width": "20%" },
             { "data": "telefono", "width": "20%" },
-            { "data": "politica_Vencimiento", "width": "10%" },
+            { "data": "politica_Vencimiento", "width": "20%" },
             { "data": "cantidad_Meses", "width": "20%" },
+
             {
                 "data": "estado", "render": function (data) {
                     if (data) {
-                        return '<span class="badge badge-success">Activo</span>'
+                        return '<span class="badge bg-light-success text-success w-100">Activo</span>'
                     } else {
-                        return '<span class="badge badge-danger">Inactivo</span>'
+                        return '<span class="badge bg-light-danger text-danger w-100">Inactivo</span>'
                     }
                 }, "width": "10%",
             },
             {
                 "data": "id_Laboratorio", "render": function (data, type, row, meta) {
-                    return "<button class='btn btn-primary btn-sm' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='fas fa-pen'></i>Editar</button>" +
-                        "<button class='btn btn-danger btn-sm ml-2' type='button' onclick='eliminar(" + data + ")'><i class='fa fa-trash'></i>Eliminar</button>"
+                    return "<button class='text-primary bg - light - primary border - 0' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='bx bxs-edit'></i></button>" +
+                        "<button class='ms-4 text-danger bg-light-danger border-0' type='button' onclick='eliminar(" + data + ")'><i class='bx bxs-trash'></i></button>"
                 },
                 "orderable": false,
                 "searchable": false,
@@ -252,8 +253,8 @@ function abrirPopUpForm(json) {
         $("#txtDireccion").val("");
         $("#txtTelefono").val("");
         $("#txtPoliticaVencimiento").val("");
-        $("#txtCantidadMeses").val("");
-        $("#cboEstado").val("");
+        $("#txtCantidadMeses").val();
+        $("#cboEstado").val();
     }
 
     $('#FormModal').modal('show');
@@ -265,15 +266,18 @@ function Guardar() {
 
         var request = {
             objeto: {
-                id_Categoria: parseInt($("#txtid").val()),
-                categoria: $("#txtNombreCategoria").val(),
-                descripcion: ($("#txtDescripcion").val() != "" ? $("#txtDescripcion").val() : ""),
+                id_Laboratorio: parseInt($("#txtid").val()),
+               nombre_Laboratorio: $("#txtNombreLaboratorio").val(),
+               direccion : $("#txtDireccion").val(),
+               telefono : $("#txtTelefono").val(),
+               politica_Vencimiento : $("#txtPoliticaVencimiento").val(),
+               cantidad_Meses : $("#txtCantidadMeses").val(),
                 estado: ($("#cboEstado").val() == "1" ? true : false)
             }
         }
 
         jQuery.ajax({
-            url: "/Categorias/Guardar",
+            url: "/Laboratorios/Guardar",
             type: "POST",
             data: request,
             success: function (data) {
@@ -313,7 +317,7 @@ function eliminar($id) {
     }).then((result) => {
         if (result.isConfirmed) {
             jQuery.ajax({
-                url: "/Categorias/Eliminar" + "?id=" + $id,
+                url: "/Laboratorios/Eliminar" + "?id=" + $id,
                 type: "GET",
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",

@@ -336,35 +336,36 @@ function Guardar() {
 }
 
 
+
 function eliminar($id) {
 
-
-    swal.fire({
-        title: "Mensaje",
-        text: "¿Desea eliminar el producto seleccionado?",
-        type: "warning",
+    Swal.fire({
+        title: 'Está seguro de eliminar el registro?',
+        text: "Esta acción no podrá revertirse!",
+        icon: 'warning',
         showCancelButton: true,
-
-        confirmButtonText: "Si",
-        confirmButtonColor: "#DD6B55",
-
-        cancelButtonText: "No",
-
-        closeOnConfirm: true
-    },
-
-        function () {
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Eliminarlo',
+        cancelButtonText: 'Cancelar eliminación'
+    }).then((result) => {
+        if (result.isConfirmed) {
             jQuery.ajax({
-                url: $.MisUrls.url._EliminarProducto + "?id=" + $id,
+                url: "/Farmacos/Eliminar" + "?id=" + $id,
                 type: "GET",
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
 
                     if (data.resultado) {
+                        Swal.fire(
+                            'Eliminado!',
+                            'Tu archivo ha sido eliminado.',
+                            'success'
+                        )
                         tabladata.ajax.reload();
                     } else {
-                        swal("Mensaje", "No se pudo eliminar el producto", "warning")
+                        Swal.fire("Mensaje", "No se pudo eliminar la categoria", "warning")
                     }
                 },
                 error: function (error) {
@@ -374,6 +375,9 @@ function eliminar($id) {
 
                 },
             });
-        });
+
+        }
+    },
+    );
 
 }

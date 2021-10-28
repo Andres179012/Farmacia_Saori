@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="semi-dark">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,6 +11,10 @@
     @*<link type="text/css" href="~/css/bootstrap.min.css" rel="stylesheet" />*@
     @*<link rel="stylesheet" type="text/css" href="~/js/assets/swal2/sweetalert2.min.css" />*@
     <link rel="stylesheet" type="text/css" href="~/css/sweetalert2.css" />
+
+    <link href="~/plugins/fullcalendar/css/main.min.css" rel="stylesheet" />
+
+    <link href="~/css/calculadora.css" rel="stylesheet" />
 
     <link href="~/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
     <link href="~/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
@@ -60,14 +64,45 @@
                     </a>
                     <ul>
                         <li>
-                            <a asp-controller="Home" asp-action="Index"><i class="bx bx-right-arrow-alt"></i>Home</a>
+                            <a asp-controller="Home" asp-action="Index"><i class="bx bx-right-arrow-alt"></i>Analytics</a>
                         </li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon">
-                            <i class='bx bx-home-circle'></i>
+                            <i class="bx bx-category"></i>
+                        </div>
+                        <div class="menu-title">Application</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a asp-area="" asp-controller="Aplicaciones" asp-action="Calendar"><i class="bx bx-right-arrow-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Aplicaciones" asp-action="Calculadora"><i class="bx bx-right-arrow-alt"></i>Calculadora</a>
+                        </li>
+                        <li>
+                            <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Chat Box</a>
+                        </li>
+                        <li>
+                            <a href="app-file-manager.html"><i class="bx bx-right-arrow-alt"></i>File Manager</a>
+                        </li>
+                        <li>
+                            <a href="app-contact-list.html"><i class="bx bx-right-arrow-alt"></i>Contatcs</a>
+                        </li>
+                        <li>
+                            <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Todo List</a>
+                        </li>
+                        <li>
+                            <a href="app-invoice.html"><i class="bx bx-right-arrow-alt"></i>Invoice</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon">
+                            <i class='bx bx-bar-chart-alt-2'></i>
                         </div>
                         <div class="menu-title">Dashboard</div>
                     </a>
@@ -83,7 +118,7 @@
                 <li>
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon">
-                            <i class="bx bx-category"></i>
+                            <i class="bx bx-grid-vertical"></i>
                         </div>
                         <div class="menu-title">Catalogos</div>
                     </a>
@@ -99,6 +134,9 @@
                         </li>
                         <li>
                             <a asp-area="" asp-controller="Proveedores" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Proveedores</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="FormaPago" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Formas de Pago</a>
                         </li>
                         <li>
                             <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Contactos</a>
@@ -895,7 +933,7 @@
                     </div>
                     <div class="user-box dropdown">
                         <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="~/IMG/logo/" class="user-img" alt="user avatar">
+                            <img src="~/IMG/logo/LOGOFarmaciaSaori.png" class="user-img" alt="user avatar">
                             <div class="user-info ps-3">
                                 <p class="user-name mb-0">Pauline Seitz</p>
                                 <p class="designattion mb-0">Web Designer</p>
@@ -1008,12 +1046,6 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Farmacia Saori - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -1034,6 +1066,8 @@
     <script src="~/plugins/highcharts/js/export-data.js"></script>
     <script src="~/plugins/highcharts/js/accessibility.js"></script>
     <script src="~/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+
+    <script src="~/plugins/fullcalendar/js/main.min.js"></script>
 
     <script src="~/js/bootstrap.bundle.min.js"></script>
     <script src="~/plugins/datatable/js/jquery.dataTables.min.js"></script>

@@ -23,8 +23,33 @@ namespace Sistema.Controllers
         [HttpGet]
         public JsonResult Obtener()
         {
-            List<Laboratorios> lista = CD_Laboratorio.Instancia.ObtenerLaboratorio();
+            List<Laboratorios> lista = CD_Laboratorios.Instancia.ObtenerLaboratorio();
             return Json(new { data = lista });
         }
+
+        public JsonResult Guardar(Laboratorios objeto)
+        {
+            bool respuesta = false;
+
+            if (objeto.Id_Laboratorio == 0)
+            {
+
+                respuesta = CD_Laboratorios.Instancia.RegistrarLaboratorio(objeto);
+            }
+            else
+            {
+                respuesta = CD_Laboratorios.Instancia.ModificarLaboratorio(objeto);
+            }
+            return Json(new { resultado = respuesta });
+        }
+
+        [HttpGet]
+        public JsonResult Eliminar(int id = 0)
+        {
+            bool respuesta = CD_Laboratorios.Instancia.EliminarLaboratorio(id);
+            return Json(new { resultado = respuesta });
+        }
+
+
     }
 }

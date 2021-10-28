@@ -67,5 +67,101 @@ namespace CapaDatos
             }
         }
 
+        public bool RegistrarProveedores(Proveedores oProveedor)
+        {
+            bool respuesta = true;
+            using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("USP_ProveedorRegistrar", oConexion);
+                    cmd.Parameters.AddWithValue("Proveedor", oProveedor.Proveedor);
+                    cmd.Parameters.AddWithValue("Visitador", oProveedor.Visitador);
+                    cmd.Parameters.AddWithValue("Direccion", oProveedor.Direccion);
+                    cmd.Parameters.AddWithValue("Telefono", oProveedor.Telefono);
+                    cmd.Parameters.AddWithValue("Estado", oProveedor.Estado);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oConexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+
+                }
+                catch
+                {
+                    respuesta = false;
+                }
+            }
+            return respuesta;
+        }
+
+        public bool ModificarProveedor(Proveedores oProveedor)
+        {
+            bool respuesta = true;
+            using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("USP_ProveedorModificar", oConexion);
+                    cmd.Parameters.AddWithValue("IdProveedor", oProveedor.Id_Proveedor);
+                    cmd.Parameters.AddWithValue("Proveedor", oProveedor.Proveedor);
+                    cmd.Parameters.AddWithValue("Visitador", oProveedor.Visitador);
+                    cmd.Parameters.AddWithValue("Direccion", oProveedor.Direccion);
+                    cmd.Parameters.AddWithValue("Telefono", oProveedor.Telefono);
+                    cmd.Parameters.AddWithValue("Estado", oProveedor.Estado);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oConexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+
+                }
+                catch
+                {
+                    respuesta = false;
+                }
+
+            }
+
+            return respuesta;
+
+        }
+
+        public bool EliminarProveedor(int IdProveedor)
+        {
+            bool respuesta = true;
+            using (SqlConnection oConexion = new SqlConnection("Server =.; Database = FarmaciaSaoriDB; User Id = sa; Password = 123"))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("USP_ProveedorEliminar", oConexion);
+                    cmd.Parameters.AddWithValue("IdProveedor", IdProveedor);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oConexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+
+                }
+                catch
+                {
+                    respuesta = false;
+                }
+
+            }
+
+            return respuesta;
+
+        }
     }
 }

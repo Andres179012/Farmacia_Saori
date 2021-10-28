@@ -61,8 +61,7 @@
                 <div class="modal-content">
                     <div class="modal-header bg-info text-white">
                         <h5 class="modal-title" id="exampleModalLabel">Producto</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
                     <div class="modal-body">
@@ -74,23 +73,23 @@
                                     <input type="text" class="form-control form-control-sm model" id="txtCodigo" name="CodigoProducto">
                                 </div>
                             </div>*@
-                            <div class="form-group row">
+                            <div class="form-group">
                                 <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Producto <span class="error"></span></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control form-control-sm model" id="txtNombreProducto" name="NombreProducto" autocomplete="off">
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <div class="form-group">
                                 <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Categoria</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control form-control-sm model options_categorias" id="cboCategoria" name="NombreCategoria"></select>
+                                <div class="col-sm-10 mb-3 select2-sm">
+                                    <select class="single-select form-control model options_categorias" id="cboCategoria" name="NombreCategoria"></select>
                                 </div>
                             </div>
 
-                            <div class="form-group row">
+                            <div class="form-group">
                                 <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Activo</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control form-control-sm model" id="cboEstado" name="Activo">
+                                    <select class="single-select form-control form-control-sm model" id="cboEstado" name="Activo">
                                         <option value="1">Activo</option>
                                         <option value="0">No Activo</option>
                                     </select>
@@ -101,8 +100,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-sm btn-primary" onclick="Guardar()">Guardar</button>
+                        <button type="button" class="btn btn-danger px-5 radius-30" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-success px-5 radius-30" onclick="Guardar()">Guardar</button>
                     </div>
                 </div>
             </div>

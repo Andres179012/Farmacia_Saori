@@ -35,3 +35,13 @@ C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.As
 C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.CoreCompileInputs.cache
 C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.dll
 C:\Users\Andres\Desktop\Sistema\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.deps.json
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfoInputs.cache
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfo.cs
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\inter\Desktop\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.pdb

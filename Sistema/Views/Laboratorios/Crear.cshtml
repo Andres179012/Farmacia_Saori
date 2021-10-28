@@ -19,7 +19,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">Laboratorio</li>
+                                <li class="breadcrumb-item active" aria-current="page">Laboratorios</li>
                             </ol>
                         </nav>
                     </div>
@@ -30,31 +30,33 @@
                     </div>
                 </div>
                 <!--end breadcrumb-->
+                <h6 class="mb-0 text-uppercase">Laboratorios</h6>
+                <hr />
                 <div class="card-body">
-                    <h6 class="mb-0 text-uppercase">Laboratorios</h6>
-                    <hr />
-                    <div class="row mt-3">
-                        <div class="col-sm-12">
-                            <table id="tbdata2" class="table table-striped table-bordered nowrap compact" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th>Codigo</th>
-                                        <th>Nombre</th>
-                                        <th>Direccion</th>
-                                        <th>Telefono</th>
-                                        <th>Politica</th>
-                                        <th>Meses</th>
-                                        <th>Estado</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="tbdata" class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Laboratorio</th>
+                                            <th>Direccion</th>
+                                            <th>Telefono</th>
+                                            <th>Politica de Vencimiento</th>
+                                            <th>Cantidad de Meses</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -62,7 +64,8 @@
             <div class="modal-content">
                 <div class="modal-header btn-info text-white">
                     <h5 class="modal-title" id="exampleModalLabel">Laboratorios</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form id="form">
@@ -71,7 +74,7 @@
 
                         <div class="form-group">
                             <label for="txtNombreLaboratorio" class="col-form-label">Laboratorio: <span class="error"></span></label>
-                            <input type="text" class="form-control form-control-sm model" id="txtNombreLaboratorio" name="Nombre_Laboratorio">
+                            <input type="text" class="form-control form-control-sm model" id="txtNombreLaboratorio" name="Laboratorio">
                         </div>
                         <div class="form-group">
                             <label for="txtDireccion" class="col-form-label">Direccion: <span class="error"></span></label>
@@ -80,14 +83,14 @@
                         <div class="form-group">
                             <label for="txtTelefono" class="col-form-label">Telefono: <span class="error"></span></label>
                             <input type="text" class="form-control form-control-sm model" id="txtTelefono" name="Telefono">
-                        </div>
+                        </div>                        
                         <div class="form-group">
-                            <label for="txtPoliticaVencimiento" class="col-form-label">Politica Vencimiento: <span class="error"></span></label>
-                            <input type="text" class="form-control form-control-sm model" id="txtPoliticaVencimiento" name="Politica_Vencimiento">
-                        </div>
+                            <label for="txtPoliticaVencimiento" class="col-form-label">Politica de Vencimiento: <span class="error"></span></label>
+                            <input type="text" class="form-control form-control-sm model" id="txtPoliticaVencimiento" name="Politica de Vencimiento">
+                        </div>                     
                         <div class="form-group">
                             <label for="txtCantidadMeses" class="col-form-label">Cantidad Meses: <span class="error"></span></label>
-                            <input type="text" class="form-control form-control-sm model" id="txtCantidadMeses" name="Cantidad_Meses">
+                            <input type="text" class="form-control form-control-sm model" id="txtCantidadMeses" name="Cantidad Meses">
                         </div>
                         <div class="form-group">
                             <label for="cboEstado" class="col-form-label">Estado:</label>
@@ -99,15 +102,16 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-sm btn-primary" onclick="Guardar()">Guardar</button>
+                    <button type="button" class="btn btn-danger px-5 radius-30" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success px-5 radius-30" onclick="Guardar()">Guardar</button>
                 </div>
             </div>
         </div>
+        </div>
     </div>
-</body>
-@section Scripts{
+    @section Scripts{
 
-    <partial name="_ValidationScriptsPartial" />
-    <script src="~/js/Laboratorio_Crear.js"></script>
-}
+        <partial name="_ValidationScriptsPartial" />
+        <script src="~/js/Laboratorio_Crear.js"></script>
+    }
+</body>

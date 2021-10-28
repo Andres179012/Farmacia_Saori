@@ -28,5 +28,28 @@ namespace Sistema.Controllers
             List<Proveedores> lista = CD_Proveedores.Instancia.ObtenerProveedores();
             return Json(new { data = lista });
         }
+
+        public JsonResult Guardar(Proveedores objeto)
+        {
+            bool respuesta = false;
+
+            if (objeto.Id_Proveedor == 0)
+            {
+
+                respuesta = CD_Proveedores.Instancia.RegistrarProveedores(objeto);
+            }
+            else
+            {
+                respuesta = CD_Proveedores.Instancia.ModificarProveedor(objeto);
+            }
+            return Json(new { resultado = respuesta });
+        }
+
+        [HttpGet]
+        public JsonResult Eliminar(int id = 0)
+        {
+            bool respuesta = CD_Proveedores.Instancia.EliminarProveedor(id);
+            return Json(new { resultado = respuesta });
+        }
     }
 }

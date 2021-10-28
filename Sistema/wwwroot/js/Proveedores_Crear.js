@@ -238,14 +238,18 @@ function abrirPopUpForm(json) {
 
     if (json != null) {
 
-        $("#txtid").val(json.id_Categoria);
-        $("#txtNombreCategoria").val(json.categoria);
-        $("#txtDescripcion").val(json.descripcion);
+        $("#txtid").val(json.id_Proveedor);
+        $("#txtNombreProveedor").val(json.proveedor);
+        $("#txtVisitador").val(json.visitador);
+        $("#txtDireccion").val(json.direccion);
+        $("#txtTelefono").val(json.telefono);
         $("#cboEstado").val(json.estado == true ? 1 : 0);
 
     } else {
-        $("#txtNombreCategoria").val("");
-        $("#txtDescripcion").val("");
+        $("#txtNombreProveedor").val("");
+        $("#txtVisitador").val("");
+        $("#txtDireccion").val("");
+        $("#txtTelefono").val("");
         $("#cboEstado").val();
     }
 
@@ -258,15 +262,17 @@ function Guardar() {
 
         var request = {
             objeto: {
-                id_Categoria: parseInt($("#txtid").val()),
-                categoria: $("#txtNombreCategoria").val(),
-                descripcion: ($("#txtDescripcion").val() != "" ? $("#txtDescripcion").val() : ""),
+                id_Proveedor: parseInt($("#txtid").val()),
+                proveedor: $("#txtNombreProveedor").val(),
+                visitador: $("#txtVisitador").val(),
+                direccion: $("#txtDireccion").val(),
+                telefono: $("#txtTelefono").val(),
                 estado: ($("#cboEstado").val() == "1" ? true : false)
             }
         }
 
         jQuery.ajax({
-            url: "/Categorias/Guardar",
+            url: "/Proveedores/Guardar",
             type: "POST",
             data: request,
             success: function (data) {
@@ -306,7 +312,7 @@ function eliminar($id) {
     }).then((result) => {
         if (result.isConfirmed) {
             jQuery.ajax({
-                url: "/Categorias/Eliminar" + "?id=" + $id,
+                url: "/Proveedores/Eliminar" + "?id=" + $id,
                 type: "GET",
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
