@@ -68,6 +68,5 @@ C:\Users\inter\Desktop\Farmacia_Saori\CapaDatos\obj\Debug\netcoreapp3.1\CapaDato
 C:\Users\inter\Desktop\Farmacia_Saori\CapaDatos\obj\Debug\netcoreapp3.1\CapaDatos.AssemblyInfoInputs.cache
 C:\Users\inter\Desktop\Farmacia_Saori\CapaDatos\obj\Debug\netcoreapp3.1\CapaDatos.AssemblyInfo.cs
 C:\Users\inter\Desktop\Farmacia_Saori\CapaDatos\obj\Debug\netcoreapp3.1\CapaDatos.csproj.CoreCompileInputs.cache
-C:\Users\inter\Desktop\Farmacia_Saori\CapaDatos\obj\Debug\netcoreapp3.1\CapaDatos.csproj.CopyComplete
 C:\Users\inter\Desktop\Farmacia_Saori\CapaDatos\obj\Debug\netcoreapp3.1\CapaDatos.dll
 C:\Users\inter\Desktop\Farmacia_Saori\CapaDatos\obj\Debug\netcoreapp3.1\CapaDatos.pdb
