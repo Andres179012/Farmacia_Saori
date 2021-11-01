@@ -1,0 +1,192 @@
+﻿@model CapaModelo.Factura_Compra
+
+@{ ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<body>
+    <!--wrapper-->
+    <div class="wrapper">
+        <!--start page wrapper -->
+        <div class="page-wrapper">
+            <div class="page-content">
+                <!--breadcrumb-->
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pe-3">Home</div>
+                    <div class="ps-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0">
+                                <li class="breadcrumb-item">
+                                    <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Compras</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-success" onclick="abrirPopUpForm(null)"><i class='bx bxs-edit'></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--end breadcrumb-->
+                <div class="row">
+                    <h6 class="mb-0 text-uppercase">Registro de Compras</h6>
+                    <hr />
+                    <div class="card border-top border-0 border-4 border-danger">
+                        <div class="card-body">
+                            <hr>
+                            <form class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="inputLastName1" class="form-label">Laboratorio</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <select class="form-select" id="cboLaboratorio" name="NombreLaboratorio" placeholder="Laboratorio">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputLastName2" class="form-label">Proveedor</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <select class="form-select" id="cboProveedor" name="Proveedor"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputLastName1" class="form-label">Nombre Generico</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName1" placeholder="Nombre Generico" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputLastName2" class="form-label">Fecha Compra</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName2" placeholder="Fecha Compra " />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputLastName1" class="form-label">Forma Farmaceutica</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <select class="form-select" id="cboFormaFarmaceutica" name="Forma Farmaceutica"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputLastName2" class="form-label">Forma Pago</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <select class="form-select" id="cboFormaPago" name="Forma Pago"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="inputLastName1" class="form-label">Cantidad Compra</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName1" placeholder="Cantidad Compra" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="inputLastName1" class="form-label">Precio Compra</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName1" placeholder="Precio Compra" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="inputLastName2" class="form-label">Lote</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName2" placeholder="Lote" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="inputLastName1" class="form-label">Unitario</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName1" placeholder="Unitario" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="inputLastName2" class="form-label">Sub Total</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName2" placeholder="Sub Total" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="inputLastName1" class="form-label">Descuento</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName1" placeholder="Descuento" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="inputLastName2" class="form-label">IVA</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName2" placeholder="IVA" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="inputLastName2" class="form-label">Total</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                        <input type="text" class="form-control border-start-0" id="inputLastName2" placeholder="Total" />
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary px-5">Registrar Compra</button>
+                                    <button type="submit" class="btn btn-danger px-5">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--end breadcrumb-->
+                <h6 class="mb-0 text-uppercase">Categorias</h6>
+                <hr />
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="tbdata" class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Laboratorio</th>
+                                            <th>Proveedor</th>
+                                            <th>FechaCompra</th>
+                                            <th>SubTotal</th>
+                                            <th>Descuento</th>
+                                            <th>IVA</th>
+                                            <th>Total</th>
+                                            <th>Farmaco</th>
+                                            <th>Forma Farmaceutica</th>
+                                            <th>Forma Pago</th>
+                                            <th>Cantidad Compra</th>
+                                            <th>Precio COmpra</th>
+                                            <th>Lote</th>
+                                            <th>Unitario</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    @section Scripts{
+
+        <partial name="_ValidationScriptsPartial" />
+        <script src="~/js/FacturaCompra_Crear.js"></script>
+    }
+</body>

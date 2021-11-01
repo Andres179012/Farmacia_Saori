@@ -108,7 +108,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("USP_LaboratorioModificar", oConexion);
                     cmd.Parameters.AddWithValue("IdLaboratorio", oLaboratorios.Id_Laboratorio);
-                    cmd.Parameters.AddWithValue("NombreLaboratorio", oLaboratorios.Nombre_Laboratorio);
+                    cmd.Parameters.AddWithValue("Nombre_Laboratorio", oLaboratorios.Nombre_Laboratorio);
                     cmd.Parameters.AddWithValue("Direccion", oLaboratorios.Direccion);
                     cmd.Parameters.AddWithValue("Telefono", oLaboratorios.Telefono);
                     cmd.Parameters.AddWithValue("PoliticaVencimiento", oLaboratorios.Politica_Vencimiento);

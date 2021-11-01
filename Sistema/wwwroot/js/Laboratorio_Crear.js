@@ -23,11 +23,11 @@ $(document).ready(function () {
         },
         "columns": [
             { "data": "id_Laboratorio", "width": "10%" },
-            { "data": "nombre_Laboratorio", "width": "20%" },
-            { "data": "direccion", "width": "20%" },
-            { "data": "telefono", "width": "20%" },
-            { "data": "politica_Vencimiento", "width": "20%" },
-            { "data": "cantidad_Meses", "width": "20%" },
+            { "data": "nombre_Laboratorio", "width": "10%" },
+            { "data": "direccion", "width": "40%" },
+            { "data": "telefono", "width": "10%" },
+            { "data": "politica_Vencimiento", "width": "10%" },
+            { "data": "cantidad_Meses", "width": "10%" },
 
             {
                 "data": "estado", "render": function (data) {
