@@ -54,3 +54,13 @@ C:\Users\Andres\Downloads\Farmacia_Saori-master\Farmacia_Saori-master\CapaModelo
 C:\Users\Andres\Downloads\Farmacia_Saori-master\Farmacia_Saori-master\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.CoreCompileInputs.cache
 C:\Users\Andres\Downloads\Farmacia_Saori-master\Farmacia_Saori-master\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.dll
 C:\Users\Andres\Downloads\Farmacia_Saori-master\Farmacia_Saori-master\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.deps.json
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\netcoreapp3.1\CapaModelo.pdb
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfoInputs.cache
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.AssemblyInfo.cs
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.dll
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\netcoreapp3.1\CapaModelo.pdb

@@ -47,7 +47,6 @@ namespace CapaDatos
                         {
                             Id_Categoria = Convert.ToInt32(dr["Id_Categoria"].ToString()),
                             Categoria = dr["Categoria"].ToString(),
-                            Descripcion = dr["Descripcion"].ToString(),
                             Estado = Convert.ToBoolean(dr["Estado"].ToString())
                         });
                     }
@@ -72,9 +71,7 @@ namespace CapaDatos
                 try
                 {
                     SqlCommand cmd = new SqlCommand("USP_CategoriaRegistrar", oConexion);
-                    cmd.Parameters.AddWithValue("Categoria", oCategoria.Categoria);
-                    cmd.Parameters.AddWithValue("Descripcion", oCategoria.Descripcion = (oCategoria.Descripcion != null ? oCategoria.Descripcion : ""));
-                    cmd.Parameters.AddWithValue("Estado", oCategoria.Estado);
+                    cmd.Parameters.AddWithValue("Categoria", oCategoria.Categoria);cmd.Parameters.AddWithValue("Estado", oCategoria.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -103,7 +100,6 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("USP_CategoriaModificar", oConexion);
                     cmd.Parameters.AddWithValue("IdCategoria", oCategoria.Id_Categoria);
                     cmd.Parameters.AddWithValue("Categoria", oCategoria.Categoria);
-                    cmd.Parameters.AddWithValue("Descripcion", oCategoria.Descripcion = (oCategoria.Descripcion != null ? oCategoria.Descripcion : ""));
                     cmd.Parameters.AddWithValue("Estado", oCategoria.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
 

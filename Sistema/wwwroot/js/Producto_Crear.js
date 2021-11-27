@@ -62,7 +62,7 @@ $(document).ready(function () {
                 }
             },
             {
-                "data": "estado", "render": function (data) {
+                "data": "stado", "render": function (data) {
                     if (data) {
                         return '<span class="badge bg-light-success text-success w-100">Activo</span>'
                     } else {
