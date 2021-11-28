@@ -62,13 +62,13 @@ $(document).ready(function () {
                 }
             },
             {
-                "data": "stado", "render": function (data) {
+                "data": "estado", "render": function (data) {
                     if (data) {
                         return '<span class="badge bg-light-success text-success w-100">Activo</span>'
                     } else {
                         return '<span class="badge bg-light-danger text-danger w-100">Inactivo</span>'
                     }
-                }
+                }, "width": "10%",
             },
             {
                 "data": "id_Farmaco", "render": function (data, type, row, meta) {
@@ -285,7 +285,6 @@ function abrirPopUpForm(json) {
         $("#txtid").prop("disabled", true)
         $("#txtNombreProducto").val("");
         $("#cboCategoria").val($("#cboCategoria option:first").val());
-
         $("#cboEstado").val();
         
     }

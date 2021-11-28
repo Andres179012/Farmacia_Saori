@@ -45,7 +45,7 @@ namespace CapaDatos
                         rptListaFormaFarmaceutica.Add(new Forma_Farmaceuticas()
                         {
                             Id_FormaFarmaceutica = Convert.ToInt32(dr["Id_FormaFarmaceutica"].ToString()),
-                            Forma_Faumaceutica = dr["Forma_Faumaceutica"].ToString(),
+                            Forma_Farmaceutica = dr["Forma_Farmaceutica"].ToString(),
                             Descripcion = dr["Descripcion"].ToString(),
                             Estado = Convert.ToBoolean(dr["Estado"].ToString())
                         });
@@ -70,7 +70,7 @@ namespace CapaDatos
                 try
                 {
                     SqlCommand cmd = new SqlCommand("USP_FormaFarmaceuticaRegistrar", oConexion);
-                    cmd.Parameters.AddWithValue("FormaFarmaceutica", oFormaFarmaceutica.Forma_Faumaceutica);
+                    cmd.Parameters.AddWithValue("FormaFarmaceutica", oFormaFarmaceutica.Forma_Farmaceutica);
                     cmd.Parameters.AddWithValue("Descripcion", oFormaFarmaceutica.Descripcion = (oFormaFarmaceutica.Descripcion != null ? oFormaFarmaceutica.Descripcion : ""));
                     cmd.Parameters.AddWithValue("Estado", oFormaFarmaceutica.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
@@ -100,7 +100,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("USP_FormaFarmaceuticaModificar", oConexion);
                     cmd.Parameters.AddWithValue("IdFormaFarmaceutica", oFormaFarmaceutica.Id_FormaFarmaceutica);
-                    cmd.Parameters.AddWithValue("FormaFarmaceutica", oFormaFarmaceutica.Forma_Faumaceutica);
+                    cmd.Parameters.AddWithValue("FormaFarmaceutica", oFormaFarmaceutica.Forma_Farmaceutica);
                     cmd.Parameters.AddWithValue("Descripcion", oFormaFarmaceutica.Descripcion = (oFormaFarmaceutica.Descripcion != null ? oFormaFarmaceutica.Descripcion : ""));
                     cmd.Parameters.AddWithValue("Estado", oFormaFarmaceutica.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;

@@ -108,10 +108,16 @@
                     </a>
                     <ul>
                         <li>
-                            <a><i class="bx bx-right-arrow-alt"></i>Ventas</a>
+                            <a asp-area="" asp-controller="Ventas" asp-action="Consultar"><i class="bx bx-right-arrow-alt"></i>Consultar Venta</a>
                         </li>
                         <li>
-                            <a asp-area="" asp-controller="Compras" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Compras</a>
+                            <a asp-area="" asp-controller="Ventas" asp-action="Registrar"><i class="bx bx-right-arrow-alt"></i>Registrar Venta</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Compras" asp-action="Consultar"><i class="bx bx-right-arrow-alt"></i>Compras</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Compras" asp-action="Registrar"><i class="bx bx-right-arrow-alt"></i>Registrar Compra</a>
                         </li>
                     </ul>
                 </li>
@@ -139,7 +145,13 @@
                             <a asp-area="" asp-controller="FormaPago" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Formas de Pago</a>
                         </li>
                         <li>
-                            <a asp-area="" asp-controller="FormasFarmaceuticas" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Formas Farmaceuticas</a>
+                            <a asp-area="" asp-controller="FormaFarmaceutica" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Formas Farmaceuticas</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Clientes" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Clientes</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Usuarios" asp-action="Crear"><i class="bx bx-right-arrow-alt"></i>Usuarios</a>
                         </li>
                         <li>
                             <a href="app-to-do.html"><i class="bx bx-right-arrow-alt"></i>Contactos</a>
@@ -1084,9 +1096,107 @@
         new PerfectScrollbar('.customers-list');
         new PerfectScrollbar('.store-metrics');
         new PerfectScrollbar('.product-list');
+
     </script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+    <script type="text/javascript">
+
+        $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
+
+        //CONTROLADOR PROVEEDOR
+        $.MisUrls.urls({ _ObtenerProveedores: '@Url.Action("Obtener", "Proveedores")' });
+        $.MisUrls.urls({ _GuardarProveedores: '@Url.Action("Guardar", "Proveedores")' });
+        $.MisUrls.urls({ _EliminarProveedores: '@Url.Action("Eliminar", "Proveedores")' });
+
+         //CONTROLADOR LABORATORIOS
+        $.MisUrls.urls({ _ObtenerLaboratorios: '@Url.Action("Obtener", "Laboratorios")' });
+        $.MisUrls.urls({ _GuardarLaboratorios: '@Url.Action("Guardar", "Laboratorios")' });
+        $.MisUrls.urls({ _EliminarLaboratorios: '@Url.Action("Eliminar", "Laboratorios")' });
+
+         //CONTROLADOR FORMA FARMACEUTICA
+        $.MisUrls.urls({ _ObtenerFormaFarmaceutica: '@Url.Action("Obtener", "FormaFarmaceutica")' });
+        $.MisUrls.urls({ _GuardarFormaFarmaceutica: '@Url.Action("Guardar", "FormaFarmaceutica")' });
+        $.MisUrls.urls({ _EliminarFormaFarmaceutica: '@Url.Action("Eliminar", "FormaFarmaceutica")' });
+
+        //CONTROLADOR FORMA PAGO
+        $.MisUrls.urls({ _ObtenerFormaPago: '@Url.Action("Obtener", "FormaPago")' });
+        $.MisUrls.urls({ _GuardarFormaPago: '@Url.Action("Guardar", "FormaPago")' });
+        $.MisUrls.urls({ _EliminarFormaPago: '@Url.Action("Eliminar", "FormaPago")' });
+
+        //CONTROLADOR USUARIO
+        $.MisUrls.urls({ _ObtenerUsuarios: '@Url.Action("Obtener", "Usuarios")' });
+        $.MisUrls.urls({ _GuardarUsuario: '@Url.Action("Guardar", "Usuarios")' });
+        $.MisUrls.urls({ _EliminarUsuario: '@Url.Action("Eliminar", "Usuarios")' });
+
+         //CONTROLADOR CLIENTE
+        $.MisUrls.urls({ _ObtenerCliente: '@Url.Action("Obtener", "Clientes")' });
+        $.MisUrls.urls({ _GuardarCliente: '@Url.Action("Guardar", "Clientes")' });
+        $.MisUrls.urls({ _EliminarCliente: '@Url.Action("Eliminar", "Clientes")' });
+
+         //CONTROLADOR PRODUCTO
+        $.MisUrls.urls({ _ObtenerProductos: '@Url.Action("Obtener", "Farmacos")' });
+        $.MisUrls.urls({ _GuardarProducto: '@Url.Action("Guardar", "Farmacos")' });
+        $.MisUrls.urls({ _EliminarProducto: '@Url.Action("Eliminar", "Farmacos")' });
+
+         //CONTROLADOR CATEGORIA
+        $.MisUrls.urls({ _ObtenerCategorias: '@Url.Action("Obtener", "Categorias")' });
+        $.MisUrls.urls({ _GuardarCategoria: '@Url.Action("Guardar", "Categorias")' });
+        $.MisUrls.urls({ _EliminarCategoria: '@Url.Action("Eliminar", "Categorias")' });
+
+        //CONTROLADOR COMPRA
+        $.MisUrls.urls({ _ObtenerCompras: '@Url.Action("Obtener", "Compra")' });
+        $.MisUrls.urls({ _GuardarCompra: '@Url.Action("Guardar", "Compra")' });
+        $.MisUrls.urls({ _DocumentoCompra: '@Url.Action("Documento", "Compra")' });
+
+
+        //CONTROLADOR VENTA
+        $.MisUrls.urls({ _ObtenerUsuario: '@Url.Action("ObtenerUsuario", "Venta")' });
+        $.MisUrls.urls({ _ObtenerProductoStockPorTienda: '@Url.Action("ObtenerProductoPorTienda", "Venta")' });
+        $.MisUrls.urls({ _ControlarStockProducto: '@Url.Action("ControlarStock", "Venta")' });
+        $.MisUrls.urls({ _RegistrarVenta: '@Url.Action("Guardar", "Venta")' });
+        $.MisUrls.urls({ _DocumentoVenta: '@Url.Action("Documento", "Venta")' });
+        $.MisUrls.urls({ _ObtenerVentas: '@Url.Action("Obtener", "Venta")' });
+
+    </script>
+    <script>
+
+        function activarMenu(menuactivo) {
+
+            var ul = $("ul.navbar-nav");
+            ul.find("li.nav-item").each(function (i, li) {
+
+                var a;
+
+                if ($(li).find("div.dropdown-menu").length != 0) {
+
+                    var div = $($(li).find("div.dropdown-menu"))
+
+                    div.find("a.dropdown-item").each(function (x, tagA) {
+                        if ($(tagA).attr("name") == menuactivo) {
+
+                            $(li).addClass("active");
+                            return false;
+                        }
+                    })
+                } else {
+
+                    a = $(li).find("a.nav-link");
+
+                    if ($(a).attr("name") == menuactivo) {
+                        $(li).addClass("active");
+                        return false;
+                    }
+                }
+            });
+        }
+
+    </script>
+    @RenderSection("scripts", required: false)
+
+
+
+
+
 
 </body>
 </html>

@@ -25,6 +25,11 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
+            {
+                "data": "id_FacturaCompra", render: function (data) {
+                    return "<button class='btn btn-success btn-sm ml-2' type='button' onclick='Imprimir(" + data + ")'><i class='far fa-clipboard'></i> Ver</button>"
+                }
+            },
             { "data": "id_FacturaCompra" },
             {
                 "data": "objlaboratorio", render: function (data) {

@@ -20,10 +20,44 @@ namespace Sistema.Controllers
         {
             return View();
         }
+
+        public ActionResult Consultar()
+        {
+            return View();
+        }
+
+        public ActionResult Registrar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult Guardar(string xml)
+        {
+
+            bool respuesta = CD_FacturaCompra.Instancia.RegistrarCompra(xml);
+
+            return Json(new { resultado = respuesta });
+        }
+
         public JsonResult Obtener()
         {
             List<Factura_Compra> lista = CD_FacturaCompra.Instancia.ObtenerFacturaCompra();
             return Json(new { data = lista });
+        }
+
+        public ActionResult Documento(int idcompra = 0)
+        {
+
+            Factura_Compra oCompra = CD_FacturaCompra.Instancia.ObtenerDetalleCompra(idcompra);
+
+            if (oCompra == null)
+            {
+                oCompra = new Factura_Compra();
+            }
+
+
+            return View(oCompra);
         }
     }
 }

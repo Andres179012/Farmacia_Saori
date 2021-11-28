@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wFKg/zoCtEINM90zmC+8SKzZ+rdXqNkNWCZn5OBbS7Yh+vYJwRaAuIIPFf6L5DQCfbzD0o9qEsfBjH1jA/RBnQ==",
+  "dgSpecHash": "+6ces/oiKkZqLkRtbNhZ8AWJO34zRDF0u4nQ5eXwf2c67dipXEQ5LtsXq32jF+5nShO4V4pJAp2JrRK1X9dSUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\CapaModelo\\CapaModelo.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\andre\\.nuget\\packages\\bootstrap\\5.1.2\\bootstrap.5.1.2.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",

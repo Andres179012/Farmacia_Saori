@@ -16,9 +16,10 @@ namespace CapaModelo
         public decimal Descuento { get; set; }
         public decimal IVA { get; set; }
         public decimal Total { get; set; }
-       
+        public bool Estado { get; set; }
+
         ////Obtenemos una lista a partir del Modelo Detalle Compra
-        //public List<Detalle_Compra> ObjdetalleCompra { get; set; }
+        public List<Detalle_Compra> oListaDetalleCompra { get; set; }
 
     }
 }

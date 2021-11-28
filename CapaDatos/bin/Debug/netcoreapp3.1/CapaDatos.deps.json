@@ -10,12 +10,14 @@
         "dependencies": {
           "CapaModelo": "1.0.0",
           "System.Configuration.ConfigurationManager": "5.0.0",
-          "System.Data.SqlClient": "4.8.3"
+          "System.Data.SqlClient": "4.8.3",
+          "bootstrap": "5.1.2"
         },
         "runtime": {
           "CapaDatos.dll": {}
         }
       },
+      "bootstrap/5.1.2": {},
       "Microsoft.NETCore.Platforms/5.0.0": {},
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
@@ -232,7 +234,8 @@
       "CapaModelo/1.0.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "5.0.0",
-          "System.Data.SqlClient": "4.8.3"
+          "System.Data.SqlClient": "4.8.3",
+          "bootstrap": "5.1.2"
         },
         "runtime": {
           "CapaModelo.dll": {}
@@ -245,6 +248,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "bootstrap/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q67rt/zOhTjlvX0hER9Wao/EohLkwJwbD6wYNorI6e9q3bUz1ZzrZjaCCEpAktAuHzm3HjKeFqENf7bfuHXx3Q==",
+      "path": "bootstrap/5.1.2",
+      "hashPath": "bootstrap.5.1.2.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "type": "package",

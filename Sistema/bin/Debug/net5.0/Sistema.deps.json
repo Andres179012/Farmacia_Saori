@@ -43,6 +43,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "5.0.3",
           "System.Configuration.ConfigurationManager": "5.0.0",
           "System.Data.SqlClient": "4.8.3",
+          "bootstrap": "5.1.2",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -327,6 +328,7 @@
           "Sistema.dll": {}
         }
       },
+      "bootstrap/5.1.2": {},
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -1702,7 +1704,8 @@
         "dependencies": {
           "CapaModelo": "1.0.0",
           "System.Configuration.ConfigurationManager": "5.0.0",
-          "System.Data.SqlClient": "4.8.3"
+          "System.Data.SqlClient": "4.8.3",
+          "bootstrap": "5.1.2"
         },
         "runtime": {
           "CapaDatos.dll": {}
@@ -1714,7 +1717,8 @@
       "CapaModelo/1.0.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "5.0.0",
-          "System.Data.SqlClient": "4.8.3"
+          "System.Data.SqlClient": "4.8.3",
+          "bootstrap": "5.1.2"
         },
         "runtime": {
           "CapaModelo.dll": {}
@@ -3386,6 +3390,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "bootstrap/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q67rt/zOhTjlvX0hER9Wao/EohLkwJwbD6wYNorI6e9q3bUz1ZzrZjaCCEpAktAuHzm3HjKeFqENf7bfuHXx3Q==",
+      "path": "bootstrap/5.1.2",
+      "hashPath": "bootstrap.5.1.2.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

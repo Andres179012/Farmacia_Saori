@@ -236,8 +236,8 @@ function abrirPopUpForm(json) {
 
     if (json != null) {
 
-        $("#txtid").val(json.id_FormaPago);
-        $("#txtFormaFarmaceutica").val(json.forma_Pago);
+        $("#txtid").val(json.id_FormaFarmaceutica);
+        $("#txtFormaFarmaceutica").val(json.forma_Farmaceutica);
         $("#txtDescripcion").val(json.descripcion);
         $("#cboEstado").val(json.estado == true ? 1 : 0);
 
@@ -250,6 +250,7 @@ function abrirPopUpForm(json) {
     $('#FormModal').modal('show');
 
 }
+
 function Guardar() {
 
     if ($("#form").valid()) {
@@ -257,7 +258,7 @@ function Guardar() {
         var request = {
             objeto: {
                 id_FormaFarmaceutica: parseInt($("#txtid").val()),
-                formaFarmaceutica: $("#txtFormaFarmaceutica").val(),
+                forma_Farmaceutica: $("#txtFormaFarmaceutica").val(),
                 descripcion: ($("#txtDescripcion").val() != "" ? $("#txtDescripcion").val() : ""),
                 estado: ($("#cboEstado").val() == "1" ? true : false)
             }

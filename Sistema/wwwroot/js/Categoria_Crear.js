@@ -24,6 +24,7 @@ $(document).ready(function () {
         "columns": [
             { "data": "id_Categoria", "width": "10%" },
             { "data": "categoria", "width": "20%" },
+            { "data": "descripcion", "width": "50%" },
             {
                 "data": "estado", "render": function (data) {
                     if (data) {
@@ -237,10 +238,12 @@ function abrirPopUpForm(json) {
 
         $("#txtid").val(json.id_Categoria);
         $("#txtNombreCategoria").val(json.categoria);
+        $("#txtDescripcion").val(json.descripcion);
         $("#cboEstado").val(json.estado == true ? 1 : 0);
 
     } else {
         $("#txtNombreCategoria").val("");
+        $("#txtDescripcion").val("");
         $("#cboEstado").val();
     }
 
@@ -255,6 +258,7 @@ function Guardar() {
             objeto: {
                 id_Categoria: parseInt($("#txtid").val()),
                 categoria: $("#txtNombreCategoria").val(),
+                descripcion: ($("#txtDescripcion").val() != "" ? $("#txtDescripcion").val() : ""),
                 estado: ($("#cboEstado").val() == "1" ? true : false)
             }
         }
