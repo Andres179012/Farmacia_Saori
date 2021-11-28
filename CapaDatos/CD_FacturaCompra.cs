@@ -36,7 +36,7 @@ namespace CapaDatos
         public bool RegistrarCompra(string Detalle)
         {
             bool respuesta = true;
-            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
             {
                 try
                 {

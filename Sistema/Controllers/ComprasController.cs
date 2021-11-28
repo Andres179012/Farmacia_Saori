@@ -36,6 +36,7 @@ namespace Sistema.Controllers
         {
 
             bool respuesta = CD_FacturaCompra.Instancia.RegistrarCompra(xml);
+            
 
             return Json(new { resultado = respuesta });
         }

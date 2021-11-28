@@ -163,7 +163,7 @@ function buscarformaf(json) {
 
         $("#txtformaf").val(json.id_FormaFarmaceutica);
         $("#txtformafar").val(json.forma_Farmaceutica);
-
+        
     } else {
         $("#txtformafar").val("");
 
@@ -201,51 +201,10 @@ function buscarproducto(json) {
     }
 
     $('#modalProducto').modal('show');
+    console.log($('#txtIdProducto').val());
 }
 
 
-$("#txtIdProducto").on('keypress', function (e) {
-
-    if (e.which == 13) {
-
-        //OBTENER PRODUCTOS
-        jQuery.ajax({
-            url: $.MisUrls.url._ObtenerProducto,
-            type: "GET",
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                $("#txtIdProducto").LoadingOverlay("hide");
-                var encontrado = false;
-                if (data.data != null) {
-                    $.each(data.data, function (i, item) {
-                        if (item.Activo == true && item.Codigo == $("#txtIdProducto").val()) {
-
-                            $("#txtIdProducto").val(item.id_Farmaco);
-                            $("#txtNombreFarmaco").val(item.nombre_Generico);
-
-                            encontrado = true;
-                            return false;
-                        }
-                    })
-
-                    if (!encontrado) {
-                        $("#txtIdFarmaco").val("0");
-                        $("#txtNombreFarmaco").val("");
-                    }
-                }
-            },
-            error: function (error) {
-                console.log(error)
-            },
-            beforeSend: function () {
-                $("#txtIdProducto").LoadingOverlay("show");
-            },
-        });
-
-
-    }
-});
 
 $.fn.inputFilter = function (inputFilter) {
     return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
@@ -289,15 +248,14 @@ $('#btnAgregarCompra').on('click', function () {
 
     $('#tbCompra > tbody  > tr').each(function (index, tr) {
         var fila = tr;
-        var codigoproducto = $(fila).find("td.codigoproducto").text();
+        var idproducto = $(fila).find("td.idfarmaco").text();
 
-        if (codigoproducto == $("#txtIdProducto").val()) {
+        if (idproducto == $("#txtIdProducto").val()) {
             existe_codigo = true;
             return false;
         }
 
     });
-
     if (!existe_codigo) {
         $("<tr>").append(
             $("<td>").append(
@@ -308,12 +266,11 @@ $('#btnAgregarCompra').on('click', function () {
             $("<td>").append($("#txtformafar").val()),
             $("<td>").append($("#txtformapago").val()),
             $("<td>").append($("#txtNombreFarmaco").val()),
-            $("<td>").addClass("#txtcantidad").append($("#txtCantidadFarmaco").val()),
-            $("<td>").addClass("#txtpreciocompra").append($("#txtPrecioCompraFarmaco").val()),
+            $("<td>").addClass("#cantidad").append($("#txtCantidadFarmaco").val()),
+            $("<td>").addClass("#preciocompra").append($("#txtPrecioCompraFarmaco").val()),
         ).appendTo("#tbCompra tbody");
 
         $("#txtIdProducto").val("0");
-        $("#txtCodigoFarmaco").val("");
         $("#txtNombreFarmaco").val("");
         $("#txtCantidadFarmaco").val("0");
         $("#txtPrecioCompraFarmaco").val("0");
@@ -347,7 +304,8 @@ $('#btnTerminarGuardarCompra').on('click', function () {
     compra = "<COMPRA>" +
         "<Id_Proveedor>" + $("#txtIdProveedor").val() + "</Id_Proveedor>" +
         "<Id_Laboratorio>" + $("#txtLab").val() + "</Id_Laboratorio>" +
-        "<Sub_Total>!subtotal¡</Sub_Total>" +
+        "<Id_Producto>" + $("#txtIdProducto").val() + "</Id_Producto>" +
+        "<Sub_Total>!sub_total¡</Sub_Total>" +
         "<Descuento>!descuento¡</Descuento>" +
         "<IVA>!iva¡</Iva>" +
         "<Total>!total¡</Total>" +
@@ -357,35 +315,46 @@ $('#btnTerminarGuardarCompra').on('click', function () {
     $('#tbCompra > tbody  > tr').each(function (index, tr) {
 
         var fila = tr;
-        var idFarmaco = parseFloat($(fila).find("td.codigoproducto").data("id_Farmaco"));
-        var idFormafarmaceutica = parseFloat($(fila).find("td.idFormaFarmaceutica").text());
+       // var idFarmaco = parseFloat($(fila).find("td.idfarmaco").data("Id_Farmaco"));
+       // var idFormafarmaceutica = parseFloat($(fila).find("td.idFormaFarmaceutica").text());
         var idFormapago = parseFloat($(fila).find("td.idFormaPago").text());
-        var CantidadCompra = parseFloat(cantidad) * parseFloat(cantidad_Compra);
+        var cantidad = parseFloat($(fila).find("td.cantidad").text());
         var preciocompra = parseFloat($(fila).find("td.precioCompra").text());
-        var lote = parseFloat($(fila).find("td.lote").text());
-        var unitario = parseFloat($(fila).find("td.unitario").text());
+        var descuento = parseFloat($(fila).find("td.descuento").text());
+        //var lote = parseFloat($(fila).find("td.lote").text());
+        //var unitario = parseFloat($(fila).find("td.unitario").text());
 
         detalle = detalle + "<DETALLE>" +
             "<IdCompra>0</IdCompra>" +
-            "<Id_Farmaco>" + idFarmaco + "</Id_Farmaco>" +
-            "<Id_FormaFarmaceutica>" + idFormafarmaceutica + "</Id_FormaFarmaceutica>" +
+          //  "<Id_Farmaco>" + idFarmaco + "</Id_Farmaco>" +
+        //    "<Id_FormaFarmaceutica>" + id_FormaFarmaceutica + "</Id_FormaFarmaceutica>" +
             "<Id_FormaPago>" + idFormapago + "</Id_FormaPago>" +
-            "<Cantidad_Compra>" + CantidadCompra + "</Cantidad_Compra>" +
+            "<Cantidad_Compra>" + cantidad + "</Cantidad_Compra>" +
             "<Precio_Compra>" + preciocompra + "</Precio_Compra>" +
-            "<Lote>" + lote + "</Lote>" +
-            "<Unitario>" + unitario+ "</Unitario>" +
+            "<Descuento>" + descuento + "</Descuento>" +
+            //"<Id_Farmaco>" + $("#txtIdProducto").val() + "</Id_Farmaco>" +
+            "<Id_FormaFarmaceutica>" + $("#txtformaf").val() + "</Id_FormaFarmaceutica>" +
+            //"<Cantidad_Compra>" + $("#txtCantidadFarmaco").val() + "</Cantidad_Compra>" +
+          //  "<Id_FormaFarmaceutica>" + idFormafarmaceutica + "</Id_FormaFarmaceutica>" +
+           // "<Id_FormaPago>" + idFormapago + "</Id_FormaPago>" +
+            //"<Precio_Compra>" + $("#txtPrecioCompraFarmaco").val() + "</Precio_Compra>" +
+             //"<Precio_Compra>" + $("#txtPrecioCompraFarmaco").val() + "</Precio_Compra>" +
+            //"<Id_FormaPago>" + $("#txtformap").val() + "</Id_FormaPago>" +
+           
+            //"<Lote>" + lote + "</Lote>" +
+            //"<Unitario>" + unitario+ "</Unitario>" +
             "</DETALLE>";
 
-        subtotal = CantidadCompra * preciocompra;
-        totaldescuento = subtotal * descuento;
-        IVA = subtotal * (15 / 100);
-        totalcostocompra = subtotal + IVA- totaldescuento;
+        sub_total = cantidad * preciocompra;
+        totaldescuento = sub_total * descuento;
+        IVA = sub_total * (15 / 100);
+        totalcostocompra = sub_total + IVA - totaldescuento;
 
     });
 
     compra = compra.replace("!total¡", totalcostocompra.toString());
     $xml = $xml + compra + detallecompra + detalle + "</DETALLE_COMPRA></DETALLE>";
-
+    console.log($xml);
     var request = { xml: $xml };
 
 
@@ -420,7 +389,7 @@ $('#btnTerminarGuardarCompra').on('click', function () {
                 $("#txtformapago").val("");
 
                 //FARMACO
-                $("#txtIdProducto").val("0");
+                $("#txtIdProducto").val("");
                 $("#txtNombreFarmaco").val("");
                 $("#txtCantidadFarmaco").val("0");
                 $("#txtPrecioCompraFarmaco").val("0");

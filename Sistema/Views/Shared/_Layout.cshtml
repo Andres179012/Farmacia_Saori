@@ -16,6 +16,8 @@
 
     <link href="~/css/calculadora.css" rel="stylesheet" />
 
+    <link src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"/>
+
     <link href="~/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
     <link href="~/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
     <link href="~/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
@@ -1084,6 +1086,8 @@
 
     <script src="~/plugins/fullcalendar/js/main.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+
     <script src="~/js/bootstrap.bundle.min.js"></script>
     <script src="~/plugins/datatable/js/jquery.dataTables.min.js"></script>
 
@@ -1144,9 +1148,9 @@
         $.MisUrls.urls({ _EliminarCategoria: '@Url.Action("Eliminar", "Categorias")' });
 
         //CONTROLADOR COMPRA
-        $.MisUrls.urls({ _ObtenerCompras: '@Url.Action("Obtener", "Compra")' });
-        $.MisUrls.urls({ _GuardarCompra: '@Url.Action("Guardar", "Compra")' });
-        $.MisUrls.urls({ _DocumentoCompra: '@Url.Action("Documento", "Compra")' });
+        $.MisUrls.urls({ _ObtenerCompras: '@Url.Action("Obtener", "Compras")' });
+        $.MisUrls.urls({ _GuardarCompra: '@Url.Action("Guardar", "Compras")' });
+        $.MisUrls.urls({ _DocumentoCompra: '@Url.Action("Documento", "Compras")' });
 
 
         //CONTROLADOR VENTA
