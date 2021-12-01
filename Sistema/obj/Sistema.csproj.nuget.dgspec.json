@@ -50,7 +50,7 @@
           "dependencies": {
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.0, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
@@ -122,7 +122,7 @@
           "dependencies": {
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.0, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
@@ -223,9 +223,13 @@
               "target": "Package",
               "version": "[5.0.3, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.0, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

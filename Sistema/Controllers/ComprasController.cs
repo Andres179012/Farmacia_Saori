@@ -32,11 +32,12 @@ namespace Sistema.Controllers
         }
 
         [HttpPost]
-        public JsonResult Guardar(string xml)
+        public JsonResult Registrar(string xml)
         {
+           
+        bool respuesta = CD_FacturaCompra.Instancia.RegistrarCompra(xml);
 
-            bool respuesta = CD_FacturaCompra.Instancia.RegistrarCompra(xml);
-            
+        
 
             return Json(new { resultado = respuesta });
         }

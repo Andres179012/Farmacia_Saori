@@ -15624,6 +15624,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\Clientes\\Crear.cshtml",
+      "TargetPath": "Views\\Clientes\\Crear.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\Usuarios\\Crear.cshtml",
+      "TargetPath": "Views\\Usuarios\\Crear.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -15631,11 +15641,6 @@
     {
       "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\Laboratorios\\Crear.cshtml",
       "TargetPath": "Views\\Laboratorios\\Crear.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\Compras\\Crear.cshtml",
-      "TargetPath": "Views\\Compras\\Crear.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15659,6 +15664,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\Ventas\\Consultar.cshtml",
+      "TargetPath": "Views\\Ventas\\Consultar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\Compras\\Registrar.cshtml",
+      "TargetPath": "Views\\Compras\\Registrar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\FormaFarmaceutica\\Crear.cshtml",
       "TargetPath": "Views\\FormaFarmaceutica\\Crear.cshtml",
       "FileKind": "mvc"
@@ -15669,8 +15684,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\FormasFarmaceuticas\\Crear.cshtml",
-      "TargetPath": "Views\\FormasFarmaceuticas\\Crear.cshtml",
+      "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\Compras\\Consultar.cshtml",
+      "TargetPath": "Views\\Compras\\Consultar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\andre\\OneDrive\\Escritorio\\Farmacia_Saori\\Sistema\\Views\\Ventas\\Registrar.cshtml",
+      "TargetPath": "Views\\Ventas\\Registrar.cshtml",
       "FileKind": "mvc"
     },
     {

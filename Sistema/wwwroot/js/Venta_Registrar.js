@@ -243,9 +243,9 @@ $('#btnAgregarVenta').on('click', function () {
 
     $('#tbVenta > tbody  > tr').each(function (index, tr) {
         var fila = tr;
-        var codigoproducto = $(fila).find("td.codigoproducto").text();
+        var idproducto = $(fila).find("td.id_Farmaco").text();
 
-        if (codigoproducto == $("#txtIdProducto").val()) {
+        if (idproducto == $("#txtIdProducto").val()) {
             existe_codigo = true;
             return false;
         }
@@ -257,12 +257,13 @@ $('#btnAgregarVenta').on('click', function () {
             $("<td>").append(
                 $("<button>").addClass("btn btn-danger btn-sm").text("Eliminar")
             ),
-            $("<td>").append($("#txtNombreUsuario").val()),
-            $("<td>").append($("#txtNCliente").val()),
-            $("<td>").append($("#txtformapago").val()),
-            $("<td>").append($("#txtNombreFarmaco").val()),
-            $("<td>").addClass("#txtcantidad").append($("#txtCantidadFarmaco").val()),
-            $("<td>").addClass("#txtprecioventa").append($("#txtPrecioVentaFarmaco").val()),
+            $("<td>").addClass("codigoproducto").data("idproducto", $("#txtIdProducto").val()),
+            $("<td>").addClass("usuario").data("user", $("#txtIdUsuario").val()).append($("#txtNombreUsuario").val()),
+            $("<td>").addClass("cliente").data("client", $("#txtIdCliente").val()).append($("#txtNCliente").val()),
+            $("<td>").addClass("formaP").data("fp", $("#txtIdFormap").val()).append($("#txtformapago").val()),
+            $("<td>").addClass("nombreF").data("nf", $("#txtIdProducto").val()).append($("#txtNombreFarmaco").val()),
+            $("<td>").addClass("catidad").data("cf", $("#txtCantidadFarmaco").val()).append($("#txtCantidadFarmaco").val()),
+            $("<td>").addClass("precioV").data("pv", $("#txtPrecioVentaFarmaco").val()).append($("#txtPrecioVentaFarmaco").val()),
         ).appendTo("#tbVenta tbody");
 
         $("#txtIdProducto").val("0");
@@ -285,66 +286,77 @@ $('#tbVenta tbody').on('click', 'button[class="btn btn-danger btn-sm"]', functio
 $('#btnTerminarGuardarVenta').on('click', function () {
 
 
-    if ($('#tbCompra > tbody  > tr').length == 0) {
+    if ($('#tbVenta > tbody  > tr').length == 0) {
         swal("Mensaje", "No existen detalles", "warning")
         return;
     }
 
     var $xml = "";
-    var compra = "";
-    var detallecompra = ""
+    var venta = "";
+    var detalleventa = ""
     var detalle = "";
     var totalcostocompra = 0;
 
+    var subtotalFinal = 0.0;
+    var ivaFinal = 0.0;
+    var totalFinal = 0.0;
+    var descuentoFinal = 0;
+    var descuento = 0;
+
     $xml = "<DETALLE>";
-    compra = "<COMPRA>" +
-        "<Id_Proveedor>" + $("#txtIdProveedor").val() + "</Id_Proveedor>" +
-        "<Id_Laboratorio>" + $("#txtLab").val() + "</Id_Laboratorio>" +
+    venta = "<Ventas>" +
+        "<Id_Usuario>" + $("#txtIdUsuario").val() + "</Id_Usuario>" +
+        "<Id_Cliente>" + $("#txtIdCliente").val() + "</Id_Cliente>" +
         "<Sub_Total>!subtotal¡</Sub_Total>" +
         "<Descuento>!descuento¡</Descuento>" +
         "<IVA>!iva¡</Iva>" +
         "<Total>!total¡</Total>" +
-        "</COMPRA>";
-    detallecompra = "<DETALLE_COMPRA>"
+        "</Ventas>";
+    detalleventa = "<DETALLE>"
 
-    $('#tbCompra > tbody  > tr').each(function (index, tr) {
+    $('#tbVenta > tbody  > tr').each(function (index, tr) {
 
         var fila = tr;
-        var idFarmaco = parseFloat($(fila).find("td.codigoproducto").data("id_Farmaco"));
-        var idFormafarmaceutica = parseFloat($(fila).find("td.idFormaFarmaceutica").text());
-        var idFormapago = parseFloat($(fila).find("td.idFormaPago").text());
-        var CantidadCompra = parseFloat(cantidad) * parseFloat(cantidad_Compra);
-        var preciocompra = parseFloat($(fila).find("td.precioCompra").text());
-        var lote = parseFloat($(fila).find("td.lote").text());
-        var unitario = parseFloat($(fila).find("td.unitario").text());
+        var idFarmaco = parseFloat($(fila).find("td.codigoproducto").data("idproducto"));
+        var idFormapago = parseFloat($(fila).find("td.formaP").data("fp"));
+        var cantidadVenta = parseFloat($(fila).find("td.catidad").data("cf"));
+        var precioVenta = parseFloat($(fila).find("td.precioV").data("pv"));
 
         detalle = detalle + "<DETALLE>" +
-            "<IdCompra>0</IdCompra>" +
+            "<Id_FacturaCompra>0</Id_FacturaCompra>" +
             "<Id_Farmaco>" + idFarmaco + "</Id_Farmaco>" +
-            "<Id_FormaFarmaceutica>" + idFormafarmaceutica + "</Id_FormaFarmaceutica>" +
             "<Id_FormaPago>" + idFormapago + "</Id_FormaPago>" +
-            "<Cantidad_Compra>" + CantidadCompra + "</Cantidad_Compra>" +
-            "<Precio_Compra>" + preciocompra + "</Precio_Compra>" +
-            "<Lote>" + lote + "</Lote>" +
-            "<Unitario>" + unitario + "</Unitario>" +
+            "<Cantidad_Compra>" + cantidadVenta + "</Cantidad_Compra>" +
+            "<Precio_Venta>" + precioVenta + "</Precio_Venta>" +
             "</DETALLE>";
 
-        subtotal = CantidadCompra * preciocompra;
+        subtotal = cantidadVenta * precioVenta;
         totaldescuento = subtotal * descuento;
         IVA = subtotal * (15 / 100);
         totalcostocompra = subtotal + IVA - totaldescuento;
-
+        subtotalFinal = subtotalFinal + subtotal;
     });
 
-    compra = compra.replace("!total¡", totalcostocompra.toString());
-    $xml = $xml + compra + detallecompra + detalle + "</DETALLE_COMPRA></DETALLE>";
+    ivaFinal = subtotalFinal * (15 / 100);
+    totalFinal = subtotalFinal + ivaFinal - 0;
 
+    console.log(subtotalFinal);
+    console.log(ivaFinal);
+    console.log(totalFinal);
+
+
+    venta = venta.replace("!descuento¡", descuentoFinal.toString());
+    venta = venta.replace("!sub_total¡", subtotalFinal.toString());
+    venta = venta.replace("!iva¡", ivaFinal.toString());
+    venta = venta.replace("!total¡", totalFinal.toString());
+    $xml = $xml + venta + detalleventa + detalle + "</DETALLE_VENTA></DETALLE>";
+    console.log($xml);
     var request = { xml: $xml };
-
+    console.log(JSON.stringify(request));
 
 
     jQuery.ajax({
-        url: $.MisUrls.url._GuardarCompra,
+        url: $.MisUrls.url._GuardarVenta,
         type: "POST",
         data: JSON.stringify(request),
         dataType: "json",

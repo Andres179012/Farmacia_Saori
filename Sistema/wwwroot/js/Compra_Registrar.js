@@ -344,19 +344,11 @@ $('#btnTerminarGuardarCompra').on('click', function () {
         detalle = detalle + "<DETALLE>" +
             "<Id_FacturaCompra>0</Id_FacturaCompra>" +
            "<Id_Farmaco>" + idFarmaco + "</Id_Farmaco>" +
-        //    "<Id_FormaFarmaceutica>" + id_FormaFarmaceutica + "</Id_FormaFarmaceutica>" +
             "<Id_FormaPago>" + idFormapago + "</Id_FormaPago>" +
             "<Cantidad_Compra>" + cantidad + "</Cantidad_Compra>" +
             "<Precio_Compra>" + preciocompra + "</Precio_Compra>" +
             "<Descuento>" + descuento + "</Descuento>" +
-            //"<Id_Farmaco>" + $("#txtIdProducto").val() + "</Id_Farmaco>" +
             "<Id_FormaFarmaceutica>"+idFormafarmaceutica +"</Id_FormaFarmaceutica>" +
-            //"<Cantidad_Compra>" + $("#txtCantidadFarmaco").val() + "</Cantidad_Compra>" +
-          //  "<Id_FormaFarmaceutica>" + idFormafarmaceutica + "</Id_FormaFarmaceutica>" +
-           // "<Id_FormaPago>" + idFormapago + "</Id_FormaPago>" +
-            //"<Precio_Compra>" + $("#txtPrecioCompraFarmaco").val() + "</Precio_Compra>" +
-             //"<Precio_Compra>" + $("#txtPrecioCompraFarmaco").val() + "</Precio_Compra>" +
-            //"<Id_FormaPago>" + $("#txtformap").val() + "</Id_FormaPago>" +
            
             "<Lote>" + lote + "</Lote>" +
             "<Unitario>" + unitario+ "</Unitario>" +
