@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaModelo;
@@ -27,10 +29,10 @@ namespace CapaDatos
             }
         }
 
-        public List<Forma_Pagos> ObtenerFormaPago()
+        public List<Forma_Pago> ObtenerFormaPago()
         {
-            var rptListaFormaPago = new List<Forma_Pagos>();
-            using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
+            var rptListaFormaPago = new List<Forma_Pago>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 SqlCommand cmd = new SqlCommand("USP_FormaPagoObtener", oConexion);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -42,11 +44,11 @@ namespace CapaDatos
 
                     while (dr.Read())
                     {
-                        rptListaFormaPago.Add(new Forma_Pagos()
+                        rptListaFormaPago.Add(new Forma_Pago()
                         {
-                            Id_FormaPago = Convert.ToInt32(dr["Id_FormaPago"].ToString()),
-                            Forma_Pago = dr["Forma_Pago"].ToString(),
-                            Estado = Convert.ToBoolean(dr["Estado"].ToString())
+                            IdFormaPago = Convert.ToInt32(dr["IdFormaPago"].ToString()),
+                            FormaPago = dr["FormaPago"].ToString(),
+                            Activo = Convert.ToBoolean(dr["Activo"].ToString())
                         });
                     }
                     dr.Close();
@@ -62,16 +64,16 @@ namespace CapaDatos
             }
         }
 
-        public bool RegistrarFormaPago(Forma_Pagos oFormaPago)
+        public bool RegistrarFormaPago(Forma_Pago oFormaPago)
         {
             bool respuesta = true;
-            using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 try
                 {
                     SqlCommand cmd = new SqlCommand("USP_FormaPagoRegistrar", oConexion);
-                    cmd.Parameters.AddWithValue("FormaPago", oFormaPago.Forma_Pago);
-                    cmd.Parameters.AddWithValue("Estado", oFormaPago.Estado);
+                    cmd.Parameters.AddWithValue("FormaPago", oFormaPago.FormaPago);
+                    cmd.Parameters.AddWithValue("Activo", oFormaPago.Activo);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -90,17 +92,17 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool ModificarFormaPago(Forma_Pagos oFormaPago)
+        public bool ModificarFormaPago(Forma_Pago oFormaPago)
         {
             bool respuesta = true;
-            using (SqlConnection oConexion = new SqlConnection("Server=.;Database=FarmaciaSaoriDB;User Id=sa;Password=123"))
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 try
                 {
                     SqlCommand cmd = new SqlCommand("USP_FormaPagoModificar", oConexion);
-                    cmd.Parameters.AddWithValue("IdFormaPago", oFormaPago.Id_FormaPago);
-                    cmd.Parameters.AddWithValue("FormaPago", oFormaPago.Forma_Pago);
-                    cmd.Parameters.AddWithValue("Estado", oFormaPago.Estado);
+                    cmd.Parameters.AddWithValue("IdFormaPago", oFormaPago.IdFormaPago);
+                    cmd.Parameters.AddWithValue("FormaPago", oFormaPago.FormaPago);
+                    cmd.Parameters.AddWithValue("Activo", oFormaPago.Activo);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -126,7 +128,7 @@ namespace CapaDatos
         public bool EliminarFormaPago(int IdFormaPago)
         {
             bool respuesta = true;
-            using (SqlConnection oConexion = new SqlConnection("Server =.; Database = FarmaciaSaoriDB; User Id = sa; Password = 123"))
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 try
                 {

@@ -14,7 +14,6 @@ namespace CapaModelo
         public string Correo { get; set; }
         public string NombreUsuario { get; set; }
         public string Clave { get; set; }
-        public int IdTienda { get; set; }
         public int IdRol { get; set; }
         public Rol oRol { get; set; }
         public List<Menu> oListaMenu { get; set; }

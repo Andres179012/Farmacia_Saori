@@ -1,0 +1,27 @@
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaDatos\bin\Debug\CapaDatos.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaDatos\bin\Debug\CapaDatos.pdb
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaDatos\bin\Debug\CapaModelo.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaDatos\bin\Debug\CapaModelo.pdb
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaDatos\bin\Debug\CapaModelo.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaDatos\bin\Debug\CapaModelo.pdb
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\bin\Debug\CapaModelo.dll
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\bin\Debug\CapaModelo.pdb
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete

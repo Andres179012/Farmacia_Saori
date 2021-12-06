@@ -1,0 +1,174 @@
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csprojAssemblyReference.cache
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.CoreCompileInputs.cache
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\FarmaciaSaori.dll.config
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\FarmaciaSaori.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\FarmaciaSaori.pdb
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csc.exe
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csc.exe.config
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csc.rsp
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csi.exe
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csi.exe.config
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csi.rsp
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.Managed.Core.targets
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.AppContext.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Collections.Immutable.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Console.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.Compression.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.FileSystem.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.Pipes.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Reflection.Metadata.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.AccessControl.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Claims.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Principal.Windows.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.ValueTuple.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Xml.XmlDocument.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Xml.XPath.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\vbc.exe
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\vbc.exe.config
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\vbc.rsp
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\VBCSCompiler.exe
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\VBCSCompiler.exe.config
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\Antlr3.Runtime.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\CapaDatos.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\CapaModelo.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\Microsoft.Web.Infrastructure.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\Newtonsoft.Json.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Helpers.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Mvc.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Optimization.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Razor.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.Deployment.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.Razor.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\WebGrease.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\CapaDatos.pdb
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\CapaModelo.pdb
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Helpers.xml
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Mvc.xml
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Optimization.xml
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Razor.xml
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.xml
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.Deployment.xml
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.Razor.xml
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\Newtonsoft.Json.xml
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\Antlr3.Runtime.pdb
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.Helpers.resources.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.Mvc.resources.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.Optimization.resources.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.Razor.resources.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.WebPages.resources.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.CopyComplete
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.pdb
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\FarmaciaSaori.dll.config
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\FarmaciaSaori.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\FarmaciaSaori.pdb
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csc.exe
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csc.exe.config
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csc.rsp
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csi.exe
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csi.exe.config
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\csi.rsp
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.AppContext.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Console.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.Compression.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Claims.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.ValueTuple.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\vbc.exe
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\vbc.exe.config
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\vbc.rsp
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\VBCSCompiler.exe
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\Antlr3.Runtime.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\CapaDatos.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\CapaModelo.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\Newtonsoft.Json.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Helpers.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Mvc.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Optimization.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Razor.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.Razor.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\WebGrease.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\CapaDatos.pdb
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\CapaModelo.pdb
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Helpers.xml
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Mvc.xml
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Optimization.xml
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.Razor.xml
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.xml
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\System.Web.WebPages.Razor.xml
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\Newtonsoft.Json.xml
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\Antlr3.Runtime.pdb
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.Razor.resources.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.AssemblyReference.cache
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.CoreCompileInputs.cache
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.CopyComplete
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\FarmaciaSaori\obj\Debug\FarmaciaSaori.pdb

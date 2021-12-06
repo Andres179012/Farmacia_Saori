@@ -153,7 +153,6 @@ namespace CapaDatos
                             Apellidos = dr["Apellidos"].ToString(),
                             Correo = dr["Correo"].ToString(),
                             Clave = dr["Clave"].ToString(),
-                            IdTienda = Convert.ToInt32(dr["IdTienda"].ToString()),
                             IdRol = Convert.ToInt32(dr["IdRol"].ToString()),
                             oRol = new Rol() { Descripcion = dr["DescripcionRol"].ToString() },
                             Activo = Convert.ToBoolean(dr["Activo"])

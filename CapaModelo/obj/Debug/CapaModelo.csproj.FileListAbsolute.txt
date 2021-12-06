@@ -1,0 +1,18 @@
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaModelo\bin\Debug\CapaModelo.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaModelo\bin\Debug\CapaModelo.pdb
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaModelo\obj\Debug\CapaModelo.dll
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaModelo\obj\Debug\CapaModelo.pdb
+D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\FarmaciaSaori\CapaModelo\obj\Debug\CapaModelo.csprojAssemblyReference.cache
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\Arias\Downloads\022_VENTAS_WEB_MVC\FarmaciaSaori\CapaModelo\obj\Debug\CapaModelo.pdb
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaModelo\obj\Debug\CapaModelo.pdb
