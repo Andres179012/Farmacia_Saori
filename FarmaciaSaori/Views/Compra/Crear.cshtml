@@ -50,24 +50,24 @@
                     <div class="col-sm-6">
                         <div class="card border-info">
                             <div class="card-body p-2">
-                                <h6 class="card-title mb-1 text-info">Detalle Tienda Destino</h6>
+                                <h6 class="card-title mb-1 text-info">Detalle Destino</h6>
                                 <div class="row  align-items-end">
-                                    <input id="txtIdTienda" type="hidden" value="0" />
+                                    <input id="txtIdDetalleFarmaco" type="hidden" value="0" />
                                     <div class="col-sm-4">
                                         <div class="form-group mb-0">
-                                            <label for="txtRucTienda" class="col-form-label col-form-label-sm">RUC:</label>
-                                            <input type="text" class="form-control form-control-sm model" readonly id="txtRucTienda" name="RUC">
+                                            <label for="txtNombreComercial" class="col-form-label col-form-label-sm">Nombre Comercial:</label>
+                                            <input type="text" class="form-control form-control-sm model" readonly id="txtNombreComercial" name="NombreComercial">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group mb-0">
-                                            <label for="txtNombreTienda" class="col-form-label col-form-label-sm">Nombre:</label>
-                                            <input type="text" class="form-control form-control-sm model" readonly id="txtNombreTienda" name="NombreTienda">
+                                            <label for="txtConcentracion" class="col-form-label col-form-label-sm">Concentracion:</label>
+                                            <input type="text" class="form-control form-control-sm model" readonly id="txtConcentracion" name="Concentracion">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group mb-0">
-                                            <button id="btnBuscarTienda" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarTienda()"><i class="fas fa-search"></i> Buscar</button>
+                                            <button id="btnBuscarDetalleFarmaco" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarDetalleFarmaco()"><i class="fas fa-search"></i> Buscar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@
                                     <tr>
                                         <th></th>
                                         <th>Ruc Proveedor</th>
-                                        <th>Ruc Tienda</th>
+                                        <th>Nombre Comercial</th>
                                         <th>Codigo Producto</th>
                                         <th>Nombre Producto</th>
                                         <th>Cantidad</th>
@@ -199,25 +199,24 @@
     </div>
 </div>
 
-<!-- MODAL TIENDA -->
-<div class="modal fade" id="modalTienda" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- MODAL DETALLE FARMACO -->
+<div class="modal fade" id="modalDetalleFarmaco" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
-                <h5 class="modal-title">Tiendas</h5>
+                <h5 class="modal-title">Detalle Farmaco</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="table-responsive">
-                    <table id="tbTienda" class="table table-striped table-bordered nowrap compact" style="width:100%">
+                    <table id="tbDetalleFarmaco" class="table table-striped table-bordered nowrap compact" style="width:100%">
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>RUC</th>
-                                <th>Razón Social</th>
-                                <th>Direccion</th>
+                                <th>Nombre Comercial</th>
+                                <th>Concentracion</th>
                             </tr>
                         </thead>
                         <tbody></tbody>

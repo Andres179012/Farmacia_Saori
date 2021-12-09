@@ -40,7 +40,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("usp_RegistrarCompra", oConexion);
+                    SqlCommand cmd = new SqlCommand("usp_RegistrarFCompra", oConexion);
                     cmd.Parameters.Add("Detalle", SqlDbType.Xml).Value = Detalle;
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -52,7 +52,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     respuesta = false;
                 }
@@ -94,19 +94,19 @@ namespace CapaDatos
                                                                    Ruc = dato.Element("RUC").Value,
                                                                    RazonSocial = dato.Element("RazonSocial").Value,
                                                                }).FirstOrDefault();
-                                rptDetalleCompra.oTienda = (from dato in doc.Element("DETALLE_COMPRA").Elements("DETALLE_TIENDA")
-                                                            select new Tienda()
+                                rptDetalleCompra.oDetalleFarmaco = (from dato in doc.Element("DETALLE_COMPRA").Elements("DETALLE_FARMACO")
+                                                            select new DetalleFarmaco()
                                                             {
-                                                                RUC = dato.Element("RUC").Value,
-                                                                Nombre = dato.Element("Nombre").Value,
-                                                                Direccion = dato.Element("Direccion").Value
+                                                                NombreComercial = dato.Element("NombreComercial").Value,
+                                                                Concentracion = dato.Element("Concentracion").Value,
+                                                                NumeroLote = dato.Element("NumeroLote").Value,
                                                             }).FirstOrDefault();
                                 rptDetalleCompra.oListaDetalleCompra = (from producto in doc.Element("DETALLE_COMPRA").Element("DETALLE_PRODUCTO").Elements("PRODUCTO")
                                                                         select new DetalleCompra()
                                                                         {
                                                                             Cantidad = int.Parse(producto.Element("Cantidad").Value),
-                                                                            oProducto = new Producto() { Nombre = producto.Element("NombreProducto").Value },
-                                                                            PrecioUnitarioCompra = Convert.ToDecimal(producto.Element("PrecioUnitarioCompra").Value, new CultureInfo("es-PE")),
+                                                                            oProducto = new Producto() { NombreGenerico = producto.Element("NombreProducto").Value },
+                                                                            PrecioCompra = Convert.ToDecimal(producto.Element("PrecioCompra").Value, new CultureInfo("es-PE")),
                                                                             TotalCosto = Convert.ToDecimal(producto.Element("TotalCosto").Value, new CultureInfo("es-PE"))
                                                                         }).ToList();
                             }
@@ -122,7 +122,7 @@ namespace CapaDatos
 
                     return rptDetalleCompra;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     rptDetalleCompra = null;
                     return rptDetalleCompra;
@@ -157,7 +157,7 @@ namespace CapaDatos
                             IdCompra = Convert.ToInt32(dr["IdCompra"].ToString()),
                             NumeroCompra = dr["NumeroCompra"].ToString(),
                             oProveedor = new Proveedor() { RazonSocial = dr["RazonSocial"].ToString() },
-                            oTienda = new Tienda() { Nombre = dr["Nombre"].ToString() },
+                            oDetalleFarmaco = new DetalleFarmaco() { NombreComercial = dr["NombreComercial"].ToString() },
                             FechaCompra = dr["FechaCompra"].ToString(),
                             TotalCosto = Convert.ToDecimal(dr["TotalCosto"].ToString(), new CultureInfo("es-PE"))
                         });
@@ -167,7 +167,7 @@ namespace CapaDatos
                     return rptListaCompra;
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     rptListaCompra = null;
                     return rptListaCompra;

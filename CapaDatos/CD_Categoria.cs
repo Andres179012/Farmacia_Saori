@@ -30,9 +30,9 @@ namespace CapaDatos
             }
         }
 
-        public List<Categoria> ObtenerCategoria()
+        public List<Categorias> ObtenerCategoria()
         {
-            List<Categoria> rptListaCategoria = new List<Categoria>();
+            List<Categorias> rptListaCategoria = new List<Categorias>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 SqlCommand cmd = new SqlCommand("usp_ObtenerCategorias", oConexion);
@@ -45,7 +45,7 @@ namespace CapaDatos
 
                     while (dr.Read())
                     {
-                        rptListaCategoria.Add(new Categoria()
+                        rptListaCategoria.Add(new Categorias()
                         {
                             IdCategoria = Convert.ToInt32(dr["IdCategoria"].ToString()),
                             Descripcion = dr["Descripcion"].ToString(),
@@ -57,7 +57,7 @@ namespace CapaDatos
                     return rptListaCategoria;
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     rptListaCategoria = null;
                     return rptListaCategoria;
@@ -65,7 +65,7 @@ namespace CapaDatos
             }
         }
 
-        public bool RegistrarCategoria(Categoria oCategoria)
+        public bool RegistrarCategoria(Categorias oCategoria)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
@@ -74,6 +74,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("usp_RegistrarCategoria", oConexion);
                     cmd.Parameters.AddWithValue("Descripcion", oCategoria.Descripcion);
+                    cmd.Parameters.AddWithValue("Activo", oCategoria.Activo);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -84,7 +85,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     respuesta = false;
                 }
@@ -92,7 +93,7 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool ModificarCategoria(Categoria oCategoria)
+        public bool ModificarCategoria(Categorias oCategoria)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
@@ -114,7 +115,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     respuesta = false;
                 }
@@ -144,7 +145,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     respuesta = false;
                 }

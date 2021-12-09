@@ -125,8 +125,11 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CompraController.cs" />
+    <Compile Include="Controllers\DetalleFarmacoController.cs" />
+    <Compile Include="Controllers\FormaFarmaceuticaController.cs" />
     <Compile Include="Controllers\FormaPagoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LaboratorioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PermisosController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
@@ -136,6 +139,7 @@
     <Compile Include="Controllers\TiendaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VentaController.cs" />
+    <Compile Include="Controllers\ViaAdministracionController.cs" />
     <Compile Include="Filters\VerificarSession.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2003,7 +2007,10 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\Views\Compra_Consultar.js" />
     <Content Include="Scripts\Views\Compra_Crear.js" />
+    <Content Include="Scripts\Views\DetalleFarmaco_Crear.js" />
+    <Content Include="Scripts\Views\FormaFarmaceutica_Crear.js" />
     <Content Include="Scripts\Views\FormaPago_Crear.js" />
+    <Content Include="Scripts\Views\Laboratorio_Crear.js" />
     <Content Include="Scripts\Views\Producto_Asignar.js" />
     <Content Include="Scripts\Views\Producto_Crear.js" />
     <Content Include="Scripts\Views\Home_Index.js" />
@@ -2018,6 +2025,7 @@
     <Content Include="Scripts\Views\Rol_Crear.js" />
     <Content Include="Scripts\Views\Venta_Consultar.js" />
     <Content Include="Scripts\Views\Venta_Crear.js" />
+    <Content Include="Scripts\Views\ViaAdministracion_Crear.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2059,11 +2067,14 @@
     <Content Include="Views\Venta\Documento.cshtml" />
     <Content Include="Views\Cliente\Crear.cshtml" />
     <Content Include="Views\FormaPago\Crear.cshtml" />
+    <Content Include="Views\FormaFarmaceutica\Crear.cshtml" />
+    <Content Include="Views\Laboratorio\Crear.cshtml" />
+    <Content Include="Views\ViaAdministracion\Crear.cshtml" />
+    <Content Include="Views\DetalleFarmaco\Crear.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

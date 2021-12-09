@@ -19,13 +19,13 @@ namespace FarmaciaSaori.Controllers
 
         public JsonResult Obtener()
         {
-            List<Categoria> lista = CD_Categoria.Instancia.ObtenerCategoria();
+            List<Categorias> lista = CD_Categoria.Instancia.ObtenerCategoria();
             return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
         }
 
 
         [HttpPost]
-        public JsonResult Guardar(Categoria objeto)
+        public JsonResult Guardar(Categorias objeto)
         {
             bool respuesta = false;
 

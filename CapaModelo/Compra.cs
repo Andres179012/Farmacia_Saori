@@ -14,7 +14,7 @@ namespace CapaModelo
         public string NumeroCompra { get; set; }
         public Usuario oUsuario { get; set; }
         public Proveedor oProveedor { get; set; }
-        public Tienda oTienda { get; set; }
+        public DetalleFarmaco oDetalleFarmaco { get; set; }
         public List<DetalleCompra> oListaDetalleCompra { get; set; }
         public decimal TotalCosto { get; set; }
         public string TipoComprobante { get; set; }

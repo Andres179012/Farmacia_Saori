@@ -56,7 +56,7 @@ namespace CapaDatos
                     return rptListaFormaPago;
 
                 }
-                catch
+                catch (Exception ex)
                 {
                     rptListaFormaPago = null;
                     return rptListaFormaPago;

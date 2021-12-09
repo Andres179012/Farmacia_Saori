@@ -11,11 +11,12 @@ namespace CapaModelo
         public int IdProducto { get; set; }
         public string Codigo { get; set; }
         public int ValorCodigo { get; set; }
-        public string Nombre { get; set; }
+        public string NombreGenerico { get; set; }
         public string Descripcion { get; set; }
         public int IdCategoria { get; set; }
-        public Categoria oCategoria { get; set; }
+        public Categorias oCategoria { get; set; }
         public bool Activo { get; set; }
+        public DateTime FechaRegistro { get; set; }
 
     }
 }

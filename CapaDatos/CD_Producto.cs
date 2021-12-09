@@ -50,10 +50,10 @@ namespace CapaDatos
                             IdProducto = Convert.ToInt32(dr["IdProducto"].ToString()),
                             Codigo = dr["Codigo"].ToString(),
                             ValorCodigo = Convert.ToInt32(dr["ValorCodigo"].ToString()),
-                            Nombre = dr["Nombre"].ToString(),
+                            NombreGenerico = dr["NombreGenerico"].ToString(),
                             Descripcion = dr["DescripcionProducto"].ToString(),
                             IdCategoria = Convert.ToInt32(dr["IdCategoria"].ToString()),
-                            oCategoria = new Categoria() { Descripcion = dr["DescripcionCategoria"].ToString() },
+                            oCategoria = new Categorias() { Descripcion = dr["DescripcionCategoria"].ToString() },
                             Activo = Convert.ToBoolean(dr["Activo"].ToString())
                         });
                     }
@@ -78,9 +78,10 @@ namespace CapaDatos
                 try
                 {
                     SqlCommand cmd = new SqlCommand("usp_RegistrarProducto", oConexion);
-                    cmd.Parameters.AddWithValue("Nombre", oProducto.Nombre);
+                    cmd.Parameters.AddWithValue("NombreGenerico", oProducto.NombreGenerico);
                     cmd.Parameters.AddWithValue("Descripcion", oProducto.Descripcion);
                     cmd.Parameters.AddWithValue("IdCategoria", oProducto.IdCategoria);
+                    cmd.Parameters.AddWithValue("Activo", oProducto.Activo);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -108,7 +109,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("usp_ModificarProducto", oConexion);
                     cmd.Parameters.AddWithValue("IdProducto", oProducto.IdProducto);
-                    cmd.Parameters.AddWithValue("Nombre", oProducto.Nombre);
+                    cmd.Parameters.AddWithValue("NombreGenerico", oProducto.NombreGenerico);
                     cmd.Parameters.AddWithValue("Descripcion", oProducto.Descripcion);
                     cmd.Parameters.AddWithValue("IdCategoria", oProducto.IdCategoria);
                     cmd.Parameters.AddWithValue("Activo", oProducto.Activo);

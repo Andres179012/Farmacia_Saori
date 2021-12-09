@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" name="Home" href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> Inicio</a>
+                    <a class="nav-link" name="Home" href="@Url.Action("Index", "Home")"><i class="fas fa-envelope"></i> Inicio</a>
                 </li>
                 @Html.ActionLinkAllow()
                 <li class="nav-item">
@@ -61,7 +61,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Content/PluginsJS")
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
         $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
 
@@ -112,11 +112,26 @@
         $.MisUrls.urls({ _GuardarCompra: '@Url.Action("Guardar", "Compra")' });
         $.MisUrls.urls({ _DocumentoCompra: '@Url.Action("Documento", "Compra")' });
 
+        //CONTROLADOR FORMA PAGO
+        $.MisUrls.urls({ _ObtenerFormaPago: '@Url.Action("Obtener", "FormaPago")' });
+        $.MisUrls.urls({ _GuardarFormaPago: '@Url.Action("Guardar", "FormaPago")' });
+        $.MisUrls.urls({ _EliminarFormaPago: '@Url.Action("Eliminar", "FormaPago")' });
+
+        //CONTROLADOR FORMA FARMACEUTICA
+        $.MisUrls.urls({ _ObtenerFormaFarmaceutica: '@Url.Action("Obtener", "FormaFarmaceutica")' });
+        $.MisUrls.urls({ _GuardarFormaFarmaceutica: '@Url.Action("Guardar", "FormaFarmaceutica")' });
+        $.MisUrls.urls({ _EliminarFormaFarmaceutica: '@Url.Action("Eliminar", "FormaFarmaceutica")' });
+
+    //CONTROLADOR LABORATORIO
+        $.MisUrls.urls({ _ObtenerLaboratorio: '@Url.Action("Obtener", "Laboratorio")' });
+        $.MisUrls.urls({ _GuardarLaboratorio: '@Url.Action("Guardar", "Laboratorio")' });
+        $.MisUrls.urls({ _EliminarLaboratorio: '@Url.Action("Eliminar", "Laboratorio")' });
+
 
         //CONTROLADOR VENTA
         $.MisUrls.urls({ _ObtenerUsuario: '@Url.Action("ObtenerUsuario", "Venta")' });
-        $.MisUrls.urls({ _ObtenerProductoStockPorTienda: '@Url.Action("ObtenerProductoPorTienda", "Venta")' });
-        $.MisUrls.urls({ _ControlarStockProducto: '@Url.Action("ControlarStock", "Venta")' });
+        //$.MisUrls.urls({ _ObtenerProductoStockPorTienda: '@Url.Action("ObtenerProductoPorTienda", "Venta")' });
+        //$.MisUrls.urls({ _ControlarStockProducto: '@Url.Action("ControlarStock", "Venta")' });
         $.MisUrls.urls({ _RegistrarVenta: '@Url.Action("Guardar", "Venta")' });
         $.MisUrls.urls({ _DocumentoVenta: '@Url.Action("Documento", "Venta")' });
         $.MisUrls.urls({ _ObtenerVentas: '@Url.Action("Obtener", "Venta")' });
@@ -131,13 +146,22 @@
         $.MisUrls.urls({ _GuardarCliente: '@Url.Action("Guardar", "Cliente")' });
         $.MisUrls.urls({ _EliminarCliente: '@Url.Action("Eliminar", "Cliente")' });
 
+    //CONTROLADOR VIA ADMINISTRACION
+        $.MisUrls.urls({ _ObtenerViaAdministracion: '@Url.Action("Obtener", "ViaAdministracion")' });
+        $.MisUrls.urls({ _GuardarViaAdministracion: '@Url.Action("Guardar", "ViaAdministracion")' });
+        $.MisUrls.urls({ _EliminarViaAdministracion: '@Url.Action("Eliminar", "ViaAdministracion")' });
+
+    //CONTROLADOR DETALLE FARMACO       
+        $.MisUrls.urls({ _ObtenerDetalleFarmaco: '@Url.Action("Obtener", "DetalleFarmaco")' });
+        $.MisUrls.urls({ _GuardarDetalleFarmaco: '@Url.Action("Guardar", "DetalleFarmaco")' });
+        $.MisUrls.urls({ _EliminarDetalleFarmaco: '@Url.Action("Eliminar", "DetalleFarmaco")' });
 
         //lenguaje español datatable
         $.MisUrls.urls({ Url_datatable_spanish: '@Url.Content("~/content/plugins/datatables/js/datatable_spanish.json")' });
 
 
 
-    </script>
+</script>
     <script>
 
         function activarMenu(menuactivo) {

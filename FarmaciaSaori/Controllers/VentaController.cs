@@ -79,14 +79,14 @@ namespace FarmaciaSaori.Controllers
             return Json(rptUsuario, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult ObtenerProductoPorTienda(int IdTienda)
+        public JsonResult ObtenerDetalleFarmaco(int IdDetalleFarmaco)
         {
 
-            List<ProductoTienda> oListaProductoTienda = CD_ProductoTienda.Instancia.ObtenerProductoTienda();
-            oListaProductoTienda = oListaProductoTienda.Where(x => x.oTienda.IdTienda == IdTienda && x.Stock > 0).ToList();
+            List<DetalleFarmaco> oListaDetalle = CD_DetalleFarmaco.Instancia.ObtenerDetalleFarmaco();
+            return Json(new { data = oListaDetalle }, JsonRequestBehavior.AllowGet);
 
 
-            return Json(new { data = oListaProductoTienda }, JsonRequestBehavior.AllowGet);
+            
         }
 
         [HttpPost]

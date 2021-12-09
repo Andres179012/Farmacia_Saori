@@ -53,7 +53,7 @@ namespace CapaDatos
                             {
                                 IdProducto = Convert.ToInt32(dr["IdProducto"].ToString()),
                                 Codigo = dr["CodigoProducto"].ToString(),
-                                Nombre = dr["NombreProducto"].ToString(),
+                                NombreGenerico = dr["NombreProducto"].ToString(),
                                 Descripcion = dr["DescripcionProducto"].ToString(),
                             },
                             oTienda = new Tienda()

@@ -74,6 +74,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("usp_RegistrarRol", oConexion);
                     cmd.Parameters.AddWithValue("Descripcion", oRol.Descripcion);
+                    cmd.Parameters.AddWithValue("Activo", oRol.Activo);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 

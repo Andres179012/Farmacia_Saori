@@ -25,7 +25,7 @@ namespace FarmaciaSaori.Controllers
         public JsonResult Obtener()
         {
             List<Forma_Pago> lista = CD_FormaPago.Instancia.ObtenerFormaPago();
-            return Json(new { data = lista });
+            return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult Guardar(Forma_Pago objeto)
@@ -48,7 +48,7 @@ namespace FarmaciaSaori.Controllers
         public JsonResult Eliminar(int id = 0)
         {
             bool respuesta = CD_FormaPago.Instancia.EliminarFormaPago(id);
-            return Json(new { resultado = respuesta });
+            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
         }
 
     }

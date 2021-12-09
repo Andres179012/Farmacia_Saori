@@ -17,15 +17,15 @@ $(document).ready(function () {
 
     tabladata = $('#tbdata').DataTable({
         "ajax": {
-            "url": "/FormaPago/Obtener",
+            "url": $.MisUrls.url._ObtenerFormaPago,
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
-            { "data": "idFormaPago", "width": "10%" },
-            { "data": "formaPago", "width": "20%" },
+            { "data": "IdFormaPago", "width": "10%" },
+            { "data": "FormaPago", "width": "20%" },
             {
-                "data": "activo", "render": function (data) {
+                "data": "Activo", "render": function (data) {
                     if (data) {
                         return '<span class="badge bg-light-success text-success w-100">Activo</span>'
                     } else {
@@ -34,9 +34,9 @@ $(document).ready(function () {
                 }, "width": "10%",
             },
             {
-                "data": "idFormaPago", "render": function (data, type, row, meta) {
-                    return "<button class='text-primary bg - light - primary border - 0' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='bx bxs-edit'></i></button>" +
-                        "<button class='ms-4 text-danger bg-light-danger border-0' type='button' onclick='eliminar(" + data + ")'><i class='bx bxs-trash'></i></button>"
+                "data": "IdFormaPago", "render": function (data, type, row, meta) {
+                    return "<button class='btn btn-primary btn-sm' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='fas fa-pen'></i></button>" +
+                        "<button class='btn btn-danger btn-sm ml-2' type='button' onclick='eliminar(" + data + ")'><i class='fa fa-trash'></i></button>"
                 },
                 "orderable": false,
                 "searchable": false,
@@ -235,9 +235,9 @@ function abrirPopUpForm(json) {
 
     if (json != null) {
 
-        $("#txtid").val(json.idFormaPago);
-        $("#txtFormaPago").val(json.formaPago);
-        $("#cboEstado").val(json.activo == true ? 1 : 0);
+        $("#txtid").val(json.IdFormaPago);
+        $("#txtFormaPago").val(json.FormaPago);
+        $("#cboEstado").val(json.Activo == true ? 1 : 0);
 
     } else {
         $("#txtFormaPago").val("");
@@ -253,14 +253,14 @@ function Guardar() {
 
         var request = {
             objeto: {
-                idFormaPago: parseInt($("#txtid").val()),
-                formaPago: $("#txtFormaPago").val(),
-                activo: ($("#cboEstado").val() == "1" ? true : false)
+                IdFormaPago: parseInt($("#txtid").val()),
+                FormaPago: $("#txtFormaPago").val(),
+                Activo: ($("#cboEstado").val() == "1" ? true : false)
             }
         }
 
         jQuery.ajax({
-            url: "/FormaPago/Guardar",
+            url: $.MisUrls.url._GuardarFormaPago,
             type: "POST",
             data: request,
             success: function (data) {
@@ -282,39 +282,37 @@ function Guardar() {
         });
 
     }
-
 }
 
 
 function eliminar($id) {
 
-    Swal.fire({
-        title: 'Está seguro de eliminar el registro?',
-        text: "Esta acción no podrá revertirse!",
-        icon: 'warning',
+    swal({
+        title: "Mensaje",
+        text: "¿Desea eliminar el cliente seleccionado?",
+        type: "warning",
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, Eliminarlo',
-        cancelButtonText: 'Cancelar eliminación'
-    }).then((result) => {
-        if (result.isConfirmed) {
+
+        confirmButtonText: "Si",
+        confirmButtonColor: "#DD6B55",
+
+        cancelButtonText: "No",
+
+        closeOnConfirm: true
+    },
+
+        function () {
             jQuery.ajax({
-                url: "/FormaPago/Eliminar" + "?id=" + $id,
+                url: $.MisUrls.url._EliminarFormaPago + "?id=" + $id,
                 type: "GET",
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
 
                     if (data.resultado) {
-                        Swal.fire(
-                            'Eliminado!',
-                            'Tu archivo ha sido eliminado.',
-                            'success'
-                        )
                         tabladata.ajax.reload();
                     } else {
-                        Swal.fire("Mensaje", "No se pudo eliminar la categoria", "warning")
+                        swal("Mensaje", "No se pudo eliminar el cliente", "warning")
                     }
                 },
                 error: function (error) {
@@ -324,8 +322,5 @@ function eliminar($id) {
 
                 },
             });
-
-        }
-    },
-    );
+        });
 }

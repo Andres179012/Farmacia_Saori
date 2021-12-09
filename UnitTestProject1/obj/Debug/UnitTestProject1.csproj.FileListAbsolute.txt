@@ -15,19 +15,3 @@ D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\VentasWeb\UnitTest
 D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\VentasWeb\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CopyComplete
 D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\VentasWeb\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 D:\WorkSpaceAD\YOUTUBE\022_FUNCIONALIDAD SISTEMA DE VENTA MVC\VentasWeb\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\UnitTestProject1.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.AssemblyReference.cache
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\obj\Debug\UnitTestProject1.dll
-C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

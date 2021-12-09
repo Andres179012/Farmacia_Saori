@@ -90,6 +90,9 @@ namespace CapaDatos
                                                        TipoDocumento = dato.Element("TipoDocumento").Value,
                                                        Codigo = dato.Element("Codigo").Value,
                                                        TotalCosto = float.Parse(dato.Element("TotalCosto").Value, NuevaCultura),
+                                                       SubTotal = float.Parse(dato.Element("SubTotal").Value, NuevaCultura),
+                                                       Descuento = int.Parse(dato.Element("Descuento").Value, NuevaCultura),
+                                                       Iva = int.Parse(dato.Element("Iva").Value, NuevaCultura),
                                                        ImporteRecibido = float.Parse(dato.Element("ImporteRecibido").Value, NuevaCultura),
                                                        ImporteCambio = float.Parse(dato.Element("ImporteCambio").Value, NuevaCultura),
                                                        FechaRegistro = dato.Element("FechaRegistro").Value
@@ -100,12 +103,12 @@ namespace CapaDatos
                                                                 Nombres = dato.Element("Nombres").Value,
                                                                 Apellidos = dato.Element("Apellidos").Value,
                                                             }).FirstOrDefault();
-                                rptDetalleVenta.oTienda = (from dato in doc.Element("DETALLE_VENTA").Elements("DETALLE_TIENDA")
-                                                           select new Tienda()
+                                rptDetalleVenta.oDetalleFarmaco = (from dato in doc.Element("DETALLE_VENTA").Elements("DETALLE_FARMACO")
+                                                           select new DetalleFarmaco()
                                                            {
-                                                               RUC = dato.Element("RUC").Value,
-                                                               Nombre = dato.Element("Nombre").Value,
-                                                               Direccion = dato.Element("Direccion").Value
+                                                               NombreComercial = dato.Element("NombreComercial").Value,
+                                                               Concentracion = dato.Element("Concentracion").Value,
+                                                               NumeroLote = dato.Element("NumeroLote").Value
                                                            }).FirstOrDefault();
                                 rptDetalleVenta.oCliente = (from dato in doc.Element("DETALLE_VENTA").Elements("DETALLE_CLIENTE")
                                                             select new Cliente()

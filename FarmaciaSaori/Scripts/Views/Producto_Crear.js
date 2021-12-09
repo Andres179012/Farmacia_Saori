@@ -7,11 +7,11 @@ $(document).ready(function () {
     ////validamos el formulario
     $("#form").validate({
         rules: {
-            Nombre: "required",
+            NombreGenerico: "required",
             Descripcion: "required"
         },
         messages: {
-            Nombre: "(*)",
+            NombreGenerico: "(*)",
             Descripcion: "(*)"
 
         },
@@ -55,7 +55,7 @@ $(document).ready(function () {
         },
         "columns": [
             { "data": "Codigo" },
-            { "data": "Nombre" },
+            { "data": "NombreGenerico" },
             { "data": "Descripcion" },
             {
                 "data": "oCategoria", render: function (data) {
@@ -101,7 +101,7 @@ function abrirPopUpForm(json) {
         $("#txtid").val(json.IdProducto);
         
         $("#txtCodigo").val(json.Codigo);
-        $("#txtNombre").val(json.Nombre);
+        $("#txtNombre").val(json.NombreGenerico);
         $("#txtDescripcion").val(json.Descripcion);
         $("#cboCategoria").val(json.IdCategoria);
         $("#cboEstado").val(json.Activo == true ? 1 : 0);
@@ -131,7 +131,7 @@ function Guardar() {
         var request = {
             objeto: {
                 IdProducto: parseInt($("#txtid").val()),
-                Nombre: $("#txtNombre").val(),
+                NombreGenerico: $("#txtNombre").val(),
                 Descripcion: $("#txtDescripcion").val(),
                 IdCategoria: $("#cboCategoria").val(),
                 Activo: ($("#cboEstado").val() == "1" ? true : false)
@@ -170,9 +170,10 @@ function Guardar() {
 function eliminar($id) {
 
 
+
     swal({
         title: "Mensaje",
-        text: "¿Desea eliminar el producto seleccionado?",
+        text: "¿Desea eliminar el cliente seleccionado?",
         type: "warning",
         showCancelButton: true,
 
@@ -195,7 +196,7 @@ function eliminar($id) {
                     if (data.resultado) {
                         tabladata.ajax.reload();
                     } else {
-                        swal("Mensaje", "No se pudo eliminar el producto", "warning")
+                        swal("Mensaje", "No se pudo eliminar el cliente", "warning")
                     }
                 },
                 error: function (error) {

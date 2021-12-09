@@ -9,18 +9,18 @@ $(document).ready(function () {
     $("#txtfechaventa").val(ObtenerFecha());
 
 
-    //OBTENER PROVEEDORES
+    //OBTENER USUARIO
     jQuery.ajax({
         url: $.MisUrls.url._ObtenerUsuario,
         type: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            //TIENDA
-            $("#txtIdTienda").val(data.oTienda.IdTienda);
-            $("#lbltiendanombre").text(data.oTienda.Nombre);
-            $("#lbltiendaruc").text(data.oTienda.RUC);
-            $("#lbltiendadireccion").text(data.oTienda.Direccion);
+            ////Detalle Farmaco
+            //$("#txtIdTienda").val(data.oTienda.IdTienda);
+            //$("#lbltiendanombre").text(data.oTienda.Nombre);
+            //$("#lbltiendaruc").text(data.oTienda.RUC);
+            //$("#lbltiendadireccion").text(data.oTienda.Direccion);
 
             //USUARIO
             $("#txtIdUsuario").val(data.IdUsuario);
@@ -40,13 +40,13 @@ $(document).ready(function () {
     //OBTENER PRODUCTOS
     tablaproducto = $('#tbProducto').DataTable({
         "ajax": {
-            "url": $.MisUrls.url._ObtenerProductoStockPorTienda + "?IdTienda=0",
+            "url": $.MisUrls.url._ObtenerDetalleFarmaco + "?IdDetalleFarmaco=0",
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
             {
-                "data": "IdProductoTienda", "render": function (data, type, row, meta) {
+                "data": "IdDetalleFarmaco", "render": function (data, type, row, meta) {
                     return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='productoSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
                 },
                 "orderable": false,
@@ -60,12 +60,7 @@ $(document).ready(function () {
             },
             {
                 "data": "oProducto", render: function (data) {
-                    return data.Nombre
-                }
-            },
-            {
-                "data": "oProducto", render: function (data) {
-                    return data.Descripcion
+                    return data.NombreGenerico
                 }
             },
             { "data": "Stock" }
@@ -142,7 +137,7 @@ $("#txtmontopago").inputFilter(function (value) {
 $('#btnBuscarProducto').on('click', function () {
 
   
-    tablaproducto.ajax.url($.MisUrls.url._ObtenerProductoStockPorTienda + "?IdTienda=" + parseInt($("#txtIdTienda").val()) ).load();
+    tablaproducto.ajax.url($.MisUrls.url._ObtenerDetalleFarmaco + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalleFarmaco").val()) ).load();
 
     $('#modalProducto').modal('show');
 })
@@ -157,10 +152,9 @@ $('#btnBuscarCliente').on('click', function () {
 function productoSelect(json) {
     $("#txtIdProducto").val(json.oProducto.IdProducto);
     $("#txtproductocodigo").val(json.oProducto.Codigo);
-    $("#txtproductonombre").val(json.oProducto.Nombre);
-    $("#txtproductodescripcion").val(json.oProducto.Descripcion);
+    $("#txtproductonombre").val(json.oProducto.NombreComercial);
     $("#txtproductostock").val(json.Stock);
-    $("#txtproductoprecio").val(json.PrecioUnidadVenta);
+    $("#txtproductoprecio").val(json.PrecioVenta);
     $("#txtproductocantidad").val("0");
     $('#modalProducto').modal('hide');
 }

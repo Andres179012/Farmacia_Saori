@@ -12,6 +12,9 @@ namespace CapaModelo
         public string TipoDocumento { get; set; }
         public string Codigo { get; set; }
         public float TotalCosto { get; set; }
+        public float SubTotal { get; set; }
+        public int Descuento { get; set; }
+        public int Iva { get; set; }
         public string TextoTotalCosto { get; set; }
         public float ImporteRecibido { get; set; }
         public string TextoImporteRecibido { get; set; }
@@ -20,7 +23,7 @@ namespace CapaModelo
         public string FechaRegistro { get; set; }
         public DateTime VFechaRegistro { get; set; }
         public Usuario oUsuario { get; set; }
-        public Tienda oTienda { get; set; }
+        public DetalleFarmaco oDetalleFarmaco { get; set; }
         public Cliente oCliente { get; set; }
         public List<DetalleVenta> oListaDetalleVenta { get; set; }
 

@@ -85,6 +85,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Nombre", oCliente.Nombre);
                     cmd.Parameters.AddWithValue("Direccion", oCliente.Direccion);
                     cmd.Parameters.AddWithValue("Telefono", oCliente.Telefono);
+                    cmd.Parameters.AddWithValue("Activo", oCliente.Activo);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
