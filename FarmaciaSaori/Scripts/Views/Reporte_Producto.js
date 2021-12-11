@@ -3,9 +3,9 @@
 $(document).ready(function () {
     activarMenu("Reportes");
 
-    //OBTENER TIENDAS
+    //OBTENER DETALLE
     jQuery.ajax({
-        url: $.MisUrls.url._ObtenerTiendas,
+        url: $.MisUrls.url._ObtenerDetalleFarmaco,
         type: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
@@ -19,7 +19,7 @@ $(document).ready(function () {
                 $.each(data.data, function (i, item) {
 
                     if (item.Activo == true) {
-                        $("<option>").attr({ "value": item.IdTienda }).text(item.Nombre).appendTo("#cboTienda");
+                        $("<option>").attr({ "value": item.IdDetalleFarmaco }).text(item.NombreComercial).appendTo("#cboTienda");
                     }
                 })
         },
@@ -51,13 +51,13 @@ $('#btnBuscar').on('click', function () {
                 $.each(data, function (i, row) {
 
                     $("<tr>").append(
-                        $("<td>").text(row["RucTienda"]),
-                        $("<td>").text(row["NombreTienda"]),
-                        $("<td>").text(row["DireccionTienda"]),
+                        $("<td>").text(row["Concentracion"]),
+                        $("<td>").text(row["NombreComercial"]),
+                        $("<td>").text(row["NumeroLote"]),
                         $("<td>").text(row["CodigoProducto"]),
                         $("<td>").text(row["NombreProducto"]),
                         $("<td>").text(row["DescripcionProducto"]),
-                        $("<td>").text(row["StockenTienda"]),
+                        $("<td>").text(row["Stock"]),
                         $("<td>").text(row["PrecioCompra"]),
                         $("<td>").text(row["PrecioVenta"])
 

@@ -9,18 +9,18 @@ $(document).ready(function () {
     $("#txtfechaventa").val(ObtenerFecha());
 
 
-    //OBTENER USUARIO
+    ////OBTENER PROVEEDORES
     jQuery.ajax({
         url: $.MisUrls.url._ObtenerUsuario,
         type: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            ////Detalle Farmaco
-            //$("#txtIdTienda").val(data.oTienda.IdTienda);
-            //$("#lbltiendanombre").text(data.oTienda.Nombre);
-            //$("#lbltiendaruc").text(data.oTienda.RUC);
-            //$("#lbltiendadireccion").text(data.oTienda.Direccion);
+            //DETALLE
+            $("#txtIdDetalle").val(data.oDetalleFarmaco.IdDetalleFarmaco);
+            $("#lbltiendanombre").text(data.oDetalleFarmaco.NombreComercial);
+            $("#lbltiendaruc").text(data.oDetalleFarmaco.Concentracion);
+            $("#lbltiendadireccion").text(data.oDetalleFarmaco.NumeroLote);
 
             //USUARIO
             $("#txtIdUsuario").val(data.IdUsuario);
@@ -40,13 +40,13 @@ $(document).ready(function () {
     //OBTENER PRODUCTOS
     tablaproducto = $('#tbProducto').DataTable({
         "ajax": {
-            "url": $.MisUrls.url._ObtenerDetalleFarmaco + "?IdDetalleFarmaco=0",
+            "url": $.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=0",
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
             {
-                "data": "IdDetalleFarmaco", "render": function (data, type, row, meta) {
+                "data": "IdProductoDetalle", "render": function (data, type, row, meta) {
                     return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='productoSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
                 },
                 "orderable": false,
@@ -61,6 +61,11 @@ $(document).ready(function () {
             {
                 "data": "oProducto", render: function (data) {
                     return data.NombreGenerico
+                }
+            },
+            {
+                "data": "oProducto", render: function (data) {
+                    return data.Descripcion
                 }
             },
             { "data": "Stock" }
@@ -136,8 +141,8 @@ $("#txtmontopago").inputFilter(function (value) {
 
 $('#btnBuscarProducto').on('click', function () {
 
-  
-    tablaproducto.ajax.url($.MisUrls.url._ObtenerDetalleFarmaco + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalleFarmaco").val()) ).load();
+
+    tablaproducto.ajax.url($.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalle").val())).load();
 
     $('#modalProducto').modal('show');
 })
@@ -152,7 +157,8 @@ $('#btnBuscarCliente').on('click', function () {
 function productoSelect(json) {
     $("#txtIdProducto").val(json.oProducto.IdProducto);
     $("#txtproductocodigo").val(json.oProducto.Codigo);
-    $("#txtproductonombre").val(json.oProducto.NombreComercial);
+    $("#txtproductonombre").val(json.oProducto.NombreGenerico);
+    $("#txtproductodescripcion").val(json.oProducto.Descripcion);
     $("#txtproductostock").val(json.Stock);
     $("#txtproductoprecio").val(json.PrecioVenta);
     $("#txtproductocantidad").val("0");
@@ -174,12 +180,12 @@ $("#txtproductocodigo").on('keypress', function (e) {
 
     if (e.which == 13) {
 
-        var request = { IdTienda: parseInt($("#txtIdTienda").val()) }
+        var request = { IdDetalleFarmaco: parseInt($("#txtIdDetalle").val()) }
 
 
         //OBTENER PROVEEDORES
         jQuery.ajax({
-            url: $.MisUrls.url._ObtenerProductoStockPorTienda + "?IdTienda=" + parseInt($("#txtIdTienda").val()),
+            url: $.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalle").val()),
             type: "GET",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
@@ -192,7 +198,7 @@ $("#txtproductocodigo").on('keypress', function (e) {
 
                             $("#txtIdProducto").val(item.oProducto.IdProducto);
                             $("#txtproductocodigo").val(item.oProducto.Codigo);
-                            $("#txtproductonombre").val(item.oProducto.Nombre);
+                            $("#txtproductonombre").val(item.oProducto.NombreGenerico);
                             $("#txtproductodescripcion").val(item.oProducto.Descripcion);
                             $("#txtproductostock").val(item.Stock);
                             $("#txtproductoprecio").val(item.PrecioUnidadVenta);
@@ -255,7 +261,7 @@ $('#btnAgregar').on('click', function () {
 
     if (!existe_codigo) {
 
-        controlarStock(parseInt($("#txtIdProducto").val()), parseInt($("#txtIdTienda").val()), parseInt($("#txtproductocantidad").val()), true);
+        controlarStock(parseInt($("#txtIdProducto").val()), parseInt($("#txtIdDetalle").val()), parseInt($("#txtproductocantidad").val()), true);
 
         var importetotal = parseFloat($("#txtproductoprecio").val()) * parseFloat($("#txtproductocantidad").val());
         $("<tr>").append(
@@ -346,7 +352,7 @@ $('#btnTerminarGuardarVenta').on('click', function () {
 
 
     VENTA = "<VENTA>" +
-        "<IdTienda>" + $("#txtIdTienda").val() + "</IdTienda>" +
+        "<IdDetalleFarmaco>" + $("#txtIdDetalle").val() + "</IdDetalleFarmaco>" +
         "<IdUsuario>" + $("#txtIdUsuario").val() + "</IdUsuario>" +
         "<IdCliente>0</IdCliente>" +
         "<TipoDocumento>" + $("#cboventatipodocumento").val() + "</TipoDocumento>" +
@@ -413,7 +419,7 @@ $('#btnTerminarGuardarVenta').on('click', function () {
 
                 $("#tbVenta tbody").html("");
 
-           
+
                 var url = $.MisUrls.url._DocumentoVenta + "?IdVenta=" + data.valor;
                 window.open(url);
 
@@ -431,7 +437,7 @@ $('#btnTerminarGuardarVenta').on('click', function () {
         }
     });
 
-   
+
 
 })
 
@@ -486,7 +492,7 @@ function controlarStock($idproducto, $idtienda, $cantidad, $restar) {
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-           
+
         },
         error: function (error) {
             console.log(error)
@@ -495,7 +501,7 @@ function controlarStock($idproducto, $idtienda, $cantidad, $restar) {
         },
     });
 
-  
+
 }
 
 

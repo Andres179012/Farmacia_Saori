@@ -8,13 +8,13 @@ namespace CapaModelo
 {
     public class ReporteProducto
     {
-        public string RucTienda { get; set; }
-        public string NombreTienda { get; set; }
-        public string DireccionTienda { get; set; }
+        public string Concentracion { get; set; }
+        public string NombreComercial { get; set; }
+        public string NumeroLote { get; set; }
         public string CodigoProducto { get; set; }
         public string NombreProducto { get; set; }
         public string DescripcionProducto { get; set; }
-        public string StockenTienda { get; set; }
+        public string Stock { get; set; }
         public string PrecioCompra { get; set; }
         public string PrecioVenta { get; set; }
     }

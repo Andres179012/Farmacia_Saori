@@ -25,22 +25,21 @@ $(document).ready(function () {
 
     tablatienda = $('#tbTienda').DataTable({
         "ajax": {
-            "url": $.MisUrls.url._ObtenerTiendas,
+            "url": $.MisUrls.url._ObtenerDetalleFarmaco,
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
             {
-                "data": "IdTienda", "render": function (data, type, row, meta) {
-                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='tiendaSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>" 
+                "data": "IdDetalleFarmaco", "render": function (data, type, row, meta) {
+                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='tiendaSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
                 },
                 "orderable": false,
                 "searchable": false,
                 "width": "90px"
             },
-            { "data": "RUC" },
-            { "data": "Nombre" },
-            { "data": "Direccion" }
+            { "data": "NombreComercial" },
+            { "data": "Concentracion" }
 
         ],
         "language": {
@@ -65,7 +64,7 @@ $(document).ready(function () {
                 "width": "90px"
             },
             { "data": "Codigo" },
-            { "data": "Nombre" },
+            { "data": "NombreGenerico" },
             { "data": "Descripcion" },
             {
                 "data": "oCategoria", render: function (data) {
@@ -88,14 +87,14 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
-            { "data": "oTienda", render: function (data) { return data.Nombre   } },
-            { "data": "oTienda", render: function (data) { return data.RUC   } },
-            { "data": "oProducto", render: function (data) { return data.Codigo   } },
-            { "data": "oProducto", render: function (data) { return data.Nombre   } },
+            { "data": "oDetalleFarmaco", render: function (data) { return data.NombreComercial } },
+            { "data": "oDetalleFarmaco", render: function (data) { return data.Concentracion } },
+            { "data": "oProducto", render: function (data) { return data.Codigo } },
+            { "data": "oProducto", render: function (data) { return data.NombreGenerico } },
             { "data": "Stock" },
             {
-                "data": "IdProductoTienda", "render": function (data, type, row, meta) {
-                    return  "<button class='btn btn-danger btn-sm ml-2' type='button' onclick='eliminar(" + data + ")'><i class='fa fa-trash'></i></button>"
+                "data": "IdProductoDetalle", "render": function (data, type, row, meta) {
+                    return "<button class='btn btn-danger btn-sm ml-2' type='button' onclick='eliminar(" + data + ")'><i class='fa fa-trash'></i></button>"
                 },
                 "orderable": false,
                 "searchable": false,
@@ -117,16 +116,15 @@ function buscarTienda() {
     $('#modalTienda').modal('show');
 }
 
-function buscarProducto(){
+function buscarProducto() {
     tablaproducto.ajax.reload();
     $('#modalProducto').modal('show');
 }
 
 function tiendaSelect(json) {
-    $("#txtIdTienda").val(json.IdTienda);
-    $("#txtRuc").val(json.RUC);
-    $("#txtRazonSocial").val(json.Nombre);
-    $("#txtDireccion").val(json.Direccion);
+    $("#txtIdDetalleFarmaco").val(json.IdDetalleFarmaco);
+    $("#txtNombreComercial").val(json.NombreComercial);
+    $("#txtConcentracion").val(json.Concentracion);
 
     $('#modalTienda').modal('hide');
 }
@@ -134,7 +132,7 @@ function tiendaSelect(json) {
 function productoSelect(json) {
     $("#txtIdProducto").val(json.IdProducto);
     $("#txtCodigo").val(json.Codigo);
-    $("#txtNombre").val(json.Nombre);
+    $("#txtNombre").val(json.NombreGenerico);
     $("#txtDescripcion").val(json.Descripcion);
 
     $('#modalProducto').modal('hide');
@@ -143,7 +141,7 @@ function productoSelect(json) {
 $("#txtCodigo").on('keypress', function (e) {
 
     if (e.which == 13) {
-        
+
         //OBTENER PRODUCTOS
         jQuery.ajax({
             url: $.MisUrls.url._ObtenerProductos,
@@ -159,7 +157,7 @@ $("#txtCodigo").on('keypress', function (e) {
 
                             $("#txtIdProducto").val(item.IdProducto);
                             $("#txtCodigo").val(item.Codigo);
-                            $("#txtNombre").val(item.Nombre);
+                            $("#txtNombre").val(item.NombreGenerico);
                             $("#txtDescripcion").val(item.Descripcion);
 
                             encontrado = true;
@@ -192,7 +190,7 @@ function asignarProducto() {
 
     var camposvacios = false;
 
-    if ($("#txtIdTienda").val() == "0" || $("#txtIdProducto").val() == "0")
+    if ($("#txtIdDetalleFarmaco").val() == "0" || $("#txtIdProducto").val() == "0")
         camposvacios = true;
 
     if (!camposvacios) {
@@ -200,7 +198,7 @@ function asignarProducto() {
         var request = {
             objeto: {
                 oProducto: { IdProducto: parseInt($("#txtIdProducto").val()) },
-                oTienda: { IdTienda: parseInt($("#txtIdTienda").val()) },
+                oDetalleFarmaco: { IdDetalleFarmaco: parseInt($("#txtIdDetalleFarmaco").val()) },
             }
         }
 

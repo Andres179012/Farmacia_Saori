@@ -107,9 +107,9 @@
                                 </tr>
                                 <tr>
                                     <td width="15">Ruc:</td>
-                                    <td style="border-bottom: 1px solid black;"><center><span>@Html.DisplayTextFor(model => model.oTienda.RUC)</span></center></td>
+                                    <td style="border-bottom: 1px solid black;"><center><span>@Html.DisplayTextFor(model => model.oDetalleFarmaco.NombreComercial)</span></center></td>
                                     <td width="110">Nombre Tienda:</td>
-                                    <td style="border-bottom: 1px solid black;"><center><span id="nombretienda">@Html.DisplayTextFor(model => model.oTienda.Nombre)</span></center></td>
+                                    <td style="border-bottom: 1px solid black;"><center><span id="nombretienda">@Html.DisplayTextFor(model => model.oDetalleFarmaco.Concentracion)</span></center></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -138,8 +138,8 @@
 
                                     <tr>
                                         <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.oProducto.Nombre)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.PrecioUnitarioCompra)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.oProducto.NombreGenerico)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.PrecioCompra)</td>
                                         <td>@Html.DisplayFor(modelItem => item.TotalCosto)</td>
                                     </tr>
                                 }

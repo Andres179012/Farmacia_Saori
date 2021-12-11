@@ -28,7 +28,7 @@ $(document).ready(function () {
     $("#txtFechaFin").datepicker();
     $("#txtFechaInicio").val(ObtenerFecha());
     $("#txtFechaFin").val(ObtenerFecha());
-  
+
 
     //OBTENER PROVEEDORES
     jQuery.ajax({
@@ -109,8 +109,8 @@ $(document).ready(function () {
                 }
             },
             {
-                "data": "oTienda", render: function (data) {
-                    return data.Nombre
+                "data": "oDetalleFarmaco", render: function (data) {
+                    return data.NombreComercial
                 }
             },
             { "data": "FechaCompra" },
@@ -120,7 +120,7 @@ $(document).ready(function () {
                     return "S./ " + (data).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
                 }
             },
-           
+
 
         ],
         "language": {
@@ -140,7 +140,7 @@ function buscar() {
         return;
     }
 
-    tabladata.ajax.url($.MisUrls.url._ObtenerCompras + "?"+
+    tabladata.ajax.url($.MisUrls.url._ObtenerCompras + "?" +
         "fechainicio=" + $("#txtFechaInicio").val().trim() +
         "&fechafin=" + $("#txtFechaFin").val().trim() +
         "&idproveedor=" + $("#cboProveedor").val() +

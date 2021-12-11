@@ -22,13 +22,8 @@ namespace CapaModelo
         public string NombreComercial { get; set; }
         public string Concentracion { get; set; }
         public string FechaVencimiento { get; set; }
-        public int Stock { get; set; }
-        public decimal PrecioVenta { get; set; }
-        public decimal PrecioCompra { get; set; }
         public string NumeroLote { get; set; }
         public Boolean PrescripcionMedica { get; set; }
-        public Boolean Iniciado { get; set; }
-
 
     }
 }

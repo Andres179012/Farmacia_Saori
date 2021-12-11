@@ -181,21 +181,9 @@ $(document).ready(function () {
             },
             { "data": "NombreComercial" },
             { "data": "Concentracion" },
-            { "data": "PrecioCompra" },
-            { "data": "PrecioVenta" },
             
             {
                 "data": "PrescripcionMedica", "render": function (data) {
-                    if (data) {
-                        return '<span class="badge badge-success">Si</span>'
-                    } else {
-                        return '<span class="badge badge-danger">No </span>'
-                    }
-                }
-            },
-            { "data": "Stock" },
-            {
-                "data": "Iniciado", "render": function (data) {
                     if (data) {
                         return '<span class="badge badge-success">Si</span>'
                     } else {
@@ -240,8 +228,6 @@ function abrirPopUpForm(json) {
         $("#txtNombreComercial").val(json.NombreComercial);
         $("#txtConcentracion").val(json.Concentracion);
         $("#txtFechaVencimiento").val(json.FechaVencimiento);
-        $("#txtPrecioVenta").val(json.PrecioVenta);
-        $("#txtPrecioCompra").val(json.PrecioCompra);
         $("#txtNumero").val(json.NumeroLote);
         $("#cboEstado").val(json.PrescripcionMedica == true ? 1 : 0);
 
@@ -255,8 +241,6 @@ function abrirPopUpForm(json) {
         $("#txtNombreComercial").val("");
         $("#txtConcentracion").val("");
         $("#txtFechaVencimiento").val("");
-        $("#txtPrecioVenta").val("");
-        $("#txtPrecioCompra").val("");
         $("#txtNumero").val("");
         $("#cboEstado").val(1);
 
@@ -282,8 +266,6 @@ function Guardar() {
                 NombreComercial: $("#txtNombreComercial").val(),
                 Concentracion: $("#txtConcentracion").val(),
                 FechaVencimiento: $("#txtFechaVencimiento").val(),
-                PrecioVenta: $("#txtPrecioVenta").val(),
-                PrecioCompra: $("#txtPrecioCompra").val(),
                 NumeroLote:$("#txtNumero").val(),
                 PrescripcionMedica: ($("#cboEstado").val() == "1" ? true : false)
             }

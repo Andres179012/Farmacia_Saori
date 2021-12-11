@@ -53,13 +53,13 @@ namespace CapaDatos
                         while (dr.Read()) {
                             lista.Add(new ReporteProducto()
                             {
-                                RucTienda = dr["Ruc Tienda"].ToString(),
-                                NombreTienda = dr["Nombre Tienda"].ToString(),
-                                DireccionTienda = dr["Direccion Tienda"].ToString(),
+                                Concentracion = dr["Concentracion Farmaco"].ToString(),
+                                NombreComercial = dr["Nombre Comercial"].ToString(),
+                                NumeroLote = dr["Numero Lote"].ToString(),
                                 CodigoProducto = dr["Codigo Producto"].ToString(),
                                 NombreProducto = dr["Nombre Producto"].ToString(),
                                 DescripcionProducto = dr["Descripcion Producto"].ToString(),
-                                StockenTienda = dr["Stock en tienda"].ToString(),
+                                Stock = dr["[Stock]"].ToString(),
                                 PrecioCompra = Convert.ToDecimal(dr["Precio Compra"].ToString(),new CultureInfo("es-PE")).ToString("N", formato),
                                 PrecioVenta = Convert.ToDecimal(dr["Precio Venta"].ToString(),new CultureInfo("es-PE")).ToString("N", formato)
                             });
@@ -68,7 +68,7 @@ namespace CapaDatos
                     }
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     lista = new List<ReporteProducto>();
                 }
@@ -105,8 +105,8 @@ namespace CapaDatos
                                 FechaVenta = dr["Fecha Venta"].ToString(),
                                 NumeroDocumento = dr["Numero Documento"].ToString(),
                                 TipoDocumento = dr["Tipo Documento"].ToString(),
-                                NombreTienda = dr["Nombre Tienda"].ToString(),
-                                RucTienda = dr["Ruc Tienda"].ToString(),
+                                NombreComercial = dr["Nombre Comercial"].ToString(),
+                                Concentracion = dr["Concentracion"].ToString(),
                                 NombreEmpleado = dr["Nombre Empleado"].ToString(),
                                 CantidadUnidadesVendidas = dr["Cantidad Unidades Vendidas"].ToString(),
                                 CantidadProductos = dr["Cantidad Productos"].ToString(),
@@ -117,7 +117,7 @@ namespace CapaDatos
                     }
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     lista = new List<ReporteVenta>();
                 }

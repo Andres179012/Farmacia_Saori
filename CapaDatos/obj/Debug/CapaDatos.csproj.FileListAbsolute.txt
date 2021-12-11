@@ -24,15 +24,6 @@ C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDato
 C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaDatos\obj\Debug\CapaDatos.pdb
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\bin\Debug\CapaDatos.dll
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\bin\Debug\CapaDatos.pdb
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\bin\Debug\CapaModelo.dll
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\bin\Debug\CapaModelo.pdb
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.dll
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.pdb
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 D:\Farmacia_Saori\CapaDatos\bin\Debug\CapaDatos.dll
 D:\Farmacia_Saori\CapaDatos\bin\Debug\CapaDatos.pdb
 D:\Farmacia_Saori\CapaDatos\bin\Debug\CapaModelo.dll
@@ -41,4 +32,20 @@ D:\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
 D:\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 D:\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.dll
 D:\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.pdb
-D:\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaDatos\bin\Debug\CapaModelo.dll
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaDatos\bin\Debug\CapaModelo.pdb
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\bin\Debug\CapaModelo.dll
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\bin\Debug\CapaModelo.pdb
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.pdb

@@ -88,6 +88,14 @@ namespace CapaDatos
                                                   Clave = dato.Element("Clave").Value,
 
                                               }).FirstOrDefault();
+                                rptUsuario.oDetalleFarmaco = (from dato in doc.Element("Usuario").Elements("DetalleFarmaco")
+                                                      select new DetalleFarmaco()
+                                                      {
+                                                          IdDetalleFarmaco = int.Parse(dato.Element("IdDetalleFarmaco").Value),
+                                                          NombreComercial = dato.Element("NombreComercial").Value,
+                                                          Concentracion = dato.Element("Concentracion").Value,
+                                                          NumeroLote = dato.Element("NumeroLote").Value
+                                                      }).FirstOrDefault();
                                 rptUsuario.oRol = (from dato in doc.Element("Usuario").Elements("DetalleRol")
                                                    select new Rol()
                                                    {
@@ -153,6 +161,7 @@ namespace CapaDatos
                             Apellidos = dr["Apellidos"].ToString(),
                             Correo = dr["Correo"].ToString(),
                             Clave = dr["Clave"].ToString(),
+                            IdDetalleFarmaco = Convert.ToInt32(dr["IdDetalleFarmaco"].ToString()),
                             IdRol = Convert.ToInt32(dr["IdRol"].ToString()),
                             oRol = new Rol() { Descripcion = dr["DescripcionRol"].ToString() },
                             Activo = Convert.ToBoolean(dr["Activo"])
@@ -185,8 +194,8 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Apellidos", oUsuario.Apellidos);
                     cmd.Parameters.AddWithValue("Correo", oUsuario.Correo);
                     cmd.Parameters.AddWithValue("Clave", oUsuario.Clave);
+                    cmd.Parameters.AddWithValue("IdDetalleFarmaco", oUsuario.IdDetalleFarmaco);
                     cmd.Parameters.AddWithValue("IdRol", oUsuario.IdRol);
-                    cmd.Parameters.AddWithValue("Activo", oUsuario.Activo);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -221,6 +230,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Apellidos", oUsuario.Apellidos);
                     cmd.Parameters.AddWithValue("Correo", oUsuario.Correo);
                     cmd.Parameters.AddWithValue("Clave", oUsuario.Clave);
+                    cmd.Parameters.AddWithValue("IdDetalleFarmaco", oUsuario.IdDetalleFarmaco);
                     cmd.Parameters.AddWithValue("IdRol", oUsuario.IdRol);
                     cmd.Parameters.AddWithValue("Activo", oUsuario.Activo);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;

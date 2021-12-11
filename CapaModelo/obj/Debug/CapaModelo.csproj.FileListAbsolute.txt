@@ -16,15 +16,20 @@ C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaMode
 C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaModelo\obj\Debug\CapaModelo.dll
 C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaModelo\obj\Debug\CapaModelo.pdb
 C:\Users\andre\Downloads\Proy Ejemplo\022_VENTAS_WEB_MVC\Farmacia Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.dll
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.pdb
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
-C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb
 D:\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.dll
 D:\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.pdb
 D:\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 D:\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
 D:\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb
 D:\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb
+C:\Users\Deyanira Soto\Documents\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\andre\OneDrive\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb

@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     //OBTENER TIENDAS
     jQuery.ajax({
-        url: $.MisUrls.url._ObtenerTiendas,
+        url: $.MisUrls.url._ObtenerDetalleFarmaco,
         type: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
@@ -48,7 +48,7 @@ $(document).ready(function () {
                 $.each(data.data, function (i, item) {
 
                     if (item.Activo == true) {
-                        $("<option>").attr({ "value": item.IdTienda }).text(item.Nombre).appendTo("#cboTienda");
+                        $("<option>").attr({ "value": item.IdDetalleFarmaco }).text(item.NombreComercial).appendTo("#cboTienda");
                     }
                 })
         },
@@ -82,8 +82,8 @@ $('#btnBuscar').on('click', function () {
                         $("<td>").text(row["FechaVenta"]),
                         $("<td>").text(row["NumeroDocumento"]),
                         $("<td>").text(row["TipoDocumento"]),
-                        $("<td>").text(row["NombreTienda"]),
-                        $("<td>").text(row["RucTienda"]),
+                        $("<td>").text(row["NombreComercial"]),
+                        $("<td>").text(row["Concentracion"]),
                         $("<td>").text(row["NombreEmpleado"]),
                         $("<td>").text(row["CantidadUnidadesVendidas"]),
                         $("<td>").text(row["CantidadProductos"]),

@@ -38,7 +38,8 @@ namespace FarmaciaSaori.Controllers
 
             if (oVenta == null)
                 oVenta = new Venta();
-            else {
+            else
+            {
 
                 oVenta.oListaDetalleVenta = (from dv in oVenta.oListaDetalleVenta
                                              select new DetalleVenta()
@@ -55,7 +56,7 @@ namespace FarmaciaSaori.Controllers
                 oVenta.TextoImporteCambio = oVenta.ImporteCambio.ToString("N", formato);
                 oVenta.TextoTotalCosto = oVenta.TotalCosto.ToString("N", formato);
             }
-               
+
 
             return View(oVenta);
         }
@@ -79,14 +80,14 @@ namespace FarmaciaSaori.Controllers
             return Json(rptUsuario, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult ObtenerDetalleFarmaco(int IdDetalleFarmaco)
+        public JsonResult ObtenerProductoPorTienda(int IdDetalleFarmaco)
         {
 
-            List<DetalleFarmaco> oListaDetalle = CD_DetalleFarmaco.Instancia.ObtenerDetalleFarmaco();
-            return Json(new { data = oListaDetalle }, JsonRequestBehavior.AllowGet);
+            List<ProductoDetalle> oListaProductoTienda = CD_ProductoTienda.Instancia.ObtenerProductoTienda();
+            oListaProductoTienda = oListaProductoTienda.Where(x => x.oDetalleFarmaco.IdDetalleFarmaco == IdDetalleFarmaco && x.Stock > 0).ToList();
 
 
-            
+            return Json(new { data = oListaProductoTienda }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

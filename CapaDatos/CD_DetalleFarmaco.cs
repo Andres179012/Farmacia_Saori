@@ -62,12 +62,8 @@ namespace CapaDatos
                             NombreComercial = dr["NombreComercial"].ToString(),
                             Concentracion = dr["Concentracion"].ToString(),
                             FechaVencimiento = dr["FechaVencimiento"].ToString(),
-                            PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
-                            PrecioCompra = Convert.ToDecimal(dr["PrecioCompra"].ToString()),
                             NumeroLote = dr["NumeroLote"].ToString(),
                             PrescripcionMedica = Convert.ToBoolean(dr["PrescripcionMedica"]),
-                            Stock = Convert.ToInt32(dr["Stock"]),
-                            Iniciado = Convert.ToBoolean(dr["Iniciado"])
 
                         });
                     }
@@ -101,8 +97,6 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("NombreComercial", oDetalleFarmaco.NombreComercial);
                     cmd.Parameters.AddWithValue("Concentracion", oDetalleFarmaco.Concentracion);
                     cmd.Parameters.AddWithValue("FechaVencimiento", oDetalleFarmaco.FechaVencimiento);
-                    cmd.Parameters.AddWithValue("PrecioVenta", oDetalleFarmaco.PrecioVenta);
-                    cmd.Parameters.AddWithValue("PrecioCompra", oDetalleFarmaco.PrecioCompra);
                     cmd.Parameters.AddWithValue("NumeroLote", oDetalleFarmaco.NumeroLote);
                     cmd.Parameters.AddWithValue("PrescripcionMedica", oDetalleFarmaco.PrescripcionMedica);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
@@ -143,8 +137,6 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("NombreComercial", oDetalleFarmaco.NombreComercial);
                     cmd.Parameters.AddWithValue("Concentracion", oDetalleFarmaco.Concentracion);
                     cmd.Parameters.AddWithValue("FechaVencimiento", oDetalleFarmaco.FechaVencimiento);
-                    cmd.Parameters.AddWithValue("PrecioVenta", oDetalleFarmaco.PrecioVenta);
-                    cmd.Parameters.AddWithValue("PrecioCompra", oDetalleFarmaco.PrecioCompra);
                     cmd.Parameters.AddWithValue("NumeroLote", oDetalleFarmaco.NumeroLote);
                     cmd.Parameters.AddWithValue("PrescripcionMedica", oDetalleFarmaco.PrescripcionMedica);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;

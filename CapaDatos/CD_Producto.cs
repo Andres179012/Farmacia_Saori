@@ -62,7 +62,7 @@ namespace CapaDatos
                     return rptListaProducto;
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     rptListaProducto = null;
                     return rptListaProducto;
@@ -92,7 +92,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     respuesta = false;
                 }
@@ -124,7 +124,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     respuesta = false;
                 }
@@ -154,7 +154,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     respuesta = false;
                 }

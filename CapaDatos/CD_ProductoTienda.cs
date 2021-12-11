@@ -31,9 +31,9 @@ namespace CapaDatos
             }
         }
 
-        public List<ProductoTienda> ObtenerProductoTienda()
+        public List<ProductoDetalle> ObtenerProductoTienda()
         {
-            List<ProductoTienda> rptListaProductoTienda = new List<ProductoTienda>();
+            List<ProductoDetalle> rptListaProductoTienda = new List<ProductoDetalle>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 SqlCommand cmd = new SqlCommand("usp_ObtenerProductoTienda", oConexion);
@@ -46,25 +46,25 @@ namespace CapaDatos
 
                     while (dr.Read())
                     {
-                        rptListaProductoTienda.Add(new ProductoTienda()
+                        rptListaProductoTienda.Add(new ProductoDetalle()
                         {
-                            IdProductoTienda = Convert.ToInt32(dr["IdProductoTienda"].ToString()),
+                            IdProductoDetalle = Convert.ToInt32(dr["IdProductoDetalle"].ToString()),
                             oProducto = new Producto()
                             {
                                 IdProducto = Convert.ToInt32(dr["IdProducto"].ToString()),
                                 Codigo = dr["CodigoProducto"].ToString(),
-                                NombreGenerico = dr["NombreProducto"].ToString(),
+                                NombreGenerico = dr["NombreGenerico"].ToString(),
                                 Descripcion = dr["DescripcionProducto"].ToString(),
                             },
-                            oTienda = new Tienda()
+                            oDetalleFarmaco = new DetalleFarmaco()
                             {
-                                IdTienda = Convert.ToInt32(dr["IdTienda"].ToString()),
-                                RUC = dr["RUC"].ToString(),
-                                Nombre = dr["NombreTienda"].ToString(),
-                                Direccion = dr["DireccionTienda"].ToString(),
+                                IdDetalleFarmaco = Convert.ToInt32(dr["IdDetalleFarmaco"].ToString()),
+                                NombreComercial = dr["NombreComercial"].ToString(),
+                                Concentracion = dr["Concentracion"].ToString(),
+
                             },
-                            PrecioUnidadCompra = Convert.ToDecimal(dr["PrecioUnidadCompra"].ToString(), new CultureInfo("es-PE")),
-                            PrecioUnidadVenta = Convert.ToDecimal(dr["PrecioUnidadVenta"].ToString(), new CultureInfo("es-PE")),
+                            PrecioCompra = Convert.ToDecimal(dr["PrecioCompra"].ToString(), new CultureInfo("es-PE")),
+                            PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString(), new CultureInfo("es-PE")),
                             Stock = Convert.ToInt32(dr["Stock"].ToString()),
                             Iniciado = Convert.ToBoolean(dr["Iniciado"].ToString())
                         });
@@ -74,7 +74,7 @@ namespace CapaDatos
                     return rptListaProductoTienda;
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     rptListaProductoTienda = null;
                     return rptListaProductoTienda;
@@ -82,7 +82,7 @@ namespace CapaDatos
             }
         }
 
-        public bool RegistrarProductoTienda(ProductoTienda oProductoTienda)
+        public bool RegistrarProductoTienda(ProductoDetalle oProductoTienda)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
@@ -91,7 +91,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("usp_RegistrarProductoTienda", oConexion);
                     cmd.Parameters.AddWithValue("IdProducto", oProductoTienda.oProducto.IdProducto);
-                    cmd.Parameters.AddWithValue("IdTienda", oProductoTienda.oTienda.IdTienda);
+                    cmd.Parameters.AddWithValue("IdDetalleFarmaco", oProductoTienda.oDetalleFarmaco.IdDetalleFarmaco);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -102,7 +102,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     respuesta = false;
                 }
@@ -110,7 +110,7 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool ModificarProductoTienda(ProductoTienda oProductoTienda)
+        public bool ModificarProductoTienda(ProductoDetalle oProductoTienda)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
@@ -118,9 +118,9 @@ namespace CapaDatos
                 try
                 {
                     SqlCommand cmd = new SqlCommand("usp_ModificarProductoTienda", oConexion);
-                    cmd.Parameters.AddWithValue("IdProductoTienda", oProductoTienda.IdProductoTienda);
+                    cmd.Parameters.AddWithValue("IdProductoDetalle", oProductoTienda.IdProductoDetalle);
                     cmd.Parameters.AddWithValue("IdProducto", oProductoTienda.oProducto.IdProducto);
-                    cmd.Parameters.AddWithValue("IdTienda", oProductoTienda.oTienda.IdTienda);
+                    cmd.Parameters.AddWithValue("IdDetalleFarmaco", oProductoTienda.oDetalleFarmaco.IdDetalleFarmaco);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -132,7 +132,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     respuesta = false;
                 }
@@ -151,7 +151,7 @@ namespace CapaDatos
                 try
                 {
                     SqlCommand cmd = new SqlCommand("usp_EliminarProductoTienda", oConexion);
-                    cmd.Parameters.AddWithValue("IdProductoTienda", IdProductoTienda);
+                    cmd.Parameters.AddWithValue("IdProductoDetalle", IdProductoTienda);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -162,7 +162,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     respuesta = false;
                 }
@@ -173,7 +173,7 @@ namespace CapaDatos
 
         }
 
-        public bool ControlarStock(int IdProducto, int IdTienda, int Cantidad, bool Restar)
+        public bool ControlarStock(int IdProducto, int IdDetalleFarmaco, int Cantidad, bool Restar)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
@@ -182,7 +182,7 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("usp_ControlarStock", oConexion);
                     cmd.Parameters.AddWithValue("IdProducto", IdProducto);
-                    cmd.Parameters.AddWithValue("IdTienda", IdTienda);
+                    cmd.Parameters.AddWithValue("IdDetalleFarmaco", IdDetalleFarmaco);
                     cmd.Parameters.AddWithValue("Cantidad", Cantidad);
                     cmd.Parameters.AddWithValue("Restar", Restar);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
@@ -195,7 +195,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     respuesta = false;
                 }

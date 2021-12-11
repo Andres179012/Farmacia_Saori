@@ -30,19 +30,19 @@ namespace FarmaciaSaori.Controllers
             return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult ObtenerPorTienda(int IdTienda)
+        public JsonResult ObtenerPorTienda(int IdDetalleFarmaco)
         {
 
             List<Producto> oListaProducto = CD_Producto.Instancia.ObtenerProducto();
-            List<ProductoTienda> oListaProductoTienda = CD_ProductoTienda.Instancia.ObtenerProductoTienda();
+            List<ProductoDetalle> oListaProductoTienda = CD_ProductoTienda.Instancia.ObtenerProductoTienda();
 
             oListaProducto = oListaProducto.Where(x => x.Activo == true).ToList();
-            if (IdTienda != 0)
+            if (IdDetalleFarmaco != 0)
             {
-                oListaProductoTienda = oListaProductoTienda.Where(x => x.oTienda.IdTienda == IdTienda).ToList();
+                oListaProductoTienda = oListaProductoTienda.Where(x => x.oDetalleFarmaco.IdDetalleFarmaco == IdDetalleFarmaco).ToList();
                 oListaProducto = (from producto in oListaProducto
                                   join productotienda in oListaProductoTienda on producto.IdProducto equals productotienda.oProducto.IdProducto
-                                  where productotienda.oTienda.IdTienda == IdTienda
+                                  where productotienda.oDetalleFarmaco.IdDetalleFarmaco == IdDetalleFarmaco
                                   select producto).ToList();
             }
 
@@ -77,14 +77,14 @@ namespace FarmaciaSaori.Controllers
         }
 
         [HttpPost]
-        public JsonResult RegistrarProductoTienda(ProductoTienda objeto)
+        public JsonResult RegistrarProductoTienda(ProductoDetalle objeto)
         {
             bool respuesta = CD_ProductoTienda.Instancia.RegistrarProductoTienda(objeto);
             return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public JsonResult ModificarProductoTienda(ProductoTienda objeto)
+        public JsonResult ModificarProductoTienda(ProductoDetalle objeto)
         {
             bool respuesta = CD_ProductoTienda.Instancia.ModificarProductoTienda(objeto);
             return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
@@ -101,7 +101,7 @@ namespace FarmaciaSaori.Controllers
         [HttpGet]
         public JsonResult ObtenerAsignaciones()
         {
-            List<ProductoTienda> lista = CD_ProductoTienda.Instancia.ObtenerProductoTienda();
+            List<ProductoDetalle> lista = CD_ProductoTienda.Instancia.ObtenerProductoTienda();
             return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
         }
     }
