@@ -9,52 +9,95 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     @Styles.Render("~/Content/css")
+    <link rel="icon" href="~/Resources/images/Favicon.png" type="image/png" />
+	<!--plugins-->
+	<link href="~/Resources/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="~/Resources/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="~/Resources/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="~/Resources/css/pace.min.css" rel="stylesheet" />
+	<script src="~/Resources/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="~/Resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="~/Resources/css/app.css" rel="stylesheet">
+	<link href="~/Resources/css/icons.css" rel="stylesheet">
 </head>
-<body class="bg-info">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="d-flex align-items-center min-vh-100">
-                    <div class="w-100 d-block my-5">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8 col-lg-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="text-center mb-4 mt-3">
-                                            <a href="#">
-                                                <span><img src="@Url.Content("~/Imagenes/tienda.png")" alt="" height="100"></span>
-                                            </a>
-                                        </div>
-                                        <form action="@Url.Content("~/Login/Index")" method="post" class="p-2">
+<body class="bg-login">
+    <div class="wrapper">
+        <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
+            <div class="container-fluid">
+                <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+                    <div class="col mx-auto">
+                        <div class="mb-4 text-center">
+                            <img src="~/Resources/images/Logo_Farmacia.png" width="180" alt="" />
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="border p-4 rounded">
+
+                                    <div class="login-separater text-center mb-4">
+                                        <span>OR SIGN IN WITH EMAIL</span>
+                                        <hr />
+                                    </div>
+                                    <div class="form-body">
+                                        <form class="row g-3" action="@Url.Content("~/Login/Index")" method="post">
                                             <div class="form-group">
                                                 <label for="emailaddress">Correo</label>
                                                 <input class="form-control" type="email" name="correo" required="" autocomplete="off" value="admin@gmail.com">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="password">Contraseña</label>
-                                                <input class="form-control" type="password" required="" name="clave" autocomplete="off" value="admin@gmail.com">
+                                           
+                                            <div class="col-12">
+                                                <label for="password" class="form-label">Enter Password</label>
+                                                <div class="input-group" id="show_hide_password">
+                                                    <input type="password" class="form-control border-end-0" placeholder="Enter Password" required="" name="clave" autocomplete="off" value="admin@gmail.com"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
+                                                </div>
                                             </div>
-
+                                            <div class="col-md-6">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
+                                                </div>
+                                            </div>
                                             <div class="mb-3 text-center">
                                                 <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
-                                <div class="row mt-4">
-                                    <div class="col-sm-12 text-center">
-                                        <p class="text-white mb-0">Todos los derechos reservados &copy;<a href="https://ouo.io/RK1tRH" target="_blank" class="text-white ml-1"><b>Open Source - CLICK HERE</b></a></p>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
+                <!--end row-->
             </div>
         </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Resources/js/bootstrap.bundle.min.js"></script>
+    <!--plugins-->
+    <script src="~/Resources/js/jquery.min.js"></script>
+    <script src="~/Resources/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="~/Resources/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="~/Resources/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <!--Password show & hide js -->
+    <script>
+        $(document).ready(function () {
+            $("#show_hide_password a").on('click', function (event) {
+                event.preventDefault();
+                if ($('#show_hide_password input').attr("type") == "text") {
+                    $('#show_hide_password input').attr('type', 'password');
+                    $('#show_hide_password i').addClass("bx-hide");
+                    $('#show_hide_password i').removeClass("bx-show");
+                } else if ($('#show_hide_password input').attr("type") == "password") {
+                    $('#show_hide_password input').attr('type', 'text');
+                    $('#show_hide_password i').removeClass("bx-hide");
+                    $('#show_hide_password i').addClass("bx-show");
+                }
+            });
+        });
+    </script>
+    <!--app JS-->
+    <script src="~/Resources/js/app.js"></script>
 </body>
 </html>
