@@ -9,7 +9,7 @@
     <meta http-equiv="Last-Modified" content="0">
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
-    <title>Mi Tienda Online</title>
+    <title>Farmacia Saori</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/PluginsCSS")
@@ -21,6 +21,8 @@
     <link href="~/Resources/plugins/highcharts/css/highcharts.css" rel="stylesheet" />
     <link href="~/Resources/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="~/Resources/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+
     <!-- loader-->
     <link href="~/Resources/css/pace.min.css" rel="stylesheet" />
     <script src="~/Resources/js/pace.min.js"></script>
@@ -33,8 +35,7 @@
     <link rel="stylesheet" href="~/Resources/css/semi-dark.css" />
     <link rel="stylesheet" href="~/Resources/css/header-colors.css" />
 
-
-
+    <link href="~/Resources/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -65,7 +66,9 @@
                         <div class="menu-title">Inicio</div>
                     </a>
                 </li>
-                @Html.ActionLinkAllow();
+                <li>
+                    @Html.ActionLinkAllow();
+                </li>
                 <li>
                     <a href="javascript:;" class="has-arrow">
                         <div class="parent-icon">
@@ -528,8 +531,8 @@
                         <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
                             <div class="user-info ps-3">
-                                <p class="user-name mb-0">Pauline Seitz</p>
-                                <p class="designattion mb-0">Web Designer</p>
+                                <p class="user-name mb-0">@ViewBag.NombreUsuario</p>
+                                <p class="designattion mb-0">@ViewBag.RolUsuario</p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -566,11 +569,144 @@
 
     </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/Content/PluginsJS")
 
-        <script type="text/javascript">
+    <!--start switcher-->
+    <div class="switcher-wrapper">
+        <div class="switcher-btn">
+            <i class='bx bx-cog bx-spin'></i>
+        </div>
+        <div class="switcher-body">
+            <div class="d-flex align-items-center">
+                <h5 class="mb-0 text-uppercase">Theme Customizer</h5>
+                <button type="button" class="btn-close ms-auto close-switcher" aria-label="Close"></button>
+            </div>
+            <hr />
+            <h6 class="mb-0">Theme Styles</h6>
+            <hr />
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="lightmode" checked>
+                    <label class="form-check-label" for="lightmode">Light</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmode">
+                    <label class="form-check-label" for="darkmode">Dark</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="semidark">
+                    <label class="form-check-label" for="semidark">Semi Dark</label>
+                </div>
+            </div>
+            <hr />
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="minimaltheme" name="flexRadioDefault">
+                <label class="form-check-label" for="minimaltheme">Minimal Theme</label>
+            </div>
+            <hr />
+            <h6 class="mb-0">Header Colors</h6>
+            <hr />
+            <div class="header-colors-indigators">
+                <div class="row row-cols-auto g-3">
+                    <div class="col">
+                        <div class="indigator headercolor1" id="headercolor1"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor2" id="headercolor2"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor3" id="headercolor3"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor4" id="headercolor4"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor5" id="headercolor5"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor6" id="headercolor6"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor7" id="headercolor7"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor8" id="headercolor8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end switcher--><!--start switcher-->
+    <div class="switcher-wrapper">
+        <div class="switcher-btn">
+            <i class='bx bx-cog bx-spin'></i>
+        </div>
+        <div class="switcher-body">
+            <div class="d-flex align-items-center">
+                <h5 class="mb-0 text-uppercase">Theme Customizer</h5>
+                <button type="button" class="btn-close ms-auto close-switcher" aria-label="Close"></button>
+            </div>
+            <hr />
+            <h6 class="mb-0">Theme Styles</h6>
+            <hr />
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="lightmode" checked>
+                    <label class="form-check-label" for="lightmode">Light</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="darkmode">
+                    <label class="form-check-label" for="darkmode">Dark</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="semidark">
+                    <label class="form-check-label" for="semidark">Semi Dark</label>
+                </div>
+            </div>
+            <hr />
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="minimaltheme" name="flexRadioDefault">
+                <label class="form-check-label" for="minimaltheme">Minimal Theme</label>
+            </div>
+            <hr />
+            <h6 class="mb-0">Header Colors</h6>
+            <hr />
+            <div class="header-colors-indigators">
+                <div class="row row-cols-auto g-3">
+                    <div class="col">
+                        <div class="indigator headercolor1" id="headercolor1"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor2" id="headercolor2"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor3" id="headercolor3"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor4" id="headercolor4"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor5" id="headercolor5"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor6" id="headercolor6"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor7" id="headercolor7"></div>
+                    </div>
+                    <div class="col">
+                        <div class="indigator headercolor8" id="headercolor8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end switcher-->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Content/PluginsJS")
+
+    <script type="text/javascript">
 
         $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
 
@@ -672,63 +808,68 @@
 
 
 
-        </script>
-        <script>
+    </script>
 
-            function activarMenu(menuactivo) {
+    @RenderSection("scripts", required: false)
+    @*Scripts de Home*@
+    <!--plugins-->
+    <!--plugins-->
+    <script src="~/Scripts/jquery-3.3.1.intellisense.js"></script>
+    <script src="~/Resources/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="~/Resources/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="~/Resources/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="~/Resources/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="~/Resources/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/Resources/plugins/highcharts/js/highcharts.js"></script>
+    <script src="~/Resources/plugins/highcharts/js/exporting.js"></script>
+    <script src="~/Resources/plugins/highcharts/js/variable-pie.js"></script>
+    <script src="~/Resources/plugins/highcharts/js/export-data.js"></script>
+    <script src="~/Resources/plugins/highcharts/js/accessibility.js"></script>
+    <script src="~/Resources/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+    <script src="~/Resources/js/index.js"></script>
 
-                var ul = $("ul.navbar-nav");
-                ul.find("li.nav-item").each(function (i, li) {
 
-                    var a;
 
-                    if ($(li).find("div.dropdown-menu").length != 0) {
+    <script>
 
-                        var div = $($(li).find("div.dropdown-menu"))
+        function activarMenu(menuactivo) {
 
-                        div.find("a.dropdown-item").each(function (x, tagA) {
-                            if ($(tagA).attr("name") == menuactivo) {
+            var ul = $("ul.navbar-nav");
+            ul.find("li.nav-item").each(function (i, li) {
 
-                                $(li).addClass("active");
-                                return false;
-                            }
-                        })
-                    } else {
+                var a;
 
-                        a = $(li).find("a.nav-link");
+                if ($(li).find("div.dropdown-menu").length != 0) {
 
-                        if ($(a).attr("name") == menuactivo) {
+                    var div = $($(li).find("div.dropdown-menu"))
+
+                    div.find("a.dropdown-item").each(function (x, tagA) {
+                        if ($(tagA).attr("name") == menuactivo) {
+
                             $(li).addClass("active");
                             return false;
                         }
-                    }
-                });
-            }
+                    })
+                } else {
 
-        </script>
-        @RenderSection("scripts", required: false)
-        @*Scripts de Home*@
-        <script src="~/Resources/js/bootstrap.bundle.min.js"></script>
-        <!--plugins-->
-        <script src="~/Resources/js/jquery.min.js"></script>
-        <script src="~/Resources/plugins/simplebar/js/simplebar.min.js"></script>
-        <script src="~/Resources/plugins/metismenu/js/metisMenu.min.js"></script>
-        <script src="~/Resources/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-        <script src="~/Resources/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
-        <script src="~/Resources/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-        <script src="~/Resources/plugins/highcharts/js/highcharts.js"></script>
-        <script src="~/Resources/plugins/highcharts/js/exporting.js"></script>
-        <script src="~/Resources/plugins/highcharts/js/variable-pie.js"></script>
-        <script src="~/Resources/plugins/highcharts/js/export-data.js"></script>
-        <script src="~/Resources/plugins/highcharts/js/accessibility.js"></script>
-        <script src="~/Resources/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
-        <script src="~/Resources/js/index.js"></script>
-        <!--app JS-->
-        <script src="~/Resources/js/app.js"></script>
-        <script>
-            new PerfectScrollbar('.customers-list');
-            new PerfectScrollbar('.store-metrics');
-            new PerfectScrollbar('.product-list');
-        </script>
+                    a = $(li).find("a.nav-link");
+
+                    if ($(a).attr("name") == menuactivo) {
+                        $(li).addClass("active");
+                        return false;
+                    }
+                }
+            });
+        }
+
+    </script>
+
+    <!--app JS-->
+    <script src="~/Resources/js/app.js"></script>
+    <script>
+        new PerfectScrollbar('.customers-list');
+        new PerfectScrollbar('.store-metrics');
+        new PerfectScrollbar('.product-list');
+    </script>
 </body>
 </html>

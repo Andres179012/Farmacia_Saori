@@ -56,7 +56,6 @@
     <Compile Include="ProductoDetalle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
-    <Compile Include="ReporteCompra.cs" />
     <Compile Include="ReporteProducto.cs" />
     <Compile Include="ReporteVenta.cs" />
     <Compile Include="Respuesta.cs" />

@@ -35,6 +35,33 @@ $(document).ready(function () {
         responsive: true
     });
 
+    //OBTENER LABORATORIO
+    tablalaboratorio = $('#tbLaboratorio').DataTable({
+        "ajax": {
+            "url": $.MisUrls.url._ObtenerLaboratorio,
+            "type": "GET",
+            "datatype": "json"
+        },
+        "columns": [
+            {
+                "data": "IdLaboratorio", "render": function (data, type, row, meta) {
+                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='laboratorioSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
+                },
+                "orderable": false,
+                "searchable": false,
+                "width": "90px"
+            },
+          
+            { "data": "RazonSocial" },
+            { "data": "Direccion" }
+
+        ],
+        "language": {
+            "url": $.MisUrls.url.Url_datatable_spanish
+        },
+        responsive: true
+    });
+
     //OBTENER DETALLE FARMACO
     tablatienda = $('#tbDetalleFarmaco').DataTable({
         "ajax": {
@@ -53,6 +80,33 @@ $(document).ready(function () {
             },
             { "data": "NombreComercial" },
             { "data": "Concentracion" }
+
+        ],
+        "language": {
+            "url": $.MisUrls.url.Url_datatable_spanish
+        },
+        responsive: true
+    });
+
+
+    //OBTENER FORMA FARMACEUTICA
+    tablatienda = $('#tbFormaFarmaceutica').DataTable({
+        "ajax": {
+            "url": $.MisUrls.url._ObtenerFormaFarmaceutica,
+            "type": "GET",
+            "datatype": "json"
+        },
+        "columns": [
+            {
+                "data": "IdFormaFarmaceutica", "render": function (data, type, row, meta) {
+                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='formafarmaceuticaSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
+                },
+                "orderable": false,
+                "searchable": false,
+                "width": "90px"
+            },
+            { "data": "FormaFarmaceutica" },
+            { "data": "Descripcion" }
 
         ],
         "language": {
@@ -100,10 +154,19 @@ function buscarProveedor() {
     $('#modalProveedor').modal('show');
 }
 
+function buscarLaboratorio() {
+    tablalaboratorio.ajax.reload();
+    $('#modalLaboratorio').modal('show');
+}
 
 function buscarDetalleFarmaco() {
     tablatienda.ajax.reload();
     $('#modalDetalleFarmaco').modal('show');
+}
+
+function buscarFormaFarmaceutica() {
+    tablatienda.ajax.reload();
+    $('#modalFormaFarmaceutica').modal('show');
 }
 
 function buscarProducto() {
@@ -125,6 +188,14 @@ function proveedorSelect(json) {
     $('#modalProveedor').modal('hide');
 }
 
+function laboratorioSelect(json) {
+
+    $("#txtIdLaboratorio").val(json.IdLaboratorio);
+    $("#txtRazonSocialLaboratorio").val(json.RazonSocial);
+
+    $('#modalLaboratorio').modal('hide');
+}
+
 function tiendaSelect(json) {
     $("#txtIdDetalleFarmaco").val(json.IdDetalleFarmaco);
     $("#txtNombreComercial").val(json.NombreComercial);
@@ -139,6 +210,14 @@ function productoSelect(json) {
     $("#txtNombreProducto").val(json.NombreGenerico);
 
     $('#modalProducto').modal('hide');
+}
+
+function formafarmaceuticaSelect(json) {
+    $("#txtIdFormaFarmaceutica").val(json.IdFormaFarmaceutica);
+    $("#txtFormaFarmaeutica").val(json.FormaFarmaceutica);
+    $("#txtDescripcion").val(json.Descripcion);
+
+    $('#modalFormaFarmaceutica').modal('hide');
 }
 
 
@@ -221,6 +300,7 @@ $('#btnAgregarCompra').on('click', function () {
     var existe_codigo = false;
     if (
         parseInt($("#txtIdProveedor").val()) == 0 ||
+        parseInt($("#txtIdLaboratorio").val()) == 0 ||
         parseInt($("#txtIdDetalleFarmaco").val()) == 0 ||
         parseInt($("#txtIdProducto").val()) == 0 ||
         parseFloat($("#txtCantidadProducto").val()) == 0 ||
@@ -248,6 +328,7 @@ $('#btnAgregarCompra').on('click', function () {
                 $("<button>").addClass("btn btn-danger btn-sm").text("Eliminar")
             ),
             $("<td>").append($("#txtRucProveedor").val()),
+            $("<td>").append($("#txtRazonSocialLaboratorio").val()),
             $("<td>").append($("#txtNombreComercial").val()),
             $("<td>").addClass("codigoproducto").data("idproducto", $("#txtIdProducto").val()).append($("#txtCodigoProducto").val()),
             $("<td>").append($("#txtNombreProducto").val()),
@@ -292,6 +373,7 @@ $('#btnTerminarGuardarCompra').on('click', function () {
     compra = "<COMPRA>" +
         "<IdUsuario>!idusuario¡</IdUsuario>" +
         "<IdProveedor>" + $("#txtIdProveedor").val() + "</IdProveedor>" +
+        "<IdLaboratorio>" + $("#txtIdLaboratorio").val() + "</IdLaboratorio>" +
         "<IdDetalleFarmaco>" + $("#txtIdDetalleFarmaco").val() + "</IdDetalleFarmaco>" +
         "<TotalCosto>!totalcosto¡</TotalCosto>" +
         "</COMPRA>";
@@ -301,6 +383,7 @@ $('#btnTerminarGuardarCompra').on('click', function () {
 
         var fila = tr;
         var idproducto = parseFloat($(fila).find("td.codigoproducto").data("idproducto"));
+        var idformafarmaceutica = parseFloat($(fila).find("td.formafarmceutica").data("idFormaFarmaceutica"));
         var cantidad = parseFloat($(fila).find("td.cantidad").text());
         var preciocompra = parseFloat($(fila).find("td.preciocompra").text());
         var precioventa = parseFloat($(fila).find("td.precioventa").text());
@@ -309,10 +392,12 @@ $('#btnTerminarGuardarCompra').on('click', function () {
         detalle = detalle + "<DETALLE>" +
             "<IdCompra>0</IdCompra>" +
             "<IdProducto>" + idproducto + "</IdProducto>" +
+            "<IdFormaFarmaceutica>" + idformafarmaceutica + "</IdFormaFarmaceutica>" +
             "<Cantidad>" + cantidad + "</Cantidad>" +
             "<PrecioCompra>" + preciocompra + "</PrecioCompra>" +
             "<PrecioVenta>" + precioventa + "</PrecioVenta>" +
             "<TotalCosto>" + totalcosto.toString() + "</TotalCosto>" +
+            //"<IdFarmaceutica>" +  + "<IdFarmaceutica>" +
             "</DETALLE>";
         totalcostocompra = totalcostocompra + totalcosto;
 
@@ -341,9 +426,18 @@ $('#btnTerminarGuardarCompra').on('click', function () {
                 $("#txtRucProveedor").val("");
                 $("#txtRazonSocialProveedor").val("");
 
+                //Laboratorio
+                $("#txtIdLaboratorio").val("0");
+                $("#txtRazonSocialLaboratorio").val("");
+
                 //DETALLE FARMACO
                 $("#txtIdDetalleFarmaco").val("0");
                 $("#txtNombreComercial").val("");
+
+                //DETALLE FARMACO
+                $("#txtIdFormaFarmaceutica").val("0");
+                $("#txtFormaFarmaceutica").val("0");
+                $("#txtDescripcion").val("");
 
                 //PRODUCTO
                 $("#txtIdProducto").val("0");

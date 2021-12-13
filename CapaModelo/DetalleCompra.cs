@@ -10,6 +10,7 @@ namespace CapaModelo
     {
         public int IdDetalleCompra { get; set; }
         public int IdCompra { get; set; }
+        public Forma_Farmaceutica oFormaFarmaceutica { get; set; }
         public Producto oProducto { get; set; }
         public int Cantidad { get; set; }
         public decimal PrecioCompra { get; set; }

@@ -37,5 +37,12 @@ namespace FarmaciaSaori.Controllers
             return RedirectToAction("Index", "Login");
         }
 
+        public JsonResult ObtenerTotal()
+        {
+            int total = CapaDatos.CD_Producto.Instancia.ObtenerTotalProducto();
+            return Json(new { data = total }, JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }

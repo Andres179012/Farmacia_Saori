@@ -2394,6 +2394,8 @@
     <Content Include="Resources\images\logo-icon.png" />
     <Content Include="Resources\images\logo-img.png" />
     <Content Include="Resources\images\Logo_Farmacia.png" />
+    <Content Include="Resources\jquery-3.3.1.min.js" />
+    <Content Include="Resources\jquery.min.js" />
     <Content Include="Resources\js\app.js" />
     <Content Include="Resources\js\bootstrap.bundle.min.js" />
     <Content Include="Resources\js\exetra-chart-script.js" />
@@ -2706,7 +2708,6 @@
     <Content Include="Scripts\Views\Home_Index.js" />
     <Content Include="Scripts\Views\Permisos_Crear.js" />
     <Content Include="Scripts\Views\Categoria_Crear.js" />
-    <Content Include="Scripts\Views\Reporte_Compra.js" />
     <Content Include="Scripts\Views\Reporte_Producto.js" />
     <Content Include="Scripts\Views\Reporte_Venta.js" />
     <Content Include="Scripts\Views\Tienda_Crear.js" />
@@ -2762,7 +2763,6 @@
     <Content Include="Views\Laboratorio\Crear.cshtml" />
     <Content Include="Views\ViaAdministracion\Crear.cshtml" />
     <Content Include="Views\DetalleFarmaco\Crear.cshtml" />
-    <Content Include="Views\Reporte\Compras.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

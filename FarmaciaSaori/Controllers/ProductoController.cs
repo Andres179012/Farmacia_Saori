@@ -30,6 +30,13 @@ namespace FarmaciaSaori.Controllers
             return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
         }
 
+
+        public JsonResult ObtenerTotal()
+        {
+            int total = CD_Producto.Instancia.ObtenerTotalProducto();
+            return Json(new { data = total }, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult ObtenerPorTienda(int IdDetalleFarmaco)
         {
 

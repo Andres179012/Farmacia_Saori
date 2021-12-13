@@ -69,7 +69,37 @@ namespace CapaDatos
                 }
             }
         }
+        
 
+        public int ObtenerTotalProducto()
+        {
+            int total = 0;
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_ObtenerTotalProductos", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        total = Convert.ToInt32(dr["TOTAL"].ToString());
+                    }
+                    dr.Close();
+                    
+                    return total;
+
+                }
+                catch (Exception)
+                {
+                    total = 0;
+                    return total;
+                }
+            }
+        }
         public bool RegistrarProducto(Producto oProducto)
         {
             bool respuesta = true;
