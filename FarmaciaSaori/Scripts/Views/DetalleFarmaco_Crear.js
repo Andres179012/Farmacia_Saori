@@ -185,16 +185,16 @@ $(document).ready(function () {
             {
                 "data": "PrescripcionMedica", "render": function (data) {
                     if (data) {
-                        return '<span class="badge badge-success">Si</span>'
+                        return '<span class="badge bg-light-success text-success w-100">Si</span>'
                     } else {
-                        return '<span class="badge badge-danger">No </span>'
+                        return '<span class="badge bg-light-danger text-danger w-100">No</span>'
                     }
                 }
             },
             {
                 "data": "IdDetalleFarmaco", "render": function (data, type, row, meta) {
-                    return "<button class='btn btn-primary btn-sm' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='fas fa-pen'></i></button>" +
-                        "<button class='btn btn-danger btn-sm ml-2' type='button' onclick='eliminar(" + data + ")'><i class='fa fa-trash'></i></button>"
+                    return "<button class='text-primary bg - light - primary border - 0' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='bx bxs-edit'></i></button>" +
+                        "<button class='ms-4 text-danger bg-light-danger border-0' type='button' onclick='eliminar(" + data + ")'><i class='bx bxs-trash'></i></button>"
                 },
                 "orderable": false,
                 "searchable": false,
