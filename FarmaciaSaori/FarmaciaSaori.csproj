@@ -2713,6 +2713,7 @@
     <Content Include="Scripts\Views\Tienda_Crear.js" />
     <Content Include="Scripts\Views\Proveedor_Crear.js" />
     <Content Include="Scripts\Views\Cliente_Crear.js" />
+    <Content Include="Scripts\Views\Total_Compras.js" />
     <Content Include="Scripts\Views\Usuario_Crear.js" />
     <Content Include="Scripts\Views\Rol_Crear.js" />
     <Content Include="Scripts\Views\Venta_Consultar.js" />

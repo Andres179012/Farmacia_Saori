@@ -131,7 +131,65 @@ namespace CapaDatos
         }
 
 
+        public double ObtenerTotalCompras()
+        {
+            double total = 0.00;
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_TotalCompras", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        total = Convert.ToDouble(dr["TOTALCOMPRAS"].ToString());
+                    }
+                    dr.Close();
+
+                    return total;
+
+                }
+                catch (Exception)
+                {
+                    total = 0;
+                    return total;
+                }
+            }
+        }
+
+        public double ObtenerTotalVentas()
+        {
+            double total = 0.00;
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_TotalVentas", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        total = Convert.ToDouble(dr["IMPORTETOTAL"].ToString());
+                    }
+                    dr.Close();
+
+                    return total;
+
+                }
+                catch (Exception)
+                {
+                    total = 0;
+                    return total;
+                }
+            }
+        }
 
         public List<Compra> ObtenerListaCompra(DateTime FechaInicio, DateTime FechaFin, int IdProveedor, int IdTienda)
         {
