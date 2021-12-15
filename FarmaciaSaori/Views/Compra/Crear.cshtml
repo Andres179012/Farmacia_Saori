@@ -36,16 +36,13 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card border-info">
-                            <div class="card-header bg-info text-white">
-                                Registrar Compra
-                            </div>
                             <div class="card-body card-compra p-2">
                                 <div class="row">
 
                                     <div class="col-sm-6">
                                         <div class="card border-info">
                                             <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-info">Detalle Proveedor Origen</h6>
+                                                <h6 class="card-title mb-1 text-success">Detalle Proveedor Origen</h6>
                                                 <div class="row align-items-end">
                                                     <input id="txtIdProveedor" type="hidden" value="0" />
                                                     <div class="col-sm-4">
@@ -62,7 +59,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-0">
-                                                            <button id="btnBuscarProveedor" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarProveedor()"><i class="fas fa-search"></i> Buscar</button>
+                                                            <button id="btnBuscarProveedor" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarProveedor()"><i class="fas fa-search"></i> Buscar</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -74,7 +71,7 @@
                                     <div class="col-sm-6">
                                         <div class="card border-info">
                                             <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-info">Detalle Laboratorio Origen</h6>
+                                                <h6 class="card-title mb-1 text-success">Detalle Laboratorio Origen</h6>
                                                 <div class="row align-items-end">
                                                     <input id="txtIdLaboratorio" type="hidden" value="0" />
                                                     <div class="col-sm-4">
@@ -85,7 +82,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-0">
-                                                            <button id="btnBuscarLaboratorio" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarLaboratorio()"><i class="fas fa-search"></i> Buscar</button>
+                                                            <button id="btnBuscarLaboratorio" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarLaboratorio()"><i class="fas fa-search"></i> Buscar</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -96,7 +93,7 @@
                                     <div class="col-sm-6">
                                         <div class="card border-info">
                                             <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-info">Detalle del Producto</h6>
+                                                <h6 class="card-title mb-1 text-success">Detalle del Producto</h6>
                                                 <div class="row  align-items-end">
                                                     <input id="txtIdDetalleFarmaco" type="hidden" value="0" />
                                                     <div class="col-sm-4">
@@ -113,43 +110,13 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-0">
-                                                            <button id="btnBuscarDetalleFarmaco" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarDetalleFarmaco()"><i class="fas fa-search"></i> Buscar</button>
+                                                            <button id="btnBuscarDetalleFarmaco" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarDetalleFarmaco()"><i class="fas fa-search"></i> Buscar</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    @*Forma Farmaceutica*@
-                                    <div class="col-sm-6">
-                                        <div class="card border-info">
-                                            <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-info">Forma Farmaceutica</h6>
-                                                <div class="row  align-items-end">
-                                                    <input id="txtIdFormaFarmaceutica" type="hidden" value="0" />
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtFormaFarmaceutica" class="col-form-label col-form-label-sm">FormaFarmaceutica:</label>
-                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtFormaFarmaceutica" name="FormaFarmaceutica">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtDescripcion" class="col-form-label col-form-label-sm">Descripcion:</label>
-                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtDescripcion" name="Desdecipcion">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <button id="btnBuscarFormaFarmaceutica" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarFormaFarmaceutica()"><i class="fas fa-search"></i> Buscar</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
 
 
                                 </div>
@@ -157,7 +124,7 @@
                                     <div class="col-sm-12">
                                         <div class="card border-info">
                                             <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-info">Detalle Producto</h6>
+                                                <h6 class="card-title mb-1 text-success">Detalle Producto</h6>
                                                 <div class="row">
                                                     <input id="txtIdProducto" type="hidden" value="0" />
                                                     <div class="col-sm-2">
@@ -175,7 +142,7 @@
                                                     <div class="col-sm-2">
                                                         <div class="form-group mb-0">
                                                             <label for="btnBuscarTienda" class="col-form-label col-form-label-sm invisible">Buscar:</label>
-                                                            <button id="btnBuscarProducto" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarProducto()"><i class="fas fa-search"></i> Buscar</button>
+                                                            <button id="btnBuscarProducto" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarProducto()"><i class="fas fa-search"></i> Buscar</button>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
@@ -186,13 +153,13 @@
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group mb-0">
-                                                            <label for="txtPrecioCompraProducto" class="col-form-label col-form-label-sm">Precio Compra: <span class="error"> S/.(00.00)</span></label>
+                                                            <label for="txtPrecioCompraProducto" class="col-form-label col-form-label-sm">Precio Compra:</label>
                                                             <input type="text" class="form-control form-control-sm model" id="txtPrecioCompraProducto" name="PrecioCompra" value="0">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group mb-0">
-                                                            <label for="txtPrecioVentaProducto" class="col-form-label col-form-label-sm">Precio Venta: <span class="error"> S/.(00.00)</span></label>
+                                                            <label for="txtPrecioVentaProducto" class="col-form-label col-form-label-sm">Precio Venta:</label>
                                                             <input type="text" class="form-control form-control-sm model" id="txtPrecioVentaProducto" name="PrecioVenta" value="0">
                                                         </div>
                                                     </div>
@@ -203,7 +170,7 @@
                                 </div>
                                 <div class="row mt-2">
                                     <div class="col-sm-12">
-                                        <button id="btnAgregarCompra" class="btn btn-primary btn-sm float-right">
+                                        <button id="btnAgregarCompra" class="btn btn-success btn-sm float-right">
                                             <i class="fas fa-plus"></i> Agregar a compra
                                         </button>
                                     </div>
@@ -347,36 +314,7 @@
                     </div>
                 </div>
 
-                <!-- FOrma Farmaceutica -->
-                <div class="modal fade" id="modalFormaFarmaceutica" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header bg-info text-white">
-                                <h5 class="modal-title">Forma Farmaceutica</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="table-responsive">
-                                    <table id="tbFormaFarmaceutica" class="table table-striped table-bordered nowrap compact" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>Forma Farmaceutica</th>
-                                                <th>Descripcion</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cerrar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <!-- MODAL PRODUCTO -->
                 <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">

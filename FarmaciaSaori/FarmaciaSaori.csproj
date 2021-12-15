@@ -2505,6 +2505,8 @@
     <Content Include="Resources\plugins\vectormap\jquery-jvectormap-us-aea-en.js" />
     <Content Include="Resources\plugins\vectormap\jquery-jvectormap-world-mill-en.js" />
     <Content Include="Resources\plugins\vectormap\jvectormap.custom.js" />
+    <Content Include="Resources\sweetalert2.js" />
+    <Content Include="Resources\sweetalert2.min.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

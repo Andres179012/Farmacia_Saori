@@ -600,6 +600,5 @@ C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\FarmaciaSaori\bin
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\FarmaciaSaori\bin\es\System.Web.WebPages.Razor.resources.dll
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.AssemblyReference.cache
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.CoreCompileInputs.cache
-C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.CopyComplete
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\FarmaciaSaori\obj\Debug\FarmaciaSaori.dll
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\FarmaciaSaori\obj\Debug\FarmaciaSaori.pdb

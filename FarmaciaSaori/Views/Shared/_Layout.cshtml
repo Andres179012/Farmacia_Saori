@@ -9,9 +9,11 @@
     <meta http-equiv="Last-Modified" content="0">
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
+    <link rel="shortcut icon" href="~/Resources/images/Favicon.png">
     <title>Farmacia Saori</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/PluginsCSS")
     @RenderSection("estilos", required: false)
     @*Estilos del Navbar*@
     <script src="~/Resources/jquery.min.js"></script>
@@ -46,7 +48,7 @@
         <div class="sidebar-wrapper" data-simplebar="true">
             <div class="sidebar-header">
                 <div>
-                    <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+                    <img src="~/Resources/images/Logo_Farmacia.png" class="logo-icon" alt="logo icon">
                 </div>
                 <div>
                     <h4 class="logo-text">Dashkote</h4>
@@ -60,29 +62,13 @@
                 <li>
                     <a class="nav-link" name="Home" href="@Url.Action("Index", "Home")">
                         <div class="parent-icon">
-                            <i class='bx bx-home-circle'></i>
+                            <i class='bx bx-bar-chart-square'></i>
                         </div>
                         <div class="menu-title">Inicio</div>
                     </a>
                 </li>
-                <li id="imprimirconsola">
-                    @Html.ActionLinkAllow();
-                </li>
                 <li>
-                    <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon">
-                            <i class='bx bx-home-circle'></i>
-                        </div>
-                        <div class="menu-title">Graficos</div>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="index.html"><i class="bx bx-right-arrow-alt"></i>Analitica</a>
-                        </li>
-                        <li>
-                            <a href="index2.html"><i class="bx bx-right-arrow-alt"></i>Tienda</a>
-                        </li>
-                    </ul>
+                    @Html.ActionLinkAllow();
                 </li>
             </ul>
             <!--end navigation-->
@@ -528,7 +514,7 @@
                     </div>
                     <div class="user-box dropdown">
                         <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
+                            <img src="~/Resources/images/Logo_Farmacia.png" class="user-img" alt="user avatar">
                             <div class="user-info ps-3">
                                 <p class="user-name mb-0">@ViewBag.NombreUsuario</p>
                                 <p class="designattion mb-0">@ViewBag.RolUsuario</p>

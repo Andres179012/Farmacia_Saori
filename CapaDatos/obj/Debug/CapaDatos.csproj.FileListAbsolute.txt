@@ -55,5 +55,6 @@ C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaDatos\bin\Deb
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaDatos\bin\Debug\CapaModelo.pdb
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.pdb

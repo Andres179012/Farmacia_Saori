@@ -89,31 +89,7 @@ $(document).ready(function () {
     });
 
 
-    //OBTENER FORMA FARMACEUTICA
-    tablatienda = $('#tbFormaFarmaceutica').DataTable({
-        "ajax": {
-            "url": $.MisUrls.url._ObtenerFormaFarmaceutica,
-            "type": "GET",
-            "datatype": "json"
-        },
-        "columns": [
-            {
-                "data": "IdFormaFarmaceutica", "render": function (data, type, row, meta) {
-                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='formafarmaceuticaSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
-                },
-                "orderable": false,
-                "searchable": false,
-                "width": "90px"
-            },
-            { "data": "FormaFarmaceutica" },
-            { "data": "Descripcion" }
-
-        ],
-        "language": {
-            "url": $.MisUrls.url.Url_datatable_spanish
-        },
-        responsive: true
-    });
+    
 
     //OBTENER PRODUCTOS
     tablaproducto = $('#tbProducto').DataTable({
@@ -164,10 +140,6 @@ function buscarDetalleFarmaco() {
     $('#modalDetalleFarmaco').modal('show');
 }
 
-function buscarFormaFarmaceutica() {
-    tablatienda.ajax.reload();
-    $('#modalFormaFarmaceutica').modal('show');
-}
 
 function buscarProducto() {
     if (parseInt($("#txtIdDetalleFarmaco").val()) == 0) {
@@ -210,14 +182,6 @@ function productoSelect(json) {
     $("#txtNombreProducto").val(json.NombreGenerico);
 
     $('#modalProducto').modal('hide');
-}
-
-function formafarmaceuticaSelect(json) {
-    $("#txtIdFormaFarmaceutica").val(json.IdFormaFarmaceutica);
-    $("#txtFormaFarmaeutica").val(json.FormaFarmaceutica);
-    $("#txtDescripcion").val(json.Descripcion);
-
-    $('#modalFormaFarmaceutica').modal('hide');
 }
 
 
@@ -383,7 +347,6 @@ $('#btnTerminarGuardarCompra').on('click', function () {
 
         var fila = tr;
         var idproducto = parseFloat($(fila).find("td.codigoproducto").data("idproducto"));
-        var idformafarmaceutica = parseFloat($(fila).find("td.formafarmceutica").data("idFormaFarmaceutica"));
         var cantidad = parseFloat($(fila).find("td.cantidad").text());
         var preciocompra = parseFloat($(fila).find("td.preciocompra").text());
         var precioventa = parseFloat($(fila).find("td.precioventa").text());
@@ -392,7 +355,6 @@ $('#btnTerminarGuardarCompra').on('click', function () {
         detalle = detalle + "<DETALLE>" +
             "<IdCompra>0</IdCompra>" +
             "<IdProducto>" + idproducto + "</IdProducto>" +
-            "<IdFormaFarmaceutica>" + idformafarmaceutica + "</IdFormaFarmaceutica>" +
             "<Cantidad>" + cantidad + "</Cantidad>" +
             "<PrecioCompra>" + preciocompra + "</PrecioCompra>" +
             "<PrecioVenta>" + precioventa + "</PrecioVenta>" +

@@ -41,7 +41,11 @@
                                         <tr>
                                             <th></th>
                                             <th>Descripcion</th>
-                                            <th>Estado</th>
+                                            <th>
+                                                <div class="d-flex order-actions">
+                                                    Estado
+                                                </div>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -55,13 +59,11 @@
 
         <!-- Modal -->
         <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
-                    <div class="modal-header btn-info text-white">
+                    <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Categoria</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="formc">
@@ -81,8 +83,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-sm btn-primary" onclick="Guardar()">Guardar</button>
+                        <button type="button" class="btn btn-danger px-2" data-bs-dismiss="modal"><i class='bx bx-message-square-x mr-1'></i>Cerrar</button>
+                        <button type="button" class="btn btn-primary px-2" onclick="Guardar()"><i class='bx bx-message-square-check mr-1'></i>Guardar</button>
                     </div>
                 </div>
             </div>
