@@ -15,6 +15,10 @@
         .btn:not(:disabled):not(.disabled) {
             cursor: pointer;
         }
+        *{
+            font-family:Ubuntu;
+            font-size:16px;
+        }
 
         .btn-secondary {
             color: #fff;
@@ -56,11 +60,11 @@
                         <table id="cabezera">
                             <tr>
                                 <td style="width:140px">
-                                    <img src="@Url.Content("~/Imagenes/tienda.png")" alt="" height="70">
+                                    <img src="@Url.Content("~/Resources/images/Logo_Farmacia.png")" alt="" height="70">
                                 </td>
                                 <td style="width:290px">
                                     <table style="width:100%">
-                                        <tr><td><label style="font-size:16px;font-weight:bold;text-align:center;width:100%;display:block">MI TIENDA ONLINE S.A.C TEST</label></td></tr>
+                                        <tr><td><label style="font-size:16px;font-weight:bold;text-align:center;width:100%;display:block">Farmacia Saori</label></td></tr>
                                         <tr><td colspan="4" align="center" style="font-size:14px">Atendido por: <span>@Html.DisplayTextFor(model => model.oUsuario.Nombres) @Html.DisplayTextFor(model => model.oUsuario.Apellidos)</span></td> </tr>
                                         <tr><td colspan="4" align="center" style="font-size:14px"><span>@Html.DisplayTextFor(model => model.oDetalleFarmaco.NombreComercial)</span></td> </tr>
                                     </table>
@@ -102,8 +106,8 @@
                 </tr>
                 <tr><td><hr /></td></tr>
                 <tr style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;">
-                    <td style="padding:4px">
-                        <u>Detalle Productos</u>
+                    <td style="padding:4px; text-align:center;">
+                        <u style="text-decoration:none; font-family:Ubuntu;font-size:18px;" >Detalle Productos</u>
                     </td>
                 </tr>
                 <tr>
@@ -137,19 +141,19 @@
                         <table style="font-weight: bold; width:100%">
                             <tr>
                                 <td colspan="4">
-                                    <table width='250' style="border:1px solid #17a2b8;">
+                                    <table width='300' style="border:1px solid #17a2b8;">
                                         <tr style="border:1px solid #17a2b8;">
-                                            <td style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;">Pago con S/.</td>
-                                            <td><span>@Html.DisplayTextFor(model => model.TextoImporteRecibido)</span></td>
-                                            <td style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;">Cambio S/.</td>
-                                            <td><span>@Html.DisplayTextFor(model => model.TextoImporteCambio)</span></td>
+                                            <td style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact; padding:3px;">Pago con C$</td>
+                                            <td style="padding: 3px;"><span>@Html.DisplayTextFor(model => model.TextoImporteRecibido)</span></td>
+                                            <td style="color: #fff; background-color: #17a2b8; -webkit-print-color-adjust: exact; padding: 3px;">Cambio C$</td>
+                                            <td style="padding: 3px; "><span>@Html.DisplayTextFor(model => model.TextoImporteCambio)</span></td>
                                         </tr>
                                     </table>
                                 </td>
                                 <td colspan="2" align="right">
                                     <table style="font-weight: bold; width: 150px;border:1px solid #17a2b8;">
                                         <tr>
-                                            <td>Total S/.</td>
+                                            <td>Total C$</td>
                                             <td style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;border:1px solid #17a2b8;"><span id="totalcosto">@Html.DisplayTextFor(model => model.TextoTotalCosto)</span></td>
                                         </tr>
                                     </table>
