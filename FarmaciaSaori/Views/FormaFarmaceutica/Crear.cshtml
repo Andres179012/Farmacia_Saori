@@ -59,7 +59,7 @@
     <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header btn-info text-white">
+                <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Formas Farmaceuticas</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -88,8 +88,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger px-5 radius-30" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success px-5 radius-30" onclick="Guardar()">Guardar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class='bx bx-message-square-x mr-1'></i>Close</button>
+                    <button id="btnGuardarCambios" type="button" class="btn btn-primary px-2" onclick="Guardar()"><i class='bx bx-message-square-check mr-1'></i>Guardar</button>
                 </div>
             </div>
         </div>

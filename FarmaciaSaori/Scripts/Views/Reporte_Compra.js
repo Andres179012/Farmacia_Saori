@@ -32,9 +32,9 @@ $(document).ready(function () {
     $("#txtFechaFin").val(ObtenerFecha());
 
 
-    //OBTENER TIENDAS
+    //OBTENER 
     jQuery.ajax({
-        url: $.MisUrls.url._ObtenerUsuarios,
+        url: $.MisUrls.url._ObtenerDetalleFarmaco,
         type: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
@@ -48,7 +48,7 @@ $(document).ready(function () {
                 $.each(data.data, function (i, item) {
 
                     if (item.Activo == true) {
-                        $("<option>").attr({ "value": item.IdUsuario }).text(item.Nombres).appendTo("#cboTienda");
+                        $("<option>").attr({ "value": item.IdDetalleFarmaco }).text(item.NombreComercial).appendTo("#cboTienda");
                     }
                 })
         },
@@ -65,7 +65,7 @@ $(document).ready(function () {
 $('#btnBuscar').on('click', function () {
 
     jQuery.ajax({
-        url: $.MisUrls.url._ObtenerReporteCompra + "?fechainicio=" + $("#txtFechaInicio").val() + "&fechafin=" + $("#txtFechaFin").val() + "&idusuario=" + $("#cboTienda").val(),
+        url: $.MisUrls.url._ObtenerReporteCompra + "?fechainicio=" + $("#txtFechaInicio").val() + "&fechafin=" + $("#txtFechaFin").val(),
         type: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
@@ -80,10 +80,10 @@ $('#btnBuscar').on('click', function () {
 
                     $("<tr>").append(
                         $("<td>").text(row["FechaRegistro"]),
-                        $("<td>").text(row["Nombres"]),
-                        $("<td>").text(row["TotalCosto"]),
                         $("<td>").text(row["NombreComercial"]),
-                        $("<td>").text(row["Concentracion"])
+                        $("<td>").text(row["Concentracion"]),
+                        $("<td>").text(row["NombreEmpleado"]),
+                        $("<td>").text(row["TotalCompra"])
 
                     ).appendTo("#tbReporte tbody");
 
@@ -131,7 +131,7 @@ function printData() {
 
 
     newWin.document.write(style);
-    newWin.document.write("<h3>Reporte de Ventas</h3>");
+    newWin.document.write("<h3>Reporte de Compras</h3>");
     newWin.document.write(divToPrint.outerHTML);
     newWin.print();
     newWin.close();

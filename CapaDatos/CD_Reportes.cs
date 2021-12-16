@@ -126,5 +126,52 @@ namespace CapaDatos
             return lista;
 
         }
+
+
+        public List<ReporteCompra> ReporteCompra(DateTime FechaInicio, DateTime FechaFin)
+        {
+            List<ReporteCompra> lista = new List<ReporteCompra>();
+
+            NumberFormatInfo formato = new CultureInfo("es-PE").NumberFormat;
+            formato.CurrencyGroupSeparator = ".";
+
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_ReporteCompra", oConexion);
+                cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new ReporteCompra()
+                            {
+                                FechaRegistro = dr["Fecha Compra"].ToString(),
+                                NombreComercial = dr["Nombre Comercial"].ToString(),
+                                Concentracion = dr["Concentracion"].ToString(),
+                                NombreEmpleado = dr["Nombre Empleado"].ToString(),
+                                TotalCompra = Convert.ToDecimal(dr["Total Compra"].ToString(), new CultureInfo("es-PE")).ToString("N", formato)
+                            });
+                        }
+
+                    }
+
+                }
+                catch (Exception)
+                {
+                    lista = new List<ReporteCompra>();
+                }
+            }
+
+            return lista;
+
+        }
+
     }
 }
