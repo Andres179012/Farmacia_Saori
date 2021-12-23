@@ -162,7 +162,7 @@ function Imprimir(id) {
     var texto = $.MisUrls.url._DocumentoCompra + "?idcompra=" + id;
 
     // Open the page in a new tab or window
-    var w = window.open(texto);
+    window.open(texto);
 
     //w.onload = function () {
     //    w.print();

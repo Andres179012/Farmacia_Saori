@@ -78,7 +78,7 @@ function abrirPopUpForm(json) {
 
 function Guardar() {
 
-    if ($("#form").valid()) {
+    if ($("#formc").valid()) {
 
         var request = {
             objeto: {

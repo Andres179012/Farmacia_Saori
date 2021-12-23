@@ -2,6 +2,7 @@
 using CapaModelo;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -23,11 +24,13 @@ namespace FarmaciaSaori.Controllers
             return View();
         }
 
-        public ActionResult Documento(int idcompra = 0) {
-            
+        public ActionResult Documento(int idcompra = 0)
+        {
+
             Compra oCompra = CD_Compra.Instancia.ObtenerDetalleCompra(idcompra);
 
-            if (oCompra == null) {
+            if (oCompra == null)
+            {
                 oCompra = new Compra();
             }
 

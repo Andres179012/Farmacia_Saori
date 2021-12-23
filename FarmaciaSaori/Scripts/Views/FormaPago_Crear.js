@@ -35,7 +35,7 @@ $(document).ready(function () {
             },
             {
                 "data": "IdFormaPago", "render": function (data, type, row, meta) {
-                    return "<button class='text-primary bg - light - primary border - 0' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='bx bxs-edit'></i></button>" +
+                    return "<button class='text-primary bg-light-primary border- 0' type='button' onclick='abrirPopUpForm(" + JSON.stringify(row) + ")'><i class='bx bxs-edit'></i></button>" +
                         "<button class='ms-4 text-danger bg-light-danger border-0' type='button' onclick='eliminar(" + data + ")'><i class='bx bxs-trash'></i></button>"
                 },
                 "orderable": false,

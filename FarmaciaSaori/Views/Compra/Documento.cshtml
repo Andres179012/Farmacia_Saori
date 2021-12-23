@@ -14,11 +14,13 @@
         .btn:not(:disabled):not(.disabled) {
             cursor: pointer;
         }
+
         .btn-secondary {
             color: #fff;
             background-color: #6c757d;
             border-color: #6c757d;
         }
+
         .btn {
             display: inline-block;
             font-weight: 400;
@@ -107,9 +109,9 @@
                                 </tr>
                                 <tr>
                                     <td width="15">Ruc:</td>
-                                    <td style="border-bottom: 1px solid black;"><center><span>@Html.DisplayTextFor(model => model.oDetalleFarmaco.NombreComercial)</span></center></td>
+                                    @*<td style="border-bottom: 1px solid black;"><center><span>@Html.DisplayTextFor(model => model.oTienda.RUC)</span></center></td>*@
                                     <td width="110">Nombre Tienda:</td>
-                                    <td style="border-bottom: 1px solid black;"><center><span id="nombretienda">@Html.DisplayTextFor(model => model.oDetalleFarmaco.Concentracion)</span></center></td>
+                                    @*<td style="border-bottom: 1px solid black;"><center><span id="nombretienda">@Html.DisplayTextFor(model => model.oTienda.Nombre)</span></center></td>*@
                                 </tr>
                             </tbody>
                         </table>
@@ -132,7 +134,7 @@
                                     <th style="width: 25%;">Importe</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            @*<tbody>
                                 @foreach (var item in Model.oListaDetalleCompra)
                                 {
 
@@ -143,7 +145,7 @@
                                         <td>@Html.DisplayFor(modelItem => item.TotalCosto)</td>
                                     </tr>
                                 }
-                            </tbody>
+                            </tbody>*@
                         </table>
                     </td>
                 </tr>
@@ -164,7 +166,7 @@
     </div>
     @Scripts.Render("~/Content/PluginsJS")
     <script>
-        
+
         function imprSelec(nombre) {
             var printContents = document.getElementById(nombre).innerHTML;
             var originalContents = document.body.innerHTML;

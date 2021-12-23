@@ -105,7 +105,7 @@ namespace CapaDatos
                                                                    {
                                                                        NombreComercial = dato.Element("NombreComercial").Value,
                                                                        Concentracion = dato.Element("Concentracion").Value,
-                                                                       NumeroLote = dato.Element("NumeroLote").Value
+                                                                       //NumeroLote = dato.Element("NumeroLote").Value
                                                                    }).FirstOrDefault();
                                 rptDetalleVenta.oCliente = (from dato in doc.Element("DETALLE_VENTA").Elements("DETALLE_CLIENTE")
                                                             select new Cliente()
