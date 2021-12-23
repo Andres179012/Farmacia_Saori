@@ -1,0 +1,19 @@
+﻿.bg-gradient-1 {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.bg-gradient-2 {
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.bg-gradient-3 {
+    background: rgb(71,0,138);
+    background: linear-gradient(90deg, rgba(71,0,138,1) 0%, rgba(140,17,255,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.bg-gradient-4 {
+    background: rgb(186,3,0);
+    background: linear-gradient(90deg, rgba(186,3,0,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}

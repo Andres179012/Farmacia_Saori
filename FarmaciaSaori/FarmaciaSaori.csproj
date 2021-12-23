@@ -2365,6 +2365,7 @@
     <Content Include="Resources\flags\4x3\zw.svg" />
     <Content Include="Resources\fonts\boxicons.svg" />
     <Content Include="Resources\fonts\LineIcons.svg" />
+    <Content Include="Resources\Gradients.css" />
     <Content Include="Resources\images\errors-images\404-error.png" />
     <Content Include="Resources\images\errors-images\505-error.png" />
     <Content Include="Resources\images\favicon-32x32.png" />

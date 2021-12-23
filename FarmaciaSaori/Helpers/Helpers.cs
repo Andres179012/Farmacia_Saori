@@ -26,17 +26,22 @@ namespace FarmaciaSaori.Helpers
 
                 foreach (Menu item in rptUsuario.oListaMenu)
                 {
-                    sb.AppendLine("<a href='javascript:;' class='has-arrow'><div class='parent-icon'><i class='" + item.Icono + "'></i></div><div>" + item.Nombre + "</div></a>");
+
+                    sb.AppendLine("<li>");
+                    sb.AppendLine("<a href='javascript:;' class='has-arrow'><div class='parent-icon'><i class='" + item.Icono + "'></i></div><div class='menu-title'>" + item.Nombre + "</div></a>");
+                    
 
                     sb.AppendLine("<ul>");
                     foreach (SubMenu subitem in item.oSubMenu)
                     {
-                        //fas fa-caret-right
                         if (subitem.Activo == true)
                             sb.AppendLine("<li><a class='dropdown-item' name='" + item.Nombre + "' href='/" + subitem.Controlador + "/" + subitem.Vista + "'><i class='" + subitem.Icono + "'></i> " + subitem.Nombre + "</a></li>");
 
                     }
                     sb.AppendLine("</ul>");
+                    sb.AppendLine("</li>");
+
+
                 }
 
 

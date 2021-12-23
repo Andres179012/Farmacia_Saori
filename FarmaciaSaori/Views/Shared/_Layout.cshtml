@@ -1,6 +1,6 @@
 ﻿@using FarmaciaSaori.Helpers
 <!DOCTYPE html>
-<html>
+<html class="semi-dark">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="~/Resources/css/semi-dark.css" />
     <link rel="stylesheet" href="~/Resources/css/header-colors.css" />
 
+    <link rel="stylesheet" href="~/Resources/Gradients.css" />
+
 
     <link href="~/Resources/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
@@ -51,8 +53,8 @@
                 <div>
                     <img src="~/Resources/images/Logo_Farmacia.png" class="logo-icon" alt="logo icon">
                 </div>
-                <div>
-                    <h4 class="logo-text">Farmacia Saori</h4>
+                <div class="logo-text">
+                    <h5 class="text-white">Farmacia Saori</h5>
                 </div>
                 <div class="toggle-icon ms-auto">
                     <i class='bx bx-arrow-to-left'></i>
@@ -60,17 +62,14 @@
             </div>
             <!--navigation-->
             <ul class="metismenu" id="menu">
-                <li>
+                <ul>
                     <a class="nav-link" name="Home" href="@Url.Action("Index", "Home")">
                         <div class="parent-icon">
                             <i class='bx bx-bar-chart-square'></i>
                         </div>
                         <div class="menu-title">Inicio</div>
                     </a>
-                </li>
-                <li>
-                    @Html.ActionLinkAllow();
-                </li>
+                    @Html.ActionLinkAllow()
             </ul>
             <!--end navigation-->
         </div>
@@ -696,9 +695,10 @@
 
         $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
 
-    $.MisUrls.urls({ _ObtenerTotalProductos: '@Url.Action("ObtenerTotal", "Home")' });
-    $.MisUrls.urls({ _ObtenerTotalCompras: '@Url.Action("ObtenerTotalCompras", "Home")' });
-    $.MisUrls.urls({ _ObtenerTotalVentas: '@Url.Action("ObtenerTotalVentas", "Home")' });
+        $.MisUrls.urls({ _ObtenerTotalProductos: '@Url.Action("ObtenerTotal", "Home")' });
+        $.MisUrls.urls({ _ObtenerTotalCompras: '@Url.Action("ObtenerTotalCompras", "Home")' });
+        $.MisUrls.urls({ _ObtenerTotalVentas: '@Url.Action("ObtenerTotalVentas", "Home")' });
+        $.MisUrls.urls({ _ObtenerTotalCategorias: '@Url.Action("ObtenerTotalC", "Home")' });
 
         //CONTROLADOR ROL
         $.MisUrls.urls({ _ObtenerRoles: '@Url.Action("Obtener", "Rol")' });

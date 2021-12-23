@@ -65,6 +65,36 @@ namespace CapaDatos
             }
         }
 
+        public int ObtenerTotalCategoria()
+        {
+            int total = 0;
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_TotalCategorias", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        total = Convert.ToInt32(dr["TOTALCATEGORIAS"].ToString());
+                    }
+                    dr.Close();
+
+                    return total;
+
+                }
+                catch (Exception)
+                {
+                    total = 0;
+                    return total;
+                }
+            }
+        }
+
         public bool RegistrarCategoria(Categorias oCategoria)
         {
             bool respuesta = true;

@@ -43,6 +43,12 @@ namespace FarmaciaSaori.Controllers
             return Json(new { data = total }, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult ObtenerTotalC()
+        {
+            int totalcategorias = CapaDatos.CD_Categoria.Instancia.ObtenerTotalCategoria();
+            return Json(new { data = totalcategorias }, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult ObtenerTotalCompras()
         {
             double totalcompras = CapaDatos.CD_Compra.Instancia.ObtenerTotalCompras();
@@ -54,6 +60,5 @@ namespace FarmaciaSaori.Controllers
             double totalventas = CapaDatos.CD_Compra.Instancia.ObtenerTotalVentas();
             return Json(new { data = totalventas }, JsonRequestBehavior.AllowGet);
         }
-
     }
 }
