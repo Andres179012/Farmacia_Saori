@@ -1,4 +1,4 @@
-﻿
+﻿ 
 var table;
 
 
@@ -79,11 +79,11 @@ $('#btnBuscar').on('click', function () {
                 $.each(data, function (i, row) {
 
                     $("<tr>").append(
-                        $("<td>").text(row["FechaRegistro"]),
-                        $("<td>").text(row["NombreComercial"]),
-                        $("<td>").text(row["Concentracion"]),
-                        $("<td>").text(row["NombreEmpleado"]),
-                        $("<td>").text(row["TotalCompra"])
+                        $("<td style='color:black'>").text(row["FechaRegistro"]),
+                        $("<td style='color:black'>").text(row["NombreComercial"]),
+                        $("<td style='color:black'>").text(row["Concentracion"]),
+                        $("<td style='color:black'>").text(row["NombreEmpleado"]),
+                        $("<td style='color:black'>").text(row["TotalCompra"])
 
                     ).appendTo("#tbReporte tbody");
 
@@ -119,19 +119,25 @@ function printData() {
         return;
     }
 
+    var header_ = document.getElementById("header-reporte-compraimg");
     var divToPrint = document.getElementById("tbReporte");
+    
 
     var style = "<style>";
-    style = style + "table {width: 100%;font: 17px Calibri;}";
-    style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
-    style = style + "padding: 2px 3px;text-align: center;}";
+    style = style + "table {width: 100%;font-family:'MesloLGL Nerd Font'; font - size: 10px;}";
+    style = style + "table, th{border-collapse: collapse;background: #6F85E8;color:white;text-align:start;border:1px solid white;padding: 4px;}";
+    style = style + "table, td {color:black;border: 1px solid #e1e1e1;";
+    style = style + "padding: 4px;}";
     style = style + "</style>";
 
     newWin = window.open("");
 
-
     newWin.document.write(style);
-    newWin.document.write("<h3>Reporte de Compras</h3>");
+    newWin.document.write("<div style='text-align:center; padding:10px;background: rgb(2,0,36);background:linear-gradient(90deg,rgba(2,0,36,1)0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);-webkit-print-color-adjust: exact;border-radius:0 15px 0 15px;' id='back_head'>");
+    newWin.document.write("<h2 style='color:white;'>Reporte de Compras Farmacia Saori</h2>");
+    newWin.document.write("<h3 style='color:white;'>San Juan, La Concepción</h3>");
+    newWin.document.write("<h3 style='color:white;'>Tel: +505 8170-7927</h3>");
+    newWin.document.write("</div>");
     newWin.document.write(divToPrint.outerHTML);
     newWin.print();
     newWin.close();

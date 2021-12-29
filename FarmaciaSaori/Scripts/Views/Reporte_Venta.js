@@ -135,7 +135,11 @@ function printData() {
 
 
     newWin.document.write(style);
-    newWin.document.write("<h3>Reporte de Ventas</h3>");
+    newWin.document.write("<div style='text-align:center; padding:10px;background: rgb(71,0,138);background: linear-gradient(90deg, rgba(71, 0, 138, 1) 0%, rgba(140, 17, 255, 1) 35%, rgba(0, 212, 255, 1) 100%);-webkit-print-color-adjust: exact;border-radius:0 15px 0 15px;' id='back_head'>");
+    newWin.document.write("<h2 style='color:white;'>Reporte de Compras Farmacia Saori</h2>");
+    newWin.document.write("<h3 style='color:white;'>San Juan, La Concepción</h3>");
+    newWin.document.write("<h3 style='color:white;'>Tel: +505 8170-7927</h3>");
+    newWin.document.write("</div>");
     newWin.document.write(divToPrint.outerHTML);
     newWin.print();
     newWin.close();

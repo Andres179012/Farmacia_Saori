@@ -52,7 +52,7 @@ namespace CapaDatos
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
 
                 }
-                catch (Exception )
+                catch (Exception)
                 {
                     respuesta = false;
                 }
@@ -85,7 +85,7 @@ namespace CapaDatos
                                                     select new Compra()
                                                     {
                                                         Codigo = dato.Element("Codigo").Value,
-                                                        TotalCosto = Convert.ToDecimal(dato.Element("TotalCosto").Value,new CultureInfo("es-PE")),
+                                                        TotalCosto = Convert.ToDecimal(dato.Element("TotalCosto").Value, new CultureInfo("es-PE")),
                                                         FechaCompra = dato.Element("FechaCompra").Value
                                                     }).FirstOrDefault();
                                 rptDetalleCompra.oProveedor = (from dato in doc.Element("DETALLE_COMPRA").Elements("DETALLE_PROVEEDOR")
@@ -95,12 +95,12 @@ namespace CapaDatos
                                                                    RazonSocial = dato.Element("RazonSocial").Value,
                                                                }).FirstOrDefault();
                                 rptDetalleCompra.oDetalleFarmaco = (from dato in doc.Element("DETALLE_COMPRA").Elements("DETALLE_FARMACO")
-                                                            select new DetalleFarmaco()
-                                                            {
-                                                                NombreComercial = dato.Element("NombreComercial").Value,
-                                                                Concentracion = dato.Element("Concentracion").Value,
-                                                                NumeroLote = dato.Element("NumeroLote").Value,
-                                                            }).FirstOrDefault();
+                                                                    select new DetalleFarmaco()
+                                                                    {
+                                                                        NombreComercial = dato.Element("NombreComercial").Value,
+                                                                        Concentracion = dato.Element("Concentracion").Value,
+                                                                        NumeroLote = dato.Element("NumeroLote").Value,
+                                                                    }).FirstOrDefault();
                                 rptDetalleCompra.oListaDetalleCompra = (from producto in doc.Element("DETALLE_COMPRA").Element("DETALLE_PRODUCTO").Elements("PRODUCTO")
                                                                         select new DetalleCompra()
                                                                         {
@@ -225,7 +225,7 @@ namespace CapaDatos
                     return rptListaCompra;
 
                 }
-                catch (Exception )
+                catch (Exception)
                 {
                     rptListaCompra = null;
                     return rptListaCompra;

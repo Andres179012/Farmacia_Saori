@@ -15,6 +15,11 @@
             cursor: pointer;
         }
 
+        * {
+            font-family: 'MesloLGL Nerd Font';
+            font-size: 12px;
+        }
+
         .btn-secondary {
             color: #fff;
             background-color: #6c757d;
@@ -55,12 +60,12 @@
                         <table id="cabezera">
                             <tr>
                                 <td style="width:140px">
-                                    <img src="@Url.Content("~/Imagenes/tienda.png")" alt="" height="70">
+                                    <img src="@Url.Content("~/Resources/images/Logo_Farmacia.png")" alt="" height="70">
                                 </td>
                                 <td style="width:340px">
                                     <table style="width:100%">
-                                        <tr><td><label style="font-size:20px;font-weight:bold;text-align:center;width:100%;display:block">MI TIENDA ONLINE S.A.C TEST</label></td></tr>
-                                        <tr><td><label style="text-align:center;width:100%;display:block">test@gmmail.com</label></td></tr>
+                                        <tr><td><label style="font-size:16px;font-weight:bold;text-align:center;width:100%;display:block">Farmacia Saori</label></td></tr>
+                                        <tr><td colspan="4" align="center">Agente: <span>@Html.DisplayTextFor(model => model.oUsuario.NombreUsuario) @Html.DisplayTextFor(model => model.oUsuario.Apellidos)</span></td> </tr>
                                     </table>
                                 </td>
                                 <td style="width:150px;">
@@ -68,7 +73,7 @@
                                         <tbody>
                                             <tr style="color:#fff;background-color:#17a2b8; -webkit-print-color-adjust: exact;"><td align="center">COMPRA</td></tr>
                                             <tr><td align="center">NRO - <span>@Html.DisplayTextFor(model => model.Codigo)</span> </td></tr>
-                                            <tr><td align="center">Fecha - <span>@Html.DisplayTextFor(model => model.FechaCompra)</span> </td></tr>
+                                            <tr><td align="center">Fecha - <span>@Html.DisplayTextFor(model => model.FechaRegistro)</span> </td></tr>
                                         </tbody>
                                     </table>
                                 </td>

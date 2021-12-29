@@ -11,13 +11,15 @@
     <meta name="viewport" content="width=device-width" />
     <title>Documento</title>
     @Styles.Render("~/Content/PluginsCSS")
+    <link href="~/Resources/Gradients.css" type="text/css" rel="stylesheet"/>
     <style type="text/css">
         .btn:not(:disabled):not(.disabled) {
             cursor: pointer;
         }
+
         *{
-            font-family:Ubuntu;
-            font-size:16px;
+            font-family:'MesloLGL Nerd Font';
+            font-size:12px;
         }
 
         .btn-secondary {
@@ -54,10 +56,10 @@
     </div>
     <div id="seleccion">
         <center>
-            <table style="width: 650px; border: 2px solid #17a00e; padding: 10px;">
+            <table style="width: 650px; border: 2px solid #e2e2e2; padding: 10px;">
                 <tr>
                     <td>
-                        <table id="cabezera" style="border-bottom: 2px solid #17a00e;padding-bottom:6px">
+                        <table id="cabezera" style="border-bottom: 2px solid #e5e5e5;padding-bottom:6px">
                             <tr>
                                 <td style="width:140px">
                                     <img src="@Url.Content("~/Resources/images/Logo_Farmacia.png")" alt="" height="70">
@@ -65,15 +67,15 @@
                                 <td style="width:290px">
                                     <table style="width:100%">
                                         <tr><td><label style="font-size:16px;font-weight:bold;text-align:center;width:100%;display:block">Farmacia Saori</label></td></tr>
-                                        <tr><td colspan="4" align="center" style="font-size:14px">Agente: <span>@Html.DisplayTextFor(model => model.oUsuario.Nombres) @Html.DisplayTextFor(model => model.oUsuario.Apellidos)</span></td> </tr>
-                                        <tr><td colspan="4" align="center" style="font-size:14px"><span>@Html.DisplayTextFor(model => model.oDetalleFarmaco.NombreComercial)</span></td> </tr>
+                                        <tr><td colspan="4" align="center">Agente: <span>@Html.DisplayTextFor(model => model.oUsuario.Nombres) @Html.DisplayTextFor(model => model.oUsuario.Apellidos)</span></td> </tr>
+                                        <tr><td colspan="4" align="center"><span>@Html.DisplayTextFor(model => model.oDetalleFarmaco.NombreComercial)</span></td> </tr>
                                     </table>
                                 </td>
                                 <td style="width:200px;">
-                                    <table style="width: 100%; height: 100px; font-weight: bold; border: 2px solid #17a00e; font-size: 14px ">
-                                        <tr><td align="center">R.U.C. <span>@Html.DisplayTextFor(model => model.oDetalleFarmaco.Concentracion)</span></td></tr>
-                                        <tr style="color: #fff; background-color: #17a00e; -webkit-print-color-adjust: exact; font-size: 16px !important"><td align="center"><span>@Html.DisplayTextFor(model => model.TipoDocumento)</span></td></tr>
-                                        <tr><td align="center">NRO - <span>@Html.DisplayTextFor(model => model.Codigo)</span> </td></tr>
+                                    <table style="width: 100%; height: 100px; font-weight: bold;">
+                                        <tr><td align="center"><span>@Html.DisplayTextFor(model => model.FechaRegistro)</span></td></tr>
+                                        <tr style="border-radius:15px; -webkit-print-color-adjust: exact; font-size: 16px !important"><td align="center"><span>@Html.DisplayTextFor(model => model.TipoDocumento)</span></td></tr>
+                                        <tr><td align="center">NO - <span>@Html.DisplayTextFor(model => model.Codigo)</span> </td></tr>
                                     </table>
                                 </td>
                             </tr>
@@ -86,39 +88,33 @@
                     <td>
                         <table style=" width: 100%;" border="0">
                             <tr>
-                                <td colspan="1" style="width:50px !important">Cliente:</td>
-                                <td colspan="5" style="border-bottom:1px solid #000"><span>@Html.DisplayTextFor(model => model.oCliente.Nombre)</span></td>
+                                <td colspan="1" style="width:60px !important">Cliente:</td>
+                                <td colspan="5"><span>@Html.DisplayTextFor(model => model.oCliente.Nombre)</span></td>
+                                <td style="width:60px">No.Documento:</td>
+                                <td><span>@Html.DisplayTextFor(model => model.oCliente.NumeroDocumento)</span></td>
                             </tr>
                             <tr>
-                                <td colspan="1" style="width:50px !important">Direccion:</td>
-                                <td colspan="5" style="border-bottom:1px solid #000"><span>@Html.DisplayTextFor(model => model.oCliente.Direccion)</span></td>
-                            </tr>
-                            <tr>
-                                <td style="width:50px">Nro.Documento:</td>
-                                <td style="border-bottom:1px solid #000"><span>@Html.DisplayTextFor(model => model.oCliente.NumeroDocumento)</span></td>
-                                <td style="width:50px"> Telefono:</td>
-                                <td style="border-bottom:1px solid #000"><span>@Html.DisplayTextFor(model => model.oCliente.Telefono)</span></td>
-                                <td style="width:50px"> Fecha:</td>
-                                <td style="border-bottom:1px solid #000"><span>@Html.DisplayTextFor(model => model.FechaRegistro)</span></td>
+                                <td colspan="1" style="width:60px !important">Direccion:</td>
+                                <td colspan="5"><span>@Html.DisplayTextFor(model => model.oCliente.Direccion)</span></td>
+                                <td style="width:60px"> Telefono:</td>
+                                <td><span>@Html.DisplayTextFor(model => model.oCliente.Telefono)</span></td>
+
                             </tr>
                         </table>
                     </td>
                 </tr>
                 <tr><td><hr /></td></tr>
                 <tr style="color: #fff; background-color: #17a00e; -webkit-print-color-adjust: exact;">
-                    <td style="padding:4px; text-align:center;">
-                        <u style="text-decoration:none; font-family:Ubuntu;font-size:18px;" >Detalle Productos</u>
-                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <table id="tbCompras" style="width:100%;border:1px solid #5e5e5e">
+                        <table id="tbCompras">
                             <thead>
-                                <tr style="color: #fff; background-color: #17a00e; -webkit-print-color-adjust: exact;">
-                                    <th style="width: 15%;">Cantidad</th>
-                                    <th style="width: 45%;">Descripcion</th>
-                                    <th style="width: 20%;">P.Unit</th>
-                                    <th style="width: 20%;">Importe Total</th>
+                                <tr style="-webkit-print-color-adjust: exact;" class="items_Cantidad">
+                                    <th style="width: 15%;border-radius: 15px 0 0 15px;margin:1px;">Cantidad</th>
+                                    <th style="width: 45%; margin: 1px;">Descripcion</th>
+                                    <th style="width: 20%; margin: 1px;">P.Unit</th>
+                                    <th style="width: 20%; border-radius: 0 15px 15px 0;">Importe Total</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -141,20 +137,34 @@
                         <table style="font-weight: bold; width:100%">
                             <tr>
                                 <td colspan="4">
-                                    <table width='300' style="border: 1px solid #17a00e;">
-                                        <tr style="border: 1px solid #17a00e;">
-                                            <td style="color: #fff; background-color: #17a00e; -webkit-print-color-adjust: exact; padding: 3px;">Pago con C$</td>
-                                            <td style="padding: 3px;"><span>@Html.DisplayTextFor(model => model.TextoImporteRecibido)</span></td>
-                                            <td style="color: #fff; background-color: #17a00e; -webkit-print-color-adjust: exact; padding: 3px;">Cambio C$</td>
-                                            <td style="padding: 3px; "><span>@Html.DisplayTextFor(model => model.TextoImporteCambio)</span></td>
+                                    <table width='330'>
+                                        <tr>
+                                            <td style="-webkit-print-color-adjust: exact; padding: 3px;">Telefono</td>
+                                            <td style="padding: 3px;"><span>+505 81707927</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="-webkit-print-color-adjust: exact; padding: 3px;">Ubicacion</td>
+                                            <td style="padding: 3px;"><span>San Juan, La Concepcion</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="-webkit-print-color-adjust: exact; padding: 3px;">Atendido Por:</td>
+                                            <td style="padding: 3px;"><span>@Html.DisplayTextFor(model => model.oUsuario.Nombres) @Html.DisplayTextFor(model => model.oUsuario.Apellidos)</span></td>
                                         </tr>
                                     </table>
                                 </td>
                                 <td colspan="2" align="right">
-                                    <table style="font-weight: bold; width: 150px; border: 1px solid #17a00e;">
+                                    <table style="font-weight: bold; width: 160px;">
                                         <tr>
-                                            <td>Total C$</td>
-                                            <td style="color: #fff; background-color: #17a00e; -webkit-print-color-adjust: exact; border: 1px solid #17a00e; "><span id="totalcosto">@Html.DisplayTextFor(model => model.TextoTotalCosto)</span></td>
+                                            <td style="-webkit-print-color-adjust: exact; padding: 3px; text-align:right;">Pago con C$</td>
+                                            <td style="padding: 3px;"><span>@Html.DisplayTextFor(model => model.TextoImporteRecibido)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style=" -webkit-print-color-adjust: exact; padding: 3px; text-align: right;">Cambio C$</td>
+                                            <td style="padding: 3px;"><span>@Html.DisplayTextFor(model => model.TextoImporteCambio)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: right;">Total C$</td>
+                                            <td style="padding: 3px; -webkit-print-color-adjust: exact;"><span id="totalcosto">@Html.DisplayTextFor(model => model.TextoTotalCosto)</span></td>
                                         </tr>
                                     </table>
                                 </td>

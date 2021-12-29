@@ -11,6 +11,7 @@
             overflow-y: scroll;
         }
     </style>
+    <link href="~/Resources/Reportes.css" type="text/css" rel="stylesheet" />
 }
 
 <body>
@@ -70,29 +71,59 @@
                                             <button id="btnBuscar" type="button" class="btn btn-sm btn-primary btn-block"><i class="fas fa-search"></i> Buscar</button>
                                         </div>
                                     </div>
-                                </div>
-                                <hr />
-                                <div class="row mb-2">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-primary float-left" onclick="printData()">
+                                    <div class="col-sm-2">
+                                        <button class="btn btn-sm btn-success btn-block" onclick="printData()">
                                             <i class="fas fa-print"></i> Imprimir
                                         </button>
                                     </div>
                                 </div>
+                                <hr />
+
+                                <div class="header-factura-venta" id="header-reporte-compra" style="-webkit-print-color-adjust: exact;">
+
+                                    <!--Content before waves-->
+                                    <div class="inner-header flex">
+                                        <!--Just the logo.. Don't mind this-->
+                                        <svg version="1.1" class="logo">
+                                            <img src="~/Resources/images/Logo_Farmacia.png" style="width: 100px;" id="logo_farmacia_rpt" />
+                                        </svg>
+                                        <h1 style="color:white;">Reporte de Ventas</h1>
+                                    </div>
+
+                                    <!--Waves Container-->
+                                    <div id="header-compras" style="-webkit-print-color-adjust: exact;">
+                                        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                                            <defs>
+                                                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                                            </defs>
+                                            <g class="parallax">
+                                                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                                                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                                                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                                                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <!--Waves end-->
+
+                                </div>
+                                <!--Header ends-->
+
                                 <div class="row" id="inner-right">
                                     <div class="col-sm-12">
-                                        <table id="tbReporte" class="table table-striped table-bordered table-sm table-responsive-sm" style="width:100%">
+                                        <table id="tbReporte" class="table table-striped table-bordered table-sm table-responsive-xl" style="width:100%">
                                             <thead>
-                                                <tr>
-                                                    <th>Fecha Venta</th>
-                                                    <th>Numero Documento</th>
-                                                    <th>Tipo Documento</th>
-                                                    <th>Nombre Tienda</th>
-                                                    <th>Ruc Tienda</th>
-                                                    <th>Nombre Empleado</th>
-                                                    <th>Cantidad Unidades Vendidas</th>
-                                                    <th>Cantidad Productos</th>
-                                                    <th>Total Venta</th>
+                                                <tr style="-webkit-print-color-adjust: exact;" class="items_detallle">
+                                                    <th style="width: 15%; border-radius: 15px 0 0 15px; margin: 1px;">Fecha Venta</th>
+                                                    <th style="margin: 1px;">Numero Documento</th>
+                                                    <th style="margin: 1px;">Tipo Documento</th>
+                                                    <th style="margin: 1px;">Nombre Tienda</th>
+                                                    <th style="margin: 1px;">Ruc Tienda</th>
+                                                    <th style="margin: 1px;">Nombre Empleado</th>
+                                                    <th style="margin: 1px;">Cantidad Unidades Vendidas</th>
+                                                    <th style="margin: 1px;">Cantidad Productos</th>
+                                                    <th style="width: 20%; border-radius: 0 15px 15px 0;">Total Venta</th>
                                                 </tr>
                                             </thead>
                                             <tbody></tbody>
