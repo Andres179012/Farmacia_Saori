@@ -42,6 +42,10 @@ namespace FarmaciaSaori.Controllers
         public JsonResult Obtener(string fechainicio, string fechafin, int idproveedor, int idtienda)
         {
             List<Compra> lista = CD_Compra.Instancia.ObtenerListaCompra(Convert.ToDateTime(fechainicio), Convert.ToDateTime(fechafin), idproveedor, idtienda);
+
+            if (lista == null)
+                lista = new List<Compra>();
+
             return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
         }
 

@@ -86,7 +86,7 @@ namespace CapaDatos
                                                     {
                                                         Codigo = dato.Element("Codigo").Value,
                                                         TotalCosto = Convert.ToDecimal(dato.Element("TotalCosto").Value, new CultureInfo("es-PE")),
-                                                        FechaCompra = dato.Element("FechaCompra").Value
+                                                        FechaRegistro = dato.Element("FechaRegistro").Value
                                                     }).FirstOrDefault();
                                 rptDetalleCompra.oProveedor = (from dato in doc.Element("DETALLE_COMPRA").Elements("DETALLE_PROVEEDOR")
                                                                select new Proveedor()
@@ -216,7 +216,8 @@ namespace CapaDatos
                             NumeroCompra = dr["NumeroCompra"].ToString(),
                             oProveedor = new Proveedor() { RazonSocial = dr["RazonSocial"].ToString() },
                             oDetalleFarmaco = new DetalleFarmaco() { NombreComercial = dr["NombreComercial"].ToString() },
-                            FechaCompra = dr["FechaCompra"].ToString(),
+                            FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()).ToString("dd/MM/yyyy"),
+                            VFechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()),
                             TotalCosto = Convert.ToDecimal(dr["TotalCosto"].ToString(), new CultureInfo("es-PE"))
                         });
                     }

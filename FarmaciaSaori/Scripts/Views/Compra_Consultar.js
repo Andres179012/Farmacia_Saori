@@ -113,7 +113,7 @@ $(document).ready(function () {
                     return data.NombreComercial
                 }
             },
-            { "data": "FechaCompra" },
+            { "data": "FechaRegistro" },
             {
                 "data": "TotalCosto", render: function (data) {
 

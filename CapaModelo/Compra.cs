@@ -10,7 +10,6 @@ namespace CapaModelo
     {
         public int IdCompra { get; set; }
         public string Codigo { get; set; }
-        public string FechaCompra { get; set; }
         public string NumeroCompra { get; set; }
         public Usuario oUsuario { get; set; }
         public int IdProveedor { get; set; }
@@ -21,6 +20,7 @@ namespace CapaModelo
         public decimal TotalCosto { get; set; }
         public string TipoComprobante { get; set; }
         public bool Activo { get; set; }
-        public DateTime FechaRegistro { get; set; }
+        public string FechaRegistro { get; set; }
+        public DateTime VFechaRegistro { get; set; }
     }
 }
