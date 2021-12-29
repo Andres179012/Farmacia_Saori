@@ -88,6 +88,12 @@ namespace CapaDatos
                                                         TotalCosto = Convert.ToDecimal(dato.Element("TotalCosto").Value, new CultureInfo("es-PE")),
                                                         FechaRegistro = dato.Element("FechaRegistro").Value
                                                     }).FirstOrDefault();
+                                rptDetalleCompra.oUsuario = (from dato in doc.Element("DETALLE_COMPRA").Elements("DETALLE_USUARIO")
+                                                            select new Usuario()
+                                                            {
+                                                                Nombres = dato.Element("Nombres").Value,
+                                                                Apellidos = dato.Element("Apellidos").Value,
+                                                            }).FirstOrDefault();
                                 rptDetalleCompra.oProveedor = (from dato in doc.Element("DETALLE_COMPRA").Elements("DETALLE_PROVEEDOR")
                                                                select new Proveedor()
                                                                {

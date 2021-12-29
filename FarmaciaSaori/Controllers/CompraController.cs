@@ -49,6 +49,12 @@ namespace FarmaciaSaori.Controllers
             return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult ObtenerUsuario()
+        {
+            Usuario rptUsuario = CD_Usuario.Instancia.ObtenerDetalleUsuario(SesionUsuario.IdUsuario);
+            return Json(rptUsuario, JsonRequestBehavior.AllowGet);
+        }
+
 
         [HttpPost]
         public JsonResult Guardar(string xml)
