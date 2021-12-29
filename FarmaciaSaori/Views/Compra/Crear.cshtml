@@ -35,187 +35,263 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="card border-info">
-                            <div class="card-body card-compra p-2">
-                                <div class="row">
-
-                                    <div class="col-sm-6">
-                                        <div class="card border-info">
-                                            <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-success">Detalle Proveedor Origen</h6>
-                                                <div class="row align-items-end">
-                                                    <input id="txtIdProveedor" type="hidden" value="0" />
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtRucProveedor" class="col-form-label col-form-label-sm">RUC:</label>
-                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtRucProveedor" name="RUC">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtRazonSocialProveedor" class="col-form-label col-form-label-sm">Razon Social:</label>
-                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtRazonSocialProveedor" name="RazonSocial">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <button id="btnBuscarProveedor" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarProveedor()"><i class="fas fa-search"></i> Buscar</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    @*Laboratorios*@
-                                    <div class="col-sm-6">
-                                        <div class="card border-info">
-                                            <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-success">Detalle Laboratorio Origen</h6>
-                                                <div class="row align-items-end">
-                                                    <input id="txtIdLaboratorio" type="hidden" value="0" />
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtRazonSocialLaboratorio" class="col-form-label col-form-label-sm">Razon Social:</label>
-                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtRazonSocialLaboratorio" name="RazonSocial">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <button id="btnBuscarLaboratorio" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarLaboratorio()"><i class="fas fa-search"></i> Buscar</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="card border-info">
-                                            <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-success">Detalle del Producto</h6>
-                                                <div class="row  align-items-end">
-                                                    <input id="txtIdDetalleFarmaco" type="hidden" value="0" />
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtNombreComercial" class="col-form-label col-form-label-sm">Nombre Comercial:</label>
-                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtNombreComercial" name="NombreComercial">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtConcentracion" class="col-form-label col-form-label-sm">Concentracion:</label>
-                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtConcentracion" name="Concentracion">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <button id="btnBuscarDetalleFarmaco" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarDetalleFarmaco()"><i class="fas fa-search"></i> Buscar</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-sm-12">
-                                        <div class="card border-info">
-                                            <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-success">Detalle Producto</h6>
-                                                <div class="row">
-                                                    <input id="txtIdProducto" type="hidden" value="0" />
-                                                    <div class="col-sm-2">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtCodigoProducto" class="col-form-label col-form-label-sm">Codigo:</label>
-                                                            <input type="text" class="form-control form-control-sm model" id="txtCodigoProducto" name="Codigo" autocomplete="off">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-2">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtNombreProducto" class="col-form-label col-form-label-sm">Nombre:</label>
-                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtNombreProducto" name="Nombre">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-2">
-                                                        <div class="form-group mb-0">
-                                                            <label for="btnBuscarTienda" class="col-form-label col-form-label-sm invisible">Buscar:</label>
-                                                            <button id="btnBuscarProducto" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarProducto()"><i class="fas fa-search"></i> Buscar</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-2">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtCantidadProducto" class="col-form-label col-form-label-sm">Cantidad:</label>
-                                                            <input type="text" class="form-control form-control-sm model" id="txtCantidadProducto" name="Cantidad" value="0">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-2">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtPrecioCompraProducto" class="col-form-label col-form-label-sm">Precio Compra:</label>
-                                                            <input type="text" class="form-control form-control-sm model" id="txtPrecioCompraProducto" name="PrecioCompra" value="0">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-2">
-                                                        <div class="form-group mb-0">
-                                                            <label for="txtPrecioVentaProducto" class="col-form-label col-form-label-sm">Precio Venta:</label>
-                                                            <input type="text" class="form-control form-control-sm model" id="txtPrecioVentaProducto" name="PrecioVenta" value="0">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-sm-12">
-                                        <button id="btnAgregarCompra" class="btn btn-success btn-sm float-right">
-                                            <i class="fas fa-plus"></i> Agregar a compra
-                                        </button>
-                                    </div>
-
-                                </div>
-
-                                <hr />
-                                <div class="row mt-3">
-                                    <div class="col-sm-12">
-                                        <div class="table-responsive-sm">
-                                            <table id="tbCompra" class="table table-striped table-bordered nowrap table-sm" style="width:100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>Ruc Proveedor</th>
-                                                        <th>Ruc Laboratorio</th>
-                                                        <th>Nombre Comercial</th>
-                                                        <th>Codigo Producto</th>
-                                                        <th>Nombre Producto</th>
-                                                        <th>Cantidad</th>
-                                                        <th>Precio Compra</th>
-                                                        <th>Precio Venta</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody></tbody>
-                                            </table>
-
-                                        </div>
-
-                                    </div>
-                                </div>
+                        <div class="card border-success">
+                            <div class="card-header p-2 bg-success text-white">
+                                Detalle Compra
+                                
                             </div>
-                            <div class="card-footer bg-white border-info">
-                                <button id="btnTerminarGuardarCompra" class="btn btn-primary btn-sm float-right">
-                                    <i class="fas fa-tags"></i> Terminar y Guardar Compra
-                                </button>
+                            <div class="card-body p-2 card-venta">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="input-group input-group-sm mb-2">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text bg-success text-white" for="inputGroupSelect01">Tipo Documento</label>
+                                            </div>
+                                            <select class="custom-select" id="cboventatipodocumento">
+                                                <option value="Boleta">Boleta</option>
+                                                <option value="Factura">Factura</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group input-group-sm mb-2">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text bg-success text-white" for="inputGroupSelect01">Fecha de Venta</label>
+                                            </div>
+                                            <input id="txtfechacompra" readonly type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="card bg-success text-white border-info">
+                                            <div class="card-body p-2">
+
+                                                <div class="row">
+                                                    <div class="col-sm-10">
+                                                        Datos Empleado
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <div class="float-right">
+                                                            <a class="btn btn-light btn-sm" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row collapse" id="collapse2">
+                                                    <input id="txtIdUsuario" type="hidden" value="0" />
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group mb-0">
+                                                            <label for="txtRucProveedor" class="col-form-label col-form-label-sm">Nombre:</label>
+                                                            <label class="form-control form-control-sm model mb-1" readonly id="lblempleadonombre"></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group mb-0">
+                                                            <label for="txtRazonSocialProveedor" class="col-form-label col-form-label-sm">Apellido:</label>
+                                                            <label class="form-control form-control-sm model mb-1" readonly id="lblempleadoapellido"></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group mb-0">
+                                                            <label for="txtRazonSocialProveedor" class="col-form-label col-form-label-sm">Correo:</label>
+                                                            <label class="form-control form-control-sm model mb-1" readonly id="lblempleadocorreo"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card border-info">
+                                            <div class="card-body card-compra p-2">
+                                                <div class="row">
+
+                                                    <div class="col-sm-6">
+                                                        <div class="card border-info">
+                                                            <div class="card-body p-2">
+                                                                <h6 class="card-title mb-1 text-success">Detalle Proveedor Origen</h6>
+                                                                <div class="row align-items-end">
+                                                                    <input id="txtIdProveedor" type="hidden" value="0" />
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtRucProveedor" class="col-form-label col-form-label-sm">RUC:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtRucProveedor" name="RUC">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtRazonSocialProveedor" class="col-form-label col-form-label-sm">Razon Social:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtRazonSocialProveedor" name="RazonSocial">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-group mb-0">
+                                                                            <button id="btnBuscarProveedor" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarProveedor()"><i class="fas fa-search"></i> Buscar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    @*Laboratorios*@
+                                                    <div class="col-sm-6">
+                                                        <div class="card border-info">
+                                                            <div class="card-body p-2">
+                                                                <h6 class="card-title mb-1 text-success">Detalle Laboratorio Origen</h6>
+                                                                <div class="row align-items-end">
+                                                                    <input id="txtIdLaboratorio" type="hidden" value="0" />
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtRazonSocialLaboratorio" class="col-form-label col-form-label-sm">Razon Social:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtRazonSocialLaboratorio" name="RazonSocial">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-group mb-0">
+                                                                            <button id="btnBuscarLaboratorio" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarLaboratorio()"><i class="fas fa-search"></i> Buscar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <div class="card border-info">
+                                                            <div class="card-body p-2">
+                                                                <h6 class="card-title mb-1 text-success">Detalle del Producto</h6>
+                                                                <div class="row  align-items-end">
+                                                                    <input id="txtIdDetalleFarmaco" type="hidden" value="0" />
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtNombreComercial" class="col-form-label col-form-label-sm">Nombre Comercial:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtNombreComercial" name="NombreComercial">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtConcentracion" class="col-form-label col-form-label-sm">Concentracion:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtConcentracion" name="Concentracion">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-group mb-0">
+                                                                            <button id="btnBuscarDetalleFarmaco" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarDetalleFarmaco()"><i class="fas fa-search"></i> Buscar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-sm-12">
+                                                        <div class="card border-info">
+                                                            <div class="card-body p-2">
+                                                                <h6 class="card-title mb-1 text-success">Detalle Producto</h6>
+                                                                <div class="row">
+                                                                    <input id="txtIdProducto" type="hidden" value="0" />
+                                                                    <div class="col-sm-2">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtCodigoProducto" class="col-form-label col-form-label-sm">Codigo:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" id="txtCodigoProducto" name="Codigo" autocomplete="off">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-2">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtNombreProducto" class="col-form-label col-form-label-sm">Nombre:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" readonly id="txtNombreProducto" name="Nombre">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-2">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="btnBuscarTienda" class="col-form-label col-form-label-sm invisible">Buscar:</label>
+                                                                            <button id="btnBuscarProducto" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarProducto()"><i class="fas fa-search"></i> Buscar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-2">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtCantidadProducto" class="col-form-label col-form-label-sm">Cantidad:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" id="txtCantidadProducto" name="Cantidad" value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-2">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtPrecioCompraProducto" class="col-form-label col-form-label-sm">Precio Compra:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" id="txtPrecioCompraProducto" name="PrecioCompra" value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-2">
+                                                                        <div class="form-group mb-0">
+                                                                            <label for="txtPrecioVentaProducto" class="col-form-label col-form-label-sm">Precio Venta:</label>
+                                                                            <input type="text" class="form-control form-control-sm model" id="txtPrecioVentaProducto" name="PrecioVenta" value="0">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-sm-12">
+                                                        <button id="btnAgregarCompra" class="btn btn-success btn-sm float-right">
+                                                            <i class="fas fa-plus"></i> Agregar a compra
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+
+                                                <hr />
+                                                <div class="row mt-3">
+                                                    <div class="col-sm-12">
+                                                        <div class="table-responsive-sm">
+                                                            <table id="tbCompra" class="table table-striped table-bordered nowrap table-sm" style="width:100%">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <th>Ruc Proveedor</th>
+                                                                        <th>Ruc Laboratorio</th>
+                                                                        <th>Nombre Comercial</th>
+                                                                        <th>Codigo Producto</th>
+                                                                        <th>Nombre Producto</th>
+                                                                        <th>Cantidad</th>
+                                                                        <th>Precio Compra</th>
+                                                                        <th>Precio Venta</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                            </table>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer bg-white border-info">
+                                                <button id="btnTerminarGuardarCompra" class="btn btn-primary btn-sm float-right">
+                                                    <i class="fas fa-tags"></i> Terminar y Guardar Compra
+                                                </button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-            </div>
+            <</div>
         </div>
-    </div>
 </body>
               
 

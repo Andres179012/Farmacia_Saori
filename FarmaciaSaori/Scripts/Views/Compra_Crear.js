@@ -7,6 +7,29 @@ var tablaproducto;
 
 $(document).ready(function () {
     activarMenu("Compras");
+    $("#txtproductocantidad").val("0");
+    $("#txtfechacompra").val(ObtenerFecha());
+
+    jQuery.ajax({
+        url: $.MisUrls.url._ObtenerUsuario,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+
+            //USUARIO
+            $("#txtIdUsuario").val(data.IdUsuario);
+            $("#lblempleadonombre").text(data.Nombres);
+            $("#lblempleadoapellido").text(data.Apellidos);
+            $("#lblempleadocorreo").text(data.Correo);
+        },
+        error: function (error) {
+            console.log(error)
+        },
+        beforeSend: function () {
+            $("#cboProveedor").LoadingOverlay("show");
+        },
+    });
 
     //OBTENER PROVEEDORES
     tablaproveedor = $('#tbProveedor').DataTable({
@@ -124,6 +147,16 @@ $(document).ready(function () {
     });
 
 })
+
+function ObtenerFecha() {
+
+    var d = new Date();
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+    var output = (('' + day).length < 2 ? '0' : '') + day + '/' + (('' + month).length < 2 ? '0' : '') + month + '/' + d.getFullYear();
+
+    return output;
+}
 
 function buscarProveedor() {
     tablaproveedor.ajax.reload();

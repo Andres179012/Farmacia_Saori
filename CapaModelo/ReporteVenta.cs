@@ -16,6 +16,6 @@ namespace CapaModelo
         public string NombreEmpleado { get; set; }
         public string CantidadUnidadesVendidas { get; set; }
         public string CantidadProductos { get; set; }
-        public string TotalVenta { get; set; }
+        public string TotalCosto { get; set; }
     }
 }

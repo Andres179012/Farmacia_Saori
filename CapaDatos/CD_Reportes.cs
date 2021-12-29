@@ -110,7 +110,7 @@ namespace CapaDatos
                                 NombreEmpleado = dr["Nombre Empleado"].ToString(),
                                 CantidadUnidadesVendidas = dr["Cantidad Unidades Vendidas"].ToString(),
                                 CantidadProductos = dr["Cantidad Productos"].ToString(),
-                                TotalVenta = Convert.ToDecimal(dr["Total Venta"].ToString(), new CultureInfo("es-PE")).ToString("N", formato)
+                                TotalCosto = Convert.ToDecimal(dr["Total Venta"].ToString(), new CultureInfo("es-PE")).ToString("N", formato)
                             });
                         }
 
