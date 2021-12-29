@@ -14,8 +14,8 @@ namespace CapaModelo
         public string Correo { get; set; }
         public string NombreUsuario { get; set; }
         public string Clave { get; set; }
-        public int IdDetalleFarmaco { get; set; }
-        public DetalleFarmaco oDetalleFarmaco { get; set; }
+        //public int IdDetalleFarmaco { get; set; }
+        //public DetalleFarmaco oDetalleFarmaco { get; set; }
         public int IdRol { get; set; }
         public Rol oRol { get; set; }
         public List<Menu> oListaMenu { get; set; }

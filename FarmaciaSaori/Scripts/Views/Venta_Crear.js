@@ -17,10 +17,10 @@ $(document).ready(function () {
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             //DETALLE
-            $("#txtIdDetalle").val(data.oDetalleFarmaco.IdDetalleFarmaco);
-            $("#lbltiendanombre").text(data.oDetalleFarmaco.NombreComercial);
-            $("#lbltiendaruc").text(data.oDetalleFarmaco.Concentracion);
-            $("#lbltiendadireccion").text(data.oDetalleFarmaco.NumeroLote);
+            //$("#txtIdDetalle").val(data.oDetalleFarmaco.IdDetalleFarmaco);
+            //$("#lbltiendanombre").text(data.oDetalleFarmaco.NombreComercial);
+            //$("#lbltiendaruc").text(data.oDetalleFarmaco.Concentracion);
+            //$("#lbltiendadireccion").text(data.oDetalleFarmaco.NumeroLote);
 
             //USUARIO
             $("#txtIdUsuario").val(data.IdUsuario);
@@ -36,6 +36,31 @@ $(document).ready(function () {
         },
     });
 
+    //OBTENER DETALLE FARMACO
+    tablatienda = $('#tbDetalleFarmaco').DataTable({
+        "ajax": {
+            "url": $.MisUrls.url._ObtenerDetalleFarmaco,
+            "type": "GET",
+            "datatype": "json"
+        },
+        "columns": [
+            {
+                "data": "IdDetalleFarmaco", "render": function (data, type, row, meta) {
+                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='tiendaSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
+                },
+                "orderable": false,
+                "searchable": false,
+                "width": "90px"
+            },
+            { "data": "NombreComercial" },
+            { "data": "Concentracion" }
+
+        ],
+        "language": {
+            "url": $.MisUrls.url.Url_datatable_spanish
+        },
+        responsive: true
+    });
 
     //OBTENER PRODUCTOS
     tablaproducto = $('#tbProducto').DataTable({
@@ -142,7 +167,7 @@ $("#txtmontopago").inputFilter(function (value) {
 $('#btnBuscarProducto').on('click', function () {
 
 
-    tablaproducto.ajax.url($.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalle").val())).load();
+    tablaproducto.ajax.url($.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalleFarmaco").val())).load();
 
     $('#modalProducto').modal('show');
 })
@@ -153,6 +178,19 @@ $('#btnBuscarCliente').on('click', function () {
 
     $('#modalCliente').modal('show');
 })
+
+function buscarDetalleFarmaco() {
+    tablatienda.ajax.reload();
+    $('#modalDetalleFarmaco').modal('show');
+}
+
+function tiendaSelect(json) {
+    $("#txtIdDetalleFarmaco").val(json.IdDetalleFarmaco);
+    $("#txtNombreComercial").val(json.NombreComercial);
+    $("#txtConcentracion").val(json.Concentracion);
+
+    $('#modalDetalleFarmaco').modal('hide');
+}
 
 function productoSelect(json) {
     $("#txtIdProducto").val(json.oProducto.IdProducto);
@@ -175,17 +213,18 @@ function clienteSelect(json) {
     $('#modalCliente').modal('hide');
 }
 
+
 $("#txtproductocodigo").on('keypress', function (e) {
 
 
     if (e.which == 13) {
 
-        var request = { IdDetalleFarmaco: parseInt($("#txtIdDetalle").val()) }
+        var request = { IdDetalleFarmaco: parseInt($("#txtIdDetalleFarmaco").val()) }
 
 
         //OBTENER PROVEEDORES
         jQuery.ajax({
-            url: $.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalle").val()),
+            url: $.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalleFarmaco").val()),
             type: "GET",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
@@ -261,7 +300,7 @@ $('#btnAgregar').on('click', function () {
 
     if (!existe_codigo) {
 
-        controlarStock(parseInt($("#txtIdProducto").val()), parseInt($("#txtIdDetalle").val()), parseInt($("#txtproductocantidad").val()), true);
+        controlarStock(parseInt($("#txtIdProducto").val()), parseInt($("#txtIdDetalleFarmaco").val()), parseInt($("#txtproductocantidad").val()), true);
 
         var importetotal = parseFloat($("#txtproductoprecio").val()) * parseFloat($("#txtproductocantidad").val());
         $("<tr>").append(
@@ -352,7 +391,7 @@ $('#btnTerminarGuardarVenta').on('click', function () {
 
 
     VENTA = "<VENTA>" +
-        "<IdDetalleFarmaco>" + $("#txtIdDetalle").val() + "</IdDetalleFarmaco>" +
+        "<IdDetalleFarmaco>" + $("#txtIdDetalleFarmaco").val() + "</IdDetalleFarmaco>" +
         "<IdUsuario>" + $("#txtIdUsuario").val() + "</IdUsuario>" +
         "<IdCliente>0</IdCliente>" +
         "<TipoDocumento>" + $("#cboventatipodocumento").val() + "</TipoDocumento>" +
@@ -399,6 +438,11 @@ $('#btnTerminarGuardarVenta').on('click', function () {
                 $("#txtclientedireccion").val("");
                 $("#txtclientetelefono").val("");
 
+
+                ////DETALLE FARMACO 
+                //$("#txtIdDetalleFarmaco").val("0");
+                //$("#txtNombreComercial").val("");
+                //$("#txtConcentracion").val("");
 
                 //PRODUCTO
                 $("#txtIdProducto").val("0");
