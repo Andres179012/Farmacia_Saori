@@ -38,10 +38,19 @@ namespace FarmaciaSaori.Controllers
             return View(oCompra);
         }
 
-
-        public JsonResult Obtener(string fechainicio, string fechafin, int idproveedor, int idtienda)
+        public JsonResult ObtenerProductoPorTienda(int IdDetalleFarmaco)
         {
-            List<Compra> lista = CD_Compra.Instancia.ObtenerListaCompra(Convert.ToDateTime(fechainicio), Convert.ToDateTime(fechafin), idproveedor, idtienda);
+
+            List<ProductoDetalle> oListaProductoTienda = CD_ProductoTienda.Instancia.ObtenerProductoTienda();
+            oListaProductoTienda = oListaProductoTienda.Where(x => x.oDetalleFarmaco.IdDetalleFarmaco == IdDetalleFarmaco && x.Stock > 0).ToList();
+
+
+            return Json(new { data = oListaProductoTienda }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult Obtener(string fechainicio, string fechafin)
+        {
+            List<Compra> lista = CD_Compra.Instancia.ObtenerListaCompra(Convert.ToDateTime(fechainicio), Convert.ToDateTime(fechafin));
 
             if (lista == null)
                 lista = new List<Compra>();

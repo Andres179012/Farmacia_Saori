@@ -144,17 +144,14 @@ namespace CapaDatos
             }
         }
 
-        public List<Venta> ObtenerListaVenta(string Codigo, DateTime FechaInicio, DateTime FechaFin, string NumeroDocumento, string Nombre)
+        public List<Venta> ObtenerListaVenta(string Codigo, DateTime FechaInicio, DateTime FechaFin)
         {
             List<Venta> rptListaVenta = new List<Venta>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 SqlCommand cmd = new SqlCommand("usp_ObtenerListaVenta", oConexion);
-                cmd.Parameters.AddWithValue("@Codigo", Codigo);
                 cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
                 cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
-                cmd.Parameters.AddWithValue("@NumeroDocumento", NumeroDocumento);
-                cmd.Parameters.AddWithValue("@Nombre", Nombre);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 try

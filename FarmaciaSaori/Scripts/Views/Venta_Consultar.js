@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     tabladata = $('#tbVentas').DataTable({
         "ajax": {
-            "url": $.MisUrls.url._ObtenerVentas + "?codigo=&fechainicio=" + ObtenerFecha() + "&fechafin=" + ObtenerFecha() + "&numerodocumento=&nombres=",
+            "url": $.MisUrls.url._ObtenerVentas + "?codigo=&fechainicio=" + ObtenerFecha() + "&fechafin=" + ObtenerFecha(),
             "type": "GET",
             "datatype": "json"
         },
@@ -45,17 +45,17 @@ $(document).ready(function () {
             },
             { "data": "TipoDocumento" },
             { "data": "Codigo" },
-            { "data": "FechaRegistro" },
-            {
-                "data": "oCliente", render: function (data) {
-                    return data.NumeroDocumento
-                }
-            },
             {
                 "data": "oCliente", render: function (data) {
                     return data.Nombre
                 }
             },
+            {
+                "data": "oCliente", render: function (data) {
+                    return data.NumeroDocumento
+                }
+            },
+            { "data": "FechaRegistro" },
             {
                 "data": "TotalCosto", render: function (data) {
 
@@ -87,11 +87,8 @@ function buscar() {
     }
 
     tabladata.ajax.url($.MisUrls.url._ObtenerVentas + "?" +
-        "codigo=" + $("#txtCodigoVenta").val().trim() +
         "&fechainicio=" + $("#txtFechaInicio").val().trim() +
-        "&fechafin=" + $("#txtFechaFin").val().trim() +
-        "&numerodocumento=" + $("#txtDocumentoCliente").val() +
-        "&nombres=" + $("#txtNombreCliente").val()).load();
+        "&fechafin=" + $("#txtFechaFin").val()).load();
 }
 
 function ObtenerFecha() {

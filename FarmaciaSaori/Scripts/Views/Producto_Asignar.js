@@ -87,10 +87,10 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
-            { "data": "oDetalleFarmaco", render: function (data) { return data.NombreComercial } },
-            { "data": "oDetalleFarmaco", render: function (data) { return data.Concentracion } },
             { "data": "oProducto", render: function (data) { return data.Codigo } },
             { "data": "oProducto", render: function (data) { return data.NombreGenerico } },
+            { "data": "oDetalleFarmaco", render: function (data) { return data.NombreComercial } },
+            { "data": "oDetalleFarmaco", render: function (data) { return data.Concentracion } },
             { "data": "Stock" },
             {
                 "data": "IdProductoDetalle", "render": function (data, type, row, meta) {

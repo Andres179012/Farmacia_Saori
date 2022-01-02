@@ -25,7 +25,6 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
-            { "data": "IdFormaFarmaceutica" },
             { "data": "FormaFarmaceutica" },
             { "data": "Descripcion" },
             {

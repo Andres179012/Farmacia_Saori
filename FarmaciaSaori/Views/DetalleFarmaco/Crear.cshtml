@@ -41,11 +41,11 @@
                                     <thead>
                                         <tr>
                                             <th>Producto</th>
+                                            <th>Nombre Comercial</th>
+                                            <th>Concentracion</th>
                                             <th>Forma Farmaceutica</th>
                                             <th>Via Administracion</th>
                                             <th>Proveedor</th>
-                                            <th>Nombre Comercial</th>
-                                            <th>Concentracion</th>
                                             <th>Prescripcion Medica</th>
                                             <th></th>
                                         </tr>
@@ -63,80 +63,58 @@
 
         <!-- Modal -->
         <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Detalle Farmaco</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h5 class="modal-title" id="exampleModalLabel">Detalle Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="form">
                             <input id="txtid" class="model" value="0" type="hidden" />
 
-                            <div class="form-group row">
-                                <label for="txtProducto" class="col-sm-2 col-form-label col-form-label-sm">Producto</label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="txtProducto" class="col-form-label">Producto</label>
                                     <select class="form-control form-control-sm model" id="txtProducto" name="Producto"></select>
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="txtForma" class="col-sm-2 col-form-label col-form-label-sm">Forma Farmaceutica</label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="txtForma" class="col-form-label">Forma Farmaceutica</label>
                                     <select class="form-control form-control-sm model" id="txtForma" name="FormaFarmaceutica"></select>
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="txtVia" class="col-sm-2 col-form-label col-form-label-sm">Via Administracion</label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="txtVia" class="col-form-label">Via Administracion</label>
                                     <select class="form-control form-control-sm model" id="txtVia" name="ViaAdministracion"></select>
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="txtLaboratorio" class="col-sm-2 col-form-label col-form-label-sm">Laboratorio</label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="txtLaboratorio" class="col-form-label">Laboratorio</label>
                                     <select class="form-control form-control-sm model" id="txtLaboratorio" name="Laboratorio"></select>
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="txtProveedor" class="col-sm-2 col-form-label col-form-label-sm">Proveedor</label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="txtProveedor" class="col-form-label">Proveedor</label>
                                     <select class="form-control form-control-sm model" id="txtProveedor" name="Proveedor"></select>
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="txtNombreComercial" class="col-sm-2 col-form-label col-form-label-sm">Nombre Comercial <span class="error"></span></label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="txtNombreComercial" class="col-form-label">Nombre Comercial <span class="error"></span></label>
                                     <input type="text" class="form-control form-control-sm required" id="txtNombreComercial" name="NombreComercial">
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="txtConcentracion" class="col-sm-2 col-form-label col-form-label-sm">Concentracion <span class="error"></span></label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="txtConcentracion" class="col-form-label">Concentracion <span class="error"></span></label>
                                     <input type="text" class="form-control form-control-sm required" id="txtConcentracion" name="Concentracion">
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="txtFechaVencimiento" class="col-sm-2 col-form-label col-form-label-sm">Fecha Vencimiento <span class="error"></span></label>
-                                <div class="col-sm-10">
+                            <div class="form-group ">
+                                <label for="txtFechaVencimiento" class="col-form-label">Fecha Vencimiento <span class="error"></span></label>
                                     <input type="text" class="form-control form-control-sm required" id="txtFechaVencimiento" name="FechaVencimiento">
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="txtNumero" class="col-sm-2 col-form-label col-form-label-sm">Numero Lote <span class="error"></span></label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="txtNumero" class="col-form-label">Numero Lote <span class="error"></span></label>
                                     <input type="text" class="form-control form-control-sm required" id="txtNumero" name="NumeroLote">
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="cboEstado" class="col-sm-2 col-form-label col-form-label-sm">Prescripcion Medica</label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="cboEstado" class="col-form-label">Prescripcion Medica</label>
                                     <select class="form-control form-control-sm model" id="cboEstado" name="PrescripcionMedica">
                                         <option value="1">Si</option>
                                         <option value="0">No </option>
                                     </select>
-                                </div>
                             </div>
 
 

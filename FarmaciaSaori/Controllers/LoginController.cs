@@ -33,5 +33,13 @@ namespace FarmaciaSaori.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpPost]
+        public JsonResult GuardarSesion(ControlSesion objeto)
+        {
+            bool respuesta = false;
+            respuesta = CD_Usuario.Instancia.RegistrarSesion(objeto);
+            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

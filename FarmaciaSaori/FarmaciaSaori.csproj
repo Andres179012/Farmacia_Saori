@@ -126,7 +126,6 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\DetalleFarmacoController.cs" />
-    <Compile Include="Controllers\DevolucionController.cs" />
     <Compile Include="Controllers\FormaFarmaceuticaController.cs" />
     <Compile Include="Controllers\FormaPagoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2705,7 +2704,6 @@
     <Content Include="Scripts\Views\Compra_Consultar.js" />
     <Content Include="Scripts\Views\Compra_Crear.js" />
     <Content Include="Scripts\Views\DetalleFarmaco_Crear.js" />
-    <Content Include="Scripts\Views\Devolucion_Crear.js" />
     <Content Include="Scripts\Views\FormaFarmaceutica_Crear.js" />
     <Content Include="Scripts\Views\FormaPago_Crear.js" />
     <Content Include="Scripts\Views\Laboratorio_Crear.js" />
@@ -2717,6 +2715,7 @@
     <Content Include="Scripts\Views\Reporte_Compra.js" />
     <Content Include="Scripts\Views\Reporte_Producto.js" />
     <Content Include="Scripts\Views\Reporte_Venta.js" />
+    <Content Include="Scripts\Views\Sesion_Guardar.js" />
     <Content Include="Scripts\Views\Tienda_Crear.js" />
     <Content Include="Scripts\Views\Proveedor_Crear.js" />
     <Content Include="Scripts\Views\Cliente_Crear.js" />
@@ -2777,6 +2776,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

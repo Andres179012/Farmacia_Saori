@@ -43,7 +43,7 @@
                                             <th>Descripcion</th>
                                             <th>Categoria</th>
                                             <th>Estado</th>
-                                            <th></th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -59,57 +59,45 @@
         <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header bg-info text-white">
+                    <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Producto</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="form">
                             <input id="txtid" value="0" type="hidden" />
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Codigo</label>
-                                <div class="col-sm-10">
+                            <div class="form-group ">
+                                <label for="staticEmail" class="col-form-label">Codigo</label>
                                     <input type="text" class="form-control form-control-sm model" id="txtCodigo" name="Codigo">
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Nombre <span class="error"></span></label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="staticEmail" class="col-form-label">Nombre <span class="error"></span></label>
                                     <input type="text" class="form-control form-control-sm model" id="txtNombre" name="Nombre" autocomplete="off">
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Descripcion <span class="error"></span></label>
-                                <div class="col-sm-10">
+                            <div class="form-group ">
+                                <label for="staticEmail" class="col-form-label">Descripcion <span class="error"></span></label>
                                     <input type="text" class="form-control form-control-sm model" id="txtDescripcion" name="Descripcion" autocomplete="off">
-                                </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Categoria</label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-form-label">Categoria</label>
                                     <select class="form-control form-control-sm model" id="cboCategoria" name="Categoria"></select>
-                                </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Activo</label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-form-label">Activo</label>
                                     <select class="form-control form-control-sm model" id="cboEstado" name="Activo">
                                         <option value="1">Activo</option>
                                         <option value="0">No Activo</option>
                                     </select>
-                                </div>
                             </div>
 
 
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-sm btn-primary" onclick="Guardar()">Guardar</button>
+                        <button type="button" class="btn btn-danger px-2" data-bs-dismiss="modal"><i class='bx bx-message-square-x mr-1'></i>Cerrar</button>
+                        <button id="btnGuardarCambios" type="button" class="btn btn-primary px-2" onclick="Guardar()"><i class='bx bx-message-square-check mr-1'></i>Guardar</button>
                     </div>
                 </div>
             </div>

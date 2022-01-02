@@ -25,7 +25,6 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
-            { "data": "IdViaAdministracion" },
             { "data": "ViaAdministracion" },
             { "data": "Descripcion" },
             {

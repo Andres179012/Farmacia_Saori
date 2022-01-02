@@ -22,7 +22,6 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
-            { "data": "IdFormaPago", "width": "10%" },
             { "data": "FormaPago", "width": "20%" },
             {
                 "data": "Activo", "render": function (data) {

@@ -39,7 +39,6 @@
                             <table id="tbdata" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Codigo</th>
                                         <th>FormaFarmaceutica</th>
                                         <th>Descripcion</th>
                                         <th>Activo</th>
@@ -59,12 +58,10 @@
     <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Formas Farmaceuticas</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Forma Farmaceutica</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                 <div class="modal-body">
                     <form id="form">
                         @*<input id="txtid" name="IdRol" value="0" type="text" />*@
@@ -88,7 +85,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class='bx bx-message-square-x mr-1'></i>Close</button>
+                    <button type="button" class="btn btn-danger px-2" data-bs-dismiss="modal"><i class='bx bx-message-square-x mr-1'></i>Cerrar</button>
                     <button id="btnGuardarCambios" type="button" class="btn btn-primary px-2" onclick="Guardar()"><i class='bx bx-message-square-check mr-1'></i>Guardar</button>
                 </div>
             </div>

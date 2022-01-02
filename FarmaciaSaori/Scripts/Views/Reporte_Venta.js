@@ -65,7 +65,7 @@ $(document).ready(function () {
 $('#btnBuscar').on('click', function () {
 
     jQuery.ajax({
-        url: $.MisUrls.url._ObtenerReporteVenta + "?fechainicio=" + $("#txtFechaInicio").val() + "&fechafin=" + $("#txtFechaFin").val() + "&idtienda=" + $("#cboTienda").val() ,
+        url: $.MisUrls.url._ObtenerReporteVenta + "?fechainicio=" + $("#txtFechaInicio").val() + "&fechafin=" + $("#txtFechaFin").val(),
         type: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
@@ -87,7 +87,7 @@ $('#btnBuscar').on('click', function () {
                         $("<td>").text(row["NombreEmpleado"]),
                         $("<td>").text(row["CantidadUnidadesVendidas"]),
                         $("<td>").text(row["CantidadProductos"]),
-                        $("<td>").text(row["TotalVenta"])
+                        $("<td>").text(row["TotalCosto"])
 
                     ).appendTo("#tbReporte tbody");
 
@@ -136,7 +136,7 @@ function printData() {
 
     newWin.document.write(style);
     newWin.document.write("<div style='text-align:center; padding:10px;background: rgb(71,0,138);background: linear-gradient(90deg, rgba(71, 0, 138, 1) 0%, rgba(140, 17, 255, 1) 35%, rgba(0, 212, 255, 1) 100%);-webkit-print-color-adjust: exact;border-radius:0 15px 0 15px;' id='back_head'>");
-    newWin.document.write("<h2 style='color:white;'>Reporte de Compras Farmacia Saori</h2>");
+    newWin.document.write("<h2 style='color:white;'>Reporte de Ventas Farmacia Saori</h2>");
     newWin.document.write("<h3 style='color:white;'>San Juan, La Concepción</h3>");
     newWin.document.write("<h3 style='color:white;'>Tel: +505 8170-7927</h3>");
     newWin.document.write("</div>");

@@ -166,7 +166,10 @@ $("#txtmontopago").inputFilter(function (value) {
 
 $('#btnBuscarProducto').on('click', function () {
 
-
+    if (parseInt($("#txtIdDetalleFarmaco").val()) == 0) {
+        swal("Mensaje", "Debe seleccionar un Producto Primero", "warning")
+        return;
+    }
     tablaproducto.ajax.url($.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalleFarmaco").val())).load();
 
     $('#modalProducto').modal('show');

@@ -31,7 +31,7 @@ namespace CapaDatos
             }
         }
 
-        public List<ReporteProducto> ReporteProductoTienda(int IdTienda, string CodigoProducto)
+        public List<ReporteProducto> ReporteProductoTienda(DateTime FechaInicio, DateTime FechaFin)
         {
             List<ReporteProducto> lista = new List<ReporteProducto>();
 
@@ -41,34 +41,36 @@ namespace CapaDatos
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 SqlCommand cmd = new SqlCommand("usp_rptProductoTienda", oConexion);
-                cmd.Parameters.AddWithValue("@IdTienda", IdTienda);
-                cmd.Parameters.AddWithValue("@Codigo", CodigoProducto);
+                cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 try
                 {
                     oConexion.Open();
-                    
-                    using (SqlDataReader dr = cmd.ExecuteReader()) {
-                        while (dr.Read()) {
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
                             lista.Add(new ReporteProducto()
                             {
-                                Concentracion = dr["Concentracion Farmaco"].ToString(),
+                                FechaRegistro = dr["Fecha Registro"].ToString(),
                                 NombreComercial = dr["Nombre Comercial"].ToString(),
-                                NumeroLote = dr["Numero Lote"].ToString(),
-                                CodigoProducto = dr["Codigo Producto"].ToString(),
-                                NombreProducto = dr["Nombre Producto"].ToString(),
-                                DescripcionProducto = dr["Descripcion Producto"].ToString(),
-                                Stock = dr["[Stock]"].ToString(),
-                                PrecioCompra = Convert.ToDecimal(dr["Precio Compra"].ToString(),new CultureInfo("es-PE")).ToString("N", formato),
-                                PrecioVenta = Convert.ToDecimal(dr["Precio Venta"].ToString(),new CultureInfo("es-PE")).ToString("N", formato)
+                                Concentracion = dr["Concentracion"].ToString(),
+                                NombreGenerico = dr["Nombre Producto"].ToString(),
+                                Codigo = dr["Codigo"].ToString(),
+                                Descripcion = dr["Descripcion"].ToString(),
+                                Stock = dr["Stock"].ToString(),
+                                PrecioCompra = dr["Precio Compra"].ToString(),
+                                PrecioVenta = dr["Precio Venta"].ToString(),
                             });
                         }
 
                     }
 
                 }
-                catch (Exception )
+                catch (Exception)
                 {
                     lista = new List<ReporteProducto>();
                 }
@@ -77,7 +79,7 @@ namespace CapaDatos
             return lista;
         }
 
-        public List<ReporteVenta> ReporteVenta(DateTime FechaInicio, DateTime FechaFin, int IdTienda)
+        public List<ReporteVenta> ReporteVenta(DateTime FechaInicio, DateTime FechaFin)
         {
             List<ReporteVenta> lista = new List<ReporteVenta>();
 
@@ -89,7 +91,6 @@ namespace CapaDatos
                 SqlCommand cmd = new SqlCommand("usp_rptVenta", oConexion);
                 cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
                 cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
-                cmd.Parameters.AddWithValue("@IdTienda", IdTienda);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 try

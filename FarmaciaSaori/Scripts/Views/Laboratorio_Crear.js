@@ -29,7 +29,6 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
-            { "data": "IdLaboratorio" },
             { "data": "NombreLaboratorio" },
             { "data": "RUC" },
             { "data": "RazonSocial" },

@@ -45,7 +45,7 @@
                                         <form class="row g-3" action="@Url.Content("~/Login/Index")" method="post">
                                             <div class="form-group">
                                                 <label for="emailaddress">Correo</label>
-                                                <input class="form-control" type="email" name="correo" required="" autocomplete="off" value="admin@gmail.com">
+                                                <input class="form-control" type="email" name="correo" required="" autocomplete="off" value="admin@gmail.com" id="txtid">
                                             </div>
 
                                             <div class="col-12">
@@ -61,7 +61,7 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3 text-center">
-                                                <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+                                                <button class="btn btn-primary btn-block" type="submit" onclick="Guardar()">Ingresar</button>
                                             </div>
                                         </form>
                                     </div>
@@ -99,6 +99,9 @@
             });
         });
     </script>
+    @section scripts{
+        <script src="@Url.Content("~/Scripts/Views/Sesion_Guardar.js")" type="text/javascript"></script>
+    }
     <!--app JS-->
     <script src="~/Resources/js/app.js"></script>
 </body>

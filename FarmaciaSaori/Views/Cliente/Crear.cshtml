@@ -45,7 +45,7 @@
                                             <th>Direccion</th>
                                             <th>Telefono</th>
                                             <th>Estado</th>
-                                            <th></th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -66,55 +66,41 @@
                         <h5 class="modal-title" id="exampleModalLabel">Cliente</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
                     <div class="modal-body">
                         <form id="form">
-                            <input id="txtid" class="model" value="0" type="hidden" />
-                            <div class="form-group row">
-                                <label for="cboclientetipodocumento" class="col-sm-2 col-form-label col-form-label-sm">Tipo Documento</label>
-                                <div class="col-sm-10">
+                            <input id="txtid" value="0" type="hidden" />
+                            <div class="form-group">
+                                <label for="cboclientetipodocumento" class="col-form-label">Tipo Documento</label>
                                     <select class="form-control form-control-sm model" id="cboclientetipodocumento">
                                         <option value="DNI">DNI</option>
                                         <option value="Carnet Extranjeria">Carnet Extranjeria</option>
                                         <option value="RUC">RUC</option>
                                     </select>
-                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Numero Documento <span class="error"></span></label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm required" id="txtNumeroDocumento" name="numerodocumento">
-                                </div>
+                            <div class="form-group">
+                                <label for="staticEmail" class="col-form-label">Numero Documento <span class="error"></span></label>
+                                 <input type="text" class="form-control form-control-sm required" id="txtNumeroDocumento" name="numerodocumento">
                             </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Nombres <span class="error"></span></label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm required" id="txtNombres" name="nombres">
-                                </div>
+                            <div class="form-group">
+                                <label for="staticEmail" class="col-form-label">Nombres <span class="error"></span></label>
+                                <input type="text" class="form-control form-control-sm required" id="txtNombres" name="nombres">
                             </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label col-form-label-sm">Direccion <span class="error"></span></label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm required" id="txtDireccion" name="direccion">
-                                </div>
+                            <div class="form-group">
+                                <label for="staticEmail" class="col-form-label">Direccion <span class="error"></span></label>
+                                <input type="text" class="form-control form-control-sm required" id="txtDireccion" name="direccion">
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Telefono <span class="error"></span></label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm required" id="txtTelefono" name="telefono">
-                                </div>
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-form-label">Telefono <span class="error"></span></label>
+                                <input type="text" class="form-control form-control-sm required" id="txtTelefono" name="telefono">
                             </div>
-
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-2 col-form-label col-form-label-sm">Activo</label>
-                                <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-form-label">Activo</label>
                                     <select class="form-control form-control-sm model" id="cboEstado" name="Activo">
                                         <option value="1">Activo</option>
                                         <option value="0">No Activo</option>
                                     </select>
-                                </div>
                             </div>
-
-
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -124,7 +110,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 </body>
 
 

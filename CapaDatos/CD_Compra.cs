@@ -197,7 +197,7 @@ namespace CapaDatos
             }
         }
 
-        public List<Compra> ObtenerListaCompra(DateTime FechaInicio, DateTime FechaFin, int IdProveedor, int IdTienda)
+        public List<Compra> ObtenerListaCompra(DateTime FechaInicio, DateTime FechaFin)
         {
             List<Compra> rptListaCompra = new List<Compra>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
@@ -205,8 +205,6 @@ namespace CapaDatos
                 SqlCommand cmd = new SqlCommand("usp_ObtenerListaCompra", oConexion);
                 cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
                 cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
-                cmd.Parameters.AddWithValue("@IdProveedor", IdProveedor);
-                cmd.Parameters.AddWithValue("@IdTienda", IdTienda);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 try

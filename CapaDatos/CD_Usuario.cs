@@ -217,6 +217,37 @@ namespace CapaDatos
 
         }
 
+        public bool RegistrarSesion(ControlSesion oUsuario)
+        {
+            bool respuesta = true;
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("usp_RegistrarInicioSesion", oConexion);
+                    cmd.Parameters.AddWithValue("IdUsuario", oUsuario.IdUsuario);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oConexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+
+                }
+                catch (Exception ex)
+                {
+                    respuesta = false;
+                }
+
+            }
+
+            return respuesta;
+
+        }
+
+
+
         public bool ModificarUsuario(Usuario oUsuario)
         {
             bool respuesta = true;

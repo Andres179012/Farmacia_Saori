@@ -88,11 +88,9 @@ $(document).ready(function () {
     });
 
 
-
-
     tabladata = $('#tbCompras').DataTable({
         "ajax": {
-            "url": $.MisUrls.url._ObtenerCompras + "?fechainicio=" + ObtenerFecha() + "&fechafin=" + ObtenerFecha() + "&idproveedor=0&idtienda=0",
+            "url": $.MisUrls.url._ObtenerCompras + "?fechainicio=" + ObtenerFecha() + "&fechafin=" + ObtenerFecha(),
             "type": "GET",
             "datatype": "json"
         },
@@ -104,13 +102,13 @@ $(document).ready(function () {
             },
             { "data": "NumeroCompra" },
             {
-                "data": "oProveedor", render: function (data) {
-                    return data.RazonSocial
+                "data": "oDetalleFarmaco", render: function (data) {
+                    return data.NombreComercial
                 }
             },
             {
-                "data": "oDetalleFarmaco", render: function (data) {
-                    return data.NombreComercial
+                "data": "oProveedor", render: function (data) {
+                    return data.RazonSocial
                 }
             },
             { "data": "FechaRegistro" },
@@ -142,10 +140,8 @@ function buscar() {
 
     tabladata.ajax.url($.MisUrls.url._ObtenerCompras + "?" +
         "fechainicio=" + $("#txtFechaInicio").val().trim() +
-        "&fechafin=" + $("#txtFechaFin").val().trim() +
-        "&idproveedor=" + $("#cboProveedor").val() +
-        "&idtienda=" + $("#cboTienda").val()).load();
-}
+        "&fechafin=" + $("#txtFechaFin").val()).load();
+ }
 
 function ObtenerFecha() {
 

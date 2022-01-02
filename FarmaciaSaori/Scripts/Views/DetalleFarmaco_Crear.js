@@ -159,6 +159,9 @@ $(document).ready(function () {
             "datatype": "json"
         },
         "columns": [
+
+            { "data": "NombreComercial" },
+            { "data": "Concentracion" },
             {
                 "data": "oProducto", render: function (data) {
                     return data.NombreGenerico
@@ -179,8 +182,6 @@ $(document).ready(function () {
                     return data.RazonSocial
                 }
             },
-            { "data": "NombreComercial" },
-            { "data": "Concentracion" },
             
             {
                 "data": "PrescripcionMedica", "render": function (data) {
