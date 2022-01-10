@@ -10,9 +10,11 @@ namespace CapaModelo
     {
         public int Cantidad { get; set; }
         public string NombreProducto { get; set; }
-        public float PrecioUnidad { get; set; }
+        public int IdDetalleFarmaco { get; set; }
+        public DetalleFarmaco oDetalleFarmaco { get; set; }
+        public decimal PrecioUnidad { get; set; }
         public string TextoPrecioUnidad { get; set; }
-        public float ImporteTotal { get; set; }
+        public decimal ImporteTotal { get; set; }
         public string TextoImporteTotal { get; set; }
     }
 }

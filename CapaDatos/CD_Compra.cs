@@ -100,18 +100,19 @@ namespace CapaDatos
                                                                    Ruc = dato.Element("RUC").Value,
                                                                    RazonSocial = dato.Element("RazonSocial").Value,
                                                                }).FirstOrDefault();
-                                rptDetalleCompra.oDetalleFarmaco = (from dato in doc.Element("DETALLE_COMPRA").Elements("DETALLE_FARMACO")
-                                                                    select new DetalleFarmaco()
-                                                                    {
-                                                                        NombreComercial = dato.Element("NombreComercial").Value,
-                                                                        Concentracion = dato.Element("Concentracion").Value,
-                                                                        NumeroLote = dato.Element("NumeroLote").Value,
-                                                                    }).FirstOrDefault();
+                                //rptDetalleCompra.oDetalleFarmaco = (from dato in doc.Element("DETALLE_COMPRA").Elements("DETALLE_FARMACO")
+                                //                                    select new DetalleFarmaco()
+                                //                                    {
+                                //                                        NombreComercial = dato.Element("NombreComercial").Value,
+                                //                                        Concentracion = dato.Element("Concentracion").Value,
+                                //                                        NumeroLote = dato.Element("NumeroLote").Value,
+                                //                                    }).FirstOrDefault();
                                 rptDetalleCompra.oListaDetalleCompra = (from producto in doc.Element("DETALLE_COMPRA").Element("DETALLE_PRODUCTO").Elements("PRODUCTO")
                                                                         select new DetalleCompra()
                                                                         {
                                                                             Cantidad = int.Parse(producto.Element("Cantidad").Value),
                                                                             oProducto = new Producto() { NombreGenerico = producto.Element("NombreProducto").Value },
+                                                                            oDetalleFarmaco=new DetalleFarmaco() { NombreComercial = producto.Element("NombreComercial").Value },
                                                                             PrecioCompra = Convert.ToDecimal(producto.Element("PrecioCompra").Value, new CultureInfo("es-PE")),
                                                                             TotalCosto = Convert.ToDecimal(producto.Element("TotalCosto").Value, new CultureInfo("es-PE"))
                                                                         }).ToList();
@@ -218,8 +219,9 @@ namespace CapaDatos
                         {
                             IdCompra = Convert.ToInt32(dr["IdCompra"].ToString()),
                             NumeroCompra = dr["NumeroCompra"].ToString(),
+                            oUsuario = new Usuario() { Nombres = dr["Nombres"].ToString() },
                             oProveedor = new Proveedor() { RazonSocial = dr["RazonSocial"].ToString() },
-                            oDetalleFarmaco = new DetalleFarmaco() { NombreComercial = dr["NombreComercial"].ToString() },
+                            //oDetalleFarmaco = new DetalleFarmaco() { NombreComercial = dr["NombreComercial"].ToString() },
                             FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()).ToString("dd/MM/yyyy"),
                             VFechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()),
                             TotalCosto = Convert.ToDecimal(dr["TotalCosto"].ToString(), new CultureInfo("es-PE"))

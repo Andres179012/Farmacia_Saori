@@ -49,9 +49,14 @@ C:\Users\andre\Music\Farmacia_Saori-master\CapaModelo\bin\Debug\CapaModelo.pdb
 C:\Users\andre\Music\Farmacia_Saori-master\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 C:\Users\andre\Music\Farmacia_Saori-master\CapaModelo\obj\Debug\CapaModelo.dll
 C:\Users\andre\Music\Farmacia_Saori-master\CapaModelo\obj\Debug\CapaModelo.pdb
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaModelo\obj\Debug\CapaModelo.pdb
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.dll
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.pdb
-C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb

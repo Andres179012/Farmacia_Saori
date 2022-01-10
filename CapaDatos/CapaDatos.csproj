@@ -46,6 +46,7 @@
     <Compile Include="CD_Cliente.cs" />
     <Compile Include="CD_Compra.cs" />
     <Compile Include="CD_DetalleFarmaco.cs" />
+    <Compile Include="CD_Devolucion.cs" />
     <Compile Include="CD_FormaPago.cs" />
     <Compile Include="CD_Laboratorio.cs" />
     <Compile Include="CD_Permisos.cs" />

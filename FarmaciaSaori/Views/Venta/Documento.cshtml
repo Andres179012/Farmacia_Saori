@@ -11,15 +11,15 @@
     <meta name="viewport" content="width=device-width" />
     <title>Documento</title>
     @Styles.Render("~/Content/PluginsCSS")
-    <link href="~/Resources/Gradients.css" type="text/css" rel="stylesheet"/>
+    <link href="~/Resources/Gradients.css" type="text/css" rel="stylesheet" />
     <style type="text/css">
         .btn:not(:disabled):not(.disabled) {
             cursor: pointer;
         }
 
-        *{
-            font-family:'MesloLGL Nerd Font';
-            font-size:12px;
+        * {
+            font-family: 'MesloLGL Nerd Font';
+            font-size: 12px;
         }
 
         .btn-secondary {
@@ -68,7 +68,7 @@
                                     <table style="width:100%">
                                         <tr><td><label style="font-size:16px;font-weight:bold;text-align:center;width:100%;display:block">Farmacia Saori</label></td></tr>
                                         <tr><td colspan="4" align="center">Agente: <span>@Html.DisplayTextFor(model => model.oUsuario.Nombres) @Html.DisplayTextFor(model => model.oUsuario.Apellidos)</span></td> </tr>
-                                        <tr><td colspan="4" align="center"><span>@Html.DisplayTextFor(model => model.oDetalleFarmaco.NombreComercial)</span></td> </tr>
+
                                     </table>
                                 </td>
                                 <td style="width:200px;">
@@ -127,9 +127,9 @@
                                 {
                                     <tr>
                                         <td style="padding:5px;">@Html.DisplayFor(modelItem => item.Cantidad)</td>
-                                        <td style="padding:5px;">@Html.DisplayFor(modelItem => item.NombreProducto)</td>
-                                        <td style="padding:5px;">@Html.DisplayFor(modelItem => item.TextoPrecioUnidad)</td>
-                                        <td style="padding:5px;">@Html.DisplayFor(modelItem => item.TextoImporteTotal)</td>
+                                        <td style="padding:5px;">@Html.DisplayFor(modelItem => item.oDetalleFarmaco.NombreComercial)</td>
+                                        <td style="padding:5px;">@Html.DisplayFor(modelItem => item.PrecioUnidad)</td>
+                                        <td style="padding:5px;">@Html.DisplayFor(modelItem => item.ImporteTotal)</td>
                                     </tr>
                                 }
                             </tbody>
@@ -161,15 +161,15 @@
                                     <table style="font-weight: bold; width: 160px;">
                                         <tr>
                                             <td style="-webkit-print-color-adjust: exact; padding: 3px; text-align:right;">Pago con C$</td>
-                                            <td style="padding: 3px;"><span>@Html.DisplayTextFor(model => model.TextoImporteRecibido)</span></td>
+                                            <td style="padding: 3px;"><span>@Html.DisplayTextFor(model => model.ImporteRecibido)</span></td>
                                         </tr>
                                         <tr>
                                             <td style=" -webkit-print-color-adjust: exact; padding: 3px; text-align: right;">Cambio C$</td>
-                                            <td style="padding: 3px;"><span>@Html.DisplayTextFor(model => model.TextoImporteCambio)</span></td>
+                                            <td style="padding: 3px;"><span>@Html.DisplayTextFor(model => model.ImporteCambio)</span></td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: right;">Total C$</td>
-                                            <td style="padding: 3px; -webkit-print-color-adjust: exact;"><span id="totalcosto">@Html.DisplayTextFor(model => model.TextoTotalCosto)</span></td>
+                                            <td style="padding: 3px; -webkit-print-color-adjust: exact;"><span id="totalcosto">@Html.DisplayTextFor(model => model.TotalCosto)</span></td>
                                         </tr>
                                     </table>
                                 </td>

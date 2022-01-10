@@ -23,7 +23,6 @@ namespace CapaModelo
         public string FechaRegistro { get; set; }
         public DateTime VFechaRegistro { get; set; }
         public Usuario oUsuario { get; set; }
-        public DetalleFarmaco oDetalleFarmaco { get; set; }
         public Cliente oCliente { get; set; }
         public List<DetalleVenta> oListaDetalleVenta { get; set; }
 

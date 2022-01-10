@@ -146,7 +146,8 @@
 
                                 <tr>
                                     <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.oProducto.NombreGenerico)</td>
+                                    @*<td>@Html.DisplayFor(modelItem => item.oProducto.NombreGenerico)</td>*@
+                                    <td>@Html.DisplayFor(modelItem => item.oDetalleFarmaco.NombreComercial)</td>
                                     <td>@Html.DisplayFor(modelItem => item.PrecioCompra)</td>
                                     <td>@Html.DisplayFor(modelItem => item.TotalCosto)</td>
                                 </tr>

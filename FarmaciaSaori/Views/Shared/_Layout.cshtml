@@ -696,6 +696,9 @@
 
         $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
 
+        $.MisUrls.urls({ _ObtenerDetalleCompra: '@Url.Action("Obtener", "Devolucion")' });
+        $.MisUrls.urls({ _RegistrarDevolucion: '@Url.Action("Guardar", "Devolucion")' });
+
         $.MisUrls.urls({ _ObtenerTotalProductos: '@Url.Action("ObtenerTotal", "Home")' });
         $.MisUrls.urls({ _ObtenerTotalCompras: '@Url.Action("ObtenerTotalCompras", "Home")' });
         $.MisUrls.urls({ _ObtenerTotalVentas: '@Url.Action("ObtenerTotalVentas", "Home")' });

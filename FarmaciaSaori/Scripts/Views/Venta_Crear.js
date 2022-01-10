@@ -386,6 +386,7 @@ $('#btnTerminarGuardarVenta').on('click', function () {
         DATOS_VENTA = DATOS_VENTA + "<DATOS>" +
             "<IdVenta>0</IdVenta >" +
             "<IdProducto>" + idproducto + "</IdProducto>" +
+            "<IdDetalleFarmaco>" + $("#txtIdDetalleFarmaco").val() + "</IdDetalleFarmaco>" +
             "<Cantidad>" + productocantidad + "</Cantidad>" +
             "<PrecioUnidad>" + productoprecio + "</PrecioUnidad>" +
             "<ImporteTotal>" + importetotal + "</ImporteTotal>" +

@@ -101,9 +101,14 @@ $(document).ready(function () {
                 }
             },
             { "data": "NumeroCompra" },
+            //{
+            //    "data": "oDetalleFarmaco", render: function (data) {
+            //        return data.NombreComercial
+            //    }
+            //},
             {
-                "data": "oDetalleFarmaco", render: function (data) {
-                    return data.NombreComercial
+                "data": "oUsuario", render: function (data) {
+                    return data.Nombres
                 }
             },
             {

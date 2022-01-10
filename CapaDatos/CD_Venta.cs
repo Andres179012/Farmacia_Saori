@@ -100,13 +100,13 @@ namespace CapaDatos
                                                                 Nombres = dato.Element("Nombres").Value,
                                                                 Apellidos = dato.Element("Apellidos").Value,
                                                             }).FirstOrDefault();
-                                rptDetalleVenta.oDetalleFarmaco = (from dato in doc.Element("DETALLE_VENTA").Elements("DETALLE_FARMACO")
-                                                                   select new DetalleFarmaco()
-                                                                   {
-                                                                       NombreComercial = dato.Element("NombreComercial").Value,
-                                                                       Concentracion = dato.Element("Concentracion").Value,
-                                                                       //NumeroLote = dato.Element("NumeroLote").Value
-                                                                   }).FirstOrDefault();
+                                //rptDetalleVenta.oDetalleFarmaco = (from dato in doc.Element("DETALLE_VENTA").Elements("DETALLE_FARMACO")
+                                //                                   select new DetalleFarmaco()
+                                //                                   {
+                                //                                       NombreComercial = dato.Element("NombreComercial").Value,
+                                //                                       Concentracion = dato.Element("Concentracion").Value,
+                                //                                       //NumeroLote = dato.Element("NumeroLote").Value
+                                //                                   }).FirstOrDefault();
                                 rptDetalleVenta.oCliente = (from dato in doc.Element("DETALLE_VENTA").Elements("DETALLE_CLIENTE")
                                                             select new Cliente()
                                                             {
@@ -119,9 +119,9 @@ namespace CapaDatos
                                                                       select new DetalleVenta()
                                                                       {
                                                                           Cantidad = int.Parse(producto.Element("Cantidad").Value),
-                                                                          NombreProducto = producto.Element("NombreProducto").Value,
-                                                                          PrecioUnidad = float.Parse(producto.Element("PrecioUnidad").Value, NuevaCultura),
-                                                                          ImporteTotal = float.Parse(producto.Element("ImporteTotal").Value, NuevaCultura)
+                                                                          oDetalleFarmaco = new DetalleFarmaco() { NombreComercial = producto.Element("NombreComercial").Value },
+                                                                          PrecioUnidad = Convert.ToDecimal(producto.Element("PrecioUnidad").Value, new CultureInfo("es-PE")),
+                                                                          ImporteTotal = Convert.ToDecimal(producto.Element("ImporteTotal").Value, new CultureInfo("es-PE"))
                                                                       }).ToList();
                             }
                             else
@@ -136,7 +136,7 @@ namespace CapaDatos
 
                     return rptDetalleVenta;
                 }
-                catch (Exception )
+                catch (Exception)
                 {
                     rptDetalleVenta = null;
                     return rptDetalleVenta;
@@ -177,7 +177,7 @@ namespace CapaDatos
                     return rptListaVenta;
 
                 }
-                catch (Exception )
+                catch (Exception)
                 {
                     rptListaVenta = null;
                     return rptListaVenta;

@@ -103,7 +103,6 @@ $(document).ready(function () {
             },
             { "data": "NombreComercial" },
             { "data": "Concentracion" }
-
         ],
         "language": {
             "url": $.MisUrls.url.Url_datatable_spanish
@@ -178,7 +177,7 @@ function buscarDetalleFarmaco() {
 }
 
 
-$('#btnBuscarProducto').on('click', function () {
+function buscarProducto() {
 
     if (parseInt($("#txtIdDetalleFarmaco").val()) == 0) {
         swal("Mensaje", "Debe seleccionar un Producto Primero", "warning")
@@ -187,7 +186,7 @@ $('#btnBuscarProducto').on('click', function () {
     tablaproducto.ajax.url($.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalleFarmaco").val())).load();
 
     $('#modalProducto').modal('show');
-})
+}
 
 
 function proveedorSelect(json) {
@@ -402,11 +401,11 @@ $('#btnTerminarGuardarCompra').on('click', function () {
         detalle = detalle + "<DETALLE>" +
             "<IdCompra>0</IdCompra>" +
             "<IdProducto>" + idproducto + "</IdProducto>" +
+            "<IdDetalleFarmaco>" + $("#txtIdDetalleFarmaco").val() + "</IdDetalleFarmaco>" +
             "<Cantidad>" + cantidad + "</Cantidad>" +
             "<PrecioCompra>" + preciocompra + "</PrecioCompra>" +
             "<PrecioVenta>" + precioventa + "</PrecioVenta>" +
             "<TotalCosto>" + totalcosto.toString() + "</TotalCosto>" +
-            //"<IdFarmaceutica>" +  + "<IdFarmaceutica>" +
             "</DETALLE>";
         totalcostocompra = totalcostocompra + totalcosto;
 
@@ -439,11 +438,12 @@ $('#btnTerminarGuardarCompra').on('click', function () {
                 $("#txtIdLaboratorio").val("0");
                 $("#txtRazonSocialLaboratorio").val("");
 
-                ////DETALLE FARMACO
-                //$("#txtIdDetalleFarmaco").val("0");
-                //$("#txtNombreComercial").val("");
-
                 //DETALLE FARMACO
+                $("#txtIdDetalleFarmaco").val("0");
+                $("#txtNombreComercial").val("");
+                $("#txtConcentracion").val("");
+
+                //FORMA FARMACEUTICA
                 $("#txtIdFormaFarmaceutica").val("0");
                 $("#txtFormaFarmaceutica").val("0");
                 $("#txtDescripcion").val("");

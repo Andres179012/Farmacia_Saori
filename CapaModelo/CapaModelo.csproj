@@ -46,7 +46,6 @@
     <Compile Include="Compra.cs" />
     <Compile Include="ControlSesion.cs" />
     <Compile Include="DetalleCompra.cs" />
-    <Compile Include="DetalleDevolucion.cs" />
     <Compile Include="DetalleFarmaco.cs" />
     <Compile Include="DetalleVenta.cs" />
     <Compile Include="Devolucion.cs" />
