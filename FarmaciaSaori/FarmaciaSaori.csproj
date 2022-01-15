@@ -2705,6 +2705,7 @@
     <Content Include="Scripts\Views\Compra_Consultar.js" />
     <Content Include="Scripts\Views\Compra_Crear.js" />
     <Content Include="Scripts\Views\DetalleFarmaco_Crear.js" />
+    <Content Include="Scripts\Views\DevolucionV_Crear.js" />
     <Content Include="Scripts\Views\Devolucion_Crear.js" />
     <Content Include="Scripts\Views\FormaFarmaceutica_Crear.js" />
     <Content Include="Scripts\Views\FormaPago_Crear.js" />
@@ -2715,6 +2716,8 @@
     <Content Include="Scripts\Views\Permisos_Crear.js" />
     <Content Include="Scripts\Views\Categoria_Crear.js" />
     <Content Include="Scripts\Views\Reporte_Compra.js" />
+    <Content Include="Scripts\Views\Reporte_DevolucionCompra.js" />
+    <Content Include="Scripts\Views\Reporte_DevolucionVenta.js" />
     <Content Include="Scripts\Views\Reporte_Producto.js" />
     <Content Include="Scripts\Views\Reporte_Venta.js" />
     <Content Include="Scripts\Views\Sesion_Guardar.js" />
@@ -2774,6 +2777,11 @@
     <Content Include="Views\DetalleFarmaco\Crear.cshtml" />
     <Content Include="Views\Reporte\Compras.cshtml" />
     <Content Include="Views\Devolucion\Crear.cshtml" />
+    <Content Include="Views\Reporte\DevolucionC.cshtml">
+      <BrowseToURL>~/Reporte/DevolucionC</BrowseToURL>
+    </Content>
+    <Content Include="Views\Devolucion\DevolucionV.cshtml" />
+    <Content Include="Views\Reporte\DevolucionRV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

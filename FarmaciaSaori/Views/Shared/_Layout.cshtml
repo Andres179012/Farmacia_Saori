@@ -696,8 +696,11 @@
 
         $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
 
+        //CONTROLADOR DEVOLUCION
         $.MisUrls.urls({ _ObtenerDetalleCompra: '@Url.Action("Obtener", "Devolucion")' });
-        $.MisUrls.urls({ _RegistrarDevolucion: '@Url.Action("Guardar", "Devolucion")' });
+    $.MisUrls.urls({ _RegistrarDevolucion: '@Url.Action("Guardar", "Devolucion")' });
+     $.MisUrls.urls({ _RegistrarDevolucionV: '@Url.Action("GuardarV", "Devolucion")' });
+        $.MisUrls.urls({ _ObtenerDetalleVenta: '@Url.Action("ObtenerDevolucion", "Devolucion")' });
 
         $.MisUrls.urls({ _ObtenerTotalProductos: '@Url.Action("ObtenerTotal", "Home")' });
         $.MisUrls.urls({ _ObtenerTotalCompras: '@Url.Action("ObtenerTotalCompras", "Home")' });
@@ -783,9 +786,9 @@
         //CONTROLADOR REPORTE
         $.MisUrls.urls({ _ObtenerReporteProducto :'@Url.Action("ObtenerProducto", "Reporte")' });
         $.MisUrls.urls({ _ObtenerReporteVenta :'@Url.Action("ObtenerVenta", "Reporte")' });
-        $.MisUrls.urls({ _ObtenerReporteCompra :'@Url.Action("ObtenerCompra", "Reporte")' });
-
-
+        $.MisUrls.urls({ _ObtenerReporteCompra: '@Url.Action("ObtenerCompra", "Reporte")' });
+    $.MisUrls.urls({ _ObtenerReporteDevolucionCompra: '@Url.Action("ObtenerDevolucion", "Reporte")' });
+     $.MisUrls.urls({ _ObtenerReporteDevolucionVenta :'@Url.Action("ObtenerDevolucionRV", "Reporte")' });
 
         //CONTROLADOR CLIENTE
         $.MisUrls.urls({ _ObtenerClientes: '@Url.Action("Obtener", "Cliente")' });

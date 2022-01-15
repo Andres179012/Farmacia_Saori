@@ -6,14 +6,14 @@ $(document).ready(function () {
     //OBTENER PROVEEDORES
     tabladata = $('#tbDetalleFarmaco').DataTable({
         "ajax": {
-            "url": $.MisUrls.url._ObtenerDetalleCompra,
+            "url": $.MisUrls.url._ObtenerDetalleVenta,
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
 
             {
-                "data": "IdDetalleCompra", "render": function (data, type, row, meta) {
+                "data": "IdDetalleVenta", "render": function (data, type, row, meta) {
                     return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='compraSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
                 },
                 "orderable": false,
@@ -26,10 +26,10 @@ $(document).ready(function () {
                     return data.Correo
                 }
             },
-            { "data": "NumeroCompra" },
+            { "data": "NumeroVenta" },
             {
-                "data": "oProveedor", render: function (data) {
-                    return data.RazonSocial
+                "data": "oCliente", render: function (data) {
+                    return data.Nombre
                 }
             },
             {
@@ -43,29 +43,23 @@ $(document).ready(function () {
                 }
             },
             {
-                "data": "oLaboratorio", render: function (data) {
-                    return data.NombreLaboratorio
-                }
-            },
-            {
                 "data": "oDetalleFarmaco", render: function (data) {
                     return data.Concentracion
                 }
             },
             { "data": "Cantidad" },
-            { "data": "PrecioCompra" },
-            { "data": "PrecioVenta" },
-            { "data": "TotalCosto" },
+            { "data": "PrecioUnidad" },
+            { "data": "ImporteTotal" },
 
             //{
             //    "data": "oUsuario", render: function (data) {
             //        return data.IdUsuario
             //    }
             //},
-            //{ "data": "IdCompra" },
+            //{ "data": "IdVenta" },
             //{
-            //    "data": "oProveedor", render: function (data) {
-            //        return data.IdProveedor
+            //    "data": "oCliente", render: function (data) {
+            //        return data.IdCliente
             //    }
             //},
             //{
@@ -78,7 +72,6 @@ $(document).ready(function () {
             //        return data.IdDetalleFarmaco
             //    }
             //},
-
         ],
         "language": {
             "url": $.MisUrls.url.Url_datatable_spanish
@@ -95,22 +88,21 @@ function buscarDetalleCompra() {
 
 function compraSelect(json) {
 
-    $("#txtidCompra").val(json.IdCompra);
-    $("#txtidproveedor").val(json.IdProveedor);
+    $("#txtidventa").val(json.IdVenta);
+    $("#txtidcliente").val(json.IdCliente);
     $("#txtidusuario").val(json.IdUsuario);
     $("#txtidproducto").val(json.IdProducto);
     $("#txtiddetalleproducto").val(json.IdDetalleFarmaco);
-    $("#txtcodigocompra").val(json.NumeroCompra);
-    $("#txtproveedor").val(json.oProveedor.RazonSocial);
-    $("#txtfechacompra").val(json.FechaRegistro);
+    $("#txtcodigoventa").val(json.NumeroVenta);
+    $("#txtcliente").val(json.oCliente.Nombre);
+    $("#txtfechaventa").val(json.FechaRegistro);
     $("#txtusuario").val(json.oUsuario.Correo);
     $("#txtnombregenerico").val(json.oProducto.NombreGenerico);
     $("#txtnombrecomercial").val(json.oDetalleFarmaco.NombreComercial);
     $("#txtconcentracion").val(json.oDetalleFarmaco.Concentracion);
-    $("#txtlaboratorio").val(json.oLaboratorio.NombreLaboratorio);
     $("#txtcantidad").val(json.Cantidad);
-    $("#txtpreciocompra").val(json.PrecioCompra);
-    $("#txttotalcosto").val(json.TotalCosto);
+    $("#txtprecioventa").val(json.PrecioUnidad);
+    $("#txttotalcosto").val(json.ImporteTotal);
 
     $('#modalCompra').modal('hide');
 }
@@ -146,12 +138,10 @@ $('#tbDevolucion tbody').on('click', 'button[class="btn btn-danger btn-sm"]', fu
 
 function Guardar() {
 
-
-
     var request = {
         objeto: {
-            IdCompra: parseInt($("#txtidCompra").val()),
-            IdProveedor: $("#txtidproveedor").val(),
+            IdVenta: parseInt($("#txtidventa").val()),
+            IdCliente: $("#txtidcliente").val(),
             IdDetalleFarmaco: $("#txtiddetalleproducto").val(),
             IdUsuario: $("#txtidusuario").val(),
             IdProducto: $("#txtidproducto").val(),
@@ -161,7 +151,7 @@ function Guardar() {
     }
 
     jQuery.ajax({
-        url: $.MisUrls.url._RegistrarDevolucion,
+        url: $.MisUrls.url._RegistrarDevolucionV,
         type: "POST",
         data: JSON.stringify(request),
         dataType: "json",

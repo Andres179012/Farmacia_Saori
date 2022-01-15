@@ -24,10 +24,20 @@ namespace FarmaciaSaori.Controllers
             return View();
         }
 
+        public ActionResult DevolucionV()
+        {
+            return View();
+        }
 
         public JsonResult Obtener()
         {
             List<DetalleCompra> lista = CD_Devolucion.Instancia.ObtenerDetalleCompra();
+            return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ObtenerDevolucion()
+        {
+            List<DetalleVenta> lista = CD_Devolucion.Instancia.ObtenerDetalleVenta();
             return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
         }
 
@@ -36,6 +46,14 @@ namespace FarmaciaSaori.Controllers
         {
 
                bool respuesta = CD_Devolucion.Instancia.RegistrarDevolucion(objeto);
+
+            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public JsonResult GuardarV(DevolucionVenta objeto)
+        {
+
+            bool respuesta = CD_Devolucion.Instancia.RegistrarDevolucionV(objeto);
 
             return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
         }

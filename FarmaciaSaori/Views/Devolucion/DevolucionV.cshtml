@@ -35,29 +35,29 @@
                                     <div class="col-sm-12">
                                         <div class="card border-info">
                                             <div class="card-body p-2">
-                                                <h6 class="card-title mb-1 text-success">Detalle Compra</h6>
+                                                <h6 class="card-title mb-1 text-success">Detalle Venta</h6>
                                                 <div class="row align-items-end">
-                                                    <input id="txtidCompra" type="hidden" value="0" />
+                                                    <input id="txtidventa" type="hidden" value="0" />
                                                     <div class="col-sm-2">
-                                                        <label class="col-form-label col-form-label-sm">Compra No.</label>
+                                                        <label class="col-form-label col-form-label-sm">Venta No.</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtcodigocompra" name="Compra No.">
+                                                            <input type="text" class="form-control border-start-0" readonly id="txtcodigoventa" name="Venta No.">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <input id="txtidproveedor" type="hidden" value="0" />
-                                                        <label class="col-form-label col-form-label-sm">Proveedor</label>
+                                                        <input id="txtidcliente" type="hidden" value="0" />
+                                                        <label class="col-form-label col-form-label-sm">Cliente</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtproveedor" name="RazonSocial">
+                                                            <input type="text" class="form-control border-start-0" readonly id="txtcliente" name="Nombre">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
-                                                        <label class="col-form-label col-form-label-sm">Fecha Compra</label>
+                                                        <label class="col-form-label col-form-label-sm">Fecha Venta</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtfechacompra" name="FechaCompra">
+                                                            <input type="text" class="form-control border-start-0" readonly id="txtfechaventa" name="FechaVenta">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
@@ -106,14 +106,6 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <input id="txtidlaboratorio" type="hidden" value="0" />
-                                                        <label class="col-form-label col-form-label-sm">Laboratorio</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtlaboratorio" name="Laboratorio">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-3">
                                                         <label class="col-form-label col-form-label-sm">Cantidad</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
@@ -121,10 +113,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <label class="col-form-label col-form-label-sm">Precio Compra</label>
+                                                        <label class="col-form-label col-form-label-sm">Precio Venta</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtpreciocompra" name="PrecioCompra">
+                                                            <input type="text" class="form-control border-start-0" readonly id="txtprecioventa" name="Precioventa">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
@@ -186,16 +178,14 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>FechaCompra</th>
+                                <th>FechaVenta</th>
                                 <th>Usuario</th>
                                 <th>Codigo</th>
-                                <th>Proveedor</th>
+                                <th>Cliente</th>
                                 <th>Nombre Generico</th>
                                 <th>Nombre Comercial</th>
-                                <th>Laboratorio</th>
                                 <th>Concentracion</th>
                                 <th>Cantidad</th>
-                                <th>Precio Compra</th>
                                 <th>Precio Venta</th>
                                 <th>Total Costo</th>
                             </tr>
@@ -204,7 +194,7 @@
                     </table>
                 </div>
             </div>
-           </div>
+        </div>
     </div>
 </div>
 
@@ -303,6 +293,6 @@
 
 @section scripts{
 
-    <script src="@Url.Content("~/Scripts/Views/Devolucion_Crear.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Views/DevolucionV_Crear.js")" type="text/javascript"></script>
 }
 

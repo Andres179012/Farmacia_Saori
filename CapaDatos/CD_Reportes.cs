@@ -174,5 +174,97 @@ namespace CapaDatos
 
         }
 
+        public List<ReporteDevolucionCompra> ReporteDevolucionCompra(DateTime FechaInicio, DateTime FechaFin)
+        {
+            List<ReporteDevolucionCompra> lista = new List<ReporteDevolucionCompra>();
+
+            NumberFormatInfo formato = new CultureInfo("es-PE").NumberFormat;
+            formato.CurrencyGroupSeparator = ".";
+
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_rptDevolucionCompra", oConexion);
+                cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new ReporteDevolucionCompra()
+                            {
+                                FechaDevolucion = dr["Fecha Devolucion"].ToString(),
+                                NombreEmpleado = dr["Empleado"].ToString(),
+                                Codigo = dr["Codigo"].ToString(),
+                                NombreComercial = dr["Producto"].ToString(),
+                                Cantidad = dr["Cantidad"].ToString(),
+                                RazonSocial = dr["Proveedor"].ToString(),
+                                Concepto = dr["Concepto"].ToString(),
+                            });
+                        }
+
+                    }
+
+                }
+                catch (Exception)
+                {
+                    lista = new List<ReporteDevolucionCompra>();
+                }
+            }
+
+            return lista;
+        }
+
+        public List<ReporteDevolucionVenta> ReporteDevolucionVenta(DateTime FechaInicio, DateTime FechaFin)
+        {
+            List<ReporteDevolucionVenta> lista = new List<ReporteDevolucionVenta>();
+
+            NumberFormatInfo formato = new CultureInfo("es-PE").NumberFormat;
+            formato.CurrencyGroupSeparator = ".";
+
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_rptDevolucionVenta", oConexion);
+                cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new ReporteDevolucionVenta()
+                            {
+                                FechaDevolucion = dr["Fecha Devolucion"].ToString(),
+                                NombreEmpleado = dr["Empleado"].ToString(),
+                                Codigo = dr["Codigo"].ToString(),
+                                NombreComercial = dr["Producto"].ToString(),
+                                Cantidad = dr["Cantidad"].ToString(),
+                                NombreCliente = dr["Cliente"].ToString(),
+                                Concepto = dr["Concepto"].ToString(),
+                            });
+                        }
+
+                    }
+
+                }
+                catch (Exception)
+                {
+                    lista = new List<ReporteDevolucionVenta>();
+                }
+            }
+
+            return lista;
+        }
+
     }
 }
