@@ -85,35 +85,11 @@ $(document).ready(function () {
         responsive: true
     });
 
-    //OBTENER DETALLE FARMACO
-    tablatienda = $('#tbDetalleFarmaco').DataTable({
-        "ajax": {
-            "url": $.MisUrls.url._ObtenerDetalleFarmaco,
-            "type": "GET",
-            "datatype": "json"
-        },
-        "columns": [
-            {
-                "data": "IdDetalleFarmaco", "render": function (data, type, row, meta) {
-                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='tiendaSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
-                },
-                "orderable": false,
-                "searchable": false,
-                "width": "90px"
-            },
-            { "data": "NombreComercial" },
-            { "data": "Concentracion" }
-        ],
-        "language": {
-            "url": $.MisUrls.url.Url_datatable_spanish
-        },
-        responsive: true
-    });
 
     //OBTENER PRODUCTOS
     tablaproducto = $('#tbProducto').DataTable({
         "ajax": {
-            "url": $.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=0",
+            "url": $.MisUrls.url._ObtenerAsignaciones,
             "type": "GET",
             "datatype": "json"
         },
@@ -136,12 +112,33 @@ $(document).ready(function () {
                     return data.NombreGenerico
                 }
             },
+
             {
-                "data": "oProducto", render: function (data) {
-                    return data.Descripcion
+                "data": "oDetalleFarmaco", render: function (data) {
+                    return data.NombreComercial
                 }
             },
-            { "data": "Stock" }
+            //{
+            //    "data": "oDetalleFarmaco", render: function (data) {
+            //        return data.IdDetalleFarmaco
+            //    }
+            //},
+            {
+                "data": "oDetalleFarmaco", render: function (data) {
+                    return data.Concentracion
+                }
+            },
+
+            { "data": "Stock" },
+            {
+                "data": "oDetalleFarmaco", "render": function (data) {
+                    if (data.PrescripcionMedica) {
+                        return '<span class="badge bg-light-success text-success w-100">Si</span>'
+                    } else {
+                        return '<span class="badge bg-light-danger text-danger w-100">No</span>'
+                    }
+                }
+            }
 
         ],
         "language": {
@@ -179,12 +176,7 @@ function buscarDetalleFarmaco() {
 
 function buscarProducto() {
 
-    if (parseInt($("#txtIdDetalleFarmaco").val()) == 0) {
-        swal("Mensaje", "Debe seleccionar un Producto Primero", "warning")
-        return;
-    }
-    tablaproducto.ajax.url($.MisUrls.url._ObtenerProductoStockPorTienda + "?IdDetalleFarmaco=" + parseInt($("#txtIdDetalleFarmaco").val())).load();
-
+    tablaproducto.ajax.reload();
     $('#modalProducto').modal('show');
 }
 
@@ -207,9 +199,7 @@ function laboratorioSelect(json) {
 }
 
 function tiendaSelect(json) {
-    $("#txtIdDetalleFarmaco").val(json.IdDetalleFarmaco);
-    $("#txtNombreComercial").val(json.NombreComercial);
-    $("#txtConcentracion").val(json.Concentracion);
+
 
     $('#modalDetalleFarmaco').modal('hide');
 }
@@ -218,7 +208,10 @@ function productoSelect(json) {
     $("#txtIdProducto").val(json.oProducto.IdProducto);
     $("#txtCodigoProducto").val(json.oProducto.Codigo);
     $("#txtNombreProducto").val(json.oProducto.NombreGenerico);
-
+    $("#txtIdDetalleFarmaco").val(json.oDetalleFarmaco.IdDetalleFarmaco);
+    $("#txtNombreComercial").val(json.oDetalleFarmaco.NombreComercial);
+    $("#txtConcentracion").val(json.oDetalleFarmaco.Concentracion);
+    $("#txtPrescripcionMedica").val(json.oDetalleFarmaco.PrescripcionMedica);
     $('#modalProducto').modal('hide');
 }
 
@@ -311,7 +304,6 @@ $('#btnAgregarCompra').on('click', function () {
     if (
         parseInt($("#txtIdProveedor").val()) == 0 ||
         parseInt($("#txtIdLaboratorio").val()) == 0 ||
-        parseInt($("#txtIdDetalleFarmaco").val()) == 0 ||
         parseInt($("#txtIdProducto").val()) == 0 ||
         parseFloat($("#txtCantidadProducto").val()) == 0 ||
         parseFloat($("#txtPrecioCompraProducto").val()) == 0 ||
@@ -353,7 +345,12 @@ $('#btnAgregarCompra').on('click', function () {
         $("#txtCantidadProducto").val("0");
         $("#txtPrecioCompraProducto").val("0");
         $("#txtPrecioVentaProducto").val("0");
-
+        $("#txtNombreComercial").val("");
+        $("#txtRucProveedor").val("");
+        $("#txtRazonSocialLaboratorio").val("");
+        $("#txtRazonSocialProveedor").val("");
+        $("#txtConcentracion").val("");
+        $("#txtPrescripcionMedica").val("");
     } else {
         swal("Mensaje", "El producto ya existe en la compra", "warning")
     }
@@ -384,7 +381,7 @@ $('#btnTerminarGuardarCompra').on('click', function () {
         "<IdUsuario>!idusuario¡</IdUsuario>" +
         "<IdProveedor>" + $("#txtIdProveedor").val() + "</IdProveedor>" +
         "<IdLaboratorio>" + $("#txtIdLaboratorio").val() + "</IdLaboratorio>" +
-        "<IdDetalleFarmaco>" + $("#txtIdDetalleFarmaco").val() + "</IdDetalleFarmaco>" +
+       "<IdDetalleFarmaco>" + $("#txtIdDetalleFarmaco").val() + "</IdDetalleFarmaco>" +
         "<TotalCosto>!totalcosto¡</TotalCosto>" +
         "</COMPRA>";
     detallecompra = "<DETALLE_COMPRA>"

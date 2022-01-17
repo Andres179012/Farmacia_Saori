@@ -84,4 +84,21 @@ C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaDatos\
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.pdb
-C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaDatos\bin\Debug\CapaModelo.dll
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaDatos\bin\Debug\CapaModelo.pdb
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Deyanira Soto\Downloads\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\andre\Videos\Farmacia_Saori-master\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\andre\Videos\Farmacia_Saori-master\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\andre\Videos\Farmacia_Saori-master\CapaDatos\bin\Debug\CapaModelo.dll
+C:\Users\andre\Videos\Farmacia_Saori-master\CapaDatos\bin\Debug\CapaModelo.pdb
+C:\Users\andre\Videos\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\andre\Videos\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\andre\Videos\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\andre\Videos\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\andre\Videos\Farmacia_Saori-master\CapaDatos\obj\Debug\CapaDatos.pdb

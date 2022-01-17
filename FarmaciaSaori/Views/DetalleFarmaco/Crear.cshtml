@@ -40,14 +40,15 @@
                                 <table id="tbdata" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Producto</th>
                                             <th>Nombre Comercial</th>
                                             <th>Concentracion</th>
                                             <th>Forma Farmaceutica</th>
                                             <th>Via Administracion</th>
+                                            <th>Laboratorio</th>
                                             <th>Proveedor</th>
                                             <th>Prescripcion Medica</th>
-                                            <th></th>
+                                            <th>Acciones</th>
+
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -74,47 +75,43 @@
                             <input id="txtid" class="model" value="0" type="hidden" />
 
                             <div class="form-group">
-                                <label for="txtProducto" class="col-form-label">Producto</label>
-                                    <select class="form-control form-control-sm model" id="txtProducto" name="Producto"></select>
-                            </div>
-                            <div class="form-group">
-                                <label for="txtForma" class="col-form-label">Forma Farmaceutica</label>
-                                    <select class="form-control form-control-sm model" id="txtForma" name="FormaFarmaceutica"></select>
-                            </div>
-                            <div class="form-group">
-                                <label for="txtVia" class="col-form-label">Via Administracion</label>
-                                    <select class="form-control form-control-sm model" id="txtVia" name="ViaAdministracion"></select>
-                            </div>
-                            <div class="form-group">
-                                <label for="txtLaboratorio" class="col-form-label">Laboratorio</label>
-                                    <select class="form-control form-control-sm model" id="txtLaboratorio" name="Laboratorio"></select>
-                            </div>
-                            <div class="form-group">
-                                <label for="txtProveedor" class="col-form-label">Proveedor</label>
-                                    <select class="form-control form-control-sm model" id="txtProveedor" name="Proveedor"></select>
-                            </div>
-                            <div class="form-group">
                                 <label for="txtNombreComercial" class="col-form-label">Nombre Comercial <span class="error"></span></label>
-                                    <input type="text" class="form-control form-control-sm required" id="txtNombreComercial" name="NombreComercial">
+                                <input type="text" class="form-control form-control-sm required" id="txtNombreComercial" name="NombreComercial">
                             </div>
                             <div class="form-group">
                                 <label for="txtConcentracion" class="col-form-label">Concentracion <span class="error"></span></label>
-                                    <input type="text" class="form-control form-control-sm required" id="txtConcentracion" name="Concentracion">
+                                <input type="text" class="form-control form-control-sm required" id="txtConcentracion" name="Concentracion">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtForma" class="col-form-label">Forma Farmaceutica</label>
+                                <select class="form-control form-control-sm model" id="txtForma" name="FormaFarmaceutica"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtVia" class="col-form-label">Via Administracion</label>
+                                <select class="form-control form-control-sm model" id="txtVia" name="ViaAdministracion"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtLaboratorio" class="col-form-label">Laboratorio</label>
+                                <select class="form-control form-control-sm model" id="txtLaboratorio" name="Laboratorio"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtProveedor" class="col-form-label">Proveedor</label>
+                                <select class="form-control form-control-sm model" id="txtProveedor" name="Proveedor"></select>
                             </div>
                             <div class="form-group ">
                                 <label for="txtFechaVencimiento" class="col-form-label">Fecha Vencimiento <span class="error"></span></label>
-                                    <input type="text" class="form-control form-control-sm required" id="txtFechaVencimiento" name="FechaVencimiento">
+                                <input type="text" class="form-control form-control-sm required" id="txtFechaVencimiento" name="FechaVencimiento">
                             </div>
                             <div class="form-group">
                                 <label for="txtNumero" class="col-form-label">Numero Lote <span class="error"></span></label>
-                                    <input type="text" class="form-control form-control-sm required" id="txtNumero" name="NumeroLote">
+                                <input type="text" class="form-control form-control-sm required" id="txtNumero" name="NumeroLote">
                             </div>
                             <div class="form-group">
                                 <label for="cboEstado" class="col-form-label">Prescripcion Medica</label>
-                                    <select class="form-control form-control-sm model" id="cboEstado" name="PrescripcionMedica">
-                                        <option value="1">Si</option>
-                                        <option value="0">No </option>
-                                    </select>
+                                <select class="form-control form-control-sm model" id="cboEstado" name="PrescripcionMedica">
+                                    <option value="1">Si</option>
+                                    <option value="0">No </option>
+                                </select>
                             </div>
 
 

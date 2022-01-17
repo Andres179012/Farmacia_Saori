@@ -100,6 +100,7 @@ function Guardar() {
                 if (data.resultado) {
                     tabladata.ajax.reload();
                     $('#FormModal').modal('hide');
+                    swal("Mensaje", "Se registro rol", "success")
                 } else {
 
                     swal("Mensaje", "No se pudo guardar los cambios", "warning")

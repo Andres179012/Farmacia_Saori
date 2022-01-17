@@ -39,30 +39,6 @@
                                             <div class="col-sm-3"><h6 class="m-0">Producto</h6></div>
                                         </div>
                                         <div class="row align-items-end">
-                                            <input id="txtIdDetalleFarmaco" type="hidden" value="0" />
-                                            <div class="col-sm-2">
-                                                <div class="form-group mb-0">
-                                                    <label for="txtNombreComercial" class="col-form-label col-form-label-sm">Nombre Comercial:</label>
-                                                    <input type="text" class="form-control form-control-sm model" readonly id="txtNombreComercial" name="NombreComercial">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <div class="form-group mb-0">
-                                                    <label for="txtConcentracion" class="col-form-label col-form-label-sm">Concentracion:</label>
-                                                    <input type="text" class="form-control form-control-sm model" readonly id="txtConcentracion" name="Concentracion">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-2">
-                                                <div class="form-group mb-0">
-                                                    <button id="btnBuscarTienda" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarTienda()"><i class="fas fa-search"></i> Buscar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr class="m-2">
-                                        <div class="row">
-                                            <div class="col-sm-3"><h6 class="m-0">Detalle Producto</h6></div>
-                                        </div>
-                                        <div class="row align-items-end">
                                             <input id="txtIdProducto" type="hidden" value="0" />
                                             <div class="col-sm-2">
                                                 <div class="form-group mb-0">
@@ -72,7 +48,7 @@
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group mb-0">
-                                                    <label for="txtNombre" class="col-form-label col-form-label-sm">Nombre:</label>
+                                                    <label for="txtNombre" class="col-form-label col-form-label-sm">Nombre Generico:</label>
                                                     <input type="text" class="form-control form-control-sm model" readonly id="txtNombre" name="Nombre">
                                                 </div>
                                             </div>
@@ -87,7 +63,44 @@
                                                     <button id="btnBuscarProducto" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarProducto()"><i class="fas fa-search"></i> Buscar</button>
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <hr class="m-2">
+                                                <div class="col-sm-3"><h6 class="m-0">Detalle Producto</h6></div>
+                                            </div>
+                                            <div class="row align-items-end">
+                                                <input id="txtIdDetalleFarmaco" type="hidden" value="0" />
+                                                <div class="col-sm-3">
+                                                    <div class="form-group mb-0">
+                                                        <label for="txtNombreComercial" class="col-form-label col-form-label-sm">Nombre Comercial:</label>
+                                                        <input type="text" class="form-control form-control-sm model" readonly id="txtNombreComercial" name="NombreComercial">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div class="form-group mb-0">
+                                                        <label for="txtConcentracion" class="col-form-label col-form-label-sm">Concentracion:</label>
+                                                        <input type="text" class="form-control form-control-sm model" readonly id="txtConcentracion" name="Concentracion">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div class="form-group mb-0">
+                                                        <label for="txtForma" class="col-form-label col-form-label-sm">Forma Farmaceutica:</label>
+                                                        <input type="text" class="form-control form-control-sm model" readonly id="txtForma" name="FormaFarmaceutica">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div class="form-group mb-0">
+                                                        <label for="txtVia" class="col-form-label col-form-label-sm">Via Administracion:</label>
+                                                        <input type="text" class="form-control form-control-sm model" readonly id="txtVia" name="ViaAdministracion">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div class="form-group mb-0">
+                                                        <button id="btnBuscarTienda" type="button" class="btn btn-sm btn-success btn-block" onclick="buscarTienda()"><i class="fas fa-search"></i> Buscar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="col-sm-2">
+                                                <hr class="m-2">
                                                 <div class="form-group mb-0">
                                                     <button id="btnAsignar" type="button" class="btn btn-sm btn-primary btn-block" onclick="asignarProducto()"><i class="fas fa-clipboard-check"></i> Asignar</button>
                                                 </div>
@@ -147,6 +160,8 @@
                                                 <th></th>
                                                 <th>Nombre Comercial</th>
                                                 <th>Concentracion</th>
+                                                <th>Forma Farmaceutica</th>
+                                                <th>Via Administracion</th>
                                             </tr>
                                         </thead>
                                         <tbody></tbody>

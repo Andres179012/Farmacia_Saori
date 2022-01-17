@@ -44,7 +44,7 @@ namespace FarmaciaSaori.Controllers
                 oListaProductoTienda = oListaProductoTienda.Where(x => x.oDetalleFarmaco.IdDetalleFarmaco == IdDetalleFarmaco).ToList();
                 oListaProducto = (from producto in oListaProducto
                                   join productotienda in oListaProductoTienda on producto.IdProducto equals productotienda.oProducto.IdProducto
-                                  //where productotienda.oDetalleFarmaco.IdDetalleFarmaco == IdDetalleFarmaco
+                                  where productotienda.oDetalleFarmaco.IdDetalleFarmaco == IdDetalleFarmaco
                                   select producto).ToList();
             }
 

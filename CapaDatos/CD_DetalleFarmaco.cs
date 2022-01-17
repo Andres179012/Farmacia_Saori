@@ -49,8 +49,6 @@ namespace CapaDatos
                         rptListaDetalleFarmaco.Add(new DetalleFarmaco()
                         {
                             IdDetalleFarmaco = Convert.ToInt32(dr["IdDetalleFarmaco"].ToString()),
-                            IdProducto = Convert.ToInt32(dr["IdProducto"].ToString()),
-                            oProducto = new Producto() { NombreGenerico = dr["NombreGenerico"].ToString() },
                             IdFormaFarmaceutica = Convert.ToInt32(dr["IdFormaFarmaceutica"].ToString()),
                             oFormaFarmaceutica = new Forma_Farmaceutica() { FormaFarmaceutica = dr["FormaFarmaceutica"].ToString() },
                             IdViaAdministracion = Convert.ToInt32(dr["IdViaAdministracion"].ToString()),
@@ -89,7 +87,6 @@ namespace CapaDatos
                 try
                 {
                     SqlCommand cmd = new SqlCommand("usp_RegistrarDetalleFarmaco", oConexion);
-                    cmd.Parameters.AddWithValue("IdProducto", oDetalleFarmaco.IdProducto);
                     cmd.Parameters.AddWithValue("IdFormaFarmaceutica", oDetalleFarmaco.IdFormaFarmaceutica);
                     cmd.Parameters.AddWithValue("IdViaAdministracion", oDetalleFarmaco.IdViaAdministracion);
                     cmd.Parameters.AddWithValue("IdLaboratorio", oDetalleFarmaco.IdLaboratorio);
@@ -129,7 +126,6 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("usp_ModificarDetalleFarmaco", oConexion);
                     cmd.Parameters.AddWithValue("IdDetalleFarmaco", oDetalleFarmaco.IdDetalleFarmaco);
-                    cmd.Parameters.AddWithValue("IdProducto", oDetalleFarmaco.IdProducto);
                     cmd.Parameters.AddWithValue("IdFormaFarmaceutica", oDetalleFarmaco.IdFormaFarmaceutica);
                     cmd.Parameters.AddWithValue("IdViaAdministracion", oDetalleFarmaco.IdViaAdministracion);
                     cmd.Parameters.AddWithValue("IdLaboratorio", oDetalleFarmaco.IdLaboratorio);

@@ -16,33 +16,6 @@ $(document).ready(function () {
         errorElement: 'span'
     });
 
-    //OBTENER PRODUCTO
-    jQuery.ajax({
-        url: $.MisUrls.url._ObtenerProductos,
-        type: "GET",
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        success: function (data) {
-
-            $("#txtProducto").html("");
-
-            if (data.data != null) {
-                $.each(data.data, function (i, item) {
-
-                    if (item.Activo == true) {
-                        $("<option>").attr({ "value": item.IdProducto }).text(item.NombreGenerico).appendTo("#txtProducto");
-                    }
-                })
-                $("#txtProducto").val($("#txtProducto option:first").val());
-            }
-
-        },
-        error: function (error) {
-            console.log(error)
-        },
-        beforeSend: function () {
-        },
-    });
     //OBTENER FORMA FARMACEUTICA
     jQuery.ajax({
         url: $.MisUrls.url._ObtenerFormaFarmaceutica,
@@ -162,11 +135,7 @@ $(document).ready(function () {
 
             { "data": "NombreComercial" },
             { "data": "Concentracion" },
-            {
-                "data": "oProducto", render: function (data) {
-                    return data.NombreGenerico
-                }
-            },
+           
             {
                 "data": "oFormaFarmaceutica", render: function (data) {
                     return data.FormaFarmaceutica
@@ -175,6 +144,11 @@ $(document).ready(function () {
             {
                 "data": "oViaAdministracion", render: function (data) {
                     return data.ViaAdministracion
+                }
+            },
+            {
+                "data": "oLaboratorio", render: function (data) {
+                    return data.NombreLaboratorio
                 }
             },
             {
@@ -221,7 +195,6 @@ function abrirPopUpForm(json) {
 
         $("#txtid").val(json.IdDetalleFarmaco);
 
-        $("#txtProducto").val(json.IdProducto);
         $("#txtForma").val(json.IdFormaFarmaceutica);
         $("#txtVia").val(json.IdViaAdministracion);
         $("#txtLaboratorio").val(json.IdLaboratorio);
@@ -234,7 +207,6 @@ function abrirPopUpForm(json) {
 
     } else {
 
-        $("#txtProducto").val("");
         $("#txtForma").val("");
         $("#txtLaboratorio").val("");
         $("#txtVia").val("");
@@ -259,7 +231,6 @@ function Guardar() {
         var request = {
             objeto: {
                 IdDetalleFarmaco: parseInt($("#txtid").val()),
-                IdProducto: $("#txtProducto").val(),
                 IdFormaFarmaceutica: $("#txtForma").val(),
                 IdViaAdministracion: $("#txtVia").val(),
                 IdLaboratorio: $("#txtLaboratorio").val(),
@@ -283,6 +254,8 @@ function Guardar() {
                 if (data.resultado) {
                     tabladata.ajax.reload();
                     $('#FormModal').modal('hide');
+
+                    swal("Mensaje", "Se registro el producto", "success")
                 } else {
 
                     swal("Mensaje", "No se pudo guardar los cambios", "warning")

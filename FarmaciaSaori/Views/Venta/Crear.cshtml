@@ -39,7 +39,6 @@
                                                 <label class="input-group-text" for="inputGroupSelect01" style="background:white;">Tipo Documento</label>
                                             </div>
                                             <select class="custom-select" id="cboventatipodocumento">
-                                                <option value="Boleta">Boleta</option>
                                                 <option value="Factura">Factura</option>
                                             </select>
                                         </div>
@@ -61,37 +60,8 @@
                             </div>
                             <div class="card-body p-2 card-venta">
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="card border-info border-top border-0 border-4">
-                                            <div class="card-body p-2">
-                                                <h6 class="card-title mb-1">Producto</h6>
-                                                <div class="row  align-items-end">
-                                                    <input id="txtIdDetalleFarmaco" type="hidden" value="0" />
-                                                    <div class="col-sm-4">
-                                                        <label class="col-form-label col-form-label-sm">Nombre Comercial</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtNombreComercial" name="NombreComercial">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <label class="col-form-label col-form-label-sm">Concentracion</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtConcentracion" name="Concentracion">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <button id="btnBuscarDetalleFarmaco" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarDetalleFarmaco()"><i class="fas fa-search"></i> Buscar</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
                                         <div class="card border-info border-top border-0 border-4">
                                             <div class="card-body p-2">
                                                 <div class="row">
@@ -117,19 +87,19 @@
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                             <label class="form-control border-start-0" readonly id="lblempleadocorreo"></label>
                                                         </div>
-                                                </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mt-2">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
                                         <div class="card border-info border-top border-0 border-4">
                                             <div class="card-body p-2">
                                                 <h6 class="card-title mb-1">Cliente</h6>
                                                 <div class="row align-items-end">
-                                                    <div class="col-md  -5">
+                                                    <div class="col-md-4">
                                                         <label class="col-form-label col-form-label-sm">Tipo Doc</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
@@ -140,7 +110,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-4">
                                                         <label class="col-form-label col-form-label-sm">Documento</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
@@ -148,103 +118,120 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-2">
-                                                        <div class="form-group mb-0">
-                                                            <button id="btnBuscarCliente" type="button" class="btn btn-sm btn-primary btn-block"><i class="fas fa-search"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <label class="col-form-label col-form-label-sm">Nombre</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                             <input type="text" class="form-control border-start-0" id="txtclientenombres" name="RazonSocial" autocomplete="off" placeholder="Nombre" />
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <label class="col-form-label col-form-label-sm">Telefono</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                             <input type="text" class="form-control border-start-0" id="txtclientetelefono" name="RazonSocial" autocomplete="off" placeholder="Telefono" />
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
+
+                                                    <div class="col-md-4">
                                                         <label class="col-form-label col-form-label-sm">Direccion</label>
                                                         <div class="input-group">
                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                             <input type="text" class="form-control border-start-0" id="txtclientedireccion" name="clientedireccion" autocomplete="off" placeholder="Direccion" />
                                                         </div>
                                                     </div>
+
+
+
+                                                    <div class="col-md-2">
+                                                        <div class="form-group mb-0">
+                                                            <button id="btnBuscarCliente" type="button" class="btn btn-sm btn-primary btn-block"><i class="fas fa-search"></i></button>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="card border-info border-top border-0 border-4">
-                                            <div class="card-body p-2">
-                                                <h6 class="card-title mb-1">Detalle Producto</h6>
-                                                <div class="row align-items-end">
-                                                    <input id="txtIdProducto" type="hidden" value="0" />
-                                                    <div class="col-sm-5">
-                                                        <label class="col-form-label col-form-label-sm">Codigo</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" id="txtproductocodigo" name="Codigo" autocomplete="off" placeholder="Codigo" />
-                                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="card border-info border-top border-0 border-4">
+                                        <div class="card-body p-2">
+                                            <h6 class="card-title mb-1">Detalle Producto</h6>
+                                            <div class="row align-items-end">
+                                                <input id="txtIdProducto" type="hidden" value="0" />
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label col-form-label-sm">Codigo</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                        <input type="text" class="form-control border-start-0" id="txtproductocodigo" name="Codigo" autocomplete="off" placeholder="Codigo" />
                                                     </div>
-                                                    <div class="col-sm-5">
-                                                        <label class="col-form-label col-form-label-sm">Nombre</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtproductonombre" name="Nombre" placeholder="Nombre" />
-                                                        </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label col-form-label-sm">Nombre</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                        <input type="text" class="form-control border-start-0" readonly id="txtproductonombre" name="Nombre" placeholder="Nombre" />
                                                     </div>
+                                                </div>
+                                                <input id="txtIdDetalleFarmaco" type="hidden" value="0" />
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label col-form-label-sm">Nombre Comercial</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                        <input type="text" class="form-control border-start-0" readonly id="txtNombreComercial" name="NombreComercial">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label col-form-label-sm">Concentracion</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                        <input type="text" class="form-control border-start-0" readonly id="txtConcentracion" name="Concentracion">
+                                                    </div>
+                                                </div>
 
-                                                    <div class="col-sm-2">
-                                                        <div class="form-group mb-0">
-                                                            <button id="btnBuscarProducto" type="button" class="btn btn-sm btn-primary btn-block"><i class="fas fa-search"></i></button>
-                                                        </div>
+
+
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label col-form-label-sm">Descripcion</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                        <input type="text" class="form-control border-start-0" readonly id="txtproductodescripcion" name="Descripcion" placeholder="Descripcion">
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <label class="col-form-label col-form-label-sm">Descripcion</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtproductodescripcion" name="Descripcion" placeholder="Descripcion">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <label class="col-form-label col-form-label-sm">Stock</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtproductostock" name="Stock">
-                                                        </div>
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label col-form-label-sm">Stock</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                        <input type="text" class="form-control border-start-0" readonly id="txtproductostock" name="Stock">
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-sm-4">
-                                                        <label class="col-form-label col-form-label-sm">Precio</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" readonly id="txtproductoprecio" name="Nombre" placeholder="Precio">
-                                                        </div>
+
+
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label col-form-label-sm">Precio</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                        <input type="text" class="form-control border-start-0" readonly id="txtproductoprecio" name="Nombre" placeholder="Precio">
                                                     </div>
-                                                    <div class="col-sm-4">
-                                                        <label class="col-form-label col-form-label-sm">Cantidad</label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                            <input type="text" class="form-control border-start-0" id="txtproductocantidad" name="Descripcion" autocomplete="off" />
-                                                        </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label col-form-label-sm">Cantidad</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                        <input type="text" class="form-control border-start-0" id="txtproductocantidad" name="Descripcion" autocomplete="off" />
                                                     </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group mb-0">
-                                                            <label for="btnAsignar" class="col-form-label col-form-label-sm invisible">Buscar:</label>
-                                                            <button id="btnAgregar" type="button" class="btn btn-sm btn-success btn-block"><i class="fa fa-plus" aria-hidden="true"></i>  Agregar</button>
-                                                        </div>
+                                                </div>
+
+                                                <div class="col-sm-3">
+                                                    <div class="form-group mb-0">
+                                                        <button id="btnBuscarProducto" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarProducto()"><i class="fas fa-search"></i> Buscar</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group mb-0">
+                                                        <label for="btnAsignar" class="col-form-label col-form-label-sm invisible">Buscar:</label>
+                                                        <button id="btnAgregar" type="button" class="btn btn-sm btn-success btn-block"><i class="fa fa-plus" aria-hidden="true"></i>  Agregar</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -285,6 +272,14 @@
                                                         <label class="input-group-text bg-primary text-white" for="inputGroupSelect01">Sub Total</label>
                                                     </div>
                                                     <input id="txtsubtotal" readonly type="text" class="form-control" value="0">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="input-group input-group-sm mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <label class="input-group-text bg-primary text-white" for="inputGroupSelect01">Descuento</label>
+                                                    </div>
+                                                    <input id="txtDescuento" readonly type="text" class="form-control" value="0">
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
@@ -377,9 +372,12 @@
                                             <tr>
                                                 <th></th>
                                                 <th>Codigo</th>
-                                                <th>Nombre</th>
-                                                <th>Descripcion</th>
+                                                <th>Nombre Generico</th>
+                                                <th>Nombre Comercial</th>
+                                                <th>Concentracion </th>
                                                 <th>Stock</th>
+                                                <th>Precio</th>
+                                                <th>Prescripcion Medica</th>
                                             </tr>
                                         </thead>
                                         <tbody></tbody>

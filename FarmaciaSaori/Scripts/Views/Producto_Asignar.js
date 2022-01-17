@@ -39,7 +39,17 @@ $(document).ready(function () {
                 "width": "90px"
             },
             { "data": "NombreComercial" },
-            { "data": "Concentracion" }
+            { "data": "Concentracion" },
+            {
+                "data": "oFormaFarmaceutica", render: function (data) {
+                    return data.FormaFarmaceutica
+                }
+            },
+            {
+                "data": "oViaAdministracion", render: function (data) {
+                    return data.ViaAdministracion
+                }
+            }
 
         ],
         "language": {
@@ -125,6 +135,8 @@ function tiendaSelect(json) {
     $("#txtIdDetalleFarmaco").val(json.IdDetalleFarmaco);
     $("#txtNombreComercial").val(json.NombreComercial);
     $("#txtConcentracion").val(json.Concentracion);
+    $("#txtForma").val(json.oFormaFarmaceutica.FormaFarmaceutica);
+    $("#txtVia").val(json.oViaAdministracion.ViaAdministracion);
 
     $('#modalTienda').modal('hide');
 }
@@ -212,10 +224,15 @@ function asignarProducto() {
 
                 if (data.resultado) {
                     tabladata.ajax.reload();
+                    swal("Mensaje", "Se registro la asignación", "success")
                     $("#txtIdProducto").val("0");
                     $("#txtCodigo").val("");
                     $("#txtNombre").val("");
                     $("#txtDescripcion").val("");
+                    $("#txtNombreComercial").val("");
+                    $("#txtConcentracion").val("");
+                    $("#txtForma").val("");
+                    $("#txtVia").val("");
                 } else {
 
                     swal("Mensaje", "No se pudo registrar la asignación", "warning")
