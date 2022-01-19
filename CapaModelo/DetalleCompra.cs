@@ -26,6 +26,7 @@ namespace CapaModelo
         public int Cantidad { get; set; }
         public decimal PrecioCompra { get; set; }
         public string TextoPrecioUnitarioCompra { get; set; }
+        public DateTime FechaVencimiento { get; set; }
         public decimal PrecioVenta { get; set; }
         public string TextoPrecioUnitarioVenta { get; set; }
         public decimal TotalCosto { get; set; }

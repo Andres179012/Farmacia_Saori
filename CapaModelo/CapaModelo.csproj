@@ -66,6 +66,7 @@
     <Compile Include="ReporteVenta.cs" />
     <Compile Include="Respuesta.cs" />
     <Compile Include="Rol.cs" />
+    <Compile Include="RptProductoVenc.cs" />
     <Compile Include="SubMenu.cs" />
     <Compile Include="Tienda.cs" />
     <Compile Include="Usuario.cs" />

@@ -307,7 +307,8 @@ $('#btnAgregarCompra').on('click', function () {
         parseInt($("#txtIdProducto").val()) == 0 ||
         parseFloat($("#txtCantidadProducto").val()) == 0 ||
         parseFloat($("#txtPrecioCompraProducto").val()) == 0 ||
-        parseFloat($("#txtPrecioVentaProducto").val()) == 0
+        parseFloat($("#txtPrecioVentaProducto").val()) == 0 ||
+        ($(".fechavencimientoproducto").val()) == 0
     ) {
         swal("Mensaje", "Debe completar todos los campos", "warning")
         return;
@@ -337,6 +338,7 @@ $('#btnAgregarCompra').on('click', function () {
             $("<td>").addClass("cantidad").append($("#txtCantidadProducto").val()),
             $("<td>").addClass("preciocompra").append($("#txtPrecioCompraProducto").val()),
             $("<td>").addClass("precioventa").append($("#txtPrecioVentaProducto").val()),
+            $("<td>").addClass("fechavencimiento").append($(".fechavencimientoproducto").val()),
         ).appendTo("#tbCompra tbody");
 
         $("#txtIdProducto").val("0");
@@ -393,6 +395,7 @@ $('#btnTerminarGuardarCompra').on('click', function () {
         var cantidad = parseFloat($(fila).find("td.cantidad").text());
         var preciocompra = parseFloat($(fila).find("td.preciocompra").text());
         var precioventa = parseFloat($(fila).find("td.precioventa").text());
+        var fechavencimiento = ($(fila).find("td.fechavencimiento").text());
         var totalcosto = parseFloat(cantidad) * parseFloat(preciocompra);
 
         detalle = detalle + "<DETALLE>" +
@@ -402,6 +405,7 @@ $('#btnTerminarGuardarCompra').on('click', function () {
             "<Cantidad>" + cantidad + "</Cantidad>" +
             "<PrecioCompra>" + preciocompra + "</PrecioCompra>" +
             "<PrecioVenta>" + precioventa + "</PrecioVenta>" +
+            "<FechaVencimiento>" + fechavencimiento + "</FechaVencimiento>" +
             "<TotalCosto>" + totalcosto.toString() + "</TotalCosto>" +
             "</DETALLE>";
         totalcostocompra = totalcostocompra + totalcosto;

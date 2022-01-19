@@ -275,50 +275,57 @@ $('#btnAgregar').on('click', function () {
         return;
     }
 
-    $('#tbVenta > tbody  > tr').each(function (index, tr) {
-        var fila = tr;
-        var idproducto = $(fila).find("td.producto").data("idproducto");
 
-        if (idproducto == $("#txtIdProducto").val()) {
-            existe_codigo = true;
-            return false;
-        }
-
-    });
-
-    if (!existe_codigo) {
-
-        controlarStock(parseInt($("#txtIdProducto").val()), parseInt($("#txtIdDetalleFarmaco").val()), parseInt($("#txtproductocantidad").val()), true);
-
-        var importetotal = parseFloat($("#txtproductoprecio").val()) * parseFloat($("#txtproductocantidad").val());
-        $("<tr>").append(
-            $("<td>").append(
-                $("<button>").addClass("btn btn-danger btn-sm").text("Eliminar").data("idproducto", parseInt($("#txtIdProducto").val())).data("cantidadproducto", parseInt($("#txtproductocantidad").val()))
-            ),
-            $("<td>").addClass("productocantidad").text($("#txtproductocantidad").val()),
-            $("<td>").addClass("producto").data("idproducto", $("#txtIdProducto").val()).text($("#txtproductonombre").val()),
-            $("<td>").text($("#txtproductodescripcion").val()),
-            $("<td>").addClass("productoprecio").text($("#txtproductoprecio").val()),
-            $("<td>").addClass("importetotal").text(importetotal)
-        ).appendTo("#tbVenta tbody");
-
-        $("#txtIdProducto").val("0");
-        $("#txtproductocodigo").val("");
-        $("#txtproductonombre").val("");
-        $("#txtproductodescripcion").val("");
-        $("#txtConcentracion").val("");
-        $("#txtNombreComercial").val("");
-        $("#txtproductostock").val("");
-        $("#txtproductoprecio").val("");
-        $("#txtproductocantidad").val("0");
-        $("#txtproductocodigo").focus();
-
-
-
-        calcularPrecios();
-    } else {
-        swal("Mensaje", "El producto ya existe en la venta", "warning")
+    if (($("#txtproductocantidad").val()) > ($("#txtproductostock").val())) {
+        swal("Mensaje", "No hay suficientes Productos", "warning")
     }
+    else {
+        $('#tbVenta > tbody  > tr').each(function (index, tr) {
+            var fila = tr;
+            var idproducto = $(fila).find("td.producto").data("idproducto");
+
+            if (idproducto == $("#txtIdProducto").val()) {
+                existe_codigo = true;
+                return false;
+            }
+
+        });
+
+        if (!existe_codigo) {
+
+            controlarStock(parseInt($("#txtIdProducto").val()), parseInt($("#txtIdDetalleFarmaco").val()), parseInt($("#txtproductocantidad").val()), true);
+
+            var importetotal = parseFloat($("#txtproductoprecio").val()) * parseFloat($("#txtproductocantidad").val());
+            $("<tr>").append(
+                $("<td>").append(
+                    $("<button>").addClass("btn btn-danger btn-sm").text("Eliminar").data("idproducto", parseInt($("#txtIdProducto").val())).data("cantidadproducto", parseInt($("#txtproductocantidad").val()))
+                ),
+                $("<td>").addClass("productocantidad").text($("#txtproductocantidad").val()),
+                $("<td>").addClass("producto").data("idproducto", $("#txtIdProducto").val()).text($("#txtproductonombre").val()),
+                $("<td>").text($("#txtproductodescripcion").val()),
+                $("<td>").addClass("productoprecio").text($("#txtproductoprecio").val()),
+                $("<td>").addClass("importetotal").text(importetotal)
+            ).appendTo("#tbVenta tbody");
+
+            $("#txtIdProducto").val("0");
+            $("#txtproductocodigo").val("");
+            $("#txtproductonombre").val("");
+            $("#txtproductodescripcion").val("");
+            $("#txtConcentracion").val("");
+            $("#txtNombreComercial").val("");
+            $("#txtproductostock").val("");
+            $("#txtproductoprecio").val("");
+            $("#txtproductocantidad").val("0");
+            $("#txtproductocodigo").focus();
+
+
+
+            calcularPrecios();
+        } else {
+            swal("Mensaje", "El producto ya existe en la venta", "warning")
+        }
+    }
+    
 })
 
 $('#tbVenta tbody').on('click', 'button[class="btn btn-danger btn-sm"]', function () {
@@ -520,6 +527,7 @@ function controlarStock($idproducto, $idtienda, $cantidad, $restar) {
         restar: $restar
     }
 
+    
 
     jQuery.ajax({
         url: $.MisUrls.url._ControlarStockProducto,

@@ -266,5 +266,41 @@ namespace CapaDatos
             return lista;
         }
 
+        public List<RptProductoVenc> ReporteProductoVencer()
+        {
+            List<RptProductoVenc> rptListaProductsVen = new List<RptProductoVenc>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_rptProductoProximosVencer", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        rptListaProductsVen.Add(new RptProductoVenc()
+                        {
+                            IdProducto = Convert.ToInt32(dr["IdProducto"].ToString()),
+                            NombreGenerico =  dr["NombreGenerico"].ToString(),
+                            IdDetalleFarmaco = Convert.ToInt32(dr["IdDetalleFarmaco"].ToString()),
+                            NombreComercial = dr["NombreComercial"].ToString(),
+                            FechaVencimiento = Convert.ToDateTime(dr["FechaVencimiento"].ToString())
+                        });
+                    }
+                    dr.Close();
+
+                     return rptListaProductsVen;
+
+                }
+                catch (Exception)
+                {
+                    rptListaProductsVen = null;
+                    return rptListaProductsVen;
+                }
+            }
+        }
     }
 }
