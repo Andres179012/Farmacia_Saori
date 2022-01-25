@@ -18,6 +18,14 @@ namespace FarmaciaSaori.Controllers
         }
 
         [HttpPost]
+        public JsonResult GuardarSesion(Usuario objeto)
+        {
+            bool respuesta = true;
+            respuesta = CD_Usuario.Instancia.RegistrarSesion(objeto);
+            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
         public ActionResult Index(string correo, string clave)
         {
 
@@ -30,16 +38,10 @@ namespace FarmaciaSaori.Controllers
             }
 
             Session["Usuario"] = ousuario;
-
+            
             return RedirectToAction("Index", "Home");
+            
         }
-
-        [HttpPost]
-        public JsonResult GuardarSesion(ControlSesion objeto)
-        {
-            bool respuesta = false;
-            respuesta = CD_Usuario.Instancia.RegistrarSesion(objeto);
-            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
-        }
+        
     }
 }

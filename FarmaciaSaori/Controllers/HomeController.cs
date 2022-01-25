@@ -1,6 +1,8 @@
-﻿using CapaModelo;
+﻿using CapaDatos;
+using CapaModelo;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -31,6 +33,12 @@ namespace FarmaciaSaori.Controllers
             return View();
         }
 
+        public ActionResult PieChart()
+        {
+            return View();
+        }
+
+
         public ActionResult Salir()
         {
             Session["Usuario"] = null;
@@ -59,6 +67,44 @@ namespace FarmaciaSaori.Controllers
         {
             double totalventas = CapaDatos.CD_Compra.Instancia.ObtenerTotalVentas();
             return Json(new { data = totalventas }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ObtenerVentaPorDia()
+        {
+            double totalventasdia = CapaDatos.CD_ObtenerTotales.Instancia.VentasPorDia();
+            return Json(new { data = totalventasdia }, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult ObtenerVentaPorMes()
+        {
+            double totalventasmes = CapaDatos.CD_ObtenerTotales.Instancia.VentasPorMes();
+            return Json(new { data = totalventasmes }, JsonRequestBehavior.AllowGet);
+        }
+
+        protected string Dashborad1()
+        {
+            DataTable Datos = new DataTable();
+            Datos.Columns.Add(new DataColumn("task", typeof(string)));
+            Datos.Columns.Add(new DataColumn("Hours", typeof(string)));
+
+            Datos.Rows.Add(new Object[] { "work", 11 });
+            Datos.Rows.Add(new Object[] { "Eat", 2 });
+            Datos.Rows.Add(new Object[] { "Commute", 2 });
+            Datos.Rows.Add(new Object[] { "work", 2 });
+            Datos.Rows.Add(new Object[] { "Sleep", 7 });
+
+            string srtDatos;
+            srtDatos = "[['task','Hours'],";
+
+            foreach (DataRow dr in Datos.Rows)
+            {
+                srtDatos = srtDatos + "[";
+                srtDatos = srtDatos + "'" + dr[0] + "'" + "," + dr[1];
+                srtDatos = srtDatos + "],";
+            }
+
+            srtDatos = srtDatos + "]";
+
+            return srtDatos;
         }
     }
 }

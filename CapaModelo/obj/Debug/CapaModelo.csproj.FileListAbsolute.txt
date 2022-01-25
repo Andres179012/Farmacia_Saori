@@ -60,3 +60,4 @@ C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb
+C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache

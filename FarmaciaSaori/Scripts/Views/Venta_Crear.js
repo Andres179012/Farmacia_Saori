@@ -8,6 +8,34 @@ $(document).ready(function () {
     $("#txtproductocantidad").val("0");
     $("#txtfechaventa").val(ObtenerFecha());
 
+    //OBTENER FORMA DE PAGO
+    jQuery.ajax({
+        url: $.MisUrls.url._ObtenerFormaPago,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+
+            $("#cboFormaDePago").html("");
+
+            if (data.data != null) {
+                $.each(data.data, function (i, item) {
+
+                    if (item.Activo == true) {
+                        $("<option>").attr({ "value": item.IdFormaPago }).text(item.FormaPago).appendTo("#cboFormaDePago");
+                    }
+                })
+                $("#cboFormaDePago").val($("#cboFormaDePago option:first").val());
+            }
+
+        },
+        error: function (error) {
+            console.log(error)
+        },
+        beforeSend: function () {
+        },
+    });
+
 
     ////OBTENER PROVEEDORES
     jQuery.ajax({
@@ -277,7 +305,12 @@ $('#btnAgregar').on('click', function () {
 
 
     if (($("#txtproductocantidad").val()) > ($("#txtproductostock").val())) {
-        swal("Mensaje", "No hay suficientes Productos", "warning")
+        Swal.fire({
+            title: "No hay Suficientes Productos",
+            //text: "Por Favor, Revisar",
+            // html:
+            icon: "info",
+        });
     }
     else {
         $('#tbVenta > tbody  > tr').each(function (index, tr) {
@@ -294,6 +327,7 @@ $('#btnAgregar').on('click', function () {
         if (!existe_codigo) {
 
             controlarStock(parseInt($("#txtIdProducto").val()), parseInt($("#txtIdDetalleFarmaco").val()), parseInt($("#txtproductocantidad").val()), true);
+
 
             var importetotal = parseFloat($("#txtproductoprecio").val()) * parseFloat($("#txtproductocantidad").val());
             $("<tr>").append(
@@ -340,6 +374,27 @@ $('#tbVenta tbody').on('click', 'button[class="btn btn-danger btn-sm"]', functio
 
 $('#btnTerminarGuardarVenta').on('click', function () {
 
+    if (($("#txtproductostock").val()) < 40) {
+        Swal.fire({
+            title: "Quedan menos de 40 Unidades de Este Producto",
+            text: "Por Favor, Revisar",
+            // html:
+            icon: "info",
+            // confirmButtonText:
+            // footer:
+            width: "30em",
+            color: "#ffff",
+            // padding:
+            background: "#161616",
+            // grow:
+            // backdrop:
+            timer: 12000,
+            timerProgressBar: 1000,
+            toast: true,
+            position: "bottom-right",
+        });
+    }
+
     //VALIDACIONES DE CLIENTE
     if ($("#txtclientedocumento").val().trim() == "" || $("#txtclientenombres").val().trim() == "") {
         swal("Mensaje", "Complete los datos del cliente", "warning");
@@ -365,6 +420,7 @@ $('#btnTerminarGuardarVenta').on('click', function () {
     var DETALLE_CLIENTE = "";
     var DETALLE_VENTA = "";
     var DATOS_VENTA = "";
+    var IdFormaPago = $("#cboFormaDePago").val();
 
     calcularCambio();
 
@@ -380,6 +436,7 @@ $('#btnTerminarGuardarVenta').on('click', function () {
 
         DATOS_VENTA = DATOS_VENTA + "<DATOS>" +
             "<IdVenta>0</IdVenta >" +
+            "<IdFormaPago>" + IdFormaPago + "</IdFormaPago>" +
             "<IdProducto>" + idproducto + "</IdProducto>" +
             "<IdDetalleFarmaco>" + $("#txtIdDetalleFarmaco").val() + "</IdDetalleFarmaco>" +
             "<Cantidad>" + productocantidad + "</Cantidad>" +
@@ -388,6 +445,7 @@ $('#btnTerminarGuardarVenta').on('click', function () {
             "</DATOS>"
     });
 
+    console.log(DATOS_VENTA)
 
     VENTA = "<VENTA>" +
         "<IdDetalleFarmaco>" + $("#txtIdDetalleFarmaco").val() + "</IdDetalleFarmaco>" +
@@ -396,6 +454,9 @@ $('#btnTerminarGuardarVenta').on('click', function () {
         "<TipoDocumento>" + $("#cboventatipodocumento").val() + "</TipoDocumento>" +
         "<CantidadProducto>" + $('#tbVenta tbody tr').length + "</CantidadProducto>" +
         "<CantidadTotal>" + $totalproductos + "</CantidadTotal>" +
+        "<SubTotal>" + $("#txtsubtotal").val() + "</SubTotal>" +
+        "<Descuento>" + $("#txtDescuento").val() + "</Descuento>" +
+        "<Iva>" + $("#txtiva").val() + "</Iva>" +
         "<TotalCosto>" + $totalimportes + "</TotalCosto>" +
         "<ImporteRecibido>" + $("#txtmontopago").val() + "</ImporteRecibido>" +
         "<ImporteCambio>" + $("#txtcambio").val() + "</ImporteCambio>" +
@@ -430,6 +491,9 @@ $('#btnTerminarGuardarVenta').on('click', function () {
                 //DOCUMENTO
                 $("#cboventatipodocumento").val("Boleta");
 
+                //DOCUMENTO
+                $("#cboFormaDePago").val("Efectivo");
+
                 //CLIENTE
                 $("#cboclientetipodocumento").val("DNI");
                 $("#txtclientedocumento").val("");
@@ -454,7 +518,7 @@ $('#btnTerminarGuardarVenta').on('click', function () {
 
                 //PRECIOS
                 $("#txtsubtotal").val("0");
-                $("#txtigv").val("0");
+                $("#txtiva").val("0");
                 $("#txttotal").val("0");
                 $("#txtmontopago").val("");
                 $("#txtcambio").val("");
@@ -500,20 +564,22 @@ $('#btncalcular').on('click', function () {
 
 function calcularPrecios() {
     var subtotal = 0;
-    var igv = 0;
+    var iva = 0;
+    var descuento = 0;
     var sumatotal = 0;
     $('#tbVenta > tbody  > tr').each(function (index, tr) {
         var fila = tr;
         var importetotal = parseFloat($(fila).find("td.importetotal").text());
         sumatotal = sumatotal + importetotal;
     });
-    igv = sumatotal * 0.18;
-    subtotal = sumatotal - igv;
+    iva = sumatotal * 0.15;
+    subtotal = sumatotal - iva;
 
 
     $("#txtsubtotal").val(subtotal.toFixed(2));
-    $("#txtigv").val(igv.toFixed(2));
+    $("#txtiva").val(iva.toFixed(2));
     $("#txttotal").val(sumatotal.toFixed(2));
+    $("#txtDescuento").val()
 }
 
 

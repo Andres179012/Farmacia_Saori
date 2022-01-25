@@ -948,3 +948,4 @@ C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\FarmaciaSa
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\FarmaciaSaori\obj\Debug\FarmaciaSaori.dll
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\FarmaciaSaori\obj\Debug\FarmaciaSaori.pdb
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.CopyComplete
+C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\FarmaciaSaori\obj\Debug\FarmaciaSaori.csproj.CopyComplete

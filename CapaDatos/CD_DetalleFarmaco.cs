@@ -59,7 +59,6 @@ namespace CapaDatos
                             oProveedor = new Proveedor() { RazonSocial = dr["RazonSocial"].ToString() },
                             NombreComercial = dr["NombreComercial"].ToString(),
                             Concentracion = dr["Concentracion"].ToString(),
-                            FechaVencimiento = dr["FechaVencimiento"].ToString(),
                             NumeroLote = dr["NumeroLote"].ToString(),
                             PrescripcionMedica = Convert.ToBoolean(dr["PrescripcionMedica"]),
 
@@ -93,7 +92,6 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdProveedor", oDetalleFarmaco.IdProveedor);
                     cmd.Parameters.AddWithValue("NombreComercial", oDetalleFarmaco.NombreComercial);
                     cmd.Parameters.AddWithValue("Concentracion", oDetalleFarmaco.Concentracion);
-                    cmd.Parameters.AddWithValue("FechaVencimiento", oDetalleFarmaco.FechaVencimiento);
                     cmd.Parameters.AddWithValue("NumeroLote", oDetalleFarmaco.NumeroLote);
                     cmd.Parameters.AddWithValue("PrescripcionMedica", oDetalleFarmaco.PrescripcionMedica);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
@@ -132,7 +130,6 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdProveedor", oDetalleFarmaco.IdProveedor);
                     cmd.Parameters.AddWithValue("NombreComercial", oDetalleFarmaco.NombreComercial);
                     cmd.Parameters.AddWithValue("Concentracion", oDetalleFarmaco.Concentracion);
-                    cmd.Parameters.AddWithValue("FechaVencimiento", oDetalleFarmaco.FechaVencimiento);
                     cmd.Parameters.AddWithValue("NumeroLote", oDetalleFarmaco.NumeroLote);
                     cmd.Parameters.AddWithValue("PrescripcionMedica", oDetalleFarmaco.PrescripcionMedica);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;

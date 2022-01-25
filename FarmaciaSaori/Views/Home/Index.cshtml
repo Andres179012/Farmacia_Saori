@@ -1,8 +1,9 @@
-﻿@{
-    /**/
+﻿@{ /**/
 
-    ViewBag.Title = "Home Page";
-}
+                ViewBag.Title = "Home Page";
+    @Styles.Render("~/Resources/sweetalert2.min.css") }
+
+
 
 <body>
     <!--start page wrapper -->
@@ -60,7 +61,7 @@
                                     <i class='bx bx-group font-30'></i>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
                 <div class="col">
@@ -82,129 +83,13 @@
                 </div>
             </div><!--end row-->
 
-
-            <div class="row">
-                <div class="col-12 col-xl-8 d-flex">
-                    <div class="card radius-10 w-100">
-                        <div class="card-body">
-                            <div class="" id="chart5"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xl-4 d-flex">
-                    <div class="card radius-10 w-100">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <h5 class="mb-1">Sales Target</h5>
-                                </div>
-                                <div class="font-22 ms-auto">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                </div>
-                            </div>
-                            <div class="mt-4" id="chart6"></div>
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <h2 class="mb-0">2248</h2>
-                                    <p class="mb-0">/2,800 target</p>
-                                </div>
-                                <div class="ms-auto d-flex align-items-center border radius-10 px-2">
-                                    <i class='bx bxs-checkbox font-22 me-1 text-primary'></i><span>Marketing Sales</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end row-->
-
-
-            <div class="row row-cols-1 row-cols-xl-2">
-                <div class="col d-flex">
-                    <div class="card radius-10 w-100">
-                        <div class="card-body">
-                            <div class="" id="chart7"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex">
-                    <div class="card radius-10 w-100">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <h5 class="mb-1">Sales Report</h5>
-                                </div>
-                                <div class="font-22 ms-auto">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                </div>
-                            </div>
-                            <div class="" id="chart8"></div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end row-->
-
-            <div class="row">
-                <div class="col-12 col-xl-4 col-xxl-3 d-flex">
-                    <div class="card radius-10 w-100 overflow-hidden">
-                        <div class="card-body">
-                            <p class="mb-1">Overall Sales Performance</p>
-                            <div class="">
-                                <h2 class="mb-0">$84,126.5</h2>
-                                <p class="mb-0 text-success">+2.5% vs last month</p>
-                            </div>
-                        </div>
-                        <div class="" id="chart9"></div>
-                    </div>
-                </div>
-                <div class="col-12 col-xl-8 col-xxl-9 d-flex">
-                    <div class="card w-100 radius-10">
-                        <div class="row g-0">
-                            <div class="col-md-4 border-end">
-                                <div class="card-body">
-                                    <h5 class="card-title">Top Sales Locations</h5>
-                                    <h2 class="mt-4 mb-1">25.860 <i class="flag-icon flag-icon-us rounded"></i></h2>
-                                    <p class="mb-0 text-secondary">Our Most Customers in US</p>
-                                </div>
-                                <ul class="list-group mt-4 list-group-flush">
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <i class='bx bxs-circle me-1 text-success'></i>
-                                        <span>Massive</span>
-                                        <strong class="ms-auto">18.4k</strong>
-                                    </li>
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <i class='bx bxs-circle me-1 text-danger'></i>
-                                        <span>Large</span>
-                                        <strong class="ms-auto">6.9k</strong>
-                                    </li>
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <i class='bx bxs-circle me-1 text-primary'></i>
-                                        <span>Medium</span>
-                                        <strong class="ms-auto">5.4k</strong>
-                                    </li>
-                                    <li class="list-group-item d-flex align-items-center">
-                                        <i class='bx bxs-circle me-1 text-warning'></i>
-                                        <span>Small</span>
-                                        <strong class="ms-auto">875</strong>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="p-3">
-                                    <div class="" id="geographic-map"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end row-->
-
             <div class="row">
                 <div class="col-12 col-xl-4 d-flex">
                     <div class="card radius-10 w-100">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <h5 class="mb-0">New Customers</h5>
+                                    <h5 class="mb-0">Clientes</h5>
                                 </div>
                                 <div class="font-22 ms-auto">
                                     <i class='bx bx-dots-horizontal-rounded'></i>
@@ -213,9 +98,6 @@
                         </div>
                         <div class="customers-list p-3 mb-3">
                             <div class="customers-list-item d-flex align-items-center border-top border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-1.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
                                 <div class="ms-2">
                                     <h6 class="mb-1 font-14">Emy Jackson</h6>
                                     <p class="mb-0 font-13 text-secondary">emy_jac@xyz.com</p>
@@ -226,131 +108,8 @@
                                     <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
                                 </div>
                             </div>
-                            <div class="customers-list-item d-flex align-items-center border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-2.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
-                                <div class="ms-2">
-                                    <h6 class="mb-1 font-14">Martin Hughes</h6>
-                                    <p class="mb-0 font-13 text-secondary">martin.hug@xyz.com</p>
-                                </div>
-                                <div class="list-inline d-flex customers-contacts ms-auto">
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-envelope'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-phone'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                </div>
-                            </div>
-                            <div class="customers-list-item d-flex align-items-center border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-3.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
-                                <div class="ms-2">
-                                    <h6 class="mb-1 font-14">Laura Madison</h6>
-                                    <p class="mb-0 font-13 text-secondary">laura_01@xyz.com</p>
-                                </div>
-                                <div class="list-inline d-flex customers-contacts ms-auto">
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-envelope'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-phone'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                </div>
-                            </div>
-                            <div class="customers-list-item d-flex align-items-center border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-4.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
-                                <div class="ms-2">
-                                    <h6 class="mb-1 font-14">Shoan Stephen</h6>
-                                    <p class="mb-0 font-13 text-secondary">s.stephen@xyz.com</p>
-                                </div>
-                                <div class="list-inline d-flex customers-contacts ms-auto">
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-envelope'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-phone'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                </div>
-                            </div>
-                            <div class="customers-list-item d-flex align-items-center border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-5.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
-                                <div class="ms-2">
-                                    <h6 class="mb-1 font-14">Keate Medona</h6>
-                                    <p class="mb-0 font-13 text-secondary">Keate@xyz.com</p>
-                                </div>
-                                <div class="list-inline d-flex customers-contacts ms-auto">
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-envelope'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-phone'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                </div>
-                            </div>
-                            <div class="customers-list-item d-flex align-items-center border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-6.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
-                                <div class="ms-2">
-                                    <h6 class="mb-1 font-14">Paul Benn</h6>
-                                    <p class="mb-0 font-13 text-secondary">pauly.b@xyz.com</p>
-                                </div>
-                                <div class="list-inline d-flex customers-contacts ms-auto">
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-envelope'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-phone'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                </div>
-                            </div>
-                            <div class="customers-list-item d-flex align-items-center border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-7.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
-                                <div class="ms-2">
-                                    <h6 class="mb-1 font-14">Winslet Maya</h6>
-                                    <p class="mb-0 font-13 text-secondary">winslet_02@xyz.com</p>
-                                </div>
-                                <div class="list-inline d-flex customers-contacts ms-auto">
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-envelope'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-phone'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                </div>
-                            </div>
-                            <div class="customers-list-item d-flex align-items-center border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-8.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
-                                <div class="ms-2">
-                                    <h6 class="mb-1 font-14">Bruno Bernard</h6>
-                                    <p class="mb-0 font-13 text-secondary">bruno.b@xyz.com</p>
-                                </div>
-                                <div class="list-inline d-flex customers-contacts ms-auto">
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-envelope'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-phone'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                </div>
-                            </div>
-                            <div class="customers-list-item d-flex align-items-center border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-9.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
-                                <div class="ms-2">
-                                    <h6 class="mb-1 font-14">Merlyn Dona</h6>
-                                    <p class="mb-0 font-13 text-secondary">merlyn.d@xyz.com</p>
-                                </div>
-                                <div class="list-inline d-flex customers-contacts ms-auto">
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-envelope'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-phone'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                </div>
-                            </div>
-                            <div class="customers-list-item d-flex align-items-center border-bottom p-2 cursor-pointer">
-                                <div class="">
-                                    <img src="assets/images/avatars/avatar-10.webp" class="rounded-circle" width="46" height="46" alt="" />
-                                </div>
-                                <div class="ms-2">
-                                    <h6 class="mb-1 font-14">Alister Campel</h6>
-                                    <p class="mb-0 font-13 text-secondary">alister_42@xyz.com</p>
-                                </div>
-                                <div class="list-inline d-flex customers-contacts ms-auto">
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-envelope'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bxs-phone'></i></a>
-                                    <a href="javascript:;" class="list-inline-item"><i class='bx bx-dots-vertical-rounded'></i></a>
-                                </div>
+                            <div class="customers-list-item d-flex align-items-center border-top border-bottom p-2 cursor-pointer" id="content_clients">
+                                <div class="ms-2 customers"></div>
                             </div>
                         </div>
                     </div>
@@ -374,8 +133,11 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center">
                                         <div>
-                                            <p class="mb-0 text-secondary">Total Products</p>
-                                            <h4 class="mb-0">856</h4>
+                                            <p class="mb-0 text-secondary">Ventas Por Dia</p>
+                                            <div class="d-flex">
+                                                <h5 class="mb-0">C$</h5>
+                                                <h5 class="mb-0" id="Ventas_Dia"></h5>
+                                            </div>
                                         </div>
                                         <div class="widgets-icons bg-light-primary text-primary ms-auto">
                                             <i class='bx bxs-shopping-bag'></i>
@@ -387,8 +149,11 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center">
                                         <div>
-                                            <p class="mb-0 text-secondary">Total Customers</p>
-                                            <h4 class="mb-0">45,241</h4>
+                                            <p class="mb-0 text-secondary">Ventas Por Mes</p>
+                                            <div class="d-flex">
+                                                <h5 class="mb-0">C$</h5>
+                                                <h5 class="mb-0" id="Ventas_Mes"></h5>
+                                            </div>
                                         </div>
                                         <div class="widgets-icons bg-light-danger text-danger ms-auto">
                                             <i class='bx bxs-group'></i>
@@ -589,6 +354,123 @@
                 </div>
             </div><!--end row-->
 
+            <div class="row">
+                <div class="col-12 col-xl-8 d-flex">
+                    <div class="card radius-10 w-100">
+                        <div class="card-body">
+                            <div class="" id="chart5"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4 d-flex">
+                    <div class="card radius-10 w-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h5 class="mb-1">Sales Target</h5>
+                                </div>
+                                <div class="font-22 ms-auto">
+                                    <i class="bx bx-dots-horizontal-rounded"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4" id="chart6"></div>
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h2 class="mb-0">2248</h2>
+                                    <p class="mb-0">/2,800 target</p>
+                                </div>
+                                <div class="ms-auto d-flex align-items-center border radius-10 px-2">
+                                    <i class='bx bxs-checkbox font-22 me-1 text-primary'></i><span>Marketing Sales</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end row-->
+
+
+            <div class="row row-cols-1 row-cols-xl-2">
+                <div class="col d-flex">
+                    <div class="card radius-10 w-100">
+                        <div class="card-body">
+                            <div class="" id="chart7"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card radius-10 w-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h5 class="mb-1">Sales Report</h5>
+                                </div>
+                                <div class="font-22 ms-auto">
+                                    <i class="bx bx-dots-horizontal-rounded"></i>
+                                </div>
+                            </div>
+                            <div class="" id="chart8"></div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-12 col-xl-4 col-xxl-3 d-flex">
+                    <div class="card radius-10 w-100 overflow-hidden">
+                        <div class="card-body">
+                            <p class="mb-1">Overall Sales Performance</p>
+                            <div class="">
+                                <h2 class="mb-0">$84,126.5</h2>
+                                <p class="mb-0 text-success">+2.5% vs last month</p>
+                            </div>
+                        </div>
+                        <div class="" id="chart9"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-8 col-xxl-9 d-flex">
+                    <div class="card w-100 radius-10">
+                        <div class="row g-0">
+                            <div class="col-md-4 border-end">
+                                <div class="card-body">
+                                    <h5 class="card-title">Top Sales Locations</h5>
+                                    <h2 class="mt-4 mb-1">25.860 <i class="flag-icon flag-icon-us rounded"></i></h2>
+                                    <p class="mb-0 text-secondary">Our Most Customers in US</p>
+                                </div>
+                                <ul class="list-group mt-4 list-group-flush">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class='bx bxs-circle me-1 text-success'></i>
+                                        <span>Massive</span>
+                                        <strong class="ms-auto">18.4k</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class='bx bxs-circle me-1 text-danger'></i>
+                                        <span>Large</span>
+                                        <strong class="ms-auto">6.9k</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class='bx bxs-circle me-1 text-primary'></i>
+                                        <span>Medium</span>
+                                        <strong class="ms-auto">5.4k</strong>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class='bx bxs-circle me-1 text-warning'></i>
+                                        <span>Small</span>
+                                        <strong class="ms-auto">875</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-3">
+                                    <div class="" id="geographic-map"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end row-->
+
+
+
 
             <div class="row">
                 <div class="col">
@@ -778,9 +660,12 @@
                     </div>
                 </div>
             </div><!--end row-->
-
+            <!--Header ends-->
+            
         </div>
     </div>
+
+
     <!--end page wrapper -->
     <!--start overlay-->
     <div class="overlay toggle-icon"></div>
@@ -792,7 +677,10 @@
     <footer class="page-footer">
         <p class="mb-0">Copyright © 2021. All right reserved.</p>
     </footer>
-
-
+    <link type="text/css" rel="stylesheet" href="~/Resources/sweetalert2.min.css" />
+    <script src="~/Resources/sweetalert2.js"></script>
+    <script src="~/Resources/Alertas.js"></script>
+    <script src="@Url.Content("~/Resources/Alerta.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Resources/sweetalert2.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/Views/Home_Index.js")" type="text/javascript"></script>
 </body>

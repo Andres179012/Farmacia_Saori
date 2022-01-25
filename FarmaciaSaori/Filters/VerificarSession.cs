@@ -21,6 +21,7 @@ namespace FarmaciaSaori.Filters
                 if (filterContext.Controller is LoginController == false)
                 {
                     filterContext.HttpContext.Response.Redirect("~/Login/Index");
+                    
                 }
             }
             else

@@ -287,7 +287,7 @@ namespace CapaDatos
                             NombreGenerico =  dr["NombreGenerico"].ToString(),
                             IdDetalleFarmaco = Convert.ToInt32(dr["IdDetalleFarmaco"].ToString()),
                             NombreComercial = dr["NombreComercial"].ToString(),
-                            FechaVencimiento = Convert.ToDateTime(dr["FechaVencimiento"].ToString())
+                            FechaVencimiento = dr["FechaVencimiento"].ToString()
                         });
                     }
                     dr.Close();

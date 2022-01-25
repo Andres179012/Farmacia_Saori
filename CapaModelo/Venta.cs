@@ -21,6 +21,8 @@ namespace CapaModelo
         public float ImporteCambio { get; set; }
         public string TextoImporteCambio { get; set; }
         public string FechaRegistro { get; set; }
+        public int IdFormaPago { get; set; }
+        public Forma_Pago oFormaPago { get; set; }
         public DateTime VFechaRegistro { get; set; }
         public Usuario oUsuario { get; set; }
         public Cliente oCliente { get; set; }

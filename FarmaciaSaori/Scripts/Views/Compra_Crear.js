@@ -5,6 +5,7 @@ var tablatienda;
 var tablaproducto;
 
 
+
 $(document).ready(function () {
     activarMenu("Compras");
     $("#txtproductocantidad").val("0");

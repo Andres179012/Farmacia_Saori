@@ -21,7 +21,6 @@
 //})
 
 
-$('#btnBuscar').on('click', function () {
 
     jQuery.ajax({
         url: $.MisUrls.url._ObtenerReporteProductosVencer,
@@ -55,7 +54,7 @@ $('#btnBuscar').on('click', function () {
         beforeSend: function () {
         },
     });
-})
+
 
 function ObtenerFecha() {
 

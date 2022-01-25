@@ -18,6 +18,7 @@
     @*Estilos del Navbar*@
     <script src="~/Resources/jquery.min.js"></script>
     <link href="~/Resources/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="~/Resources/sweetalert2.min.css" rel="stylesheet" />
     <link href="~/Resources/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
     <link href="~/Resources/plugins/highcharts/css/highcharts.css" rel="stylesheet" />
     <link href="~/Resources/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
@@ -38,7 +39,7 @@
 
     <link rel="stylesheet" href="~/Resources/Gradients.css" />
 
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <link href="~/Resources/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
@@ -71,8 +72,14 @@
                         <div class="menu-title">Inicio</div>
                     </a>
                     @Html.ActionLinkAllow()
-            </ul>
-            <!--end navigation-->
+                    <a class="nav-link" name="Home" href="@Url.Action("PieChart", "Home")">
+                        <div class="parent-icon">
+                            <i class='bx bx-bar-chart-square'></i>
+                        </div>
+                        <div class="menu-title">Inicio</div>
+                    </a>
+                </ul>
+                <!--end navigation-->
         </div>
 
         <!--start header -->
@@ -702,6 +709,9 @@
      $.MisUrls.urls({ _RegistrarDevolucionV: '@Url.Action("GuardarV", "Devolucion")' });
         $.MisUrls.urls({ _ObtenerDetalleVenta: '@Url.Action("ObtenerDevolucion", "Devolucion")' });
 
+
+        $.MisUrls.urls({ _ObtenerVentasDia: '@Url.Action("ObtenerVentaPorDia", "Home")' });
+        $.MisUrls.urls({ _ObtenerVentaPorMes: '@Url.Action("ObtenerVentaPorMes", "Home")' });
         $.MisUrls.urls({ _ObtenerTotalProductos: '@Url.Action("ObtenerTotal", "Home")' });
         $.MisUrls.urls({ _ObtenerTotalCompras: '@Url.Action("ObtenerTotalCompras", "Home")' });
         $.MisUrls.urls({ _ObtenerTotalVentas: '@Url.Action("ObtenerTotalVentas", "Home")' });
@@ -829,7 +839,8 @@
     <script src="~/Resources/plugins/highcharts/js/accessibility.js"></script>
     <script src="~/Resources/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
     <script src="~/Resources/js/index.js"></script>
-
+    <script src="~/Resources/sweetalert2.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <script>

@@ -1845,6 +1845,7 @@
     <Content Include="Imagenes\logo.png" />
     <Content Include="Imagenes\tienda.png" />
     <Content Include="Imagenes\tiendalogo.png" />
+    <Content Include="Resources\Alertas.js" />
     <Content Include="Resources\css\app.css" />
     <Content Include="Resources\css\bootstrap.min.css" />
     <Content Include="Resources\css\dark-theme.css" />
@@ -2784,6 +2785,7 @@
     <Content Include="Views\Devolucion\DevolucionV.cshtml" />
     <Content Include="Views\Reporte\DevolucionRV.cshtml" />
     <Content Include="Views\Reporte\ProductosVencer.cshtml" />
+    <Content Include="Views\Home\PieChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

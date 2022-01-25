@@ -59,6 +59,11 @@ namespace CapaDatos
             return respuesta;
         }
 
+        public Usuario RegistrarSesion()
+        {
+            throw new NotImplementedException();
+        }
+
         public Usuario ObtenerDetalleUsuario(int IdUsuario)
         {
             Usuario rptUsuario = new Usuario();
@@ -217,15 +222,18 @@ namespace CapaDatos
 
         }
 
-        public bool RegistrarSesion(ControlSesion oUsuario)
+
+        public bool RegistrarSesion(Usuario oUsuario)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
+
                 try
                 {
                     SqlCommand cmd = new SqlCommand("usp_RegistrarInicioSesion", oConexion);
                     cmd.Parameters.AddWithValue("IdUsuario", oUsuario.IdUsuario);
+                    cmd.Parameters.AddWithValue("Correo", oUsuario.Correo);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oConexion.Open();
@@ -233,7 +241,7 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
-
+                    return respuesta;
                 }
                 catch (Exception ex)
                 {

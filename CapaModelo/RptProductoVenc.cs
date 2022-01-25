@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace CapaModelo
         public int IdDetalleFarmaco { get; set; }
         public string NombreComercial { get; set; }
         public DetalleFarmaco oDetalleFarmaco { get; set; }
-        public DateTime FechaVencimiento { get; set; }
+        [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public string FechaVencimiento { get; set; }
     }
 }

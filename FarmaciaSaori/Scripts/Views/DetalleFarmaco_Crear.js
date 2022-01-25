@@ -201,7 +201,6 @@ function abrirPopUpForm(json) {
         $("#txtProveedor").val(json.IdProveedor);
         $("#txtNombreComercial").val(json.NombreComercial);
         $("#txtConcentracion").val(json.Concentracion);
-        $("#txtFechaVencimiento").val(json.FechaVencimiento);
         $("#txtNumero").val(json.NumeroLote);
         $("#cboEstado").val(json.PrescripcionMedica == true ? 1 : 0);
 
@@ -213,7 +212,6 @@ function abrirPopUpForm(json) {
         $("#txtProveedor").val("");
         $("#txtNombreComercial").val("");
         $("#txtConcentracion").val("");
-        $("#txtFechaVencimiento").val("");
         $("#txtNumero").val("");
         $("#cboEstado").val(1);
 
@@ -237,7 +235,6 @@ function Guardar() {
                 IdProveedor: $("#txtProveedor").val(),
                 NombreComercial: $("#txtNombreComercial").val(),
                 Concentracion: $("#txtConcentracion").val(),
-                FechaVencimiento: $("#txtFechaVencimiento").val(),
                 NumeroLote:$("#txtNumero").val(),
                 PrescripcionMedica: ($("#cboEstado").val() == "1" ? true : false)
             }

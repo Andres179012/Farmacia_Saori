@@ -50,7 +50,7 @@ $('#btnBuscar').on('click', function () {
                 $.each(data, function (i, row) {
 
                     $("<tr>").append(
-                        $("<td style='color:black'>").text(row["FechaRegistro"]),
+                        $("<div class='customers-list-item d-flex align-items-center border-top border-bottom p-2 cursor-pointer'>").text(row["FechaRegistro"]),
                         $("<td style='color:black'>").text(row["Codigo"]),
                         $("<td style='color:black'>").text(row["NombreComercial"]),
                         $("<td style='color:black'>").text(row["NombreGenerico"]),

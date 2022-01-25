@@ -49,6 +49,7 @@
     <Compile Include="CD_Devolucion.cs" />
     <Compile Include="CD_FormaPago.cs" />
     <Compile Include="CD_Laboratorio.cs" />
+    <Compile Include="CD_ObtenerTotales.cs" />
     <Compile Include="CD_Permisos.cs" />
     <Compile Include="CD_Producto.cs" />
     <Compile Include="CD_ProductoTienda.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="CD_ViaAdministracion.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="CD_FormaFarmaceutica.cs" />
+    <Compile Include="Dashboard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
