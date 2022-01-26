@@ -79,5 +79,17 @@ namespace FarmaciaSaori.Controllers
             List<RptProductoVenc> lista = CD_Reportes.Instancia.ReporteProductoVencer();
             return Json(lista, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult ObtenerClientesHome()
+        {
+            List<rptClientesHome> lista = CD_Reportes.Instancia.ObClientesHome();
+            return Json(lista, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ObtenerTopProducts()
+        {
+            List<TopProducts> lista = CD_Reportes.Instancia.ObTopProducts();
+            return Json(lista, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="rptClientesHome.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="ControlSesion.cs" />
     <Compile Include="DetalleCompra.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="RptProductoVenc.cs" />
     <Compile Include="SubMenu.cs" />
     <Compile Include="Tienda.cs" />
+    <Compile Include="TopProducts.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs" />
     <Compile Include="ViaAdministracion.cs" />

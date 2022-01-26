@@ -1,9 +1,9 @@
 ﻿Swal.fire({
     title: "Hay Productos Proximos a vencer",
      text:"Por Favor, Revisar", 
-    // html:
+    html: "<a class='nav- link' href='Reporte/ProductosVencer' style='text-decoration:none; color:white;background:#FA1D1F;padding:20px;border-radius:5px;' '>Ver</a>",
     icon:"info",
-    // confirmButtonText:
+     confirmButtonText:"Bueno",
     // footer:
      width:"30em",
     color:"#ffff",
@@ -11,7 +11,7 @@
     background:"#161616",
     // grow:
     // backdrop:
-    timer: 6000,
+    timer: 10000,
     timerProgressBar: 200,
     toast:true,
     position: "bottom-right",
@@ -40,7 +40,7 @@
     // 	cancelButton:
     // 	footer:	
 
-     //showConfirmButton:"okay",
+    showConfirmButton:false,
      confirmButtonColor:"Red"
     // confirmButtonAriaLabel:
 

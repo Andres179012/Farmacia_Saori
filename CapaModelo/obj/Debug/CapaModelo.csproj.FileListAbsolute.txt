@@ -38,12 +38,6 @@ C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaModelo\bin\De
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
 C:\Users\inter\Desktop\Escritorio\Nueva carpeta\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb
-C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.dll
-C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.pdb
-C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
-C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
-C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
-C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb
 C:\Users\andre\Music\Farmacia_Saori-master\CapaModelo\bin\Debug\CapaModelo.dll
 C:\Users\andre\Music\Farmacia_Saori-master\CapaModelo\bin\Debug\CapaModelo.pdb
 C:\Users\andre\Music\Farmacia_Saori-master\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
@@ -61,3 +55,9 @@ C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb
 C:\Users\andre\OneDrive\Escritorio\Sistema Web Oficial\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.pdb
+C:\Users\inter\Desktop\Escritorio\Farmacia_Saori\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache

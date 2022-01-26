@@ -71,13 +71,13 @@
                         </div>
                         <div class="menu-title">Inicio</div>
                     </a>
-                    @Html.ActionLinkAllow()
                     <a class="nav-link" name="Home" href="@Url.Action("PieChart", "Home")">
                         <div class="parent-icon">
                             <i class='bx bx-bar-chart-square'></i>
                         </div>
-                        <div class="menu-title">Inicio</div>
+                        <div class="menu-title">Dashboard</div>
                     </a>
+                    @Html.ActionLinkAllow()
                 </ul>
                 <!--end navigation-->
         </div>
@@ -794,6 +794,8 @@
         $.MisUrls.urls({ _ObtenerVentas: '@Url.Action("Obtener", "Venta")' });
 
         //CONTROLADOR REPORTE
+        $.MisUrls.urls({ _ObtenerClientesHome :'@Url.Action("ObtenerClientesHome", "Reporte")' });
+        $.MisUrls.urls({ _ObtenerTopProductos :'@Url.Action("ObtenerTopProducts", "Reporte")' });
         $.MisUrls.urls({ _ObtenerReporteProductosVencer :'@Url.Action("ObtenerProductosVencer", "Reporte")' });
         $.MisUrls.urls({ _ObtenerReporteProducto :'@Url.Action("ObtenerProducto", "Reporte")' });
         $.MisUrls.urls({ _ObtenerReporteVenta :'@Url.Action("ObtenerVenta", "Reporte")' });

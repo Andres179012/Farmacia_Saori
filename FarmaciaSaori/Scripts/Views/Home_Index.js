@@ -141,28 +141,64 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     jQuery.ajax({
-        url: $.MisUrls.url._ObtenerReporteProductosVencer,
+        url: $.MisUrls.url._ObtenerClientesHome,
         type: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
 
             if (data != undefined && data != null) {
-                
 
-                $("#content_clients .customers").html("");
+                $(".customers").html("");
 
 
                 $.each(data, function (i,row) {
 
-                    $("<div class='ms-2'>").append(
-                        $("<h6>").text(row["NombreGenerico"]),
+                    $("<div class='customers-list-item d-flex align-items-center border-top border-bottom p-2 cursor-pointer'>").append(
+                        $("<div class='ms-2'>").append(
+                            $("<h6 class='mb-1 font-14'>").text(row["Nombre"]),
+                            $("<p class='mb-0 font-13 text-secondary'>").text(row["Telefono"]),
+                        ),
                         $("<div class='list-inline d-flex customers-contacts ms-auto'>").append(
                             $("<a class='list-inline-item'><i class='bx bxs-envelope'></i></a>"),
                             $("<a class='list-inline-item'><i class='bx bxs-phone'></i></a>"),
                             $("<a class='list-inline-item'><i class='bx bx-dots-vertical-rounded'></i></a>"),
-                        )
-                    ).appendTo("#content_clients .customers");
+                        ),
+                    ).appendTo(".customers");
+
+                })
+
+            }
+
+        },
+    });
+});
+
+$(document).ready(function () {
+    jQuery.ajax({
+        url: $.MisUrls.url._ObtenerTopProductos,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+
+            if (data != undefined && data != null) {
+
+                $(".topProducts").html("");
+
+
+                $.each(data, function (i, row) {
+
+                    $("<div class='customers-list-item d-flex align-items-center border-top border-bottom p-2 cursor-pointer'>").append(
+                        $("<a class='list-inline-item'><i class='bx bxs-cart-alt bx-sm'></i></a>"),
+                        $("<div class='ms-2'>").append(
+                            $("<h5 class='mb-1 font-14'>").text(row["NombreComercial"]),
+                        ),
+                        $("<div class='list-inline d-flex customers-contacts ms-auto'>").append(
+                            $("<h5 class='mb-1 font-14'>C$</h5>"),
+                            $("<h5 class='mb-1 font-14'>").text(row["MASVENDIDO"]),
+                        ),
+                    ).appendTo(".topProducts");
 
                 })
 

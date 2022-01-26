@@ -2621,6 +2621,7 @@
     <Content Include="Resources\plugins\highcharts\js\variable-pie.js.map" />
     <Content Include="Resources\plugins\metismenu\css\metisMenu.min.css.map" />
     <Content Include="Resources\plugins\metismenu\js\metisMenu.min.js.map" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2790,7 +2791,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

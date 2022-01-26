@@ -1,4 +1,5 @@
 ﻿using CapaModelo;
+using CapaDatos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -299,6 +300,77 @@ namespace CapaDatos
                 {
                     rptListaProductsVen = null;
                     return rptListaProductsVen;
+                }
+            }
+        }
+
+        public List<rptClientesHome> ObClientesHome()
+        {
+            List<rptClientesHome> rptClientHome= new List<rptClientesHome>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_rptClientesHome", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        rptClientHome.Add(new rptClientesHome()
+                        {
+                            IdCliente = Convert.ToInt32(dr["IdCliente"].ToString()),
+                            Nombre = dr["Nombre"].ToString(),
+                            Direccion = dr["Direccion"].ToString(),
+                            Telefono = dr["Telefono"].ToString()
+                        });
+                    }
+                    dr.Close();
+
+                    return rptClientHome;
+
+                }
+                catch (Exception)
+                {
+                    rptClientHome = null;
+                    return rptClientHome;
+                }
+            }
+        }
+
+        public List<TopProducts> ObTopProducts()
+        {
+            List<TopProducts> topProducts = new List<TopProducts>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_Top10Products", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        topProducts.Add(new TopProducts()
+                        {
+                            IdDetalleFarmaco = Convert.ToInt32(dr["IdDetalleFarmaco"].ToString()),
+                            NombreComercial = dr["NombreComercial"].ToString(),
+                            MASVENDIDO = Convert.ToDecimal(dr["MASVENDIDO"].ToString()),
+                        });
+                    }
+                    dr.Close();
+
+                    return topProducts;
+
+                }
+                catch (Exception)
+                {
+                    topProducts = null;
+                    return topProducts;
                 }
             }
         }
