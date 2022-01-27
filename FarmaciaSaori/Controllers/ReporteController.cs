@@ -91,5 +91,11 @@ namespace FarmaciaSaori.Controllers
             List<TopProducts> lista = CD_Reportes.Instancia.ObTopProducts();
             return Json(lista, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult ObtenerLaboratoriosHome()
+        {
+            List<Laboratorio> lista = CD_Laboratorio.Instancia.ObtenerLaboratorio();
+            return Json(lista, JsonRequestBehavior.AllowGet);
+        }
     }
 }

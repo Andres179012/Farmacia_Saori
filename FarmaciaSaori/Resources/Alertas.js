@@ -1,9 +1,9 @@
 ﻿Swal.fire({
     title: "Hay Productos Proximos a vencer",
      text:"Por Favor, Revisar", 
-    html: "<a class='nav- link' href='Reporte/ProductosVencer' style='text-decoration:none; color:white;background:#FA1D1F;padding:20px;border-radius:5px;' '>Ver</a>",
+    html: "<a class='nav- link' href='Reporte/ProductosVencer' style='text-decoration:none;padding:5px; color:white;background:#FA1D1F;border-radius:5px;' '>Ver</a>",
     icon:"info",
-     confirmButtonText:"Bueno",
+     confirmButtonText:"Ver",
     // footer:
      width:"30em",
     color:"#ffff",
