@@ -304,6 +304,42 @@ namespace CapaDatos
             }
         }
 
+
+        public List<ControlIncioSesion> ReporteIncioSesion()
+        {
+            List<ControlIncioSesion> rptListaSesiones = new List<ControlIncioSesion>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_ControlInicioSesion", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        rptListaSesiones.Add(new ControlIncioSesion()
+                        {
+                            IdInicioSesion = Convert.ToInt32(dr["IdIncioSesion"].ToString()),
+                            Correo = dr["Correo"].ToString(),
+                            FechaEntrada = dr["FechaEntrada"].ToString()
+                        });
+                    }
+                    dr.Close();
+
+                    return rptListaSesiones;
+
+                }
+                catch (Exception)
+                {
+                    rptListaSesiones = null;
+                    return rptListaSesiones;
+                }
+            }
+        }
+
         public List<rptClientesHome> ObClientesHome()
         {
             List<rptClientesHome> rptClientHome= new List<rptClientesHome>();

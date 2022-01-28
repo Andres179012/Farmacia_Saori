@@ -9,9 +9,8 @@ namespace CapaModelo
     public class ControlSesion
     {
         public int IdInicioSesion { get; set; }
-        public int IdUsuario { get; set; }
+
         public string Correo { get; set; }
-        public Usuario oUsuario { get; set; }
 
         public DateTime FechaEntrada { get; set; }
     }

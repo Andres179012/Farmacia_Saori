@@ -18,10 +18,10 @@ namespace FarmaciaSaori.Controllers
         }
 
         [HttpPost]
-        public JsonResult GuardarSesion(Usuario objeto)
+        public JsonResult GuardarSesion(ControlSesion objeto)
         {
             bool respuesta = true;
-            respuesta = CD_Usuario.Instancia.RegistrarSesion(objeto);
+            respuesta = CD_ControlSesion.Instancia.RegistrarInicioSesion(objeto);
             return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
         }
 

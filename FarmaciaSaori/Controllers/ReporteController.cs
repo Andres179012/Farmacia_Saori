@@ -39,6 +39,11 @@ namespace FarmaciaSaori.Controllers
         {
             return View();
         }
+
+        public ActionResult IncioSesion()
+        {
+            return View();
+        }
         public JsonResult ObtenerProducto(string fechainicio, string fechafin)
         {
 
@@ -77,6 +82,13 @@ namespace FarmaciaSaori.Controllers
         {
 
             List<RptProductoVenc> lista = CD_Reportes.Instancia.ReporteProductoVencer();
+            return Json(lista, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ObtenerIniciosSesion()
+        {
+
+            List<ControlIncioSesion> lista = CD_Reportes.Instancia.ReporteIncioSesion();
             return Json(lista, JsonRequestBehavior.AllowGet);
         }
 

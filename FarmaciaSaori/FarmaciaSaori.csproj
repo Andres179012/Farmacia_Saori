@@ -2711,6 +2711,7 @@
     <Content Include="Scripts\Views\Devolucion_Crear.js" />
     <Content Include="Scripts\Views\FormaFarmaceutica_Crear.js" />
     <Content Include="Scripts\Views\FormaPago_Crear.js" />
+    <Content Include="Scripts\Views\InicioSesion.js" />
     <Content Include="Scripts\Views\Laboratorio_Crear.js" />
     <Content Include="Scripts\Views\ProductosVencimiento.js" />
     <Content Include="Scripts\Views\Producto_Asignar.js" />
@@ -2787,6 +2788,7 @@
     <Content Include="Views\Reporte\DevolucionRV.cshtml" />
     <Content Include="Views\Reporte\ProductosVencer.cshtml" />
     <Content Include="Views\Home\PieChart.cshtml" />
+    <Content Include="Views\Reporte\IncioSesion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
