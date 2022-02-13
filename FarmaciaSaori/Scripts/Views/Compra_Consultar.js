@@ -146,7 +146,7 @@ function buscar() {
     tabladata.ajax.url($.MisUrls.url._ObtenerCompras + "?" +
         "fechainicio=" + $("#txtFechaInicio").val().trim() +
         "&fechafin=" + $("#txtFechaFin").val()).load();
- }
+}
 
 function ObtenerFecha() {
 

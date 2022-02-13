@@ -45,6 +45,7 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ControlIncioSesion.cs" />
+    <Compile Include="LaboratorioProveedor.cs" />
     <Compile Include="rptClientesHome.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="ControlSesion.cs" />

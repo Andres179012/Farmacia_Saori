@@ -75,7 +75,12 @@ namespace FarmaciaSaori.Controllers
             return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
         }
 
-
+        [HttpGet]
+        public JsonResult ObtenerLaboratorioProveedor()
+        {
+            List<LaboratorioProveedor> lista = CD_Compra.Instancia.ObtenerLaboratorioProveedor();
+            return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

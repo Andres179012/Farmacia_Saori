@@ -304,7 +304,7 @@ $('#btnAgregar').on('click', function () {
     }
 
 
-    if ($("#txtproductocantidad").val() < $("#txtproductostock").val()) {
+    if ($("#txtproductocantidad").val() > $("#txtproductostock").val()) {
         Swal.fire({
             title: "No hay Suficientes Productos",
             //text: "Por Favor, Revisar",

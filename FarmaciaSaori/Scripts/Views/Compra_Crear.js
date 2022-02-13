@@ -3,7 +3,7 @@ var tabladata;
 var tablaproveedor;
 var tablatienda;
 var tablaproducto;
-
+var tablaLabProv;
 
 
 $(document).ready(function () {
@@ -32,60 +32,108 @@ $(document).ready(function () {
         },
     });
 
-    //OBTENER PROVEEDORES
-    tablaproveedor = $('#tbProveedor').DataTable({
+    ////OBTENER PROVEEDORES
+    //tablaproveedor = $('#tbProveedor').DataTable({
+    //    "ajax": {
+    //        "url": $.MisUrls.url._ObtenerProveedores,
+    //        "type": "GET",
+    //        "datatype": "json"
+    //    },
+    //    "columns": [
+    //        {
+    //            "data": "IdProveedor", "render": function (data, type, row, meta) {
+    //                return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='proveedorSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
+    //            },
+    //            "orderable": false,
+    //            "searchable": false,
+    //            "width": "90px"
+    //        },
+    //        { "data": "Ruc" },
+    //        { "data": "RazonSocial" },
+    //        { "data": "Direccion" }
+
+    //    ],
+    //    "language": {
+    //        "url": $.MisUrls.url.Url_datatable_spanish
+    //    },
+    //    responsive: true
+    //});
+
+    ////OBTENER LABORATORIO
+    //tablalaboratorio = $('#tbLaboratorio').DataTable({
+    //    "ajax": {
+    //        "url": $.MisUrls.url._ObtenerLaboratorio,
+    //        "type": "GET",
+    //        "datatype": "json"
+    //    },
+    //    "columns": [
+    //        {
+    //            "data": "IdLaboratorio", "render": function (data, type, row, meta) {
+    //                return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='laboratorioSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
+    //            },
+    //            "orderable": false,
+    //            "searchable": false,
+    //            "width": "90px"
+    //        },
+
+    //        { "data": "RazonSocial" },
+    //        { "data": "Direccion" }
+
+    //    ],
+    //    "language": {
+    //        "url": $.MisUrls.url.Url_datatable_spanish
+    //    },
+    //    responsive: true
+    //});
+
+    //OBTENER LABORATORIO PROVEEDOR
+    tablaLabProv = $('#tbLabProv').DataTable({
         "ajax": {
-            "url": $.MisUrls.url._ObtenerProveedores,
+            "url": $.MisUrls.url._ObtenerLaboratorioProveedor,
             "type": "GET",
             "datatype": "json"
         },
         "columns": [
             {
-                "data": "IdProveedor", "render": function (data, type, row, meta) {
-                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='proveedorSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
+                "data": "IdLaboratorioProveedor", "render": function (data, type, row, meta) {
+                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='LabProvSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
                 },
                 "orderable": false,
                 "searchable": false,
                 "width": "90px"
             },
-            { "data": "Ruc" },
-            { "data": "RazonSocial" },
-            { "data": "Direccion" }
-
+            {
+                "data": "oLaboratorio", render: function (data) {
+                    return data.NombreLaboratorio
+                }
+            },
+            {
+                "data": "oProveedor", render: function (data) {
+                    return data.RazonSocial
+                }
+            },
+            {
+                "data": "oProveedor", render: function (data) {
+                    return data.Ruc
+                }
+            }
+            ,
+            {
+                "data": "oProveedor", render: function (data) {
+                    return data.Telefono
+                }
+            },
+            {
+                "data": "oProveedor", render: function (data) {
+                    return data.Direccion
+                }
+            }
         ],
         "language": {
             "url": $.MisUrls.url.Url_datatable_spanish
         },
         responsive: true
     });
-
-    //OBTENER LABORATORIO
-    tablalaboratorio = $('#tbLaboratorio').DataTable({
-        "ajax": {
-            "url": $.MisUrls.url._ObtenerLaboratorio,
-            "type": "GET",
-            "datatype": "json"
-        },
-        "columns": [
-            {
-                "data": "IdLaboratorio", "render": function (data, type, row, meta) {
-                    return "<button class='btn btn-sm btn-primary ml-2' type='button' onclick='laboratorioSelect(" + JSON.stringify(row) + ")'><i class='fas fa-check'></i></button>"
-                },
-                "orderable": false,
-                "searchable": false,
-                "width": "90px"
-            },
-          
-            { "data": "RazonSocial" },
-            { "data": "Direccion" }
-
-        ],
-        "language": {
-            "url": $.MisUrls.url.Url_datatable_spanish
-        },
-        responsive: true
-    });
-
 
     //OBTENER PRODUCTOS
     tablaproducto = $('#tbProducto').DataTable({
@@ -174,6 +222,10 @@ function buscarDetalleFarmaco() {
     $('#modalDetalleFarmaco').modal('show');
 }
 
+function buscarLaboratorioP() {
+    tablaLabProv.ajax.reload();
+    $('#modalLabProv').modal('show');
+}
 
 function buscarProducto() {
 
@@ -182,22 +234,22 @@ function buscarProducto() {
 }
 
 
-function proveedorSelect(json) {
+//function proveedorSelect(json) {
 
-    $("#txtIdProveedor").val(json.IdProveedor);
-    $("#txtRucProveedor").val(json.Ruc);
-    $("#txtRazonSocialProveedor").val(json.RazonSocial);
+//    $("#txtIdProveedor").val(json.IdProveedor);
+//    $("#txtRucProveedor").val(json.Ruc);
+//    $("#txtRazonSocialProveedor").val(json.RazonSocial);
 
-    $('#modalProveedor').modal('hide');
-}
+//    $('#modalProveedor').modal('hide');
+//}
 
-function laboratorioSelect(json) {
+//function laboratorioSelect(json) {
 
-    $("#txtIdLaboratorio").val(json.IdLaboratorio);
-    $("#txtRazonSocialLaboratorio").val(json.RazonSocial);
+//    $("#txtIdLaboratorio").val(json.IdLaboratorio);
+//    $("#txtRazonSocialLaboratorio").val(json.RazonSocial);
 
-    $('#modalLaboratorio').modal('hide');
-}
+//    $('#modalLaboratorio').modal('hide');
+//}
 
 function tiendaSelect(json) {
 
@@ -214,6 +266,17 @@ function productoSelect(json) {
     $("#txtConcentracion").val(json.oDetalleFarmaco.Concentracion);
     $("#txtPrescripcionMedica").val(json.oDetalleFarmaco.PrescripcionMedica);
     $('#modalProducto').modal('hide');
+}
+
+function LabProvSelect(json) {
+    $("#txtRazonSocialLaboratorio").val(json.oLaboratorio.NombreLaboratorio);
+    $("#txtIdLaboratorio").val(json.oLaboratorio.IdLaboratorio);
+    $("#txtRazonSocialProveedor").val(json.oProveedor.RazonSocial);
+    $("#txtRuc").val(json.oProveedor.Ruc);
+    $("#txttelefonoProveedor").val(json.oProveedor.Telefono);
+    $("#txtDireccion").val(json.oProveedor.Direccion);
+    $("#txtIdProveedor").val(json.oProveedor.IdProveedor);
+    $('#modalLabProv').modal('hide');
 }
 
 
@@ -303,9 +366,9 @@ $('#btnAgregarCompra').on('click', function () {
 
     var existe_codigo = false;
     if (
-        parseInt($("#txtIdProveedor").val()) == 0 ||
-        parseInt($("#txtIdLaboratorio").val()) == 0 ||
         parseInt($("#txtIdProducto").val()) == 0 ||
+        parseInt($("#txtIdLaboratorio").val()) == 0 ||
+        parseInt($("#txtIdProveedor").val()) == 0 ||
         parseFloat($("#txtCantidadProducto").val()) == 0 ||
         parseFloat($("#txtPrecioCompraProducto").val()) == 0 ||
         parseFloat($("#txtPrecioVentaProducto").val()) == 0 ||
@@ -334,8 +397,8 @@ $('#btnAgregarCompra').on('click', function () {
             $("<td>").addClass("codigoproducto").data("idproducto", $("#txtIdProducto").val()).append($("#txtCodigoProducto").val()),
             $("<td>").append($("#txtNombreProducto").val()),
             $("<td>").append($("#txtNombreComercial").val()),
-            $("<td>").append($("#txtRucProveedor").val()),
             $("<td>").append($("#txtRazonSocialLaboratorio").val()),
+            $("<td>").append($("#txtRazonSocialProveedor").val()),
             $("<td>").addClass("cantidad").append($("#txtCantidadProducto").val()),
             $("<td>").addClass("preciocompra").append($("#txtPrecioCompraProducto").val()),
             $("<td>").addClass("precioventa").append($("#txtPrecioVentaProducto").val()),
@@ -349,7 +412,6 @@ $('#btnAgregarCompra').on('click', function () {
         $("#txtPrecioCompraProducto").val("0");
         $("#txtPrecioVentaProducto").val("0");
         $("#txtNombreComercial").val("");
-        $("#txtRucProveedor").val("");
         $("#txtRazonSocialLaboratorio").val("");
         $("#txtRazonSocialProveedor").val("");
         $("#txtConcentracion").val("");
@@ -433,8 +495,10 @@ $('#btnTerminarGuardarCompra').on('click', function () {
 
                 //PROVEEDOR
                 $("#txtIdProveedor").val("0");
-                $("#txtRucProveedor").val("");
                 $("#txtRazonSocialProveedor").val("");
+                $("#txtRuc").val("");
+                $("#txttelefonoProveedor").val("");
+                $("#txtDireccion").val("");
 
                 //Laboratorio
                 $("#txtIdLaboratorio").val("0");
@@ -474,6 +538,6 @@ $('#btnTerminarGuardarCompra').on('click', function () {
         },
     });
 
- 
+
 
 })

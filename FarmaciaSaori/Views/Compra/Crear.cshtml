@@ -1,8 +1,6 @@
-﻿
-@{
-    ViewBag.Title = "Crear";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿    
+@{ ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <body>
     <!--wrapper-->
@@ -43,7 +41,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <div class="card-body p-2 card-venta">
@@ -54,52 +52,53 @@
                                                 <div class="row">
 
                                                     @*Laboratorios*@
-                                                    <div class="col-sm-6">
+                                                    <div class="col-sm-12">
                                                         <div class="card border-info border-top border-0 border-4">
                                                             <div class="card-body p-2">
-                                                                <h6 class="card-title mb-1">Laboratorio</h6>
+                                                                <h6 class="card-title mb-1">Detalle Laboratorio</h6>
                                                                 <div class="row align-items-end">
-                                                                    <input id="txtIdLaboratorio" type="hidden" value="0" />
-                                                                    <div class="col-sm-8">
-                                                                        <label class="col-form-label col-form-label-sm">Razon Social</label>
+                                                                    <input id="txtIdLabProv" type="hidden" value="0" />
+                                                                    <div class="col-sm-4">
+                                                                        <input id="txtIdLaboratorio" type="hidden" value="0" />
+                                                                        <label class="col-form-label col-form-label-sm">Laboratorio</label>
                                                                         <div class="input-group">
                                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                                             <input type="text" class="form-control border-start-0" readonly id="txtRazonSocialLaboratorio" name="RazonSocial">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-4">
-                                                                        <div class="form-group mb-0">
-                                                                            <button id="btnBuscarLaboratorio" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarLaboratorio()"><i class="fas fa-search"></i> Buscar</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    @*Proveedores*@
-                                                    <div class="col-md-6">
-                                                        <div class="card border-info border-top border-0 border-4">
-                                                            <div class="card-body p-2">
-                                                                <h6 class="card-title mb-1">Proveedor</h6>
-                                                                <div class="row align-items-end">
-                                                                    <input id="txtIdProveedor" type="hidden" value="0" />
-                                                                    <div class="col-sm-4">
-                                                                        <label class="col-form-label col-form-label-sm">RUC</label>
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                                            <input type="text" class="form-control border-start-0" readonly id="txtRucProveedor" name="RUC">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-4">
-                                                                        <label class="col-form-label col-form-label-sm">Razon Social</label>
+
+                                                                        <input id="txtIdProveedor" type="hidden" value="0" />
+                                                                        <label class="col-form-label col-form-label-sm">Proveedor</label>
                                                                         <div class="input-group">
                                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                                             <input type="text" class="form-control border-start-0" readonly id="txtRazonSocialProveedor" name="RazonSocial">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-4">
+                                                                        <label class="col-form-label col-form-label-sm">RUC Proveedor</label>
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                                            <input type="text" class="form-control border-start-0" readonly id="txtRuc" name="RUC">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <label class="col-form-label col-form-label-sm">Telefono Proveedor</label>
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                                            <input type="text" class="form-control border-start-0" readonly id="txttelefonoProveedor" name="Telefono">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <label class="col-form-label col-form-label-sm">Direccion Proveedor</label>
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                                            <input type="text" class="form-control border-start-0" readonly id="txtDireccion" name="Direccion">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
                                                                         <div class="form-group mb-0">
-                                                                            <button id="btnBuscarProveedor" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarProveedor()"><i class="fas fa-search"></i> Buscar</button>
+                                                                            <button id="btnBuscarLaboratorioP" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarLaboratorioP()"><i class="fas fa-search"></i> Buscar</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -109,21 +108,21 @@
 
                                                 </div>
                                                 <div class="row">
-                                                   
+
                                                     <div class="col-md-12">
                                                         <div class="card border-info border-top border-0 border-4">
                                                             <div class="card-body p-2">
                                                                 <h6 class="card-title mb-1">Producto</h6>
                                                                 <div class="row">
                                                                     <input id="txtIdProducto" type="hidden" value="0" />
-                                                                    <div class="col-sm-3">
+                                                                    <div class="col-sm-4">
                                                                         <label class="col-form-label col-form-label-sm">Codigo</label>
                                                                         <div class="input-group">
                                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                                             <input type="text" class="form-control border-start-0" id="txtCodigoProducto" name="Codigo" autocomplete="off">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-sm-3">
+                                                                    <div class="col-sm-4">
                                                                         <label class="col-form-label col-form-label-sm">Nombre</label>
                                                                         <div class="input-group">
                                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
@@ -131,29 +130,29 @@
                                                                         </div>
                                                                     </div>
                                                                     <input id="txtIdDetalleFarmaco" type="hidden" value="0" />
-                                                                    <div class="col-sm-3">
+                                                                    <div class="col-sm-4">
                                                                         <label class="col-form-label col-form-label-sm">Nombre Comercial</label>
                                                                         <div class="input-group">
                                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                                             <input type="text" class="form-control border-start-0" readonly id="txtNombreComercial" name="NombreComercial">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-sm-3">
-                                                                        <label class="col-form-label col-form-label-sm">Concentracion</label>
+                                                                    <div class="col-sm-4">
+                                                                        <label class="col-form-label col-form-label-sm">Concentracion y Presentacion</label>
                                                                         <div class="input-group">
                                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                                             <input type="text" class="form-control border-start-0" readonly id="txtConcentracion" name="Concentracion">
                                                                         </div>
                                                                     </div>
 
-                                                                    <div class="col-sm-3">
+                                                                    <div class="col-sm-4">
                                                                         <label class="col-form-label col-form-label-sm">Prescripcion Medica</label>
                                                                         <div class="input-group">
                                                                             <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
                                                                             <input type="text" class="form-control border-start-0" readonly id="txtPrescripcionMedica" name="PrescripcionMedica">
-                                                                         </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="col-sm-3">
+                                                                    <div class="col-sm-4">
                                                                         <div class="form-group mb-0">
                                                                             <label for="btnBuscarTienda" class="col-form-label col-form-label-sm invisible">Buscar:</label>
                                                                             <button id="btnBuscarProducto" type="button" class="btn btn-sm btn-primary btn-block" onclick="buscarProducto()"><i class="fas fa-search"></i> Buscar</button>
@@ -165,75 +164,75 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                        <div class="col-sm-3">
-                                                            <label class="col-form-label col-form-label-sm">Cantidad</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                                <input type="number" class="form-control border-start-0" id="txtCantidadProducto" name="Cantidad" value="0" min="1" pattern="[0-9]+" step="1" autocomplete="off" onkeypress="if (isNaN(String.fromCharCode(event.keyCode))) return false;">
-                                                            </div>
+                                                    <div class="col-sm-3">
+                                                        <label class="col-form-label col-form-label-sm">Cantidad</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                            <input type="number" class="form-control border-start-0" id="txtCantidadProducto" name="Cantidad" value="0" min="1" pattern="[0-9]+" step="1" autocomplete="off" onkeypress="if (isNaN(String.fromCharCode(event.keyCode))) return false;">
                                                         </div>
-                                                        <div class="col-sm-3">
-                                                            <label class="col-form-label col-form-label-sm">Precio Compra</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                                <input type="number" class="form-control border-start-0" id="txtPrecioCompraProducto" name="PrecioCompra" value="0" min="1" pattern="[0-9]+" step="1" autocomplete="off" onkeypress="if (isNaN(String.fromCharCode(event.keyCode))) return false;">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <label class="col-form-label col-form-label-sm">Precio Venta</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
-                                                                <input type="number" class="form-control border-start-0" id="txtPrecioVentaProducto" name="PrecioVenta" value="0" min="1" pattern="[0-9]+" step="1" autocomplete="off" onkeypress="if (isNaN(String.fromCharCode(event.keyCode))) return false;">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-3">
-                                                            <div class="form-group mb-0">
-                                                                <label for="txtRucProveedor" class="col-form-label col-form-label-sm">Fecha Vencimiento:</label><input type="date" id="start" name="trip-start"
-                                                                       value="2022-01-01"
-                                                                       min="2022-01-01" max="2050-01-01" class="form-control border-start-0 fechavencimientoproducto">
-                                                            </div>
-                                                        </div>
-                                                </div>
-                                                    <div class="row mt-2">
-                                                        <div class="col-sm-12">
-                                                            <button id="btnAgregarCompra" class="btn btn-success btn-sm float-right">
-                                                                <i class="fas fa-plus"></i> Agregar a compra
-                                                            </button>
-                                                        </div>
-
                                                     </div>
-
-                                                    <hr />
-                                                    <div class="row mt-3">
-                                                        <div class="col-sm-12">
-                                                            <div class="table-responsive-sm">
-                                                                <table id="tbCompra" class="table table-striped table-bordered nowrap table-sm" style="width:100%">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th></th>
-                                                                            <th>Codigo Producto</th>
-                                                                            <th>Nombre Generico</th>
-                                                                            <th>Nombre Comercial</th>
-                                                                            <th>Proveedor</th>
-                                                                            <th>Laboratorio</th>
-                                                                            <th>Cantidad</th>
-                                                                            <th>Precio Compra</th>
-                                                                            <th>Precio Venta</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody></tbody>
-                                                                </table>
-
-                                                            </div>
-
+                                                    <div class="col-sm-3">
+                                                        <label class="col-form-label col-form-label-sm">Precio Compra</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                            <input type="number" class="form-control border-start-0" id="txtPrecioCompraProducto" name="PrecioCompra" value="0" min="1" pattern="[0-9]+" step="1" autocomplete="off" onkeypress="if (isNaN(String.fromCharCode(event.keyCode))) return false;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label class="col-form-label col-form-label-sm">Precio Venta</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text bg-transparent"><i class='bx bxs-capsule'></i></span>
+                                                            <input type="number" class="form-control border-start-0" id="txtPrecioVentaProducto" name="PrecioVenta" value="0" min="1" pattern="[0-9]+" step="1" autocomplete="off" onkeypress="if (isNaN(String.fromCharCode(event.keyCode))) return false;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group mb-0">
+                                                            <label for="txtRucProveedor" class="col-form-label col-form-label-sm">Fecha Vencimiento:</label><input type="date" id="start" name="trip-start"
+                                                                                                                                                                   value="2022-01-01"
+                                                                                                                                                                   min="2022-01-01" max="2050-01-01" class="form-control border-start-0 fechavencimientoproducto">
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-sm-12">
+                                                        <button id="btnAgregarCompra" class="btn btn-success btn-sm float-right">
+                                                            <i class="fas fa-plus"></i> Agregar a compra
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+
+                                                <hr />
+                                                <div class="row mt-3">
+                                                    <div class="col-sm-12">
+                                                        <div class="table-responsive-sm">
+                                                            <table id="tbCompra" class="table table-striped table-bordered nowrap table-sm" style="width:100%">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <th>Codigo Producto</th>
+                                                                        <th>Nombre Generico</th>
+                                                                        <th>Nombre Comercial</th>
+                                                                        <th>Proveedor</th>
+                                                                        <th>Laboratorio</th>
+                                                                        <th>Cantidad</th>
+                                                                        <th>Precio Compra</th>
+                                                                        <th>Precio Venta</th>
+                                                                        <th>Fecha Vencimiento</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                            </table>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="card-footer bg-white border-info">
                                                 <button id="btnTerminarGuardarCompra" class="btn btn-primary btn-sm float-right">
                                                     <i class="fas fa-tags"></i> Terminar y Guardar Compra
                                                 </button>
-                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -242,103 +241,133 @@
                         </div>
                     </div>
                 </div>
-            <</div>
+            </div>
+            <
         </div>
+    </div>
 </body>
-              
 
 
-                <!-- MODAL PROVEEDOR -->
-                <div class="modal fade" id="modalProveedor" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Proveedor</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="table-responsive">
-                                    <table id="tbProveedor" class="table table-striped table-bordered nowrap compact" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>RUC</th>
-                                                <th>Razon Social</th>
-                                                <th>Direccion</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+<!-- MODAL PROVEEDOR -->
+<div class="modal fade" id="modalProveedor" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Proveedor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table id="tbProveedor" class="table table-striped table-bordered nowrap compact" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>RUC</th>
+                                <th>Razon Social</th>
+                                <th>Direccion</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
-
-                <!-- MODAL LABORATORIO -->
-                <div class="modal fade" id="modalLaboratorio" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Laboratorio</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="table-responsive">
-                                    <table id="tbLaboratorio" class="table table-striped table-bordered nowrap compact" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>Razon Social</th>
-                                                <th>Direccion</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL PROVEEDOR -->
+<div class="modal fade" id="modalLabProv" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalle Laboratorio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table id="tbLabProv" class="table table-striped table-bordered nowrap compact" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Laboratorio</th>
+                                <th>Proveedor</th>
+                                <th>Ruc</th>
+                                <th>Telefono</th>
+                                <th>Direccion</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
-               
+            </div>
+        </div>
+    </div>
+</div>
 
-                <!-- MODAL PRODUCTO -->
-                <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Detalle Producto</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="table-responsive">
-                                    <table id="tbProducto" class="table table-striped table-bordered nowrap compact" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>Codigo</th>
-                                                <th>Nombre Generico</th>
-                                                <th>Nombre Comercial</th>
-                                                <th>Concentracion</th>
-                                                <th>Stock</th>
-                                                <th>Prescripcion Medica</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!-- MODAL LABORATORIO -->
+<div class="modal fade" id="modalLaboratorio" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Laboratorio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table id="tbLaboratorio" class="table table-striped table-bordered nowrap compact" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Razon Social</th>
+                                <th>Direccion</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker1').datetimepicker();
-                    });
-                </script>
-                @section scripts{
+            </div>
+        </div>
+    </div>
+</div>
 
-                    <script src="@Url.Content("~/Scripts/Views/Compra_Crear.js")" type="text/javascript"></script>
-                }
+
+<!-- MODAL PRODUCTO -->
+<div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalle Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table id="tbProducto" class="table table-striped table-bordered nowrap compact" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Codigo</th>
+                                <th>Nombre Generico</th>
+                                <th>Nombre Comercial</th>
+                                <th>Concentracion</th>
+                                <th>Stock</th>
+                                <th>Prescripcion Medica</th>
+
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
+@section scripts{
+
+    <script src="@Url.Content("~/Scripts/Views/Compra_Crear.js")" type="text/javascript"></script>
+}
 

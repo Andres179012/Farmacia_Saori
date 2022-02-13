@@ -75,7 +75,7 @@
                         <div class="parent-icon">
                             <i class='bx bx-bar-chart-square'></i>
                         </div>
-                        <div class="menu-title">Dashboard</div>
+                        <div class="menu-title">Administración</div>
                     </a>
                     @Html.ActionLinkAllow()
                 </ul>
@@ -702,6 +702,8 @@
 <script type="text/javascript">
 
         $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
+
+    $.MisUrls.urls({ _ObtenerLaboratorioProveedor: '@Url.Action("ObtenerLaboratorioProveedor", "Compra")' });
 
         //CONTROLADOR DEVOLUCION
         $.MisUrls.urls({ _ObtenerDetalleCompra: '@Url.Action("Obtener", "Devolucion")' });

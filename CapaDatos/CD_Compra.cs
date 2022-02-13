@@ -138,6 +138,53 @@ namespace CapaDatos
         }
 
 
+        public List<LaboratorioProveedor> ObtenerLaboratorioProveedor()
+        {
+            List<LaboratorioProveedor> rptListaLaboratorioProveedor = new List<LaboratorioProveedor>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                SqlCommand cmd = new SqlCommand("usp_ObtenerLaboratorioProveedor", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        rptListaLaboratorioProveedor.Add(new LaboratorioProveedor()
+                        {
+                            IdLaboratorioProveedor = Convert.ToInt32(dr["IdLaboratorioProveedor"].ToString()),
+                            oLaboratorio = new Laboratorio()
+                            {
+                                IdLaboratorio = Convert.ToInt32(dr["IdLaboratorio"].ToString()),
+                                NombreLaboratorio = dr["NombreLaboratorio"].ToString(),
+                            },
+                            oProveedor = new Proveedor()
+                            {
+                                IdProveedor = Convert.ToInt32(dr["IdProveedor"].ToString()),
+                                RazonSocial = dr["RazonSocial"].ToString(),
+                                Ruc = dr["Ruc"].ToString(),
+                                Telefono = dr["Telefono"].ToString(),
+                                Direccion = dr["Direccion"].ToString(),
+                            },
+                        });
+                    }
+                    dr.Close();
+
+                    return rptListaLaboratorioProveedor;
+
+                }
+                catch (Exception)
+                {
+                    rptListaLaboratorioProveedor = null;
+                    return rptListaLaboratorioProveedor;
+                }
+            }
+        }
+
+
         public double ObtenerTotalCompras()
         {
             double total = 0.00;

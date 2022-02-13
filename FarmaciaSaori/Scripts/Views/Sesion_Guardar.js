@@ -11,8 +11,7 @@ $(function () {
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
-                    alert("Sesion guardada")
-                    Swal.fire({
+                    swal({
                         title: "Su Sesion Esta Siendo Guardada",
                     });
                 },
